@@ -1,5 +1,7 @@
 package net.guha.apps.rest;
 
+import net.guha.apps.rest.resources.DepictionResource;
+import net.guha.apps.rest.resources.TPSAResource;
 import org.restlet.Application;
 import org.restlet.Component;
 import org.restlet.Restlet;
@@ -14,6 +16,9 @@ public class RESTApplications extends Application {
         // setup depiction service
         router.attach("/depict/{smiles}/{width}/{height}", DepictionResource.class);
         router.attach("/depict/{smiles}", DepictionResource.class);
+
+        router.attach("/descriptors/tpsa/{smiles}", TPSAResource.class);
+        
         return router;
     }
 

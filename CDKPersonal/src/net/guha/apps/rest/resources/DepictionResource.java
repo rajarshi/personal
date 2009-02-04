@@ -1,5 +1,6 @@
-package net.guha.apps.rest;
+package net.guha.apps.rest.resources;
 
+import net.guha.apps.rest.StructureDiagram;
 import net.guha.apps.rest.representations.ByteRepresentation;
 import org.openscience.cdk.exception.CDKException;
 import org.restlet.Context;
