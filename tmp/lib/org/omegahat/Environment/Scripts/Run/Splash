@@ -1,0 +1,116 @@
+/* 
+  Here we create a very simple window and button with the word
+  Omega. We can use this as a very simple splash screen.
+
+  See Scripts/Examples/guiListener.nomg for an explanation of
+  the addActionListener() call.
+
+  The commands simply create a new window with a button,
+  and currently displays it. Feel free to comment out the
+  show() call. Doing so would make the window not appear
+  but would have the side effect of starting the AWT event loop
+  in the JVM. This would allow new AWT components to be created 
+  correctly in the session.
+
+  By bracing the expression and declaring the variables
+  to be "local", they should disappear after the evaluation
+  of the enclosing expression.
+  Since this is a top-level evaluation, local variables don't
+  go away. This is a bug/misfeature in the evaluator class and 
+  associated expression methods.
+  We also need to add/clarify some facilities for assigning
+  non-local variables to the appropriate database, etc.
+
+*/
+
+{ // local variables
+Object tmp = null;
+local fr,b;
+ // compute the name of the file being sourced to use as 
+ // the title for the window. Don't destroy the stack!
+fr = new Frame("Omega:"+sourceStack().peek());
+b = new JButton("Quit Omega");
+b.setToolTipText("Click to quit Omega");
+fr.setLayout(new BorderLayout());
+fr.add("Center", b);
+fr.pack();
+fr.resize(new Dimension(300,300));
+
+ Show = true;
+ /* Note that just creating the GUI (not necessarily showing it)
+    is sufficient to get the event handling working.
+  */
+ if(Show == true) {
+   fr.show();
+
+ /* This will be put into a function or method located somewhere.
+    It will probably be in the lib directories but we will wait until we 
+    discuss how to structure things.
+    See guiListener.nomg.
+
+    Note, it no longer writes to disk, but instead the class loader
+    sucks it up dynamically from memory.
+  */
+
+ dynamicClassLoader().defineClass("java.awt.event.ActionListener", "FunctionActionListener");
+ b.addActionListener(new FunctionActionListener(
+                      function(ev) { 
+    /* To handle the problem  of this thread not being able to evaluate
+       this function rapidly, we set the priority to almost the 
+       maximum just for the duration of this evaluation. Of course,
+       the session terminates and so no other thread gets a slice of the
+       processor(s).
+     */
+
+Thread.currentThread().setPriority(Thread.MAX_PRIORITY-1);
+//Thread.currentThread().setPriority((Thread.MAX_PRIORITY-Thread.MIN_PRIORITY)/2);
+                        ev.getSource().getParent().dispose();
+                        show("Exiting omega ....");
+                          // force the quit system wide!
+                        q(true);
+                      }, this)
+                    );
+  } else {
+    show("Not displaying the GUI");
+  }
+
+
+
+  // assign this to a persistent database
+  // could do this by assigning splashWindow before entering
+  // the local scope!
+
+defaultDatabase().assign("splashWindow",fr);
+}
+
+
+
+/*
+Copyright (c) 1998, 1999 The Omega Project for Statistical Computing.
+     All rights reserved.
+
+     Redistribution and use in source and binary forms, with or without
+     modification, are permitted provided that the following conditions are
+     met:
+
+       Redistributions of source code must retain the above copyright notice,
+       this list of conditions and the following disclaimer.
+
+       Redistributions in binary form must reproduce the above copyright
+       notice, this list of conditions and the following disclaimer in the
+       documentation and/or other materials provided with the distribution.
+
+       Neither name of the Omega Project for Statistical Computing nor the 
+       names of its contributors may be used to endorse or promote products 
+       derived from this software without specific prior written permission.
+
+     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS ``AS IS'' AND ANY
+     EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
+     SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+     SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+     PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+     INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+     STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
+     THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+*/

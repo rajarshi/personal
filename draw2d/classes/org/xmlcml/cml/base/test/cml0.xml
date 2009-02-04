@@ -1,0 +1,9 @@
+<!-- schema access included -->
+<c:cml 
+    xmlns:c="http://org.xml-cml.cml/schema"
+    xsi:schemaLocation="http://org.xml-cml.cml/schema cml0.xsd" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+>
+    <c:molecule id="a1"/>
+</c:cml>
+

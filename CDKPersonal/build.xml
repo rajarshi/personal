@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="cdkpersonal" default="all">
+
+
+    <property file="cdkpersonal.properties"/>
+    <!-- Uncomment the following property if no tests compilation is needed -->
+    <!--
+   <property name="skip.tests" value="true"/>
+    -->
+
+    <!-- Compiler options -->
+
+    <property name="compiler.debug" value="on"/>
+    <property name="compiler.generate.no.warnings" value="off"/>
+    <property name="compiler.args" value=""/>
+    <property name="compiler.max.memory" value="128m"/>
+    <patternset id="ignored.files">
+        <exclude name="**/CVS/**"/>
+        <exclude name="**/SCCS/**"/>
+        <exclude name="**/RCS/**"/>
+        <exclude name="**/rcs/**"/>
+        <exclude name="**/.DS_Store/**"/>
+        <exclude name="**/.svn/**"/>
+    </patternset>
+    <patternset id="compiler.resources">
+        <include name="**/?*.properties"/>
+        <include name="**/?*.xml"/>
+        <include name="**/?*.gif"/>
+        <include name="**/?*.png"/>
+        <include name="**/?*.jpeg"/>
+        <include name="**/?*.jpg"/>
+        <include name="**/?*.html"/>
+        <include name="**/?*.dtd"/>
+        <include name="**/?*.tld"/>
+    </patternset>
+
+
+    <!-- Global Libraries -->
+
+    <path id="library.idea_libs.classpath">
+        <pathelement location="/usr/local/share/java/idea5.01/redist/forms_rt.jar"/>
+        <pathelement location="/usr/local/share/java/idea5.01/redist/javac2.jar"/>
+    </path>
+
+    <path id="library.cdk_deps.classpath">
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/mysql-2.0.4.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/vecmath1.2-1.14.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/batik-util.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/antlr.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/batik-dom.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/Jama-1.0.1.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/JRI.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/batik-xml.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/jfontchooser.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/xmldb.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/jumbo52.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/jai_core.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/batik-svggen.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/weka.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/xml-apis.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/baysmith-io.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/sjava-0.68.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/javacc.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/biojava-1.4.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/postgresql7.0-1.2.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/bcel-5.1.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/dadml.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/batik-awt-util.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/log4j.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/jgrapht-0.6.0.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/commons-cli-1.0.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/xindice.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/jar/jai_codec.jar"/>
+    </path>
+
+    <path id="library.cdk_jars.classpath">
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-control.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-libio-openbabel.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-reaction.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-render.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-extra.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-forcefield.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-smiles.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-interfaces.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-data.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-valencycheck.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-pdb.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-applications.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-io.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-datadebug.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-qsar-weka.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-builder3d.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-inchi.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-qsar-pdb.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-standard.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-charges.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-nonotify.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-svg.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-experimental.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-libio-cml.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-core.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-qsar-cml.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-sdg.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-qsar.jar"/>
+        <pathelement location="/home/rguha/src/java/cdk/trunk/cdk/dist/jar/cdk-pdb-cml.jar"/>
+    </path>
+
+
+    <!-- Application Server Libraries -->
+
+    <!-- Modules -->
+
+    <import file="${basedir}/module_cdkpersonal.xml"/>
+
+    <target name="init" description="Build initialization">
+        <!-- Perform any build initialization in this target -->
+    </target>
+
+    <target name="clean" depends="clean.module.cdkpersonal" description="cleanup all"/>
+
+    <target name="all" depends="init, clean, compile.module.cdkpersonal" description="build all"/>
+
+    <target name="jar">
+        <unjar dest="classes" src="${cdk.jar.home}/cdk-core.jar"/>
+        <unjar dest="classes" src="${cdk.jar.home}/cdk-standard.jar"/>
+        <unjar dest="classes" src="${cdk.jar.home}/cdk-extra.jar"/>
+        <unjar dest="classes" src="${cdk.jar.home}/cdk-io.jar"/>
+        <unjar dest="classes" src="${cdk.jar.home}/cdk-interfaces.jar"/>
+        <unjar dest="classes" src="${cdk.jar.home}/cdk-data.jar"/>
+        <unjar dest="classes" src="${cdk.deps.home}/commons-cli-1.0.jar"/>
+        <unjar dest="classes" src="${cdk.deps.home}/vecmath1.2-1.14.jar"/>
+        <jar jarfile="momsim.jar" basedir="classes">
+            <manifest>
+                <attribute name="Main-Class" value="net.guha.apps.sim3d.MomentSimilarity"/>
+            </manifest>
+            <fileset dir="classes">
+                <include name="**/org/**"/>
+                <include name="**/net/guha/apps/sim3d/**"/>
+                <exclude name="**/temporary/**"/>
+            </fileset>
+        </jar>
+    </target>
+</project>

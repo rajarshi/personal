@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="module_cdkpersonal" default="compile.module.cdkpersonal">
+  <dirname property="module.cdkpersonal.basedir" file="${ant.file.module_cdkpersonal}"/>
+  
+  
+  <property name="compiler.args.cdkpersonal" value="${compiler.args}"/>
+  
+  <property name="cdkpersonal.output.dir" value="${module.cdkpersonal.basedir}/classes"/>
+  <property name="cdkpersonal.testoutput.dir" value="${module.cdkpersonal.basedir}/classes"/>
+  
+  <path id="cdkpersonal.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="cdkpersonal.module.classpath">
+    <path refid="library.cdk_jars.classpath"/>
+    <path refid="library.cdk_deps.classpath"/>
+    <path refid="library.idea_libs.classpath"/>
+    <pathelement location="${module.cdkpersonal.basedir}/../../../cdk/trunk/cdk/develjar/junit.jar"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.cdkpersonal">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.cdkpersonal">
+    <patternset refid="excluded.from.module.cdkpersonal"/>
+  </patternset>
+  
+  <path id="cdkpersonal.module.sourcepath">
+    <dirset dir="${module.cdkpersonal.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.cdkpersonal" depends="compile.module.cdkpersonal.production,compile.module.cdkpersonal.tests" description="Compile module CDKPersonal"/>
+  
+  <target name="compile.module.cdkpersonal.production" description="Compile module CDKPersonal; production classes">
+    <mkdir dir="${cdkpersonal.output.dir}"/>
+    <javac destdir="${cdkpersonal.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memoryMaximumSize="${compiler.max.memory}" fork="true">
+      <compilerarg line="${compiler.args.cdkpersonal}"/>
+      <bootclasspath refid="cdkpersonal.module.bootclasspath"/>
+      <classpath refid="cdkpersonal.module.classpath"/>
+      <src refid="cdkpersonal.module.sourcepath"/>
+    </javac>
+    
+    <copy todir="${cdkpersonal.output.dir}">
+      <fileset dir="${module.cdkpersonal.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.cdkpersonal.tests" depends="compile.module.cdkpersonal.production" description="compile module CDKPersonal; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.cdkpersonal" description="cleanup module">
+    <delete dir="${cdkpersonal.output.dir}"/>
+    <delete dir="${cdkpersonal.testoutput.dir}"/>
+  </target>
+</project>

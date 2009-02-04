@@ -1,0 +1,1270 @@
+Threads
+thread	group	parent	class	method
+--------------------------------------------------------------
+0x80a4b80	Finalizer	system	<unknown>	
+0x80a3e38	Reference Handler	system	<unknown>	
+0x8246ea8	Signal Dispatcher	system	<unknown>	
+0x8244db0	jmp-gtk	system	<unknown>	
+
+
+
+Classdump
+class_name	#instaces	max #instances	size	#GC	tenure
+--------------------------------------------------------------
+Total	9510	9510	1598920	0	0
+Total	9510	9510	1598920	0	0
+int[]	20	20	592624	0	0
+byte[]	880	880	489504	0	0
+char[]	2128	2128	267232	0	0
+java.lang.Object[]	942	942	56768	0	0
+java.lang.String	1390	1390	33360	0	0
+org.openscience.cdk.Atom	101	101	14544	0	0
+short[]	139	139	9888	0	0
+java.nio.HeapCharBuffer	195	195	9360	0	0
+java.nio.HeapByteBuffer	180	180	8640	0	0
+java.net.URL	145	145	8120	0	0
+java.lang.Class	78	78	6864	0	0
+java.util.jar.JarFile$JarFileEntry	71	71	6816	0	0
+java.nio.DirectByteBuffer	119	119	6664	0	0
+java.util.zip.ZipEntry	71	71	5680	0	0
+java.util.HashMap$Entry	199	199	4776	0	0
+java.util.zip.ZipFile$MappedZipFileInputStream	73	73	4672	0	0
+java.lang.StringBuilder	281	281	4496	0	0
+java.util.LinkedHashMap$Entry	130	130	4160	0	0
+boolean[]	107	107	3808	0	0
+java.util.Hashtable$Entry	152	152	3648	0	0
+java.util.zip.ZipFile$2	71	71	3408	0	0
+java.util.ArrayList	131	131	3144	0	0
+java.lang.ref.Finalizer	95	95	3040	0	0
+java.util.jar.JarFile	46	46	2576	0	0
+java.lang.reflect.Field	35	35	2520	0	0
+java.io.File	121	121	1936	0	0
+sun.misc.URLClassPath$JarLoader	60	60	1920	0	0
+sun.misc.Cleaner	46	46	1840	0	0
+java.util.zip.Inflater	41	41	1640	0	0
+java.io.DataInputStream	51	51	1632	0	0
+java.util.HashMap	39	39	1560	0	0
+java.lang.StringBuffer	94	94	1504	0	0
+java.lang.ClassNotFoundException	46	46	1472	0	0
+java.io.ExpiringCache$Entry	60	60	1440	0	0
+java.net.Parts	60	60	1440	0	0
+java.util.Vector	54	54	1296	0	0
+java.security.PrivilegedActionException	37	37	1184	0	0
+sun.misc.URLClassPath$3	61	61	976	0	0
+sun.misc.FileURLMapper	60	60	960	0	0
+java.util.Hashtable	23	23	920	0	0
+java.lang.reflect.Constructor	13	13	832	0	0
+java.lang.Integer	49	49	784	0	0
+java.net.URLClassLoader$1	46	46	736	0	0
+java.util.zip.ZipFile$ZipCloser	46	46	736	0	0
+java.lang.Long	46	46	736	0	0
+java.security.CodeSource	23	23	736	0	0
+java.util.Locale	22	22	704	0	0
+sun.misc.URLClassPath$JarLoader$1	22	22	704	0	0
+java.util.regex.Pattern$Category	36	36	576	0	0
+java.lang.Thread	6	6	576	0	0
+java.util.concurrent.ConcurrentHashMap$Segment	16	16	512	0	0
+java.lang.ref.SoftReference	16	16	512	0	0
+java.util.jar.Attributes$Name	30	30	480	0	0
+sun.reflect.Label$PatchInfo	19	19	456	0	0
+sun.net.www.protocol.file.FileURLConnection	4	4	416	0	0
+java.io.ObjectStreamField	12	12	384	0	0
+java.util.concurrent.locks.ReentrantLock$NonfairSync	16	16	384	0	0
+java.security.Provider$EngineDescription	24	24	384	0	0
+java.io.FileNotFoundException	14	14	336	0	0
+double[]	3	3	312	0	0
+java.util.AbstractList$Itr	12	12	288	0	0
+long[]	2	2	280	0	0
+java.util.jar.JarVerifier	5	5	240	0	0
+java.util.regex.Pattern$GroupTail	9	9	216	0	0
+java.security.AccessControlContext	8	8	192	0	0
+sun.reflect.Label	12	12	192	0	0
+sun.net.www.ParseUtil	22	22	176	0	0
+java.util.regex.Pattern$Ctype	11	11	176	0	0
+java.lang.StackTraceElement	7	7	168	0	0
+java.util.regex.Pattern$Range	7	7	168	0	0
+java.io.FilePermission	5	5	160	0	0
+java.lang.Object	20	20	160	0	0
+sun.security.util.ManifestEntryVerifier	3	3	144	0	0
+java.lang.RuntimePermission	6	6	144	0	0
+java.lang.Package	3	3	144	0	0
+java.util.regex.Pattern$GroupHead	9	9	144	0	0
+sun.nio.cs.UTF_8$Encoder	3	3	144	0	0
+sun.reflect.MethodAccessorGenerator	1	1	136	0	0
+sun.reflect.ClassFileAssembler	4	4	128	0	0
+java.security.ProtectionDomain	4	4	128	0	0
+java.util.regex.Pattern$Curly	4	4	128	0	0
+java.io.ByteArrayInputStream	5	5	120	0	0
+java.util.jar.Manifest$FastInputStream	5	5	120	0	0
+java.util.regex.Pattern$BitClass	5	5	120	0	0
+java.io.ExpiringCache$1	2	2	112	0	0
+java.io.FileDescriptor	7	7	112	0	0
+sun.nio.cs.StreamEncoder$CharsetSE	2	2	112	0	0
+sun.reflect.NativeConstructorAccessorImpl	4	4	96	0	0
+java.util.regex.Pattern$Ques	4	4	96	0	0
+java.security.BasicPermissionCollection	4	4	96	0	0
+java.lang.ThreadGroup	2	2	96	0	0
+java.lang.ref.Reference$ReferenceHandler	1	1	96	0	0
+java.util.Properties	2	2	96	0	0
+java.util.jar.Attributes	6	6	96	0	0
+java.lang.ThreadLocal$ThreadLocalMap$Entry	3	3	96	0	0
+sun.net.www.MessageHeader	4	4	96	0	0
+java.security.Permissions	4	4	96	0	0
+java.lang.ref.Finalizer$FinalizerThread	1	1	96	0	0
+sun.security.provider.Sun	1	1	88	0	0
+java.util.StringTokenizer	2	2	80	0	0
+sun.nio.cs.UTF_8$Decoder	2	2	80	0	0
+java.io.ExpiringCache	2	2	80	0	0
+java.util.jar.Manifest	5	5	80	0	0
+java.lang.reflect.Method	1	1	80	0	0
+java.io.ByteArrayOutputStream	5	5	80	0	0
+java.io.BufferedWriter	2	2	80	0	0
+java.io.FilePermission$1	5	5	80	0	0
+java.io.FileInputStream	5	5	80	0	0
+java.lang.ref.WeakReference	3	3	72	0	0
+sun.misc.Launcher$ExtClassLoader	1	1	72	0	0
+java.util.regex.Pattern$Single	3	3	72	0	0
+java.util.Stack	3	3	72	0	0
+sun.nio.cs.Surrogate$Parser	3	3	72	0	0
+sun.misc.Launcher$AppClassLoader	1	1	72	0	0
+java.lang.ref.ReferenceQueue	3	3	72	0	0
+sun.reflect.ByteVectorImpl	4	4	64	0	0
+java.util.regex.Pattern	1	1	64	0	0
+sun.misc.URLClassPath	2	2	64	0	0
+java.io.FilePermissionCollection	4	4	64	0	0
+java.io.PrintStream	2	2	64	0	0
+java.io.BufferedInputStream	2	2	64	0	0
+sun.reflect.DelegatingConstructorAccessorImpl	4	4	64	0	0
+org.openscience.cdk.AtomContainer	1	1	56	0	0
+sun.security.provider.NativePRNG$RandomIO	1	1	56	0	0
+float[]	1	1	56	0	0
+sun.reflect.DelegatingClassLoader	1	1	56	0	0
+java.lang.ThreadLocal	3	3	48	0	0
+java.util.regex.Pattern$Branch	3	3	48	0	0
+java.lang.ref.ReferenceQueue$Null	2	2	48	0	0
+java.io.BufferedOutputStream	2	2	48	0	0
+sun.misc.BASE64Decoder	3	3	48	0	0
+java.util.LinkedHashMap	1	1	48	0	0
+java.nio.charset.CodingErrorAction	3	3	48	0	0
+java.util.HashSet	3	3	48	0	0
+java.io.FileOutputStream	2	2	48	0	0
+sun.misc.Signal	3	3	48	0	0
+java.io.OutputStreamWriter	2	2	48	0	0
+sun.nio.cs.StandardCharsets$Aliases	1	1	40	0	0
+sun.nio.cs.StandardCharsets$Cache	1	1	40	0	0
+sun.misc.FloatingDecimal	1	1	40	0	0
+java.util.concurrent.ConcurrentHashMap	1	1	40	0	0
+java.lang.ref.ReferenceQueue$Lock	5	5	40	0	0
+sun.nio.cs.StandardCharsets$Classes	1	1	40	0	0
+java.util.Collections$SynchronizedMap	1	1	32	0	0
+sun.misc.SoftCache	1	1	32	0	0
+sun.nio.cs.Surrogate$Generator	2	2	32	0	0
+sun.misc.URLClassPath$FileLoader$1	1	1	32	0	0
+sun.misc.NativeSignalHandler	2	2	32	0	0
+java.lang.Boolean	2	2	32	0	0
+java.util.Properties$LineReader	1	1	32	0	0
+java.util.regex.Pattern$Dummy	2	2	32	0	0
+java.nio.charset.CoderResult	2	2	32	0	0
+sun.security.action.GetPropertyAction	2	2	32	0	0
+java.util.concurrent.atomic.AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl	1	1	32	0	0
+java.util.Random	1	1	32	0	0
+java.nio.ByteOrder	2	2	32	0	0
+java.lang.ClassLoader$NativeLibrary	1	1	32	0	0
+java.util.regex.Pattern$TreeInfo	1	1	24	0	0
+java.lang.ThreadLocal$ThreadLocalMap	1	1	24	0	0
+sun.reflect.MethodAccessorGenerator$1	1	1	24	0	0
+sun.nio.cs.UTF_8	1	1	24	0	0
+sun.nio.cs.StandardCharsets	1	1	24	0	0
+java.io.UnixFileSystem	1	1	24	0	0
+java.lang.ClassCastException	1	1	24	0	0
+java.lang.StringCoding$CharsetSD	1	1	24	0	0
+java.security.Provider$ServiceKey	1	1	24	0	0
+java.lang.reflect.ReflectPermission	1	1	24	0	0
+java.lang.StringCoding$CharsetSE	1	1	24	0	0
+java.util.regex.Pattern$JavaUpperCase	1	1	16	0	0
+java.util.regex.Pattern$JavaISOControl	1	1	16	0	0
+java.nio.charset.CoderResult$2	1	1	16	0	0
+sun.reflect.BootstrapConstructorAccessorImpl	1	1	16	0	0
+java.util.regex.Pattern$JavaIdentifierIgnorable	1	1	16	0	0
+java.util.regex.Pattern$Node	1	1	16	0	0
+java.util.regex.Pattern$JavaJavaIdentifierPart	1	1	16	0	0
+java.util.regex.Pattern$All	1	1	16	0	0
+java.util.regex.Pattern$JavaLetter	1	1	16	0	0
+java.lang.Shutdown$Lock	2	2	16	0	0
+java.util.regex.Pattern$JavaTitleCase	1	1	16	0	0
+sun.misc.FloatingDecimal$1	1	1	16	0	0
+java.util.regex.Pattern$JavaMirrored	1	1	16	0	0
+java.util.regex.Pattern$JavaSpaceChar	1	1	16	0	0
+java.lang.Class$1	1	1	16	0	0
+java.util.regex.Pattern$JavaUnicodeIdentifierStart	1	1	16	0	0
+java.util.regex.Pattern$LastNode	1	1	16	0	0
+java.util.regex.Pattern$JavaLetterOrDigit	1	1	16	0	0
+sun.misc.Launcher	1	1	16	0	0
+java.util.regex.Pattern$JavaDigit	1	1	16	0	0
+sun.misc.URLClassPath$FileLoader	1	1	16	0	0
+java.util.Collections$EmptyMap	1	1	16	0	0
+java.util.regex.Pattern$JavaLowerCase	1	1	16	0	0
+java.util.regex.Pattern$Start	1	1	16	0	0
+java.util.regex.Pattern$JavaWhitespace	1	1	16	0	0
+java.nio.charset.CoderResult$1	1	1	16	0	0
+java.util.regex.Pattern$JavaUnicodeIdentifierPart	1	1	16	0	0
+java.util.regex.Pattern$JavaJavaIdentifierStart	1	1	16	0	0
+java.util.BitSet	1	1	16	0	0
+java.util.Collections$EmptyList	1	1	16	0	0
+java.util.regex.Pattern$JavaDefined	1	1	16	0	0
+java.util.concurrent.atomic.AtomicLong	1	1	16	0	0
+sun.net.www.protocol.jar.Handler	2	2	16	0	0
+sun.reflect.ClassDefiner$1	1	1	16	0	0
+java.lang.reflect.ReflectAccess	1	1	8	0	0
+sun.reflect.ReflectionFactory	1	1	8	0	0
+java.lang.ref.Reference$Lock	1	1	8	0	0
+java.lang.Runtime	1	1	8	0	0
+java.util.Collections$ReverseComparator	1	1	8	0	0
+java.lang.Terminator$1	1	1	8	0	0
+java.lang.String$CaseInsensitiveComparator	1	1	8	0	0
+sun.security.provider.Sun$1	1	1	8	0	0
+java.lang.System$2	1	1	8	0	0
+sun.misc.ASCIICaseInsensitiveComparator	1	1	8	0	0
+java.util.jar.JavaUtilJarAccessImpl	1	1	8	0	0
+java.util.Hashtable$EmptyIterator	1	1	8	0	0
+java.security.Security$1	1	1	8	0	0
+java.util.Collections$EmptySet	1	1	8	0	0
+sun.misc.Unsafe	1	1	8	0	0
+sun.security.provider.NativePRNG$1	1	1	8	0	0
+sun.reflect.GeneratedConstructorAccessor1	1	1	8	0	0
+sun.misc.Launcher$Factory	1	1	8	0	0
+java.net.UnknownContentHandler	1	1	8	0	0
+java.util.Hashtable$EmptyEnumerator	1	1	8	0	0
+sun.net.www.protocol.file.Handler	1	1	8	0	0
+java.util.zip.ZipFile$1	1	1	8	0	0
+
+
+
+Methods
+class name	method	sec	calls	subsec	#alloced instances	#alloced bytes
+--------------------------------------------------------------
+java.lang.Math	int max (int, int)	0.056103000	13446	0.000000000	0	0
+java.util.jar.JarFile	boolean hasClassPathAttribute ()	0.052513000	46	0.094389000	86	115352
+java.lang.String	char charAt (int)	0.041890000	13486	0.000000000	0	0
+sun.net.www.ParseUtil	java.lang.String decode (java.lang.String)	0.030513000	69	0.056004000	69	1104
+java.lang.StringBuilder	java.lang.StringBuilder append (char)	0.026987000	3932	0.014581000	0	0
+java.io.UnixFileSystem	java.lang.String normalize (java.lang.String)	0.025527000	120	0.021296000	0	0
+java.lang.AbstractStringBuilder	java.lang.AbstractStringBuilder append (char)	0.012713000	3933	0.001871000	0	0
+sun.reflect.ClassFileAssembler	void emitByte (byte)	0.012479000	1783	0.005703000	0	0
+java.lang.ClassLoader	java.lang.Class defineClass1 (java.lang.String, byte[], int, int, java.security.ProtectionDomain, java.lang.String)	0.009587000	23	0.093898000	191	11776
+sun.nio.cs.UTF_8$Encoder	java.nio.charset.CoderResult encodeArrayLoop (java.nio.CharBuffer, java.nio.ByteBuffer)	0.007725000	179	0.005538000	0	0
+java.lang.System	void arraycopy (java.lang.Object, int, java.lang.Object, int, int)	0.007398000	2097	0.000000000	0	0
+java.lang.StringCoding$CharsetSE	byte[] encode (char[], int, int)	0.007273000	162	0.048387000	162	38592
+java.util.zip.ZipFile	long open (java.lang.String, int, long)	0.006971000	46	0.020437000	2	104
+java.lang.AbstractStringBuilder	java.lang.AbstractStringBuilder append (java.lang.String)	0.006658000	725	0.012060000	0	0
+java.util.zip.ZipFile	java.util.zip.ZipEntry getEntry (java.lang.String)	0.006532000	525	0.005726000	71	5680
+perf	void main (java.lang.String[])	0.006414000	1	0.124153000	170	17896
+java.lang.String	void getChars (int, int, char[], int)	0.006319000	911	0.003355000	0	0
+java.util.zip.Inflater	int inflateBytes (byte[], int, int)	0.006065000	148	0.000029000	2	120
+sun.reflect.ByteVectorImpl	void add (byte)	0.005616000	1783	0.000087000	0	0
+sun.nio.cs.UTF_8$Encoder	java.nio.charset.CoderResult encodeLoop (java.nio.CharBuffer, java.nio.ByteBuffer)	0.005587000	179	0.014389000	0	0
+java.util.HashMap	java.lang.Object put (java.lang.Object, java.lang.Object)	0.005425000	299	0.016523000	0	0
+java.nio.Buffer	void <init> (int, int, int, int)	0.005270000	492	0.003254000	0	0
+java.lang.AbstractStringBuilder	void expandCapacity (int)	0.004747000	479	0.001610000	479	72880
+sun.misc.URLClassPath	sun.misc.URLClassPath$Loader getLoader (int)	0.004745000	454	0.503462000	0	0
+java.lang.Character	int toLowerCase (int)	0.004656000	639	0.006280000	0	0
+java.lang.String	void <init> (char[], int, int)	0.004355000	441	0.001479000	441	52920
+java.lang.CharacterDataLatin1	int toLowerCase (int)	0.004306000	639	0.001974000	0	0
+java.util.jar.JarFile	java.util.zip.ZipEntry getEntry (java.lang.String)	0.004132000	525	0.013495000	71	6816
+java.nio.Buffer	java.nio.Buffer position (int)	0.003983000	1250	0.000000000	0	0
+java.util.jar.JarFile	java.util.jar.JarEntry getJarEntry (java.lang.String)	0.003633000	525	0.017627000	0	0
+sun.reflect.ClassFileAssembler	void emitConstantPoolUTF8 (java.lang.String)	0.003566000	54	0.020197000	0	0
+java.util.HashMap	int hash (java.lang.Object)	0.003553000	506	0.012973000	0	0
+sun.misc.URLClassPath	sun.misc.Resource getResource (java.lang.String, boolean)	0.003421000	46	0.551066000	0	0
+java.util.jar.Attributes$Name	boolean isValid (java.lang.String)	0.003348000	30	0.005867000	0	0
+sun.reflect.UTF8	byte[] encode (java.lang.String)	0.003270000	54	0.007404000	54	1496
+java.util.zip.ZipFile	long getEntry (long, java.lang.String, boolean)	0.003215000	598	0.000029000	2	112
+java.nio.charset.CharsetEncoder	java.nio.charset.CoderResult encode (java.nio.CharBuffer, java.nio.ByteBuffer, boolean)	0.003197000	179	0.021573000	0	0
+java.nio.ByteBuffer	void <init> (int, int, int, int, byte[], int)	0.003172000	297	0.006161000	0	0
+java.lang.StringBuilder	java.lang.StringBuilder append (java.lang.String)	0.003109000	461	0.013703000	0	0
+sun.reflect.ClassFileAssembler	void emitShort (short)	0.003102000	268	0.005688000	0	0
+java.util.ArrayList	java.lang.Object get (int)	0.003050000	450	0.001438000	0	0
+java.lang.String	int lastIndexOf (int)	0.003044000	236	0.000836000	0	0
+java.util.jar.Attributes$Name	boolean isValid (char)	0.003028000	443	0.001463000	0	0
+sun.misc.URLClassPath$JarLoader	sun.misc.Resource getResource (java.lang.String, boolean)	0.003010000	430	0.036661000	0	0
+sun.reflect.ClassFileAssembler	void append (sun.reflect.ByteVector)	0.003009000	3	0.004266000	0	0
+java.lang.String	java.lang.String toLowerCase (java.util.Locale)	0.002977000	145	0.010558000	48	1608
+java.util.zip.ZipFile	java.io.InputStream getInputStream (java.lang.String)	0.002974000	73	0.021678000	144	8080
+sun.reflect.UTF8	int utf8Length (java.lang.String)	0.002902000	54	0.002243000	0	0
+java.lang.StringCoding	byte[] encode (java.lang.String, char[], int, int)	0.002847000	162	0.063619000	0	0
+java.nio.CharBuffer	void <init> (int, int, int, int, char[], int)	0.002823000	195	0.003293000	0	0
+java.lang.ThreadLocal	java.lang.Object get ()	0.002604000	179	0.003111000	0	0
+java.lang.StringBuilder	java.lang.String toString ()	0.002599000	281	0.003771000	281	6744
+java.lang.CharacterDataLatin1	int getProperties (int)	0.002586000	832	0.000000000	0	0
+java.lang.String	int indexOf (int)	0.002565000	282	0.000967000	0	0
+sun.misc.URLClassPath$JarLoader	java.util.jar.JarFile getJarFile (java.net.URL)	0.002529000	60	0.274392000	120	3872
+java.util.zip.ZipFile$MappedZipFileInputStream	void close ()	0.002351000	146	0.001690000	0	0
+sun.misc.URLClassPath$JarLoader	void <init> (java.net.URL, java.net.URLStreamHandler, java.util.HashMap)	0.002351000	60	0.307005000	120	4320
+java.util.HashMap	int indexFor (int, int)	0.002325000	753	0.000000000	0	0
+java.util.zip.InflaterInputStream	int read (byte[], int, int)	0.002263000	74	0.018237000	0	0
+sun.misc.ASCIICaseInsensitiveComparator	int lowerCaseHashCode (java.lang.String)	0.002229000	21	0.003797000	0	0
+java.lang.AbstractStringBuilder	void <init> (int)	0.002228000	375	0.000000000	375	25944
+java.util.zip.ZipFile	void <init> (java.io.File, int)	0.002227000	46	0.114670000	92	1840
+java.util.zip.ZipFile$MappedZipFileInputStream	void <init> (java.util.zip.ZipFile, long, java.lang.String)	0.002226000	73	0.009658000	0	0
+java.util.HashMap	java.lang.Object get (java.lang.Object)	0.002216000	139	0.008041000	0	0
+java.net.URLStreamHandler	java.lang.String toExternalForm (java.net.URL)	0.002127000	83	0.009470000	83	1328
+java.nio.Buffer	java.nio.Buffer limit (int)	0.002121000	638	0.000000000	0	0
+java.net.URLStreamHandler	int hashCode (java.net.URL)	0.002086000	61	0.002523000	0	0
+java.lang.Character	char toLowerCase (char)	0.002051000	304	0.005316000	0	0
+java.nio.DirectByteBuffer	java.nio.ByteBuffer get (byte[], int, int)	0.002032000	76	0.002108000	0	0
+java.lang.StringCoding	java.lang.Object deref (java.lang.ThreadLocal)	0.002018000	178	0.006191000	0	0
+java.util.HashMap	void addEntry (int, java.lang.Object, java.lang.Object, int)	0.002000000	199	0.001879000	199	4776
+java.lang.String	java.lang.String substring (int, int)	0.001979000	222	0.000621000	191	4584
+sun.misc.ASCIICaseInsensitiveComparator	int toLower (int)	0.001970000	296	0.000912000	0	0
+org.openscience.cdk.AtomContainer	void addAtom (org.openscience.cdk.interfaces.IAtom)	0.001953000	100	0.008909000	0	0
+java.lang.String	int hashCode ()	0.001949000	589	0.000000000	0	0
+java.nio.charset.CoderResult	boolean isUnderflow ()	0.001906000	568	0.000000000	0	0
+java.lang.StringBuilder	void <init> ()	0.001893000	281	0.001705000	0	0
+java.nio.ByteBuffer	int arrayOffset ()	0.001865000	602	0.000000000	0	0
+java.io.File	void <init> (java.lang.String)	0.001855000	119	0.047979000	0	0
+java.util.Properties	void load (java.io.InputStream)	0.001837000	1	0.002409000	2	2096
+java.security.Provider	java.lang.Object put (java.lang.Object, java.lang.Object)	0.001835000	67	0.016505000	67	1072
+java.util.zip.ZipFile	void ensureOpen ()	0.001830000	598	0.000000000	0	0
+java.nio.CharBuffer	java.nio.CharBuffer wrap (char[], int, int)	0.001796000	195	0.007423000	195	9360
+java.nio.CharBuffer	int arrayOffset ()	0.001795000	585	0.000000000	0	0
+java.lang.StringBuffer	java.lang.StringBuffer append (java.lang.String)	0.001790000	264	0.005015000	0	0
+java.util.zip.Inflater	long init (boolean)	0.001752000	41	0.000028000	2	104
+java.nio.ByteBuffer	java.nio.ByteBuffer wrap (byte[], int, int)	0.001684000	178	0.006852000	178	8544
+sun.misc.FileURLMapper	java.lang.String getPath ()	0.001644000	120	0.075743000	0	0
+java.lang.String	boolean equals (java.lang.Object)	0.001636000	520	0.000000000	0	0
+java.util.HashMap	java.lang.Object maskNull (java.lang.Object)	0.001626000	506	0.000000000	0	0
+java.lang.ClassLoader	java.lang.Class findBootstrapClass (java.lang.String)	0.001626000	37	0.000962000	69	3184
+java.util.zip.ZipFile	java.util.zip.Inflater getInflater ()	0.001613000	71	0.004625000	41	1640
+java.lang.Throwable	java.lang.Throwable fillInStackTrace ()	0.001587000	98	0.000000000	327	27032
+java.lang.StringCoding	byte[] trim (byte[], int)	0.001579000	162	0.000587000	162	11592
+java.util.regex.Pattern$categoryNames	void <clinit> ()	0.001532000	1	0.004666000	68	1160
+java.net.URL	void <init> (java.net.URL, java.lang.String, java.net.URLStreamHandler)	0.001528000	29	0.022294000	0	0
+org.openscience.cdk.ChemObject	void addListener (org.openscience.cdk.interfaces.IChemObjectListener)	0.001500000	100	0.005777000	0	0
+java.util.jar.JavaUtilJarAccessImpl	boolean jarFileHasClassPathAttribute (java.util.jar.JarFile)	0.001462000	46	0.146902000	0	0
+java.lang.String	java.lang.String concat (java.lang.String)	0.001441000	74	0.001752000	148	7952
+java.util.ArrayList	void RangeCheck (int)	0.001438000	450	0.000000000	0	0
+sun.net.www.protocol.jar.Handler	void parseURL (java.net.URL, java.lang.String, int, int)	0.001435000	22	0.013238000	44	528
+java.lang.String	boolean startsWith (java.lang.String, int)	0.001428000	402	0.000000000	0	0
+java.util.Hashtable	java.lang.Object put (java.lang.Object, java.lang.Object)	0.001409000	96	0.000677000	96	2304
+java.lang.String	boolean startsWith (java.lang.String)	0.001409000	207	0.000758000	0	0
+java.util.zip.ZipFile$MappedZipFileInputStream	int read (byte[], int, int)	0.001406000	76	0.007918000	0	0
+java.lang.ClassLoader	boolean checkName (java.lang.String)	0.001401000	134	0.001752000	0	0
+java.util.jar.Attributes$Name	boolean isAlpha (char)	0.001371000	443	0.000000000	0	0
+java.net.URLClassLoader	java.lang.Class defineClass (java.lang.String, sun.misc.Resource)	0.001357000	23	0.249040000	23	736
+java.net.URL	void <init> (java.lang.String, java.lang.String, int, java.lang.String, java.net.URLStreamHandler)	0.001341000	60	0.009398000	60	1440
+java.lang.String	boolean endsWith (java.lang.String)	0.001340000	195	0.000670000	0	0
+java.nio.HeapCharBuffer	void <init> (char[], int, int)	0.001307000	195	0.006116000	0	0
+java.net.URLClassLoader	boolean isSealed (java.lang.String, java.util.jar.Manifest)	0.001297000	19	0.002741000	0	0
+java.lang.String	java.lang.String toLowerCase ()	0.001260000	121	0.005812000	0	0
+java.util.zip.InflaterInputStream	void <init> (java.io.InputStream, java.util.zip.Inflater, int)	0.001254000	71	0.000714000	213	151824
+java.lang.String	int indexOf (java.lang.String, int)	0.001253000	58	0.000238000	0	0
+java.util.regex.Pattern	void compile ()	0.001244000	1	0.015938000	6	784
+java.lang.ThreadLocal$ThreadLocalMap	java.lang.Object access$000 (java.lang.ThreadLocal$ThreadLocalMap, java.lang.ThreadLocal)	0.001217000	179	0.000754000	0	0
+sun.misc.URLClassPath$3	java.lang.Object run ()	0.001214000	61	0.311497000	61	1936
+java.lang.System	java.lang.SecurityManager getSecurityManager ()	0.001212000	394	0.000000000	0	0
+java.lang.String	void <init> (int, int, char[])	0.001212000	370	0.000000000	0	0
+java.nio.HeapByteBuffer	void <init> (byte[], int, int)	0.001195000	178	0.005657000	0	0
+java.lang.StringCoding	int access$000 (int, float)	0.001193000	178	0.000613000	0	0
+java.io.UnixFileSystem	int getBooleanAttributes0 (java.io.File)	0.001190000	64	0.025372000	0	0
+java.util.AbstractList	void <init> ()	0.001190000	175	0.000547000	0	0
+java.util.ArrayList	boolean add (java.lang.Object)	0.001186000	170	0.000595000	0	0
+java.util.ArrayList	void <init> (int)	0.001178000	127	0.001254000	127	7112
+java.lang.String	byte[] getBytes (java.lang.String)	0.001165000	162	0.066466000	0	0
+java.nio.Bits	java.nio.ByteOrder byteOrder ()	0.001159000	373	0.000000000	0	0
+java.nio.charset.CharsetEncoder	java.nio.charset.CoderResult flush (java.nio.ByteBuffer)	0.001151000	162	0.000502000	0	0
+java.nio.ByteBuffer	java.nio.ByteBuffer wrap (byte[])	0.001136000	162	0.007765000	0	0
+java.lang.String	int indexOf (int, int)	0.001134000	333	0.000000000	0	0
+java.lang.String	java.lang.String replace (char, char)	0.001134000	91	0.000269000	160	7816
+java.lang.StringBuffer	java.lang.String toString ()	0.001127000	94	0.001215000	94	2256
+java.lang.StringCoding	byte[] access$400 (byte[], int)	0.001081000	162	0.002166000	0	0
+java.util.zip.ZipFile$ZipFileInputStream	void <init> (java.util.zip.ZipFile, long)	0.001070000	73	0.001884000	0	0
+java.util.zip.Inflater	int inflate (byte[], int, int)	0.001062000	148	0.006094000	0	0
+sun.misc.FileURLMapper	boolean exists ()	0.001054000	60	0.132707000	60	960
+java.lang.ClassLoader	java.lang.Class loadClass (java.lang.String, boolean)	0.001051000	74	0.875213000	0	0
+sun.reflect.ByteVectorImpl	int getLength ()	0.001031000	334	0.000000000	0	0
+java.util.zip.ZipFile	java.nio.MappedByteBuffer newMappedByteBuffer (int, long, java.lang.Runnable)	0.001028000	46	0.062720000	138	2576
+java.lang.ClassLoader	java.lang.Class findLoadedClass (java.lang.String)	0.001020000	74	0.002645000	0	0
+sun.reflect.MethodAccessorGenerator	void emitInvoke ()	0.001011000	1	0.017566000	15	272
+java.security.Provider	java.lang.Object implPut (java.lang.Object, java.lang.Object)	0.001006000	67	0.008296000	1	48
+java.net.URLClassLoader$1	java.lang.Object run ()	0.000980000	46	0.808629000	23	736
+java.lang.ref.Finalizer	void <init> (java.lang.Object)	0.000960000	91	0.001236000	0	0
+java.io.UnixFileSystem	int getBooleanAttributes (java.io.File)	0.000955000	64	0.030811000	0	0
+org.openscience.cdk.ChemObject	java.util.List lazyChemObjectListeners ()	0.000951000	100	0.002838000	104	2560
+java.lang.String	boolean regionMatches (boolean, int, java.lang.String, int, int)	0.000950000	52	0.005004000	0	0
+java.util.Vector	int size ()	0.000939000	296	0.000000000	0	0
+sun.misc.URLClassPath	sun.misc.URLClassPath$Loader getLoader (java.net.URL)	0.000917000	61	0.314170000	61	976
+java.lang.String	int lastIndexOf (int, int)	0.000916000	258	0.000000000	0	0
+sun.misc.ASCIICaseInsensitiveComparator	boolean isUpper (int)	0.000912000	296	0.000000000	0	0
+sun.reflect.MethodAccessorGenerator	sun.reflect.MagicAccessorImpl generate (java.lang.Class, java.lang.String, java.lang.Class[], java.lang.Class, java.lang.Class[], int, boolean, boolean, java.lang.Class)	0.000912000	1	0.052568000	2	56
+java.util.HashMap$Entry	void <init> (int, java.lang.Object, java.lang.Object, java.util.HashMap$Entry)	0.000907000	268	0.000000000	0	0
+java.util.LinkedHashMap	void createEntry (int, java.lang.Object, java.lang.Object, int)	0.000887000	68	0.001393000	68	2176
+java.io.FilterInputStream	void <init> (java.io.InputStream)	0.000879000	128	0.000389000	0	0
+java.util.HashMap	boolean containsKey (java.lang.Object)	0.000874000	61	0.005863000	0	0
+java.util.Stack	java.lang.Object pop ()	0.000869000	61	0.001526000	0	0
+java.io.UnixFileSystem	int prefixLength (java.lang.String)	0.000868000	120	0.000369000	0	0
+java.lang.ref.Finalizer	void register (java.lang.Object)	0.000855000	91	0.002196000	91	2912
+java.util.ArrayList	void <init> ()	0.000848000	127	0.002432000	0	0
+java.util.zip.ZipFile$2	void fill ()	0.000826000	74	0.009333000	0	0
+sun.reflect.ByteVectorImpl	byte get (int)	0.000821000	267	0.000000000	0	0
+sun.net.www.protocol.jar.Handler	java.lang.String parseContextSpec (java.net.URL, java.lang.String)	0.000816000	22	0.003071000	22	352
+java.nio.ByteBuffer	void <init> (int, int, int, int)	0.000815000	119	0.003676000	0	0
+java.util.zip.ZipFile$2	void close ()	0.000804000	71	0.003016000	0	0
+java.nio.DirectByteBuffer	void <init> (sun.nio.ch.DirectBuffer, int, int, int, int, int)	0.000798000	73	0.003477000	0	0
+java.security.AccessController	java.lang.Object doPrivileged (java.security.PrivilegedExceptionAction, java.security.AccessControlContext)	0.000794000	46	0.810503000	25	872
+java.util.regex.Pattern	int peek ()	0.000786000	117	0.000365000	0	0
+java.security.AccessController	java.lang.Object doPrivileged (java.security.PrivilegedExceptionAction)	0.000774000	61	0.313188000	14	448
+java.lang.StringCoding$CharsetSD	char[] decode (byte[], int, int)	0.000762000	16	0.004349000	16	1648
+java.io.InputStream	void <init> ()	0.000762000	210	0.000000000	0	0
+java.net.URLClassLoader	java.lang.Class findClass (java.lang.String)	0.000742000	46	0.811470000	46	736
+java.util.LinkedHashMap	void addEntry (int, java.lang.Object, java.lang.Object, int)	0.000736000	68	0.003102000	0	0
+sun.misc.URLClassPath$JarLoader	java.net.URL[] getClassPath ()	0.000729000	46	0.170038000	0	0
+sun.security.util.ManifestEntryVerifier	void <init> (java.util.jar.Manifest)	0.000728000	3	0.000747000	17	504
+sun.misc.Cleaner	sun.misc.Cleaner create (java.lang.Object, java.lang.Runnable)	0.000728000	46	0.000947000	46	1840
+java.util.jar.JarFile	java.util.jar.Manifest getManifestFromReference ()	0.000727000	27	0.027190000	20	600
+java.util.HashMap	boolean eq (java.lang.Object, java.lang.Object)	0.000724000	80	0.002443000	0	0
+java.nio.DirectByteBuffer	java.nio.ByteBuffer slice ()	0.000723000	73	0.004275000	73	4088
+java.net.URLStreamHandler	java.net.InetAddress getHostAddress (java.net.URL)	0.000722000	99	0.000308000	0	0
+sun.reflect.AccessorGenerator	void emitBoxingContantPoolEntries ()	0.000715000	1	0.012706000	0	0
+java.lang.CharacterDataLatin1	int toUpperCase (int)	0.000706000	100	0.000322000	0	0
+java.io.DataInputStream	void <init> (java.io.InputStream)	0.000706000	51	0.000495000	153	15096
+java.lang.StringBuilder	java.lang.StringBuilder append (java.lang.Object)	0.000705000	67	0.015639000	0	0
+java.lang.Character	int toUpperCase (int)	0.000703000	100	0.001028000	0	0
+java.util.Properties$LineReader	int readLine ()	0.000701000	22	0.000253000	0	0
+org.openscience.cdk.Element	void <init> ()	0.000699000	101	0.000545000	0	0
+org.openscience.cdk.Element	void <init> (java.lang.String)	0.000698000	101	0.001244000	0	0
+java.io.File	boolean exists ()	0.000697000	64	0.031962000	0	0
+org.openscience.cdk.Isotope	void <init> (java.lang.String)	0.000693000	101	0.001942000	0	0
+java.security.Provider	void addEngine (java.lang.String, boolean, boolean)	0.000687000	24	0.010729000	29	616
+java.io.File	java.lang.String getName ()	0.000686000	64	0.003363000	0	0
+org.openscience.cdk.Atom	void <init> (java.lang.String)	0.000684000	101	0.003312000	0	0
+java.lang.Character	char toUpperCase (char)	0.000682000	100	0.001731000	0	0
+java.net.URL	int hashCode ()	0.000682000	135	0.004609000	0	0
+org.openscience.cdk.ChemObject	void notifyChanged ()	0.000681000	100	0.000306000	0	0
+java.net.URL	java.lang.String toString ()	0.000679000	83	0.012157000	0	0
+java.io.UnixFileSystem	long getLastModifiedTime (java.io.File)	0.000678000	46	0.019472000	0	0
+sun.nio.cs.UTF_8$Decoder	java.nio.charset.CoderResult decodeArrayLoop (java.nio.ByteBuffer, java.nio.CharBuffer)	0.000678000	16	0.000495000	0	0
+java.util.ArrayList	boolean contains (java.lang.Object)	0.000677000	100	0.000307000	0	0
+org.openscience.cdk.AtomType	void <init> (java.lang.String)	0.000677000	101	0.002635000	0	0
+java.lang.ref.SoftReference	java.lang.Object get ()	0.000677000	202	0.000000000	0	0
+java.lang.ThreadLocal$ThreadLocalMap	java.lang.Object get (java.lang.ThreadLocal)	0.000677000	179	0.000077000	0	0
+java.net.Parts	void <init> (java.lang.String)	0.000675000	60	0.001289000	0	0
+java.util.regex.Pattern	boolean isSupplementary (int)	0.000674000	96	0.000294000	0	0
+java.lang.ClassLoader	java.lang.Class findLoadedClass0 (java.lang.String)	0.000674000	74	0.000000000	144	7024
+java.util.regex.Pattern	boolean has (int)	0.000655000	204	0.000000000	0	0
+java.nio.ByteBuffer	byte[] array ()	0.000654000	212	0.000000000	0	0
+java.util.jar.JarFile	void <init> (java.lang.String)	0.000653000	46	0.136998000	46	736
+java.lang.Character	int toUpperCaseEx (int)	0.000652000	93	0.000891000	0	0
+java.util.Stack	java.lang.Object peek ()	0.000643000	61	0.000474000	0	0
+sun.reflect.NativeConstructorAccessorImpl	java.lang.Object newInstance (java.lang.Object[])	0.000634000	16	0.055521000	1	136
+java.util.HashMap	void transfer (java.util.HashMap$Entry[])	0.000628000	7	0.000501000	0	0
+java.lang.String	int codePointAt (int)	0.000627000	93	0.000912000	0	0
+java.lang.Character	int codePointAtImpl (char[], int, int)	0.000626000	93	0.000286000	0	0
+java.nio.CharBuffer	char[] array ()	0.000617000	195	0.000000000	0	0
+java.nio.CharBuffer	boolean hasArray ()	0.000617000	195	0.000000000	0	0
+java.lang.StringCoding	int scale (int, float)	0.000613000	178	0.000000000	0	0
+java.lang.Thread	java.lang.Thread currentThread ()	0.000613000	184	0.000000000	0	0
+sun.net.www.protocol.file.Handler	java.net.URLConnection createFileURLConnection (java.net.URL, java.io.File)	0.000613000	4	0.000526000	4	416
+java.lang.ClassLoader	void checkCerts (java.lang.String, java.security.CodeSource)	0.000609000	23	0.001125000	3	128
+java.nio.ByteBuffer	boolean hasArray ()	0.000609000	195	0.000000000	0	0
+sun.net.www.ParseUtil	java.lang.String encodePath (java.lang.String, boolean)	0.000607000	23	0.001137000	46	5264
+java.lang.ref.FinalReference	void <init> (java.lang.Object, java.lang.ref.ReferenceQueue)	0.000607000	91	0.000310000	0	0
+java.nio.Buffer	boolean hasRemaining ()	0.000603000	195	0.000000000	0	0
+java.lang.CharacterDataLatin1	int toUpperCaseEx (int)	0.000601000	93	0.000290000	0	0
+java.nio.charset.CoderResult	boolean isOverflow ()	0.000599000	195	0.000000000	0	0
+sun.misc.Resource	byte[] getBytes ()	0.000595000	23	0.008795000	23	69704
+java.lang.StringBuffer	void <init> (int)	0.000584000	87	0.000485000	0	0
+java.net.URLStreamHandler	void parseURL (java.net.URL, java.lang.String, int, int)	0.000580000	7	0.002546000	7	112
+java.util.Stack	boolean empty ()	0.000579000	84	0.000277000	0	0
+java.util.ArrayList	void ensureCapacity (int)	0.000576000	170	0.000019000	4	608
+java.lang.String	java.lang.String substring (int)	0.000576000	86	0.001122000	0	0
+java.util.regex.Pattern$Node	boolean study (java.util.regex.Pattern$TreeInfo)	0.000574000	102	0.012787000	0	0
+java.util.concurrent.locks.ReentrantLock	void <init> ()	0.000569000	16	0.001274000	16	384
+org.openscience.cdk.ChemObject	void <init> ()	0.000564000	102	0.000000000	102	2448
+java.net.URL	java.lang.String toExternalForm ()	0.000560000	83	0.011597000	0	0
+java.nio.DirectByteBuffer	void <init> (int, long, java.lang.Runnable)	0.000550000	46	0.003776000	0	0
+java.util.AbstractCollection	void <init> ()	0.000550000	176	0.000000000	0	0
+java.lang.ThreadLocal	java.lang.ThreadLocal$ThreadLocalMap getMap (java.lang.Thread)	0.000549000	179	0.000000000	0	0
+sun.misc.URLClassPath$JarLoader	sun.misc.Resource checkResource (java.lang.String, boolean, java.util.jar.JarEntry)	0.000545000	22	0.021132000	44	1936
+java.nio.charset.CharsetEncoder	java.nio.charset.CharsetEncoder reset ()	0.000542000	162	0.000000000	0	0
+java.lang.reflect.Constructor	java.lang.Object newInstance (java.lang.Object[])	0.000534000	47	0.060616000	0	0
+java.util.zip.ZipFile	void freeEntry (long, long)	0.000531000	144	0.000027000	2	112
+java.lang.ClassLoader	java.lang.Class defineClass (java.lang.String, byte[], int, int, java.security.ProtectionDomain)	0.000531000	23	0.110458000	0	0
+sun.misc.FloatingDecimal	void <clinit> ()	0.000528000	1	0.017423000	11	896
+java.util.zip.ZipFile	void releaseInflater (java.util.zip.Inflater)	0.000526000	71	0.000779000	0	0
+java.lang.Class	java.lang.Class forName0 (java.lang.String, boolean, java.lang.ClassLoader)	0.000524000	1	0.000178000	0	0
+java.util.zip.ZipEntry	void <init> (java.lang.String, long)	0.000521000	71	0.000344000	0	0
+java.nio.ByteOrder	java.nio.ByteOrder nativeOrder ()	0.000519000	76	0.000229000	0	0
+org.openscience.cdk.AtomContainer	boolean contains (org.openscience.cdk.interfaces.IAtom)	0.000514000	100	0.000000000	0	0
+java.util.Vector	boolean add (java.lang.Object)	0.000513000	71	0.000266000	0	0
+sun.misc.Launcher$AppClassLoader	java.lang.Class loadClass (java.lang.String, boolean)	0.000513000	37	0.821487000	0	0
+java.util.zip.ZipFile	void access$1400 (java.util.zip.ZipFile)	0.000511000	76	0.000247000	0	0
+java.lang.ClassLoader	java.lang.Class findBootstrapClass0 (java.lang.String)	0.000511000	37	0.003552000	0	0
+java.nio.charset.CharsetEncoder	float maxBytesPerChar ()	0.000503000	162	0.000000000	0	0
+java.nio.charset.CharsetEncoder	java.nio.charset.CoderResult implFlush (java.nio.ByteBuffer)	0.000502000	162	0.000000000	0	0
+java.lang.ClassLoader	java.lang.Package getPackage (java.lang.String)	0.000501000	31	0.003370000	0	0
+java.util.zip.ZipFile	java.io.InputStream getInputStream (java.util.zip.ZipEntry)	0.000500000	73	0.024652000	0	0
+java.util.zip.ZipFile$2	void <init> (java.util.zip.ZipFile, java.io.InputStream, java.util.zip.Inflater, int, java.util.zip.ZipFile$ZipFileInputStream)	0.000499000	71	0.001968000	0	0
+java.nio.MappedByteBuffer	void <init> (int, int, int, int)	0.000498000	73	0.002746000	0	0
+sun.reflect.Label	void bind ()	0.000498000	12	0.001490000	0	0
+java.util.zip.ZipFile	long access$1300 (long)	0.000495000	73	0.000274000	0	0
+java.util.jar.JarFile$JarFileEntry	void <init> (java.util.jar.JarFile, java.util.zip.ZipEntry)	0.000495000	71	0.000742000	0	0
+java.lang.ref.Reference	void <init> (java.lang.Object, java.lang.ref.ReferenceQueue)	0.000494000	147	0.000000000	0	0
+java.util.Hashtable	java.lang.Object get (java.lang.Object)	0.000493000	48	0.000306000	0	0
+java.io.File	long lastModified ()	0.000490000	46	0.020295000	0	0
+java.util.zip.ZipFile	long access$1200 (long)	0.000490000	73	0.000281000	0	0
+java.util.zip.ZipFile	void access$1100 (long, long)	0.000489000	73	0.000258000	0	0
+java.util.zip.ZipFile	long access$1600 (long)	0.000483000	73	0.000285000	0	0
+java.lang.String	java.lang.String valueOf (java.lang.Object)	0.000481000	70	0.012693000	0	0
+java.util.zip.ZipFile	long access$600 (java.util.zip.ZipFile)	0.000480000	146	0.000000000	0	0
+java.util.zip.ZipFile	void access$300 (java.util.zip.ZipFile, java.util.zip.Inflater)	0.000477000	71	0.001305000	0	0
+java.util.jar.JarEntry	void <init> (java.util.zip.ZipEntry)	0.000477000	71	0.000265000	0	0
+java.security.Provider	void check (java.lang.String)	0.000470000	67	0.000206000	0	0
+java.util.jar.JarFile	boolean isKnownToNotHaveClassPathAttribute ()	0.000468000	46	0.000884000	1	16
+java.util.LinkedHashMap$Entry	void <init> (int, java.lang.Object, java.lang.Object, java.util.HashMap$Entry)	0.000468000	69	0.000230000	0	0
+java.util.zip.ZipFile	long getSize (long)	0.000463000	144	0.000028000	2	104
+java.util.Vector	void <init> (int, int)	0.000463000	48	0.000483000	48	2688
+sun.misc.URLClassPath$JarLoader	void parseExtensionsDependencies ()	0.000460000	46	0.000149000	0	0
+sun.misc.BASE64Decoder	void <clinit> ()	0.000459000	1	0.000000000	2	416
+java.util.concurrent.ConcurrentHashMap	void <init> (int, float, int)	0.000457000	1	0.002143000	22	920
+java.util.LinkedHashMap$Entry	void access$600 (java.util.LinkedHashMap$Entry, java.util.LinkedHashMap$Entry)	0.000456000	68	0.000250000	0	0
+java.util.StringTokenizer	int scanToken (int)	0.000448000	10	0.000385000	0	0
+java.lang.StackTraceElement	java.lang.String toString ()	0.000441000	7	0.002736000	14	224
+sun.reflect.GeneratedConstructorAccessor1	java.lang.Object newInstance (java.lang.Object[])	0.000433000	30	0.002874000	30	1680
+java.util.Properties	java.lang.String loadConvert (char[], int, int, char[])	0.000433000	42	0.000539000	42	1008
+sun.reflect.ClassFileAssembler	short getLength ()	0.000432000	64	0.000198000	0	0
+java.util.zip.Inflater	void <init> (boolean)	0.000414000	41	0.001780000	41	656
+java.lang.String	boolean equalsIgnoreCase (java.lang.String)	0.000413000	102	0.002719000	0	0
+sun.reflect.ClassFileAssembler	short cpi ()	0.000410000	133	0.000000000	0	0
+java.lang.ClassLoader	void checkPackageAccess (java.lang.Class, java.security.ProtectionDomain)	0.000408000	36	0.002105000	0	0
+java.lang.ClassLoader	void check ()	0.000408000	134	0.000000000	0	0
+sun.misc.URLClassPath$FileLoader	sun.misc.Resource getResource (java.lang.String, boolean)	0.000406000	1	0.002782000	9	472
+sun.misc.VM	boolean allowArraySyntax ()	0.000404000	134	0.000000000	0	0
+sun.security.provider.Sun	void <init> ()	0.000400000	1	0.039646000	0	0
+sun.net.www.ParseUtil	java.lang.String canonizeString (java.lang.String)	0.000396000	22	0.001215000	0	0
+java.util.jar.Attributes	void read (java.util.jar.Manifest$FastInputStream, byte[])	0.000393000	6	0.020489000	26	624
+java.io.DataInputStream	void readFully (byte[], int, int)	0.000391000	51	0.013747000	0	0
+sun.nio.cs.StreamEncoder$CharsetSE	void implWrite (char[], int, int)	0.000388000	17	0.002757000	0	0
+java.nio.Bits	void copyToByteArray (long, java.lang.Object, long, long)	0.000387000	76	0.000000000	0	0
+sun.nio.cs.StreamEncoder$CharsetSE	void writeBytes ()	0.000382000	17	0.001223000	0	0
+java.util.Vector	void ensureCapacityHelper (int)	0.000379000	100	0.000008000	2	272
+java.util.regex.Pattern	java.util.regex.Pattern$Node sequence (java.util.regex.Pattern$Node)	0.000378000	11	0.036157000	0	0
+java.util.regex.Pattern$Node	void <init> ()	0.000376000	113	0.000000000	0	0
+java.util.Locale	java.util.Locale getDefault ()	0.000375000	121	0.000000000	0	0
+java.lang.String	java.lang.String toUpperCase (java.util.Locale)	0.000373000	5	0.001550000	2	104
+java.lang.StringCoding	char[] decode (java.lang.String, byte[], int, int)	0.000359000	16	0.006107000	0	0
+java.lang.Throwable	void <init> (java.lang.String, java.lang.Throwable)	0.000355000	46	0.000786000	0	0
+java.lang.ClassLoader	java.security.ProtectionDomain preDefineClass (java.lang.String, java.security.ProtectionDomain)	0.000351000	23	0.002530000	0	0
+java.util.jar.Attributes$Name	int hashCode ()	0.000351000	55	0.006088000	0	0
+java.util.Vector	java.lang.Object elementAt (int)	0.000348000	80	0.000000000	0	0
+java.io.FilterInputStream	void close ()	0.000345000	51	0.002836000	0	0
+sun.reflect.ClassFileAssembler	void emitConstantPoolMethodref (short, short)	0.000343000	23	0.001638000	0	0
+java.lang.String	int indexOf (java.lang.String)	0.000341000	51	0.001406000	0	0
+java.io.ObjectStreamClass	java.lang.String getClassSignature (java.lang.Class)	0.000331000	6	0.001269000	11	176
+java.lang.ClassNotFoundException	void <init> (java.lang.String)	0.000330000	46	0.001465000	0	0
+java.util.jar.JarFile	void <init> (java.io.File, boolean, int)	0.000329000	46	0.116897000	0	0
+java.lang.Long	void <init> (long)	0.000328000	46	0.000141000	0	0
+java.lang.Character	int charCount (int)	0.000326000	106	0.000000000	0	0
+java.util.zip.Inflater	void reset ()	0.000326000	30	0.000302000	0	0
+java.util.jar.Attributes$Name	void <init> (java.lang.String)	0.000326000	30	0.009361000	0	0
+java.util.jar.JarFile	java.util.jar.JarEntry getManEntry ()	0.000325000	48	0.004182000	0	0
+sun.misc.Cleaner	void <init> (java.lang.Object, java.lang.Runnable)	0.000325000	46	0.000468000	0	0
+java.lang.Exception	void <init> (java.lang.String, java.lang.Throwable)	0.000324000	46	0.001141000	0	0
+java.security.Security	void <clinit> ()	0.000324000	1	0.009154000	2	48
+java.util.regex.Pattern	int next ()	0.000323000	49	0.000170000	0	0
+java.util.Hashtable$Entry	void <init> (int, java.lang.Object, java.lang.Object, java.util.Hashtable$Entry)	0.000323000	96	0.000000000	0	0
+java.util.Vector	void <init> (int)	0.000323000	48	0.000946000	0	0
+sun.security.util.ManifestEntryVerifier	void <clinit> ()	0.000322000	1	0.061614000	2	136
+java.util.Vector	void <init> ()	0.000322000	48	0.001269000	0	0
+java.lang.Integer	void <init> (int)	0.000321000	46	0.000146000	0	0
+java.lang.ref.PhantomReference	void <init> (java.lang.Object, java.lang.ref.ReferenceQueue)	0.000321000	46	0.000147000	0	0
+java.util.regex.Pattern	java.util.regex.Pattern$Node closure (java.util.regex.Pattern$Node)	0.000320000	21	0.000391000	8	224
+java.lang.ref.Finalizer	void add ()	0.000319000	91	0.000000000	0	0
+sun.reflect.DelegatingConstructorAccessorImpl	java.lang.Object newInstance (java.lang.Object[])	0.000318000	46	0.059462000	0	0
+java.util.zip.ZipFile$ZipCloser	void <init> (long, java.util.zip.ZipFile$1)	0.000317000	46	0.000157000	0	0
+java.util.LinkedHashMap	void transfer (java.util.HashMap$Entry[])	0.000317000	3	0.000269000	0	0
+java.util.zip.ZipEntry	void initFields (long)	0.000316000	71	0.000028000	3	128
+java.nio.MappedByteBuffer	void <init> (int, int, int, int, boolean)	0.000315000	46	0.001745000	0	0
+java.util.jar.JarFile	void initializeVerifier ()	0.000315000	3	0.068609000	3	144
+sun.misc.JarIndex	sun.misc.JarIndex getJarIndex (java.util.jar.JarFile)	0.000314000	46	0.001601000	0	0
+java.util.HashMap	void <init> (int, float)	0.000310000	20	0.000128000	20	1608
+sun.reflect.ClassFileAssembler	void emitConstantPoolNameAndType (short, short)	0.000308000	21	0.001495000	0	0
+java.util.ArrayList	int indexOf (java.lang.Object)	0.000307000	100	0.000000000	0	0
+org.openscience.cdk.ChemObject	int getListenerCount ()	0.000306000	100	0.000000000	0	0
+java.nio.charset.CharsetDecoder	java.nio.charset.CoderResult decode (java.nio.ByteBuffer, java.nio.CharBuffer, boolean)	0.000306000	16	0.001658000	0	0
+java.lang.ClassLoader	long findNative (java.lang.ClassLoader, java.lang.String)	0.000303000	19	0.000261000	0	0
+java.net.URLStreamHandler	int getDefaultPort ()	0.000302000	99	0.000000000	0	0
+java.lang.Throwable	void <init> (java.lang.Throwable)	0.000301000	37	0.000519000	0	0
+sun.reflect.BootstrapConstructorAccessorImpl	java.lang.Object newInstance (java.lang.Object[])	0.000301000	1	0.000055000	0	0
+sun.reflect.Label	void add (sun.reflect.ClassFileAssembler, short, short, int)	0.000298000	19	0.000258000	19	456
+java.util.regex.Pattern	java.util.regex.Pattern$Node group0 ()	0.000294000	9	0.026052000	4	64
+java.util.regex.Pattern	boolean isSurrogate (int)	0.000294000	96	0.000000000	0	0
+java.util.jar.JarVerifier	void <init> (byte[])	0.000292000	5	0.000645000	25	800
+java.util.jar.Manifest	void <init> (java.io.InputStream)	0.000290000	5	0.022393000	10	280
+java.util.jar.Attributes	java.lang.String getValue (java.util.jar.Attributes$Name)	0.000289000	42	0.004798000	0	0
+java.util.Hashtable	void <init> (int, float)	0.000288000	20	0.000125000	20	1096
+java.lang.Number	void <init> ()	0.000287000	92	0.000000000	0	0
+java.lang.Character	boolean isHighSurrogate (char)	0.000286000	93	0.000000000	0	0
+java.nio.Buffer	int remaining ()	0.000286000	93	0.000000000	0	0
+java.net.URLStreamHandler	boolean sameFile (java.net.URL, java.net.URL)	0.000284000	19	0.001233000	0	0
+sun.net.www.protocol.file.Handler	boolean hostsEqual (java.net.URL, java.net.URL)	0.000281000	19	0.000837000	0	0
+java.util.jar.Attributes	java.lang.Object get (java.lang.Object)	0.000280000	42	0.004518000	0	0
+java.util.jar.Attributes	java.lang.String putValue (java.lang.String, java.lang.String)	0.000279000	13	0.013951000	13	208
+sun.reflect.AccessorGenerator	void emitCommonConstantPoolEntries ()	0.000278000	1	0.009741000	0	0
+java.security.SecureClassLoader	java.security.ProtectionDomain getProtectionDomain (java.security.CodeSource)	0.000277000	23	0.026760000	4	128
+java.util.regex.Pattern$Category	void <init> (int)	0.000272000	36	0.000113000	0	0
+java.net.URLStreamHandler	boolean hostsEqual (java.net.URL, java.net.URL)	0.000270000	19	0.000447000	0	0
+java.util.regex.Pattern	java.util.regex.Pattern$Node family (boolean, boolean)	0.000268000	4	0.006963000	4	96
+java.util.zip.ZipEntry	void <init> (java.util.zip.ZipEntry)	0.000265000	71	0.000000000	0	0
+java.util.jar.Manifest	void read (java.io.InputStream)	0.000263000	5	0.021815000	11	2776
+sun.reflect.ClassFileAssembler	void incStack ()	0.000263000	39	0.000120000	0	0
+java.security.PrivilegedActionException	void <init> (java.lang.Exception)	0.000259000	37	0.001071000	0	0
+java.io.BufferedWriter	void write (java.lang.String, int, int)	0.000259000	17	0.000305000	0	0
+java.util.HashSet	boolean add (java.lang.Object)	0.000259000	36	0.001734000	0	0
+java.util.BitSet	boolean get (int)	0.000258000	23	0.000144000	0	0
+sun.reflect.ClassFileAssembler	void setStack (int)	0.000258000	84	0.000000000	0	0
+java.security.SecureClassLoader	java.lang.Class defineClass (java.lang.String, byte[], int, int, java.security.CodeSource)	0.000257000	23	0.138026000	0	0
+java.io.PrintStream	void write (byte[], int, int)	0.000257000	17	0.000753000	0	0
+java.util.zip.ZipFile	long getEntryOffset (long)	0.000256000	73	0.000029000	2	120
+java.util.jar.JarFile	java.io.InputStream getInputStream (java.util.zip.ZipEntry)	0.000253000	22	0.075437000	0	0
+java.util.zip.ZipFile	long getCSize (long)	0.000253000	73	0.000028000	2	112
+java.security.Permissions	void add (java.security.Permission)	0.000253000	8	0.002978000	0	0
+java.lang.String	char[] toCharArray ()	0.000253000	28	0.000294000	28	2408
+java.util.zip.ZipFile	int getMethod (long)	0.000252000	73	0.000028000	2	112
+java.lang.Exception	void <init> (java.lang.Throwable)	0.000251000	37	0.000820000	0	0
+java.lang.ClassLoader	java.lang.Class loadClassInternal (java.lang.String)	0.000251000	37	0.822250000	0	0
+java.lang.ClassLoader	java.lang.Class loadClass (java.lang.String)	0.000250000	37	0.822000000	0	0
+java.util.LinkedHashMap$Entry	void addBefore (java.util.LinkedHashMap$Entry)	0.000250000	68	0.000000000	0	0
+java.util.zip.Inflater	void setInput (byte[], int, int)	0.000249000	74	0.000000000	0	0
+java.nio.DirectByteBuffer	long ix (int)	0.000247000	76	0.000000000	0	0
+java.util.zip.ZipFile	void ensureOpenOrZipException ()	0.000247000	76	0.000000000	0	0
+sun.net.www.protocol.jar.Handler	int indexOfBangSlash (java.lang.String)	0.000246000	22	0.000148000	0	0
+java.nio.Buffer	void checkBounds (int, int, int)	0.000246000	76	0.000000000	0	0
+java.io.PrintStream	void newLine ()	0.000245000	8	0.003065000	0	0
+java.util.zip.ZipEntry	long getSize ()	0.000242000	73	0.000000000	0	0
+java.nio.ByteBuffer	java.nio.ByteOrder order ()	0.000241000	76	0.000000000	0	0
+java.util.concurrent.ConcurrentHashMap$Segment	void <init> (int, float)	0.000241000	16	0.001898000	17	344
+sun.reflect.ClassFileAssembler	void emitShort (short, short)	0.000241000	19	0.000120000	0	0
+java.net.URLStreamHandler	void setURL (java.net.URL, java.lang.String, java.lang.String, int, java.lang.String, java.lang.String)	0.000240000	22	0.000478000	0	0
+java.util.jar.JarFile	byte[] getBytes (java.util.zip.ZipEntry)	0.000240000	8	0.004912000	16	1192
+java.util.zip.Inflater	boolean needsDictionary ()	0.000239000	74	0.000000000	0	0
+java.lang.String	int indexOf (char[], int, int, char[], int, int, int)	0.000238000	58	0.000000000	0	0
+sun.misc.Unsafe	java.lang.Class defineClass (java.lang.String, byte[], int, int, java.lang.ClassLoader, java.security.ProtectionDomain)	0.000237000	1	0.000020000	5	328
+sun.nio.cs.UTF_8$Decoder	java.nio.charset.CoderResult decodeLoop (java.nio.ByteBuffer, java.nio.CharBuffer)	0.000237000	16	0.001273000	0	0
+sun.misc.Resource	java.io.InputStream cachedInputStream ()	0.000235000	46	0.076379000	0	0
+sun.net.www.URLConnection	void <init> (java.net.URL)	0.000234000	4	0.000098000	4	96
+java.util.regex.Pattern	java.util.regex.Pattern$Node clazz (boolean)	0.000233000	5	0.001154000	5	120
+java.util.jar.JarVerifier	void beginEntry (java.util.jar.JarEntry, sun.security.util.ManifestEntryVerifier)	0.000233000	3	0.002186000	0	0
+java.nio.DirectByteBuffer	long address ()	0.000233000	73	0.000000000	0	0
+java.util.jar.Manifest$FastInputStream	int readLine (byte[], int, int)	0.000229000	25	0.000233000	0	0
+java.util.zip.Inflater	boolean needsInput ()	0.000229000	74	0.000000000	0	0
+java.lang.String	java.lang.String intern ()	0.000228000	44	0.000000000	10	384
+sun.security.provider.Sun$1	java.lang.Object run ()	0.000228000	1	0.009583000	0	0
+sun.net.www.protocol.file.FileURLConnection	java.security.Permission getPermission ()	0.000228000	4	0.008893000	4	128
+java.util.zip.InflaterInputStream	void ensureOpen ()	0.000227000	74	0.000000000	0	0
+java.util.zip.Inflater	boolean finished ()	0.000227000	74	0.000000000	0	0
+java.util.Vector	void removeElementAt (int)	0.000222000	61	0.000000000	0	0
+java.lang.Double	java.lang.String toString (double)	0.000221000	1	0.018367000	1	40
+java.util.Vector	void addElement (java.lang.Object)	0.000220000	29	0.000121000	0	0
+sun.reflect.NativeConstructorAccessorImpl	java.lang.Object newInstance0 (java.lang.reflect.Constructor, java.lang.Object[])	0.000215000	16	0.001548000	16	896
+sun.reflect.AccessorGenerator	void emitMethod (short, int, sun.reflect.ClassFileAssembler, sun.reflect.ClassFileAssembler, short[])	0.000214000	2	0.008881000	0	0
+java.security.CodeSource	boolean equals (java.lang.Object)	0.000214000	19	0.001846000	0	0
+java.util.regex.Pattern	java.util.regex.Pattern$Node range (java.util.regex.Pattern$BitClass)	0.000213000	12	0.000635000	0	0
+java.security.SecureClassLoader	java.security.PermissionCollection getPermissions (java.security.CodeSource)	0.000213000	4	0.001037000	4	96
+java.io.PrintStream	void write (java.lang.String)	0.000213000	9	0.003610000	0	0
+java.util.regex.Pattern$Curly	boolean study (java.util.regex.Pattern$TreeInfo)	0.000212000	14	0.002085000	0	0
+java.security.BasicPermissionCollection	void add (java.security.Permission)	0.000212000	4	0.000214000	0	0
+java.lang.Thread	void init (java.lang.ThreadGroup, java.lang.Runnable, java.lang.String, long)	0.000210000	5	0.000592000	0	0
+java.net.URLStreamHandler	void setURL (java.net.URL, java.lang.String, java.lang.String, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)	0.000209000	29	0.000123000	0	0
+java.lang.System	java.lang.String getProperty (java.lang.String)	0.000209000	22	0.000707000	0	0
+sun.misc.URLClassPath$3	void <init> (sun.misc.URLClassPath, java.net.URL)	0.000208000	61	0.000000000	0	0
+java.lang.Class	java.lang.reflect.Field[] getDeclaredFields0 (boolean)	0.000206000	2	0.000000000	47	2184
+sun.misc.URLClassPath$Loader	void <init> (java.net.URL)	0.000206000	61	0.000000000	0	0
+java.util.LinkedHashMap	boolean removeEldestEntry (java.util.Map$Entry)	0.000204000	67	0.000000000	0	0
+java.util.AbstractList$Itr	java.lang.Object next ()	0.000204000	19	0.000245000	0	0
+java.net.URLClassLoader	java.lang.Package definePackage (java.lang.String, java.util.jar.Manifest, java.net.URL)	0.000199000	3	0.004729000	0	0
+java.net.URL	void <init> (java.net.URL, java.lang.String)	0.000199000	29	0.023822000	0	0
+java.util.AbstractList	java.util.Iterator iterator ()	0.000197000	12	0.000133000	12	288
+java.security.CodeSource	int hashCode ()	0.000197000	27	0.000086000	0	0
+sun.reflect.ClassFileAssembler	void opc_ifeq (sun.reflect.Label)	0.000196000	9	0.000795000	0	0
+java.util.regex.Pattern$Branch	boolean study (java.util.regex.Pattern$TreeInfo)	0.000195000	7	0.003563000	0	0
+sun.misc.FileURLMapper	void <init> (java.net.URL)	0.000193000	60	0.000000000	0	0
+java.lang.Object	int hashCode ()	0.000192000	54	0.000000000	0	0
+sun.reflect.ClassFileAssembler	void opc_goto (sun.reflect.Label)	0.000191000	9	0.000769000	0	0
+sun.nio.cs.StreamEncoder	void write (char[], int, int)	0.000190000	17	0.003198000	0	0
+sun.reflect.ClassFileAssembler	void emitConstantPoolClass (short)	0.000190000	18	0.000713000	0	0
+java.lang.Throwable	void printStackTrace (java.io.PrintStream)	0.000188000	1	0.011140000	7	112
+java.io.FilePermission	void init (int)	0.000188000	5	0.004606000	5	80
+java.io.BufferedWriter	void flushBuffer ()	0.000187000	17	0.003560000	0	0
+sun.reflect.ClassFileAssembler	void opc_aload_2 ()	0.000186000	18	0.000353000	0	0
+java.util.regex.Pattern	int read ()	0.000182000	27	0.000082000	0	0
+java.security.Provider	void <clinit> ()	0.000182000	1	0.011474000	2	64
+java.lang.String	void <init> (byte[], int, int, java.lang.String)	0.000178000	16	0.006517000	0	0
+java.util.jar.Manifest$FastInputStream	void fill ()	0.000177000	12	0.000086000	0	0
+java.util.zip.ZipFile	int getTotal (long)	0.000176000	46	0.000029000	2	112
+java.net.URLClassLoader	java.security.PermissionCollection getPermissions (java.security.CodeSource)	0.000175000	4	0.020998000	2	48
+java.lang.ClassLoader	java.lang.String defineClassSourceLocation (java.security.ProtectionDomain)	0.000174000	23	0.003603000	0	0
+java.io.BufferedOutputStream	void flush ()	0.000173000	25	0.000421000	0	0
+java.net.URLClassLoader$1	void <init> (java.net.URLClassLoader, java.lang.String)	0.000173000	46	0.000000000	0	0
+java.util.zip.Inflater	void reset (long)	0.000173000	30	0.000035000	2	104
+java.util.regex.Pattern	java.util.regex.Pattern$Node createGroup (boolean)	0.000171000	9	0.000191000	18	360
+java.security.Permissions	java.security.PermissionCollection getPermissionCollection (java.security.Permission, boolean)	0.000171000	8	0.002292000	0	0
+java.lang.ClassLoader	void addClass (java.lang.Class)	0.000171000	24	0.000289000	0	0
+java.lang.ClassLoader	void postDefineClass (java.lang.Class, java.security.ProtectionDomain)	0.000171000	23	0.000074000	0	0
+sun.misc.Resource	java.nio.ByteBuffer getByteBuffer ()	0.000169000	23	0.076543000	0	0
+java.util.zip.ZipFile	long getMappedLen (long)	0.000167000	46	0.000027000	2	120
+java.lang.Class	int getModifiers ()	0.000166000	49	0.000000000	0	0
+java.util.jar.Manifest$FastInputStream	int readLine (byte[])	0.000166000	25	0.000462000	0	0
+java.util.zip.ZipFile	long getMappedAddr (long)	0.000164000	46	0.000027000	2	120
+java.util.jar.JarFile$JarFileEntry	java.security.CodeSigner[] getCodeSigners ()	0.000164000	22	0.000214000	0	0
+java.util.jar.Manifest	java.util.jar.Attributes getAttributes (java.lang.String)	0.000164000	23	0.000713000	0	0
+sun.misc.URLClassPath$JarLoader$1	void <init> (sun.misc.URLClassPath$JarLoader, java.lang.String, java.net.URL, java.util.jar.JarEntry)	0.000162000	22	0.000070000	0	0
+sun.misc.URLClassPath$JarLoader$1	java.util.jar.Manifest getManifest ()	0.000160000	22	0.012265000	0	0
+java.lang.StringCoding	char[] trim (char[], int)	0.000159000	16	0.000055000	16	968
+java.util.jar.JarFile	java.util.jar.Manifest getManifest ()	0.000159000	24	0.027881000	0	0
+java.io.FileOutputStream	void writeBytes (byte[], int, int)	0.000159000	17	0.000000000	0	0
+sun.misc.URLClassPath$JarLoader$1	int getContentLength ()	0.000158000	22	0.000068000	0	0
+java.util.zip.ZipFile$ZipCloser	void <init> (long)	0.000157000	46	0.000000000	0	0
+java.net.URLClassLoader	java.lang.Class access$100 (java.net.URLClassLoader, java.lang.String, sun.misc.Resource)	0.000156000	23	0.250397000	0	0
+java.util.Properties	java.lang.String getProperty (java.lang.String)	0.000156000	25	0.000414000	0	0
+sun.misc.URLClassPath$JarLoader$1	java.security.CodeSigner[] getCodeSigners ()	0.000156000	22	0.000378000	0	0
+sun.misc.URLClassPath$JarLoader$1	java.io.InputStream getInputStream ()	0.000156000	22	0.075690000	0	0
+sun.reflect.ByteVectorFactory	sun.reflect.ByteVector create ()	0.000154000	4	0.000058000	4	64
+sun.misc.Cleaner	sun.misc.Cleaner add (sun.misc.Cleaner)	0.000154000	46	0.000000000	0	0
+sun.misc.ASCIICaseInsensitiveComparator	int compare (java.lang.Object, java.lang.Object)	0.000151000	2	0.000128000	0	0
+sun.misc.ExtensionDependency	boolean checkExtensionsDependencies (java.util.jar.JarFile)	0.000149000	46	0.000000000	0	0
+java.security.AccessController	java.lang.Object doPrivileged (java.security.PrivilegedAction)	0.000149000	14	0.026133000	0	0
+java.lang.System	void checkKey (java.lang.String)	0.000148000	23	0.000072000	0	0
+java.security.CodeSource	java.security.cert.Certificate[] getCertificates ()	0.000147000	46	0.000000000	0	0
+java.util.jar.JarFile	void access$000 (java.util.jar.JarFile)	0.000146000	22	0.000068000	0	0
+sun.misc.SharedSecrets	sun.misc.JavaUtilJarAccess javaUtilJarAccess ()	0.000145000	46	0.000000000	0	0
+java.io.BufferedOutputStream	void flushBuffer ()	0.000145000	25	0.000276000	0	0
+java.util.jar.Attributes$Name	void <clinit> ()	0.000144000	1	0.006173000	17	272
+org.openscience.cdk.AtomContainer	void <init> (int, int)	0.000138000	1	0.000323000	19	1040
+java.lang.ClassLoader$NativeLibrary	long find (java.lang.String)	0.000137000	19	0.000000000	0	0
+java.util.HashMap	void <init> (int)	0.000137000	20	0.000438000	0	0
+sun.reflect.ReflectionFactory	sun.reflect.ConstructorAccessor newConstructorAccessor (java.lang.reflect.Constructor)	0.000137000	2	0.000139000	3	56
+java.net.URL	boolean equals (java.lang.Object)	0.000137000	19	0.001651000	0	0
+java.util.jar.JarFile	void maybeInstantiateVerifier ()	0.000135000	44	0.000000000	0	0
+java.net.URLStreamHandler	boolean equals (java.net.URL, java.net.URL)	0.000134000	19	0.001517000	0	0
+java.util.regex.Pattern$BitClass	boolean study (java.util.regex.Pattern$TreeInfo)	0.000134000	19	0.003384000	0	0
+java.lang.String	void <init> (byte[], int, int, int)	0.000133000	13	0.000043000	13	504
+java.io.BufferedOutputStream	void write (byte[], int, int)	0.000129000	17	0.000057000	0	0
+sun.reflect.ClassFileAssembler	void opc_invokevirtual (short, int, int)	0.000129000	9	0.000398000	0	0
+java.lang.Package	java.lang.Package getSystemPackage (java.lang.String)	0.000129000	6	0.000584000	0	0
+java.util.jar.JarFile	void <clinit> ()	0.000128000	1	0.000010000	4	624
+java.io.FilePermission$1	java.lang.Object run ()	0.000127000	5	0.004355000	6	96
+java.util.StringTokenizer	int skipDelimiters (int)	0.000126000	12	0.000109000	0	0
+sun.misc.URLClassPath$JarLoader	java.net.URL[] parseClassPath (java.net.URL, java.lang.String)	0.000126000	2	0.004394000	9	408
+java.lang.Class	boolean isPrimitive ()	0.000125000	38	0.000000000	0	0
+java.lang.Float	boolean isNaN (float)	0.000125000	40	0.000000000	0	0
+java.io.FilePermission	java.security.PermissionCollection newPermissionCollection ()	0.000124000	4	0.000514000	4	64
+java.util.regex.Pattern	java.util.regex.Pattern$Node expr (java.util.regex.Pattern$Node)	0.000123000	10	0.036660000	1	16
+java.net.URL	void set (java.lang.String, java.lang.String, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)	0.000123000	29	0.000000000	0	0
+java.lang.Throwable	java.lang.StackTraceElement getStackTraceElement (int)	0.000122000	7	0.000000000	19	512
+java.lang.Class	java.lang.String getName0 ()	0.000122000	8	0.000000000	12	496
+java.util.regex.Pattern	int single ()	0.000122000	12	0.000237000	0	0
+java.io.UnixFileSystem	java.lang.String normalize (java.lang.String, int, int)	0.000122000	4	0.000311000	4	64
+java.io.Writer	void write (java.lang.String)	0.000122000	17	0.000564000	0	0
+java.lang.AbstractStringBuilder	java.lang.AbstractStringBuilder append (int)	0.000122000	8	0.000159000	0	0
+java.util.HashMap	java.util.HashMap$Entry getEntry (java.lang.Object)	0.000120000	7	0.000164000	0	0
+sun.reflect.ByteVectorImpl	void put (int, byte)	0.000120000	38	0.000000000	0	0
+sun.security.provider.NativePRNG$1	java.lang.Object run ()	0.000119000	1	0.002159000	3	88
+sun.reflect.Label	void <init> ()	0.000119000	12	0.000310000	12	288
+java.io.OutputStreamWriter	void write (char[], int, int)	0.000119000	17	0.003388000	0	0
+sun.nio.cs.StreamEncoder$CharsetSE	void implFlushBuffer ()	0.000119000	17	0.001605000	0	0
+sun.nio.cs.StreamEncoder	void flushBuffer ()	0.000118000	17	0.001724000	0	0
+sun.reflect.AccessorGenerator	java.lang.String getClassName (java.lang.Class, boolean)	0.000118000	6	0.000287000	1	16
+java.lang.Throwable	void <init> (java.lang.String)	0.000117000	15	0.000282000	0	0
+java.io.FileOutputStream	void write (byte[], int, int)	0.000117000	17	0.000159000	0	0
+java.util.regex.Pattern	void <clinit> ()	0.000114000	1	0.000050000	2	32
+java.lang.StringCoding$CharsetSD	java.lang.String charsetName ()	0.000114000	14	0.000044000	0	0
+java.io.OutputStreamWriter	void flushBuffer ()	0.000114000	17	0.001842000	0	0
+sun.net.www.protocol.file.Handler	java.net.URLConnection openConnection (java.net.URL, java.net.Proxy)	0.000113000	4	0.007973000	4	64
+java.security.BasicPermission	java.security.PermissionCollection newPermissionCollection ()	0.000113000	4	0.000886000	4	96
+java.util.jar.Manifest$FastInputStream	void <init> (java.io.InputStream, int)	0.000112000	5	0.000049000	5	41040
+java.util.regex.Pattern$Ques	boolean study (java.util.regex.Pattern$TreeInfo)	0.000112000	10	0.000662000	0	0
+sun.reflect.ClassFileAssembler	void opc_invokespecial (short, int, int)	0.000112000	8	0.000361000	0	0
+java.util.concurrent.locks.ReentrantLock$Sync	void <init> ()	0.000111000	16	0.000051000	0	0
+java.util.jar.JarFile	java.lang.String[] getMetaInfEntryNames ()	0.000111000	3	0.000034000	17	616
+java.util.regex.Pattern$JavaTypeClass	void <init> ()	0.000111000	16	0.000055000	0	0
+java.util.Vector	java.lang.Object remove (int)	0.000111000	30	0.000000000	0	0
+java.nio.CharBuffer	java.nio.CharBuffer wrap (char[])	0.000110000	16	0.000646000	0	0
+sun.reflect.ClassFileAssembler	void emitInt (int)	0.000110000	6	0.000245000	0	0
+java.nio.charset.CharsetDecoder	java.nio.charset.CoderResult flush (java.nio.CharBuffer)	0.000110000	16	0.000050000	0	0
+java.lang.StringCoding	char[] access$100 (char[], int)	0.000109000	16	0.000214000	0	0
+java.util.concurrent.locks.ReentrantLock$NonfairSync	void <init> ()	0.000109000	16	0.000162000	0	0
+java.lang.Exception	void <init> (java.lang.String)	0.000109000	15	0.000399000	0	0
+sun.reflect.AccessorGenerator	boolean canWidenTo (java.lang.Class, java.lang.Class)	0.000109000	16	0.000053000	0	0
+java.util.HashMap	void <init> ()	0.000106000	10	0.000052000	10	800
+java.io.BufferedWriter	void ensureOpen ()	0.000106000	34	0.000000000	0	0
+java.io.PrintStream	void ensureOpen ()	0.000106000	34	0.000000000	0	0
+java.io.FileInputStream	void open (java.lang.String)	0.000105000	4	0.001620000	0	0
+java.security.Security	void initialize ()	0.000105000	1	0.006376000	3	96
+java.io.FileInputStream	void <init> (java.io.File)	0.000104000	4	0.001762000	4	64
+java.util.AbstractList$Itr	boolean hasNext ()	0.000104000	31	0.000000000	0	0
+sun.reflect.ClassFileAssembler	void opc_checkcast (short)	0.000103000	10	0.000397000	0	0
+java.util.HashMap	void resize (int)	0.000102000	10	0.001715000	10	2720
+java.security.ProtectionDomain	void <init> (java.security.CodeSource, java.security.PermissionCollection, java.lang.ClassLoader, java.security.Principal[])	0.000102000	4	0.000012000	5	152
+java.net.URLConnection	void <clinit> ()	0.000101000	1	0.000045000	2	48
+java.util.AbstractMap	void <init> ()	0.000100000	31	0.000000000	0	0
+java.lang.Class	java.lang.reflect.Constructor[] getDeclaredConstructors0 (boolean)	0.000100000	2	0.000000000	12	488
+java.io.FileNotFoundException	void <init> (java.lang.String)	0.000099000	14	0.000574000	0	0
+java.io.IOException	void <init> (java.lang.String)	0.000097000	14	0.000477000	0	0
+java.lang.Long	long longValue ()	0.000096000	30	0.000000000	0	0
+java.util.jar.Attributes	java.lang.Object put (java.lang.Object, java.lang.Object)	0.000096000	13	0.004024000	0	0
+java.util.regex.Pattern$TreeInfo	void reset ()	0.000095000	29	0.000000000	0	0
+java.security.CodeSource	void <init> (java.net.URL, java.security.CodeSigner[])	0.000095000	23	0.000000000	0	0
+java.util.regex.Pattern	java.util.regex.Pattern$Node atom ()	0.000094000	3	0.000269000	0	0
+java.lang.String	void checkBounds (byte[], int, int)	0.000094000	29	0.000000000	0	0
+sun.reflect.ClassFileAssembler	void opc_instanceof (short)	0.000094000	9	0.000356000	0	0
+java.util.zip.Inflater	void ensureOpen ()	0.000094000	30	0.000000000	0	0
+java.util.jar.Attributes$Name	boolean isDigit (char)	0.000092000	30	0.000000000	0	0
+java.io.FileInputStream	int readBytes (byte[], int, int)	0.000091000	4	0.000000000	0	0
+java.util.Hashtable	void <init> ()	0.000091000	13	0.000268000	0	0
+java.io.ExpiringCache	java.io.ExpiringCache$Entry entryFor (java.lang.String)	0.000090000	7	0.000404000	0	0
+sun.reflect.ClassFileAssembler	void opc_new (short)	0.000089000	6	0.000329000	0	0
+java.util.AbstractList$Itr	void <init> (java.util.AbstractList, java.util.AbstractList$1)	0.000087000	12	0.000046000	0	0
+java.security.Provider$EngineDescription	void <init> (java.lang.String, boolean, boolean)	0.000087000	24	0.000000000	0	0
+sun.misc.Launcher$AppClassLoader	java.security.PermissionCollection getPermissions (java.security.CodeSource)	0.000086000	4	0.023174000	4	96
+sun.misc.FloatingDecimal	void dtoa (int, long, int)	0.000085000	1	0.000113000	1	48
+sun.net.www.protocol.file.Handler	void parseURL (java.net.URL, java.lang.String, int, int)	0.000084000	7	0.003149000	0	0
+java.util.StringTokenizer	void setMaxDelimCodePoint ()	0.000084000	2	0.000062000	0	0
+java.lang.ThreadGroup	void uncaughtException (java.lang.Thread, java.lang.Throwable)	0.000083000	2	0.024272000	1	16
+java.io.FilePermission	void <init> (java.lang.String, java.lang.String)	0.000083000	5	0.004827000	0	0
+java.util.regex.Pattern$Ctype	void <init> (int)	0.000081000	11	0.000035000	0	0
+sun.reflect.AccessorGenerator	short sub (short, short)	0.000081000	26	0.000000000	0	0
+java.util.regex.Pattern	java.util.regex.Pattern$Node newSingle (int)	0.000079000	3	0.000060000	3	72
+java.io.PrintStream	void println (java.lang.String)	0.000077000	7	0.005773000	0	0
+java.lang.Class	java.lang.reflect.Field getDeclaredField (java.lang.String)	0.000076000	4	0.000812000	0	0
+java.lang.Class	java.lang.reflect.Field[] privateGetDeclaredFields (boolean)	0.000076000	4	0.000366000	2	64
+sun.misc.Resource	void <init> ()	0.000076000	23	0.000000000	0	0
+java.util.BitSet	long bit (int)	0.000073000	23	0.000000000	0	0
+sun.reflect.MethodAccessorGenerator$1	java.lang.Object run ()	0.000073000	1	0.001506000	0	0
+java.util.regex.Pattern	java.util.regex.Pattern$Node retrieveCategoryNode (java.lang.String)	0.000072000	4	0.006349000	0	0
+sun.misc.URLClassPath$JarLoader$1	java.net.URL getCodeSourceURL ()	0.000072000	22	0.000000000	0	0
+sun.net.www.ParseUtil	void <init> ()	0.000071000	22	0.000000000	0	0
+java.util.BitSet	int unitIndex (int)	0.000071000	23	0.000000000	0	0
+java.lang.ref.Reference	void <init> (java.lang.Object)	0.000071000	10	0.000037000	0	0
+java.util.concurrent.locks.AbstractQueuedSynchronizer	void <clinit> ()	0.000070000	1	0.000933000	0	0
+java.lang.Class	java.lang.ClassLoader getClassLoader ()	0.000069000	9	0.000032000	0	0
+sun.reflect.ClassDefiner	java.lang.Class defineClass (java.lang.String, byte[], int, int, java.lang.ClassLoader)	0.000069000	1	0.000529000	1	16
+java.io.ByteArrayInputStream	int read (byte[], int, int)	0.000068000	12	0.000018000	0	0
+java.lang.Class	java.lang.String getName ()	0.000068000	10	0.000122000	0	0
+java.io.ObjectStreamField	void <init> (java.lang.String, java.lang.Class, boolean)	0.000068000	6	0.001644000	0	0
+java.util.LinkedHashMap	java.lang.Object get (java.lang.Object)	0.000068000	7	0.000299000	0	0
+java.lang.Class	java.lang.reflect.Constructor getConstructor0 (java.lang.Class[], int)	0.000067000	2	0.000363000	0	0
+sun.reflect.MethodAccessorGenerator	java.lang.String buildInternalSignature ()	0.000067000	1	0.000461000	1	16
+sun.reflect.Label$PatchInfo	void <init> (sun.reflect.ClassFileAssembler, short, short, int)	0.000067000	19	0.000000000	0	0
+java.util.regex.Pattern$GroupTail	void <init> (int, int)	0.000067000	9	0.000029000	0	0
+java.util.jar.Attributes	void <init> (int)	0.000066000	6	0.000186000	6	240
+sun.security.provider.Sun	void <clinit> ()	0.000066000	1	0.009829000	1	8
+java.lang.ClassLoader	java.lang.ClassLoader getCallerClassLoader ()	0.000066000	6	0.000046000	0	0
+java.util.StringTokenizer	java.lang.String nextToken ()	0.000065000	5	0.000481000	0	0
+java.security.Security	java.io.File securityPropFile (java.lang.String)	0.000065000	1	0.000729000	2	32
+java.lang.ref.SoftReference	void <init> (java.lang.Object)	0.000065000	9	0.000097000	0	0
+sun.misc.URLClassPath$FileLoader	void <init> (java.net.URL)	0.000064000	1	0.001432000	1	16
+java.util.regex.Pattern$GroupHead	void <init> (int)	0.000064000	9	0.000031000	0	0
+sun.reflect.ByteVectorImpl	void resize (int)	0.000064000	6	0.000023000	6	3696
+sun.reflect.MethodAccessorGenerator	sun.reflect.ConstructorAccessor generateConstructor (java.lang.Class, java.lang.Class[], java.lang.Class[], int)	0.000063000	1	0.053504000	0	0
+java.util.Dictionary	void <init> ()	0.000063000	20	0.000000000	0	0
+java.io.FilePermissionCollection	void <init> ()	0.000062000	4	0.000119000	4	96
+java.security.Permissions	void <init> ()	0.000062000	4	0.000129000	4	160
+java.lang.Class	java.lang.reflect.Field searchFields (java.lang.reflect.Field[], java.lang.String)	0.000061000	4	0.000196000	0	0
+java.lang.Thread	void <init> (java.lang.ThreadGroup, java.lang.String)	0.000061000	5	0.000802000	5	40
+java.util.regex.Pattern$Range	boolean study (java.util.regex.Pattern$TreeInfo)	0.000061000	8	0.000024000	0	0
+java.io.UnixFileSystem	java.lang.String canonicalize (java.lang.String)	0.000061000	5	0.001563000	0	0
+java.security.AccessController	java.security.AccessControlContext getContext ()	0.000061000	5	0.000112000	0	0
+java.util.zip.ZipEntry	boolean isDirectory ()	0.000061000	9	0.000096000	0	0
+java.lang.Throwable	java.lang.String toString ()	0.000060000	1	0.000216000	1	16
+java.lang.Thread	void setPriority (int)	0.000060000	5	0.000073000	0	0
+java.lang.ClassLoader	java.lang.Package definePackage (java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.net.URL)	0.000060000	3	0.000745000	3	144
+java.lang.Shutdown	void <clinit> ()	0.000059000	1	0.000024000	2	16
+java.util.AbstractList$Itr	void checkForComodification ()	0.000059000	19	0.000000000	0	0
+java.lang.ClassLoader	boolean compareCerts (java.security.cert.Certificate[], java.security.cert.Certificate[])	0.000059000	19	0.000000000	0	0
+sun.reflect.AccessorGenerator	short indexForPrimitiveType (java.lang.Class)	0.000059000	18	0.000000000	0	0
+java.util.regex.Pattern	void accept (int, java.lang.String)	0.000058000	9	0.000032000	0	0
+java.util.regex.Pattern$Range	void <init> (int)	0.000058000	6	0.000021000	0	0
+java.io.BufferedWriter	void newLine ()	0.000058000	8	0.000302000	0	0
+java.util.zip.ZipFile	void initDBBConstructor ()	0.000058000	1	0.001114000	1	8
+java.util.regex.Pattern$BitClass	void <init> (boolean)	0.000058000	5	0.000016000	5	1360
+java.security.BasicPermissionCollection	void <init> ()	0.000058000	4	0.000121000	4	160
+org.openscience.cdk.AtomContainer	void growAtomArray ()	0.000058000	4	0.000073000	4	1264
+java.io.PrintStream	void print (java.lang.String)	0.000058000	8	0.003420000	0	0
+java.lang.Package	boolean isSealed ()	0.000058000	19	0.000000000	0	0
+java.security.CodeSource	boolean matchCerts (java.security.CodeSource, boolean)	0.000058000	19	0.000000000	0	0
+java.security.Provider	void putId ()	0.000057000	1	0.018821000	0	0
+java.lang.StringBuilder	java.lang.StringBuilder append (int)	0.000057000	8	0.000281000	0	0
+java.security.AccessController	java.security.AccessControlContext getStackAccessControlContext ()	0.000057000	5	0.000000000	5	120
+java.io.File	java.lang.String getCanonicalPath ()	0.000056000	5	0.001678000	0	0
+sun.reflect.ClassFileAssembler	void opc_sipush (short)	0.000056000	4	0.000198000	0	0
+java.util.zip.ZipFile$1	java.lang.Object run ()	0.000056000	1	0.001043000	1	24
+java.security.BasicPermissionCollection	void <clinit> ()	0.000055000	1	0.000652000	4	120
+java.util.regex.Pattern$Start	void <init> (java.util.regex.Pattern$Node)	0.000055000	1	0.001535000	1	24
+java.util.concurrent.ConcurrentHashMap$Segment	void setTable (java.util.concurrent.ConcurrentHashMap$HashEntry[])	0.000055000	16	0.000000000	0	0
+java.util.Arrays	void mergeSort (java.lang.Object[], java.lang.Object[], int, int, int)	0.000055000	5	0.000410000	3	112
+java.nio.charset.CharsetDecoder	java.nio.charset.CharsetDecoder reset ()	0.000055000	16	0.000000000	0	0
+sun.nio.cs.StreamEncoder	void ensureOpen ()	0.000053000	17	0.000000000	0	0
+sun.security.provider.NativePRNG$RandomIO	void <init> (java.io.File, java.io.File)	0.000053000	1	0.000915000	6	104
+java.io.BufferedWriter	int min (int, int)	0.000053000	17	0.000000000	0	0
+java.nio.Buffer	java.nio.Buffer clear ()	0.000053000	17	0.000000000	0	0
+java.nio.charset.CharsetDecoder	float maxCharsPerByte ()	0.000053000	16	0.000000000	0	0
+java.lang.Class	java.lang.ClassLoader getClassLoader0 ()	0.000052000	15	0.000000000	0	0
+java.io.ByteArrayOutputStream	void <init> (int)	0.000052000	5	0.000018000	5	240
+sun.reflect.AccessorGenerator	void <clinit> ()	0.000052000	1	0.000030000	1	48
+java.nio.Buffer	java.nio.Buffer flip ()	0.000052000	17	0.000000000	0	0
+java.util.concurrent.locks.AbstractQueuedSynchronizer	void <init> ()	0.000051000	16	0.000000000	0	0
+java.io.BufferedInputStream	int read1 (byte[], int, int)	0.000051000	3	0.000092000	0	0
+sun.reflect.ReflectionFactory	int inflationThreshold ()	0.000051000	16	0.000000000	0	0
+sun.reflect.ClassFileAssembler	void opc_athrow ()	0.000051000	5	0.000064000	0	0
+java.util.jar.JarVerifier	void update (int, byte[], int, int, sun.security.util.ManifestEntryVerifier)	0.000050000	6	0.000030000	0	0
+java.util.Hashtable	void rehash ()	0.000050000	5	0.000000000	5	1000
+java.util.jar.Manifest$FastInputStream	byte peek ()	0.000050000	14	0.000095000	0	0
+java.nio.charset.CharsetDecoder	java.nio.charset.CoderResult implFlush (java.nio.CharBuffer)	0.000050000	16	0.000000000	0	0
+java.util.Hashtable	void <init> (int)	0.000049000	7	0.000145000	0	0
+java.util.StringTokenizer	boolean hasMoreTokens ()	0.000049000	7	0.000121000	0	0
+java.lang.Object	java.lang.Class getClass ()	0.000049000	14	0.000000000	0	0
+java.lang.Package	java.lang.String getSystemPackage0 (java.lang.String)	0.000049000	6	0.000000000	0	0
+java.lang.Class	java.lang.reflect.Constructor[] privateGetDeclaredConstructors (boolean)	0.000048000	2	0.000152000	2	64
+java.io.UnixFileSystem	java.lang.String canonicalize0 (java.lang.String)	0.000048000	1	0.000789000	2	80
+java.util.regex.Pattern$Ctype	boolean study (java.util.regex.Pattern$TreeInfo)	0.000048000	6	0.000020000	0	0
+sun.security.util.Debug	sun.security.util.Debug getInstance (java.lang.String, java.lang.String)	0.000048000	6	0.000018000	0	0
+sun.reflect.AccessorGenerator	void emitWideningBytecodeForPrimitiveConversion (sun.reflect.ClassFileAssembler, java.lang.Class, java.lang.Class)	0.000048000	9	0.000067000	0	0
+sun.reflect.Reflection	java.lang.Class getCallerClass (int)	0.000048000	10	0.000000000	0	0
+sun.misc.Unsafe	sun.misc.Unsafe getUnsafe ()	0.000047000	4	0.000067000	0	0
+java.lang.Throwable	java.lang.StackTraceElement[] getOurStackTrace ()	0.000047000	1	0.000136000	1	40
+java.io.BufferedInputStream	int read (byte[], int, int)	0.000047000	3	0.000183000	0	0
+java.lang.StringBuffer	void <init> ()	0.000047000	7	0.000038000	0	0
+sun.reflect.AccessorGenerator	void emitConstructor ()	0.000047000	1	0.000867000	1	32
+java.lang.Object	java.lang.Object clone ()	0.000047000	7	0.000000000	7	536
+java.util.AbstractList$Itr	void <init> (java.util.AbstractList)	0.000046000	12	0.000000000	0	0
+java.io.ExpiringCache	java.lang.String get (java.lang.String)	0.000046000	6	0.000450000	0	0
+sun.security.provider.NativePRNG	sun.security.provider.NativePRNG$RandomIO initIO ()	0.000046000	1	0.002294000	1	8
+sun.security.util.SignatureFileVerifier	boolean isBlockOrSF (java.lang.String)	0.000045000	3	0.000090000	0	0
+java.util.regex.Pattern$Ques	void <init> (java.util.regex.Pattern$Node, int)	0.000045000	4	0.000013000	0	0
+java.util.regex.Pattern$Single	boolean study (java.util.regex.Pattern$TreeInfo)	0.000045000	6	0.001956000	0	0
+java.io.UnixFileSystem	java.lang.String resolve (java.lang.String, java.lang.String)	0.000044000	1	0.000134000	1	16
+java.util.zip.Inflater	void initIDs ()	0.000044000	1	0.000028000	2	112
+sun.nio.cs.UTF_8	java.lang.String historicalName ()	0.000044000	14	0.000000000	0	0
+java.lang.Class	boolean desiredAssertionStatus ()	0.000043000	4	0.000063000	0	0
+java.security.BasicPermission	void <init> (java.lang.String)	0.000043000	4	0.000057000	0	0
+java.io.ByteArrayInputStream	void <init> (byte[])	0.000042000	5	0.000017000	0	0
+java.lang.ClassLoader	void <init> (java.lang.ClassLoader)	0.000042000	1	0.000153000	5	144
+java.util.StringTokenizer	int countTokens ()	0.000042000	2	0.000531000	0	0
+sun.reflect.ReflectionFactory	java.lang.reflect.Field copyField (java.lang.reflect.Field)	0.000042000	4	0.000123000	0	0
+sun.reflect.ClassFileAssembler	void opc_dup ()	0.000042000	4	0.000095000	0	0
+java.io.FilePermissionCollection	void add (java.security.Permission)	0.000041000	4	0.000042000	0	0
+java.security.PermissionCollection	void <init> ()	0.000040000	12	0.000000000	0	0
+java.io.ObjectStreamField	void <init> (java.lang.String, java.lang.Class)	0.000040000	6	0.001712000	0	0
+java.util.zip.ZipFile	void initIDs ()	0.000040000	1	0.000031000	2	104
+sun.reflect.AccessorGenerator	boolean isPrimitive (java.lang.Class)	0.000040000	6	0.000021000	0	0
+sun.reflect.ClassFileAssembler	void opc_aload_1 ()	0.000040000	4	0.000080000	0	0
+java.util.Arrays	void sort (java.lang.Object[])	0.000040000	1	0.000116000	0	0
+sun.net.www.protocol.file.FileURLConnection	void <init> (java.net.URL, java.io.File)	0.000040000	4	0.000332000	0	0
+java.util.regex.Pattern$Single	void <init> (int)	0.000040000	3	0.000020000	0	0
+java.util.zip.ZipEntry	void initIDs ()	0.000040000	1	0.000029000	2	112
+java.util.jar.Manifest$FastInputStream	void <init> (java.io.InputStream)	0.000039000	5	0.000161000	0	0
+java.lang.reflect.Field	java.lang.reflect.Field copy ()	0.000039000	4	0.000041000	4	288
+java.net.URL	java.net.URLConnection openConnection ()	0.000039000	4	0.008118000	0	0
+java.lang.Class	java.lang.Object newInstance0 ()	0.000038000	1	0.000790000	2	32
+sun.reflect.MethodAccessorGenerator	java.lang.String generateName (boolean, boolean)	0.000038000	1	0.000173000	1	16
+sun.reflect.ClassFileAssembler	void <init> ()	0.000038000	3	0.000072000	0	0
+java.lang.reflect.Constructor	java.lang.Class[] getParameterTypes ()	0.000037000	5	0.000032000	0	0
+java.nio.DirectByteBuffer	void <clinit> ()	0.000037000	1	0.000141000	0	0
+java.io.UnixFileSystem	java.lang.String resolve (java.io.File)	0.000037000	5	0.000017000	0	0
+java.security.AccessControlContext	java.security.AccessControlContext optimize ()	0.000037000	5	0.000018000	0	0
+java.io.ByteArrayOutputStream	void <init> ()	0.000037000	5	0.000070000	0	0
+java.util.regex.Pattern$BitClass	java.util.regex.Pattern$Node add (int, int)	0.000037000	12	0.000000000	0	0
+java.lang.ThreadGroup	void checkAccess ()	0.000037000	5	0.000015000	0	0
+java.lang.Class	void checkMemberAccess (int, java.lang.ClassLoader)	0.000036000	5	0.000015000	0	0
+java.util.jar.Attributes	void <init> ()	0.000036000	5	0.000215000	0	0
+sun.net.www.MessageHeader	void grow ()	0.000036000	4	0.000000000	8	256
+java.util.regex.Pattern$Curly	void <init> (java.util.regex.Pattern$Node, int, int, int)	0.000036000	4	0.000012000	0	0
+sun.reflect.AccessorGenerator	int typeSizeInStackSlots (java.lang.Class)	0.000036000	12	0.000000000	0	0
+sun.reflect.ClassDefiner$1	java.lang.Object run ()	0.000036000	1	0.000208000	1	56
+sun.misc.BASE64Decoder	void <init> ()	0.000035000	3	0.000011000	3	48
+java.lang.Integer	void getChars (int, int, char[])	0.000035000	8	0.000000000	0	0
+java.lang.Thread	void checkAccess ()	0.000035000	5	0.000015000	0	0
+sun.net.www.MessageHeader	void <init> ()	0.000035000	4	0.000036000	0	0
+java.security.Permissions	void <clinit> ()	0.000035000	1	0.000799000	3	88
+sun.security.util.Debug	sun.security.util.Debug getInstance (java.lang.String)	0.000035000	5	0.000055000	0	0
+java.util.Properties$LineReader	void <init> (java.util.Properties, java.io.InputStream)	0.000035000	1	0.000000000	2	10272
+java.lang.Math	double floor (double)	0.000034000	1	0.000056000	0	0
+java.util.Stack	java.lang.Object push (java.lang.Object)	0.000034000	5	0.000052000	0	0
+sun.reflect.ClassFileAssembler	void opc_aaload ()	0.000034000	3	0.000037000	0	0
+java.nio.Bits	boolean unaligned ()	0.000034000	1	0.000076000	1	16
+java.lang.Package	void <clinit> ()	0.000033000	1	0.000083000	3	120
+java.io.FilePermissionCollection	void <clinit> ()	0.000032000	1	0.000301000	2	48
+java.lang.RuntimePermission	void <init> (java.lang.String)	0.000032000	4	0.000100000	0	0
+sun.net.www.protocol.file.Handler	java.net.URLConnection openConnection (java.net.URL)	0.000032000	4	0.008086000	0	0
+java.lang.Thread	java.lang.ClassLoader getContextClassLoader ()	0.000031000	5	0.000012000	0	0
+java.util.regex.Pattern$Ctype	java.util.regex.Pattern$Node dup (boolean)	0.000031000	3	0.000030000	3	48
+java.lang.String	java.lang.String valueOf (double)	0.000031000	1	0.018588000	0	0
+sun.misc.FloatingDecimal	java.lang.String toJavaFormatString ()	0.000031000	1	0.000157000	1	24
+sun.reflect.ByteVectorImpl	void <init> ()	0.000031000	4	0.000027000	0	0
+java.security.BasicPermission	void init (java.lang.String)	0.000031000	4	0.000013000	0	0
+java.util.jar.JarVerifier	void doneWithMeta ()	0.000030000	3	0.000009000	0	0
+java.security.Permission	void <init> (java.lang.String)	0.000030000	9	0.000000000	0	0
+java.io.FileInputStream	int read (byte[], int, int)	0.000030000	4	0.000091000	0	0
+java.io.FileInputStream	int available ()	0.000030000	1	0.000000000	0	0
+java.util.jar.Manifest	java.lang.String parseName (byte[], int)	0.000030000	1	0.000424000	1	24
+sun.misc.ASCIICaseInsensitiveComparator	void <clinit> ()	0.000029000	1	0.000033000	1	8
+java.lang.Class	boolean isArray ()	0.000029000	9	0.000000000	0	0
+sun.security.util.SignatureFileVerifier	void <clinit> ()	0.000029000	1	0.000706000	1	48
+java.lang.AbstractStringBuilder	int stringSizeOfInt (int)	0.000029000	8	0.000000000	0	0
+sun.reflect.Reflection	boolean isSubclassOf (java.lang.Class, java.lang.Class)	0.000029000	2	0.000022000	0	0
+java.lang.Math	int min (int, int)	0.000028000	9	0.000000000	0	0
+java.io.UnixFileSystem	java.lang.String parentOrNull (java.lang.String)	0.000028000	1	0.000028000	0	0
+java.lang.System	long currentTimeMillis ()	0.000028000	5	0.000000000	0	0
+java.lang.reflect.Field	void <init> (java.lang.Class, java.lang.String, java.lang.Class, int, int, java.lang.String, byte[])	0.000028000	4	0.000013000	0	0
+sun.reflect.AccessorGenerator	short unboxingMethodForPrimitiveType (java.lang.Class)	0.000028000	9	0.000000000	0	0
+sun.reflect.ClassFileAssembler	void opc_i2l ()	0.000028000	4	0.000039000	0	0
+java.lang.reflect.ReflectAccess	java.lang.reflect.Field copyField (java.lang.reflect.Field)	0.000028000	4	0.000080000	0	0
+java.lang.String	void <init> (int[], int, int)	0.000027000	4	0.000000000	4	120
+java.net.URLConnection	void <init> (java.net.URL)	0.000027000	4	0.000000000	0	0
+sun.reflect.ByteVectorImpl	void <init> (int)	0.000027000	4	0.000000000	4	448
+java.util.regex.Pattern$Branch	void <init> (java.util.regex.Pattern$Node, java.util.regex.Pattern$Node)	0.000027000	3	0.000009000	0	0
+java.util.regex.Pattern	int nextEscaped ()	0.000026000	8	0.000000000	0	0
+java.util.concurrent.atomic.AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl	boolean compareAndSet (java.lang.Object, java.lang.Object, java.lang.Object)	0.000026000	1	0.000028000	0	0
+sun.misc.FloatingDecimal	void <init> (double)	0.000026000	1	0.000202000	0	0
+sun.misc.URLClassPath	void push (java.net.URL[])	0.000026000	2	0.000086000	0	0
+sun.reflect.ClassFileAssembler	void opc_if_icmpeq (sun.reflect.Label)	0.000026000	1	0.000144000	0	0
+java.lang.Class	java.lang.Object newInstance ()	0.000025000	1	0.000831000	0	0
+java.util.regex.Pattern	void mark (int)	0.000025000	8	0.000000000	0	0
+java.lang.Thread	void dispatchUncaughtException (java.lang.Throwable)	0.000025000	1	0.012188000	0	0
+sun.reflect.ReflectionFactory	java.lang.reflect.Constructor copyConstructor (java.lang.reflect.Constructor)	0.000025000	2	0.000065000	0	0
+java.lang.StrictMath	void <clinit> ()	0.000024000	1	0.000008000	0	0
+java.lang.StrictMath	double floor (double)	0.000024000	1	0.000000000	0	0
+java.util.jar.JarVerifier	void <clinit> ()	0.000024000	1	0.000018000	0	0
+java.lang.reflect.Constructor	void acquireConstructorAccessor ()	0.000024000	2	0.000296000	0	0
+java.io.UnixFileSystem	long getLength (java.io.File)	0.000024000	1	0.000375000	0	0
+java.lang.reflect.AccessibleObject	void setAccessible (boolean)	0.000024000	2	0.000014000	0	0
+java.io.BufferedInputStream	void <init> (java.io.InputStream, int)	0.000024000	1	0.000010000	1	8208
+java.io.ExpiringCache	void put (java.lang.String, java.lang.String)	0.000024000	1	0.000139000	1	24
+sun.reflect.AccessorGenerator	java.lang.String internalize (java.lang.String)	0.000024000	3	0.000059000	0	0
+sun.reflect.MethodAccessorGenerator	boolean isInterface ()	0.000023000	1	0.000004000	0	0
+java.lang.Thread	void setPriority0 (int)	0.000023000	5	0.000000000	0	0
+java.io.FilterInputStream	int read (byte[])	0.000023000	3	0.000230000	0	0
+sun.misc.URLClassPath$FileLoader$1	java.io.InputStream getInputStream ()	0.000023000	1	0.000510000	1	16
+java.lang.Class	java.lang.Class getSuperclass ()	0.000022000	6	0.000000000	0	0
+sun.reflect.ReflectionFactory	sun.reflect.LangReflectAccess langReflectAccess ()	0.000022000	6	0.000000000	0	0
+java.security.Provider	void <init> (java.lang.String, double, java.lang.String)	0.000022000	1	0.018921000	0	0
+java.security.Security	java.lang.String getProperty (java.lang.String)	0.000022000	1	0.000033000	0	0
+java.lang.Package	void <init> (java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.net.URL, java.lang.ClassLoader)	0.000022000	3	0.000000000	0	0
+sun.reflect.ConstructorAccessorImpl	void <init> ()	0.000022000	3	0.000010000	0	0
+java.lang.StackTraceElement	boolean isNativeMethod ()	0.000022000	7	0.000000000	0	0
+java.lang.Thread	long nextThreadID ()	0.000021000	5	0.000000000	0	0
+java.io.FileInputStream	void close0 ()	0.000021000	2	0.000000000	0	0
+java.io.BufferedInputStream	void close ()	0.000021000	1	0.000068000	0	0
+java.lang.ThreadGroup	void addUnstarted ()	0.000021000	5	0.000000000	0	0
+sun.reflect.ClassFileAssembler	void append (sun.reflect.ClassFileAssembler)	0.000021000	3	0.007275000	0	0
+java.io.FilePermission$1	void <init> (java.io.FilePermission)	0.000021000	5	0.000000000	0	0
+java.lang.Class	sun.reflect.ReflectionFactory getReflectionFactory ()	0.000020000	6	0.000000000	0	0
+java.io.File	void <init> (java.io.File, java.lang.String)	0.000020000	1	0.000262000	0	0
+java.lang.reflect.Constructor	void setConstructorAccessor (sun.reflect.ConstructorAccessor)	0.000020000	4	0.000006000	0	0
+sun.reflect.ClassFileAssembler	void <init> (sun.reflect.ByteVector)	0.000020000	4	0.000000000	0	0
+sun.reflect.ClassFileAssembler	void opc_astore_2 ()	0.000020000	2	0.000026000	0	0
+sun.reflect.ClassFileAssembler	void opc_dup_x1 ()	0.000020000	2	0.000040000	0	0
+java.util.jar.Attributes$Name	boolean equals (java.lang.Object)	0.000020000	2	0.000279000	0	0
+java.lang.ThreadLocal$ThreadLocalMap	java.lang.Object getAfterMiss (java.lang.ThreadLocal, int, java.lang.ThreadLocal$ThreadLocalMap$Entry)	0.000020000	1	0.000057000	1	32
+java.lang.Class	void checkInitted ()	0.000019000	6	0.000000000	0	0
+java.util.regex.Pattern	void <init> (java.lang.String, int)	0.000019000	1	0.017182000	0	0
+java.lang.reflect.Constructor	java.lang.reflect.Constructor copy ()	0.000019000	2	0.000024000	2	128
+java.lang.reflect.AccessibleObject	void <init> ()	0.000019000	6	0.000000000	0	0
+java.io.BufferedInputStream	byte[] getBufIfOpen ()	0.000019000	6	0.000000000	0	0
+sun.misc.FloatingDecimal	int getChars (char[])	0.000019000	1	0.000011000	0	0
+sun.misc.Cleaner	void <clinit> ()	0.000019000	1	0.000022000	1	24
+java.lang.Class	boolean isInstance (java.lang.Object)	0.000018000	1	0.000000000	0	0
+java.lang.Class	boolean desiredAssertionStatus0 (java.lang.Class)	0.000018000	4	0.000000000	0	0
+java.io.OutputStream	void <init> ()	0.000018000	5	0.000000000	0	0
+java.lang.reflect.Constructor	void <init> (java.lang.Class, java.lang.Class[], java.lang.Class[], int, int, java.lang.String, byte[], byte[])	0.000018000	2	0.000006000	0	0
+sun.security.util.Debug	boolean isOn (java.lang.String)	0.000018000	6	0.000000000	0	0
+java.security.Provider$ServiceKey	void <init> (java.lang.String, java.lang.String, boolean)	0.000018000	1	0.000004000	0	0
+sun.reflect.ClassDefiner$1	void <init> (java.lang.ClassLoader)	0.000018000	1	0.000000000	0	0
+java.security.AccessController	java.security.AccessControlContext getInheritedAccessControlContext ()	0.000018000	5	0.000000000	0	0
+java.io.UnixFileSystem	boolean isAbsolute (java.io.File)	0.000017000	5	0.000000000	0	0
+java.io.FileInputStream	void close ()	0.000017000	2	0.000021000	0	0
+sun.reflect.AccessorGenerator	short add (short, short)	0.000017000	5	0.000000000	0	0
+sun.reflect.ClassFileAssembler	void emitMagicAndVersion ()	0.000017000	1	0.000126000	0	0
+sun.reflect.Reflection	java.lang.reflect.Field[] filterFields (java.lang.Class, java.lang.reflect.Field[])	0.000017000	2	0.000088000	0	0
+sun.misc.Unsafe	java.lang.Object allocateInstance (java.lang.Class)	0.000016000	1	0.000000000	1	8
+java.util.jar.JarVerifier	void processEntry (sun.security.util.ManifestEntryVerifier)	0.000016000	3	0.000005000	0	0
+java.io.File	long length ()	0.000016000	1	0.000402000	0	0
+java.lang.Void	void <clinit> ()	0.000016000	1	0.000008000	0	0
+java.lang.Shutdown$Lock	void <init> (java.lang.Shutdown$1)	0.000016000	2	0.000008000	0	0
+java.lang.ThreadGroup	void remove (java.lang.Thread)	0.000016000	1	0.000008000	0	0
+java.io.FilePermission	int getMask (java.lang.String)	0.000016000	5	0.000000000	0	0
+java.io.PrintStream	void println (java.lang.Object)	0.000016000	1	0.001110000	0	0
+java.util.regex.Pattern$Dummy	void <init> ()	0.000016000	2	0.000006000	0	0
+java.lang.Class	java.lang.reflect.Constructor getDeclaredConstructor (java.lang.Class[])	0.000015000	1	0.000266000	0	0
+java.util.regex.Pattern	int escape (boolean, boolean)	0.000015000	2	0.000007000	0	0
+java.lang.Thread	void exit ()	0.000015000	1	0.000024000	0	0
+java.util.Collections$SynchronizedMap	java.lang.Object get (java.lang.Object)	0.000015000	2	0.000073000	0	0
+java.util.HashSet	void <init> ()	0.000015000	1	0.000025000	1	40
+java.util.StringTokenizer	void <init> (java.lang.String, java.lang.String, boolean)	0.000015000	2	0.000146000	0	0
+java.util.LinkedHashMap$Entry	void recordAccess (java.util.HashMap)	0.000015000	4	0.000000000	0	0
+sun.reflect.ClassFileAssembler	void decStack ()	0.000015000	5	0.000000000	0	0
+sun.misc.URLClassPath$FileLoader$1	void <init> (sun.misc.URLClassPath$FileLoader, java.lang.String, java.net.URL, java.io.File)	0.000015000	1	0.000006000	0	0
+java.lang.reflect.ReflectAccess	java.lang.reflect.Constructor copyConstructor (java.lang.reflect.Constructor)	0.000015000	2	0.000043000	0	0
+sun.misc.Unsafe	long objectFieldOffset (java.lang.reflect.Field)	0.000014000	4	0.000000000	0	0
+java.lang.Throwable	int getStackTraceDepth ()	0.000014000	1	0.000000000	0	0
+sun.reflect.MethodAccessorGenerator	int numNonPrimitiveParameterTypes ()	0.000014000	1	0.000010000	0	0
+java.util.zip.ZipFile	void <clinit> ()	0.000014000	1	0.000071000	0	0
+java.security.ProtectionDomain	void <clinit> ()	0.000014000	1	0.000018000	0	0
+sun.security.action.GetPropertyAction	java.lang.Object run ()	0.000014000	2	0.000098000	0	0
+java.lang.String	void <init> (byte[], java.lang.String)	0.000014000	2	0.000834000	0	0
+java.util.StringTokenizer	void <init> (java.lang.String)	0.000014000	2	0.000161000	0	0
+sun.reflect.ClassDefiner	void <clinit> ()	0.000014000	1	0.000027000	0	0
+java.util.Properties	void <init> ()	0.000014000	2	0.000071000	0	0
+java.util.Properties	void <init> (java.util.Properties)	0.000014000	2	0.000057000	0	0
+java.io.ExpiringCache$Entry	long timestamp ()	0.000014000	4	0.000000000	0	0
+java.lang.Class	java.lang.Class forName (java.lang.String)	0.000013000	1	0.000724000	0	0
+java.lang.Class	boolean arrayContentsEq (java.lang.Object[], java.lang.Object[])	0.000013000	4	0.000000000	0	0
+sun.reflect.DelegatingClassLoader	void <init> (java.lang.ClassLoader)	0.000013000	1	0.000195000	0	0
+sun.reflect.UnsafeFieldAccessorImpl	void <clinit> ()	0.000013000	1	0.000026000	0	0
+sun.reflect.ByteVectorImpl	void trim ()	0.000013000	1	0.000004000	1	1528
+java.io.PrintStream	void print (java.lang.Object)	0.000013000	1	0.000686000	0	0
+sun.reflect.ClassFileAssembler	void opc_swap ()	0.000013000	2	0.000020000	0	0
+java.io.FileDescriptor	void <init> ()	0.000013000	4	0.000000000	0	0
+java.lang.ClassCastException	void <init> (java.lang.String)	0.000012000	1	0.000040000	0	0
+java.lang.Class	boolean isInterface ()	0.000012000	3	0.000000000	0	0
+java.util.regex.Pattern	void unread ()	0.000012000	4	0.000000000	0	0
+sun.reflect.MethodAccessorGenerator	boolean usesPrimitiveTypes ()	0.000012000	1	0.000004000	0	0
+java.util.regex.Pattern$Range	java.util.regex.Pattern$Node dup (boolean)	0.000012000	1	0.000010000	1	24
+java.security.PermissionCollection	void setReadOnly ()	0.000012000	4	0.000000000	0	0
+java.lang.Shutdown	void shutdown ()	0.000012000	1	0.000014000	0	0
+java.security.SecureClassLoader	void check ()	0.000012000	4	0.000000000	0	0
+java.lang.System	java.lang.String getProperty (java.lang.String, java.lang.String)	0.000012000	1	0.000038000	0	0
+java.lang.String	java.lang.String valueOf (char[])	0.000012000	1	0.000014000	1	24
+java.util.jar.Manifest	int toLower (int)	0.000012000	4	0.000000000	0	0
+sun.reflect.ClassFileAssembler	void opc_aload_0 ()	0.000012000	1	0.000022000	0	0
+sun.reflect.ClassFileAssembler	short getMaxLocals ()	0.000012000	4	0.000000000	0	0
+sun.reflect.BootstrapConstructorAccessorImpl	void <init> (java.lang.reflect.Constructor)	0.000012000	1	0.000011000	0	0
+java.lang.ThreadLocal$ThreadLocalMap	boolean cleanSomeSlots (int, int)	0.000012000	1	0.000006000	0	0
+sun.security.provider.NativePRNG	void <clinit> ()	0.000012000	1	0.002340000	0	0
+sun.reflect.Reflection	boolean quickCheckMemberAccess (java.lang.Class, int)	0.000012000	1	0.000008000	0	0
+java.util.regex.Pattern$JavaUnicodeIdentifierPart	void <init> ()	0.000011000	1	0.000010000	0	0
+java.util.regex.Pattern	java.util.regex.Pattern compile (java.lang.String)	0.000011000	1	0.017201000	1	64
+java.lang.Thread	java.lang.String getName ()	0.000011000	1	0.000026000	0	0
+java.io.BufferedInputStream	java.io.InputStream getInIfOpen ()	0.000011000	3	0.000000000	0	0
+java.security.Provider$ServiceKey	void <init> (java.lang.String, java.lang.String, boolean, java.security.Provider$1)	0.000011000	1	0.000022000	0	0
+java.lang.String	void <init> (char[])	0.000011000	1	0.000003000	1	24
+sun.reflect.MethodAccessorGenerator$1	void <init> (sun.reflect.MethodAccessorGenerator, java.lang.String, byte[], java.lang.Class)	0.000011000	1	0.000000000	0	0
+org.openscience.cdk.AtomContainer	org.openscience.cdk.interfaces.IAtom[] getAtoms ()	0.000011000	1	0.000003000	1	416
+java.lang.ref.ReferenceQueue	void <init> ()	0.000011000	1	0.000011000	1	8
+sun.misc.CharacterDecoder	void <init> ()	0.000011000	3	0.000000000	0	0
+java.util.zip.Inflater	void <clinit> ()	0.000011000	1	0.000072000	0	0
+java.util.concurrent.ConcurrentHashMap	void <init> ()	0.000011000	1	0.002600000	0	0
+java.util.regex.Pattern$TreeInfo	void <init> ()	0.000011000	1	0.000008000	0	0
+sun.misc.Unsafe	boolean compareAndSwapObject (java.lang.Object, long, java.lang.Object, java.lang.Object)	0.000010000	1	0.000000000	0	0
+java.util.regex.Pattern$JavaUnicodeIdentifierStart	void <init> ()	0.000010000	1	0.000010000	0	0
+java.util.regex.Pattern$JavaSpaceChar	void <init> ()	0.000010000	1	0.000010000	0	0
+java.util.jar.JarVerifier	boolean nothingToVerify ()	0.000010000	3	0.000000000	0	0
+java.util.LinkedHashMap	void init ()	0.000010000	1	0.000011000	1	32
+java.util.regex.Pattern$JavaISOControl	void <init> ()	0.000010000	1	0.000010000	0	0
+java.lang.Shutdown	void sequence ()	0.000010000	1	0.000004000	0	0
+java.security.Security$1	java.lang.Object run ()	0.000010000	1	0.006491000	0	0
+java.util.regex.Pattern$JavaLowerCase	void <init> ()	0.000010000	1	0.000012000	0	0
+org.openscience.cdk.AtomContainer	void <init> ()	0.000010000	1	0.000461000	0	0
+sun.reflect.DelegatingConstructorAccessorImpl	void <init> (sun.reflect.ConstructorAccessorImpl)	0.000010000	1	0.000013000	0	0
+java.util.regex.Pattern$JavaDigit	void <init> ()	0.000010000	1	0.000010000	0	0
+sun.reflect.ClassFileAssembler	void opc_areturn ()	0.000010000	1	0.000013000	0	0
+sun.reflect.ClassFileAssembler	void opc_return ()	0.000010000	1	0.000013000	0	0
+java.security.Security	void access$000 ()	0.000010000	1	0.006481000	0	0
+sun.misc.URLClassPath$FileLoader$1	int getContentLength ()	0.000010000	1	0.000418000	0	0
+java.util.regex.Pattern$JavaLetter	void <init> ()	0.000010000	1	0.000010000	0	0
+sun.reflect.MagicAccessorImpl	void <init> ()	0.000010000	3	0.000000000	0	0
+java.util.zip.ZipEntry	void <clinit> ()	0.000010000	1	0.000069000	0	0
+java.util.regex.Pattern$JavaJavaIdentifierStart	void <init> ()	0.000010000	1	0.000010000	0	0
+java.util.regex.Pattern$JavaJavaIdentifierPart	void <init> ()	0.000010000	1	0.000010000	0	0
+sun.misc.FloatingDecimal$1	void <init> ()	0.000009000	1	0.000012000	0	0
+java.util.regex.Pattern	void append (int, int)	0.000009000	3	0.000000000	0	0
+sun.reflect.MethodAccessorGenerator	void <init> ()	0.000009000	1	0.000009000	0	0
+sun.security.provider.NativePRNG$RandomIO	void <init> (java.io.File, java.io.File, sun.security.provider.NativePRNG$1)	0.000009000	1	0.000968000	0	0
+java.util.regex.Pattern$JavaIdentifierIgnorable	void <init> ()	0.000009000	1	0.000011000	0	0
+java.net.UnknownContentHandler	void <init> ()	0.000009000	1	0.000005000	0	0
+java.util.regex.Pattern$JavaWhitespace	void <init> ()	0.000009000	1	0.000011000	0	0
+java.lang.RuntimeException	void <init> (java.lang.String)	0.000009000	1	0.000031000	0	0
+java.util.regex.Pattern$All	void <init> ()	0.000009000	1	0.000003000	0	0
+java.util.regex.Pattern$LastNode	void <init> ()	0.000009000	1	0.000006000	0	0
+java.io.BufferedInputStream	void <init> (java.io.InputStream)	0.000009000	1	0.000034000	0	0
+java.util.Hashtable	boolean isEmpty ()	0.000009000	3	0.000000000	0	0
+sun.security.util.ManifestEntryVerifier	void update (byte[], int, int)	0.000009000	3	0.000000000	0	0
+sun.reflect.NativeConstructorAccessorImpl	void <init> (java.lang.reflect.Constructor)	0.000009000	1	0.000011000	0	0
+java.util.regex.Pattern$JavaUpperCase	void <init> ()	0.000009000	1	0.000011000	0	0
+sun.reflect.AccessorGenerator	void <init> ()	0.000009000	1	0.000000000	0	0
+java.util.regex.Pattern$JavaTitleCase	void <init> ()	0.000009000	1	0.000010000	0	0
+java.lang.reflect.Method	int getModifiers ()	0.000009000	1	0.000000000	0	0
+java.util.regex.Pattern$JavaDefined	void <init> ()	0.000009000	1	0.000010000	0	0
+java.util.regex.Pattern$JavaMirrored	void <init> ()	0.000009000	1	0.000011000	0	0
+java.util.regex.Pattern$JavaLetterOrDigit	void <init> ()	0.000009000	1	0.000010000	0	0
+java.lang.ThreadLocal	void <init> ()	0.000008000	1	0.000004000	0	0
+java.lang.Class	java.lang.Class getPrimitiveClass (java.lang.String)	0.000008000	1	0.000000000	0	0
+sun.reflect.MethodAccessorGenerator	void <clinit> ()	0.000008000	1	0.000000000	0	0
+java.util.LinkedHashMap	void <init> ()	0.000008000	1	0.000039000	0	0
+java.lang.ThreadLocal$ThreadLocalMap$Entry	void <init> (java.lang.ThreadLocal, java.lang.Object)	0.000008000	1	0.000018000	0	0
+java.lang.reflect.AccessibleObject	void setAccessible0 (java.lang.reflect.AccessibleObject, boolean)	0.000008000	2	0.000000000	0	0
+java.lang.Class$1	java.lang.Object run ()	0.000008000	1	0.000019000	0	0
+sun.security.action.GetPropertyAction	void <init> (java.lang.String)	0.000008000	2	0.000000000	0	0
+java.nio.charset.Charset	java.nio.charset.Charset lookup (java.lang.String)	0.000008000	1	0.000004000	0	0
+java.lang.Shutdown$Lock	void <init> ()	0.000008000	2	0.000000000	0	0
+java.lang.StringBuffer	java.lang.StringBuffer append (char)	0.000008000	1	0.000003000	0	0
+java.lang.ThreadGroup	void add (java.lang.Thread)	0.000008000	2	0.000000000	0	0
+java.lang.ref.ReferenceQueue$Lock	void <init> (java.lang.ref.ReferenceQueue$1)	0.000008000	1	0.000003000	0	0
+java.lang.Double	long doubleToLongBits (double)	0.000008000	2	0.000000000	0	0
+sun.net.www.protocol.file.FileURLConnection	void <clinit> ()	0.000008000	1	0.000000000	0	0
+java.util.regex.Pattern	int skip ()	0.000007000	2	0.000000000	0	0
+java.util.regex.Pattern$Range	void <init> (int, int)	0.000007000	1	0.000003000	0	0
+java.lang.reflect.Constructor	java.lang.Class[] getExceptionTypes ()	0.000007000	1	0.000006000	0	0
+java.lang.ref.WeakReference	void <init> (java.lang.Object)	0.000007000	1	0.000011000	0	0
+java.lang.ThreadLocal$ThreadLocalMap$Entry	void <init> (java.lang.ThreadLocal, java.lang.Object, java.lang.ThreadLocal$1)	0.000007000	1	0.000026000	0	0
+java.lang.String	java.lang.String toString ()	0.000007000	2	0.000000000	0	0
+java.nio.charset.Charset	boolean isSupported (java.lang.String)	0.000007000	1	0.000012000	0	0
+sun.reflect.ReflectionFactory	void checkInitted ()	0.000007000	2	0.000000000	0	0
+java.lang.Double	double longBitsToDouble (long)	0.000007000	1	0.000000000	0	0
+sun.reflect.ClassFileAssembler	void opc_arraylength ()	0.000007000	1	0.000010000	0	0
+sun.reflect.ClassFileAssembler	void setMaxLocals (int)	0.000007000	2	0.000000000	0	0
+java.util.concurrent.ConcurrentHashMap	void <clinit> ()	0.000007000	1	0.000000000	0	0
+sun.misc.URLClassPath$FileLoader$1	java.net.URL getCodeSourceURL ()	0.000007000	1	0.000000000	0	0
+java.util.Properties	java.lang.String getProperty (java.lang.String, java.lang.String)	0.000007000	1	0.000019000	0	0
+java.util.AbstractSet	void <init> ()	0.000007000	1	0.000003000	0	0
+sun.misc.FloatingDecimal$1	java.lang.Object initialValue ()	0.000006000	1	0.000000000	1	64
+sun.security.provider.NativePRNG$1	void <init> ()	0.000006000	1	0.000000000	0	0
+java.lang.Thread	java.lang.Thread$UncaughtExceptionHandler getUncaughtExceptionHandler ()	0.000006000	1	0.000000000	0	0
+java.util.jar.Attributes	int size ()	0.000006000	1	0.000000000	0	0
+java.security.PermissionCollection	boolean isReadOnly ()	0.000006000	1	0.000000000	0	0
+java.security.Security$1	void <init> ()	0.000006000	1	0.000000000	0	0
+java.lang.reflect.Modifier	boolean isAbstract (int)	0.000006000	2	0.000000000	0	0
+sun.reflect.DelegatingConstructorAccessorImpl	void setDelegate (sun.reflect.ConstructorAccessorImpl)	0.000006000	2	0.000000000	0	0
+sun.security.provider.Sun$1	void <init> ()	0.000006000	1	0.000000000	0	0
+sun.reflect.ClassFileAssembler	short getMaxStack ()	0.000006000	2	0.000000000	0	0
+java.lang.ThreadLocal$ThreadLocalMap	int nextIndex (int, int)	0.000006000	2	0.000000000	0	0
+sun.misc.ASCIICaseInsensitiveComparator	void <init> ()	0.000005000	1	0.000000000	0	0
+java.lang.Throwable	java.lang.String getLocalizedMessage ()	0.000005000	1	0.000000000	0	0
+sun.misc.SharedSecrets	void setJavaUtilJarAccess (sun.misc.JavaUtilJarAccess)	0.000005000	1	0.000000000	0	0
+java.net.ContentHandler	void <init> ()	0.000005000	1	0.000000000	0	0
+java.lang.Thread	java.lang.Thread$UncaughtExceptionHandler getDefaultUncaughtExceptionHandler ()	0.000005000	1	0.000000000	0	0
+sun.security.util.ManifestEntryVerifier	java.util.jar.JarEntry getEntry ()	0.000005000	1	0.000000000	0	0
+java.util.jar.JavaUtilJarAccessImpl	void <init> ()	0.000005000	1	0.000000000	0	0
+java.io.FilePermission	boolean access$100 (java.io.FilePermission)	0.000005000	1	0.000000000	0	0
+java.lang.Object	void notifyAll ()	0.000005000	1	0.000000000	0	0
+java.lang.StackTraceElement	java.lang.String getClassName ()	0.000005000	1	0.000000000	0	0
+sun.reflect.Reflection	int getClassAccessFlags (java.lang.Class)	0.000005000	1	0.000000000	0	0
+java.util.zip.ZipFile$1	void <init> ()	0.000005000	1	0.000000000	0	0
+java.lang.ThreadLocal	int nextHashCode ()	0.000004000	1	0.000000000	0	0
+java.lang.Throwable	java.lang.Throwable getCause ()	0.000004000	1	0.000000000	0	0
+java.lang.Float	int floatToIntBits (float)	0.000004000	1	0.000000000	0	0
+java.lang.Shutdown	void runHooks ()	0.000004000	1	0.000000000	0	0
+java.lang.String	java.lang.String trim ()	0.000004000	1	0.000000000	0	0
+sun.misc.FloatingDecimal	int countBits (long)	0.000004000	1	0.000000000	0	0
+java.nio.Bits	sun.misc.Unsafe unsafe ()	0.000004000	1	0.000000000	0	0
+sun.security.provider.NativePRNG	boolean isAvailable ()	0.000004000	1	0.000000000	0	0
+java.util.zip.ZipFile	java.lang.reflect.Constructor access$100 ()	0.000003000	1	0.000000000	0	0
+java.util.zip.ZipFile	java.lang.reflect.Constructor access$102 (java.lang.reflect.Constructor)	0.000003000	1	0.000000000	0	0
+java.lang.Class$1	void <init> (java.lang.Class, java.lang.reflect.Constructor)	0.000003000	1	0.000000000	0	0
+sun.misc.Resource	java.security.CodeSigner[] getCodeSigners ()	0.000003000	1	0.000000000	0	0
+java.lang.reflect.Modifier	boolean isPublic (int)	0.000003000	1	0.000000000	0	0
+sun.reflect.NativeConstructorAccessorImpl	void setParent (sun.reflect.DelegatingConstructorAccessorImpl)	0.000003000	1	0.000000000	0	0
+java.io.ExpiringCache$1	boolean removeEldestEntry (java.util.Map$Entry)	0.000003000	1	0.000000000	0	0
+java.lang.ref.ReferenceQueue$Lock	void <init> ()	0.000003000	1	0.000000000	0	0
+sun.misc.URLClassPath$Loader	java.net.URL[] getClassPath ()	0.000003000	1	0.000000000	0	0
+java.io.ExpiringCache$Entry	void <init> (long, java.lang.String)	0.000003000	1	0.000000000	0	0

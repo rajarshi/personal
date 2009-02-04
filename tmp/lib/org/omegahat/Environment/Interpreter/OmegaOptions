@@ -1,0 +1,142 @@
+
+omegahatReleaseDate: August 12th 2000. 
+
+# Controls whether GroupedClassList or ClassLocator is used,
+# providing different control over the class searching mechanism.
+#  See http://www.omegahat.org/Language/RecentChanges.html
+#groupedClassList: true
+
+
+#debug= true
+
+# Note that you can use variable from the System properties
+# table. (HOME is currently not there by default.)
+# These are expanded when the evaluator manager is created.
+
+# This is a comma-separated list of directories and archive files
+# in which the findFile() method of the evaluator will look
+# for unqualified files. 
+OmegahatSearchPath= .,${OMEGA_HOME}/Environment/Scripts/Run,${OMEGA_HOME}/Jars/Omegahat/Environment.jar
+#searchPath= .,${HOME},${OMEGA_HOME}/Jars/Environment.jar
+
+# Regular and continuation prompt.
+# Note here that we provide an expression for the prompt.
+# It can be a literal, or full expression.
+# In this example, we have a closure that gives local scope
+# for the count variable.
+prompt= function() { static int count = 1; return("[" + count++  + "] ");}
+
+
+# Here is an example of a version that resets itself to another prompt.
+#prompt= promptExpression("'>'"); ".. ";
+
+# And here is a self-replacing version with a function.
+#prompt= promptExpression('function(){static int n = 0; "[" + ++n + "] ";}') ; "[init] ";
+
+# Here is a less imaginative one that uses the global scope.
+#prompt=    _lineNumber++; "["+ _lineNumber + "] ";
+
+
+# A simple literal will work also, but issue a warning at the beginning of
+# the session.
+continue=' .. '  
+
+# For the GUI version of omega, the prompt can be 
+# HTML text that is formatted when displayed.
+#prompt=    "<font color=green>$ \></font>"
+#prompt=  "> "
+
+# Flag indicating whether parser debug information should
+# be displayed.
+#parserDebug= true
+
+
+# The name of a class (as found by Evaluator.findClass)
+# which is used to create new default databases in the evaluator.
+# This can be the name of any Database class, including the simple
+# ObjectDatabase, TypedDatabase, PersistenObjectDatabase.
+# Basically this is any class that implements the Database
+# interface.
+# Currently, bad things happen if the full package name is not provided.
+# It is a simple recursive ordering problem that causes an infinite loop.
+#defaultDatabaseClass=  org.omegahat.Environment.Databases.ObjectDatabase
+#defaultDatabaseClass=  org.omegahat.Environment.Databases.TypedDatabase
+
+# It is not a good idea to use a persistent database
+# as the initial default one since the directory Scratch
+# may not exist. Instead, it is better to use the 
+# language to create new database and have them attached.
+#defaultDatabaseClass=  org.omegahat.Environment.Databases.PersistentObjectDatabase
+
+
+# Uncomment either of these to experiment with signals that are handled
+# by the evaluator.
+evaluatorClassName= org.omegahat.Environment.Interpreter.InteractiveEvaluator
+#evaluatorClassName=org.omegahat.Environment.Interpreter.GUIHelpEvaluator
+#evaluatorClassName=org.omegahat.Environment.Interpreter.SignallableEvaluator
+
+# Provides JHelp based help system framework - few files!
+#evaluatorClassName=  org.omegahat.Environment.Interpreter.GUIHelpEvaluator
+
+
+# This version allows dynamic CORBA calls to be made directly
+# as if they were local. (Non-dynamic versions that use the stubs
+# are always local in appearance).
+#evaluatorClassName=  org.omegahat.Interfaces.CORBA.Parser.CorbaAugmentedEvaluator
+#evaluatorClassName=  org.omegahat.Interfaces.CORBA.Parser.OrbacusEvaluator
+
+# Shows the sub-expressions as they are evaluated in a JTree.
+#evaluatorClassName=  org.omegahat.Environment.Interpreter.TracingEvaluator
+
+# Handles signals using JNI cod. The second allows user level functions 
+# to be registered for different signal types.
+#evaluatorClassName= org.omegahat.Environment.Interpreter.SignallableEvaluator
+#evaluatorClassName= org.omegahat.Environment.System.UserLevelSignalHandler
+
+
+# The class of the default lexer. This one handles
+# nested strings of the form '"abc"' rather than
+# treating '' as a character identifier. That behaviour
+# is provided in the class omegaJavaLexer
+#defaultLexerClass= omegaNestedStringLexer
+
+OmegaVersion=0.01 Alpha
+
+errorHandlerClass=org.omegahat.Environment.Debugger.DefaultErrorHandler
+
+# Controls how the output of container object is displayed
+# and specifically truncated to avoid length outputs.
+taskDisplayAbove: 100
+
+
+
+
+
+# BSD License
+###    Copyright (c) 1998 1999, The Omega Project for Statistical Computing.
+###         All rights reserved.
+###    
+###         Redistribution and use in source and binary forms, with or without
+###         modification, are permitted provided that the following conditions are
+###         met:
+###    
+###           Redistributions of source code must retain the above copyright notice,
+###           this list of conditions and the following disclaimer.
+###    
+###           Redistributions in binary form must reproduce the above copyright
+###           notice, this list of conditions and the following disclaimer in the
+###           documentation and/or other materials provided with the distribution.
+###    
+###           Neither name of the Omega Project for Statistical Computing nor the 
+###           names of its contributors may be used to endorse or promote products 
+###           derived from this software without specific prior written permission.
+###    
+###         THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS ``AS IS'' AND ANY
+###         EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+###         MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
+###         SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+###         SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+###         PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+###         INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+###         STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
+###         THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 

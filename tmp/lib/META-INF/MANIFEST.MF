@@ -1,0 +1,242 @@
+Manifest-Version: 1.0
+
+Name: jas/ExceptAttr.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 2nZk28ZsjPBbX70PKSsdgctBKos=
+MD5-Digest: AqK3k455hTh1rRZx06htGA==
+
+Name: jas/ClassEnv.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: XYG480zxPBuQmAlDR2Q0vCHHm5o=
+MD5-Digest: dNylHjHn0cBXPXIxxCUaog==
+
+Name: jas/CodeAttr.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: AJHfOgpG5KMmEIckoYAIG+zTWOI=
+MD5-Digest: 1Y56+UpOd0lE/YGMH0T4YQ==
+
+Name: jas/ShortOperand.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: dmqoS4SD7yHsjAJJXCvX8OswZIc=
+MD5-Digest: ghvxcSKkRb58374lK80wvA==
+
+Name: jas/LongCP.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: j98+zYIS2Sz0iufXQpRczmXFA2M=
+MD5-Digest: zRc5vaS3OacWpn6bmOdINw==
+
+Name: jas/InvokeinterfaceInsn.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: Ugnu/YkSM3T+5a928xsshF3zlEc=
+MD5-Digest: h25JyNRzxoSDdG69reoX1g==
+
+Name: jas/TableswitchOperand.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 6BoyTFGa0pj5LkYAm3F/L5J7PUg=
+MD5-Digest: eQRSfBfrXl0ekkHZy0akeg==
+
+Name: jas/ByteOperand.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: IFYxXHHSwyHU23B//+jxjTijwbw=
+MD5-Digest: wHzLUWhLsZkx1Zj3sT4Srw==
+
+Name: jas/MultiarrayInsn.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: CI3Uu2swfar3IoAyGVqzG3hiLGU=
+MD5-Digest: tPAFFVdyKvHYEJ0H7yclwQ==
+
+Name: jas/UnsignedByteWideOperand.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: j7yQ2GGmkI/X89SWKIHXrQswCQQ=
+MD5-Digest: Y6V1cgwz7SJ7OPQstc1+BA==
+
+Name: jas/NameTypeCP.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: QUZErQ8tCdmelzxx8EYod9PpTRU=
+MD5-Digest: ZmQGxerb+pGFothIwckJgw==
+
+Name: jas/IincInsn.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: tASsUzfiBxZ7FUjLXpo61iqFdhU=
+MD5-Digest: y2weTVBez2+PEUqQAKz4rQ==
+
+Name: jas/IntegerOperand.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: wUQVFmF8EUrVbD/wAt4dZCUNEBU=
+MD5-Digest: U6JMc2C8LE70cFaJmRxXxw==
+
+Name: jas/ConstAttr.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: ykJSv5LQOuWISOC/wGeM+o0HPdU=
+MD5-Digest: ED1iLwjX6T7a3V1/ZZIyIQ==
+
+Name: jas/Method.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: x2/yQIFAtmuTzkUpw4hN0yPXQDQ=
+MD5-Digest: I/w6pctRkY4fVETl7w5UIw==
+
+Name: jas/CP.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: YtChUi7RDzyv01HIfUQf4wIT6oM=
+MD5-Digest: CcaSNyYNzH7Q3pKbTh+w6Q==
+
+Name: jas/StringCP.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: EjvAfqARztLnChTA7tYlZ/q/doQ=
+MD5-Digest: +ljocOPOrFnV46dfr3mTYg==
+
+Name: jas/FloatCP.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 2EvktX+tGE6V8g5vLDa06twL0xc=
+MD5-Digest: 7gEpOBVffg7UaK9R8kPXBA==
+
+Name: jas/LocalVarTableAttr.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: IsJj3mXLyAhbFPgEav8SAnzWcpQ=
+MD5-Digest: kjp0jl0uzHOBsOfpTizw7A==
+
+Name: jas/UnsignedByteOperand.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: MEqYhsZJUrre5n/Uhsg1vFutQWE=
+MD5-Digest: 86ccPJSzStUf+oBNfnFwww==
+
+Name: jas/Var.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: ZPmos3ay/WmKh+hKydGleLpuhLo=
+MD5-Digest: nUDTiZ9X5l/3Lt+7hi7nhg==
+
+Name: jas/InterfaceCP.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: +JCHrcscbKJWnFlbWpWmkycOSe4=
+MD5-Digest: lHnL133U63OaPaVtFM+7GA==
+
+Name: jas/AsciiCP.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: +U0EKWRkTMK9/aUeCCAysEIg6P8=
+MD5-Digest: rCb0x0UubD4UfplqUq6kHQ==
+
+Name: jas/jasError.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: SlGn9afGlvQtMqRQjYXTnwM6FGY=
+MD5-Digest: M7UAk5INdvfXgD0GbEc0+w==
+
+Name: jas/LdcOperand.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: Li+Rp7CdJ8y7nsZZkg+heyY68/k=
+MD5-Digest: /7SjG7qvqmyhDz3y4GJMqw==
+
+Name: jas/CPOperand.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: Hr10VB9Plcdz+FfLJZakQvstaKQ=
+MD5-Digest: h4M4tn8k9ZcWkQhP7hx9CA==
+
+Name: jas/SourceAttr.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: OysSO/L3jLWxFrzHIhbrfz6C4Oo=
+MD5-Digest: JV1LtQBfNSwh5u+fUUxwGA==
+
+Name: jas/LookupswitchInsn.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: mKtJLbGxpSA+Uk/nDrtF0udlf2E=
+MD5-Digest: WUs0jRptTbVGJBFJQr+sRg==
+
+Name: jas/LineTableAttr.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: QOlvQxX7voJjBdUcDa/70vdGX9E=
+MD5-Digest: 6dMARHO9u7apQq7tC0Lmfw==
+
+Name: jas/LookupswitchOperand.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 9LVvmD8fodTnVeH+ROFz+dOlIj8=
+MD5-Digest: sJTY+N7c1JfjQNRM5jVjTA==
+
+Name: jas/LocalVarEntry.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 0AVVx0e8w7W0VJ2emLQuhKVq8HA=
+MD5-Digest: AxJFO6jeDBhiCkYWYtPKXg==
+
+Name: jas/Insn.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: gg4tvwISr1ZeMw0/v4wvJrFor5Y=
+MD5-Digest: Mjw96Ctksjcsjc6TvEWXMA==
+
+Name: jas/ClassCP.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: PcD44R/3rxIQFz6ZAZHy+KLthYQ=
+MD5-Digest: i3vPF4GN5BSdoEUxdNxhLw==
+
+Name: jas/IincOperand.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: tKEL4FU0Zvgymr7Bu6m2HgdTpw4=
+MD5-Digest: d4P4OL46oCuiLY660+BpUA==
+
+Name: jas/CatchEntry.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: ws+jsF8T1r8lyse07KzJLovY0Kw=
+MD5-Digest: 8IfFLpsftCpiJaT1HzecNA==
+
+Name: jas/Label.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: dovVsV+F1oGIfxEzpCcdcXmarhI=
+MD5-Digest: yhhpMiJY414zGUHp2Nmgug==
+
+Name: jas/GenericAttr.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 1McXW3LU8lTnLb80mN0iPRMFhGM=
+MD5-Digest: Uc1gmhW5/8yTKwXMsheFLQ==
+
+Name: jas/DoubleCP.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: bSmq+Sqnmn1FYAlNdaZ7rVi5Qro=
+MD5-Digest: zdQCSYvXtnajdw1bXJlXew==
+
+Name: jas/TableswitchInsn.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: FR3opjLSSO3Zx4nWbn5aLbZFRHw=
+MD5-Digest: oWC9D+2RyCkE3ks6+r6V3A==
+
+Name: jas/FieldCP.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: Qnkr3MY+Gb2cLQwsI3KpKqsAPBg=
+MD5-Digest: R7CgJglPV7gBKqQ1/uGZDw==
+
+Name: jas/InvokeinterfaceOperand.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: HBprBRyB8srZmLN1tFq65MLVRyI=
+MD5-Digest: TgCcPfJ8CrmiLYrZeXUJ8g==
+
+Name: jas/MultiarrayOperand.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: hWMt8A9dBxaDSNIuFEfD8vpJJyg=
+MD5-Digest: GmZeOWW5F/PqNtj3Zhs5dg==
+
+Name: jas/RuntimeConstants.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: KVmIkZvlGwjEJPQ4z5xmIhFRLgc=
+MD5-Digest: bCmbvg4XGsn0sTohzUZCuA==
+
+Name: jas/LabelOperand.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: miDE8f/QnWBF65oX1f9WBmTraoY=
+MD5-Digest: HzjANCOyCv7ykTCjU1FNXg==
+
+Name: jas/IntegerCP.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: Ne3iZEb79D8e9ApRtsLlwhJi76o=
+MD5-Digest: oWCeAolpFQKBAUezlPOtdA==
+
+Name: jas/InsnOperand.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: PBO/o2oFl9dy9iaH6kW2YLr+kiw=
+MD5-Digest: RBaFTBNXnyyHT8gLYv//Pg==
+
+Name: jas/MethodCP.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: c5l/Jrb01D479v5r6ei7w038u9E=
+MD5-Digest: +R4t3lJsbcbt8F+zB7/0Sg==
+
+Name: jas/Catchtable.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: SKDfmtTuWqOfsQOnodERjy8/lwc=
+MD5-Digest: gj5wrfqNxkkrV66GSJVRBg==
+

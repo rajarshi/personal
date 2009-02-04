@@ -1,0 +1,5 @@
+org/openscience/cdk/tools/manipulator/BondManipulator.java
+org/openscience/cdk/graph/PathTools.java
+org/openscience/cdk/graph/SpanningTree.java
+org/openscience/cdk/graph/matrix/AdjacencyMatrix.java
+org/openscience/cdk/atomtype/CDKAtomTypeMatcher.java
