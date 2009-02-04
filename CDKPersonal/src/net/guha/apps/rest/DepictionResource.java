@@ -23,12 +23,10 @@ public class DepictionResource extends Resource {
 
         smiles = (String) request.getAttributes().get("smiles");
 
-        if (request.getAttributes().get("width") != null)
-            width = Integer.parseInt((String) request.getAttributes().get("width"));
-
-        if (request.getAttributes().get("height") != null)
-            height = Integer.parseInt((String) request.getAttributes().get("height"));
-
+        Object width = request.getAttributes().get("width");
+        Object height = request.getAttributes().get("height");
+        if (width != null) this.width = Integer.parseInt((String) width);
+        if (height != null) this.height = Integer.parseInt((String) height);     
         getVariants().add(new Variant(MediaType.IMAGE_JPEG));
     }
 
