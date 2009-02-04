@@ -119,10 +119,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Renderer2DPanel.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Renderer2DPanel.java">
+      <file leaf-file-name="Misc.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Misc.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="0" selection-start="1317" selection-end="1317" vertical-scroll-proportion="0.5068836">
+            <state line="98" column="76" selection-start="3753" selection-end="3753" vertical-scroll-proportion="0.48811013">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -130,10 +130,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Misc.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Misc.java">
+      <file leaf-file-name="ReaderFactory.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../cdk/branches/cdk-1.2.x/src/main/org/openscience/cdk/io/ReaderFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="46" selection-start="2945" selection-end="2945" vertical-scroll-proportion="0.11764706">
+            <state line="304" column="35" selection-start="11823" selection-end="11823" vertical-scroll-proportion="0.57908165">
               <folding />
             </state>
           </provider>
@@ -747,7 +747,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1296" y="0" width="1260" height="974" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
@@ -764,7 +764,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21262887" order="0" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2373444" order="0" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2373444" order="0" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24938676" order="2" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
@@ -916,16 +916,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Misc.java">
+    <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Renderer2DPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="46" selection-start="2945" selection-end="2945" vertical-scroll-proportion="0.11764706">
+        <state line="63" column="35" selection-start="2401" selection-end="2401" vertical-scroll-proportion="0.33291614">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../cdk/branches/cdk-1.2.x/src/main/org/openscience/cdk/io/ReaderFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="304" column="35" selection-start="11823" selection-end="11823" vertical-scroll-proportion="0.57908165">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Renderer2DPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Misc.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="1317" selection-end="1317" vertical-scroll-proportion="0.5068836">
+        <state line="98" column="76" selection-start="3753" selection-end="3753" vertical-scroll-proportion="0.48811013">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

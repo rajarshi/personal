@@ -1,10 +1,11 @@
 package net.guha.util.cdk;
 
+import org.openscience.cdk.ChemFile;
 import org.openscience.cdk.DefaultChemObjectBuilder;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IChemFile;
-import org.openscience.cdk.io.IChemObjectReader;
+import org.openscience.cdk.io.ISimpleChemObjectReader;
 import org.openscience.cdk.io.MDLWriter;
 import org.openscience.cdk.io.ReaderFactory;
 import org.openscience.cdk.tools.manipulator.ChemFileManipulator;
@@ -12,9 +13,9 @@ import org.openscience.cdk.tools.manipulator.ChemFileManipulator;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.List;
 import java.util.Map;
 import java.util.Vector;
-import java.util.List;
 
 /**
  * Miscellaneous utility methods.
@@ -94,8 +95,8 @@ public class Misc {
             for (i = 0; i < filenames.length; i++) {
                 File input = new File(filenames[i]);
                 ReaderFactory readerFactory = new ReaderFactory();
-                IChemObjectReader reader = readerFactory.createReader(new FileReader(input));
-                IChemFile content = (IChemFile) reader.read(builder.newChemFile());
+                ISimpleChemObjectReader reader = readerFactory.createReader(new FileReader(input));
+                IChemFile content = (IChemFile) reader.read(new ChemFile());
                 if (content == null) continue;
 
                 List c = ChemFileManipulator.getAllAtomContainers(content);
