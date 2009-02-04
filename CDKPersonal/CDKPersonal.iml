@@ -20,6 +20,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="CDK" level="project" />
+    <orderEntry type="library" name="RESTLet" level="project" />
     <orderEntryProperties />
   </component>
 </module>
