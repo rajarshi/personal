@@ -20,11 +20,15 @@ public class DepictionResource extends Resource {
 
     public DepictionResource(Context context, Request request, Response response) {
         super(context, request, response);
-        
+
         smiles = (String) request.getAttributes().get("smiles");
-        width = Integer.parseInt((String) request.getAttributes().get("width"));
-        height =Integer.parseInt((String) request.getAttributes().get("height")); 
-        
+
+        if (request.getAttributes().get("width") != null)
+            width = Integer.parseInt((String) request.getAttributes().get("width"));
+
+        if (request.getAttributes().get("height") != null)
+            height = Integer.parseInt((String) request.getAttributes().get("height"));
+
         getVariants().add(new Variant(MediaType.IMAGE_JPEG));
     }
 
@@ -37,7 +41,7 @@ public class DepictionResource extends Resource {
             try {
                 image = sdg.getDiagram(smiles, width, height, 0.9);
             } catch (CDKException e) {
-               throw new ResourceException(e);
+                throw new ResourceException(e);
             }
             assert image != null;
             representation = new ByteRepresentation(image, MediaType.IMAGE_JPEG, image.length);

@@ -10,7 +10,10 @@ import org.restlet.data.Protocol;
 public class RESTApplications extends Application {
     public synchronized Restlet createRoot() {
         Router router = new Router(getContext());
+
+        // setup depiction service
         router.attach("/depict/{smiles}/{width}/{height}", DepictionResource.class);
+        router.attach("/depict/{smiles}", DepictionResource.class);
         return router;
     }
 
