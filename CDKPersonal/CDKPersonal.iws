@@ -41,53 +41,6 @@
     <option name="PATCH_PATH" value="" />
     <option name="REVERSE_PATCH" value="false" />
   </component>
-  <component name="Cvs2Configuration">
-    <option name="PRUNE_EMPTY_DIRECTORIES" value="true" />
-    <option name="MERGING_MODE" value="0" />
-    <option name="MERGE_WITH_BRANCH1_NAME" value="HEAD" />
-    <option name="MERGE_WITH_BRANCH2_NAME" value="HEAD" />
-    <option name="RESET_STICKY" value="false" />
-    <option name="CREATE_NEW_DIRECTORIES" value="true" />
-    <option name="DEFAULT_TEXT_FILE_SUBSTITUTION" value="kv" />
-    <option name="PROCESS_UNKNOWN_FILES" value="false" />
-    <option name="PROCESS_DELETED_FILES" value="false" />
-    <option name="PROCESS_IGNORED_FILES" value="false" />
-    <option name="RESERVED_EDIT" value="false" />
-    <option name="CHECKOUT_DATE_OR_REVISION_SETTINGS">
-      <value>
-        <option name="BRANCH" value="" />
-        <option name="DATE" value="" />
-        <option name="USE_BRANCH" value="false" />
-        <option name="USE_DATE" value="false" />
-      </value>
-    </option>
-    <option name="UPDATE_DATE_OR_REVISION_SETTINGS">
-      <value>
-        <option name="BRANCH" value="" />
-        <option name="DATE" value="" />
-        <option name="USE_BRANCH" value="false" />
-        <option name="USE_DATE" value="false" />
-      </value>
-    </option>
-    <option name="SHOW_CHANGES_REVISION_SETTINGS">
-      <value>
-        <option name="BRANCH" value="" />
-        <option name="DATE" value="" />
-        <option name="USE_BRANCH" value="false" />
-        <option name="USE_DATE" value="false" />
-      </value>
-    </option>
-    <option name="SHOW_OUTPUT" value="false" />
-    <option name="ADD_WATCH_INDEX" value="0" />
-    <option name="REMOVE_WATCH_INDEX" value="0" />
-    <option name="UPDATE_KEYWORD_SUBSTITUTION" />
-    <option name="MAKE_NEW_FILES_READONLY" value="false" />
-    <option name="SHOW_CORRUPTED_PROJECT_FILES" value="0" />
-    <option name="TAG_AFTER_PROJECT_COMMIT" value="false" />
-    <option name="OVERRIDE_EXISTING_TAG_FOR_PROJECT" value="true" />
-    <option name="TAG_AFTER_PROJECT_COMMIT_NAME" value="" />
-    <option name="CLEAN_COPY" value="false" />
-  </component>
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
@@ -165,7 +118,28 @@
     <option name="myCurrentFavoritesList" value="CDKPersonal" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="Renderer2DPanel.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Renderer2DPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="0" selection-start="1317" selection-end="1317" vertical-scroll-proportion="0.5068836">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Misc.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Misc.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="82" column="46" selection-start="2945" selection-end="2945" vertical-scroll-proportion="0.11764706">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -773,7 +747,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1296" y="0" width="1260" height="974" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
@@ -790,7 +764,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21262887" order="0" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2373444" order="0" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2373444" order="0" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24938676" order="2" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
@@ -942,10 +916,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/ViewMolecule2D.java">
+    <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Misc.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="13" selection-start="760" selection-end="760" vertical-scroll-proportion="0.1689612">
+        <state line="82" column="46" selection-start="2945" selection-end="2945" vertical-scroll-proportion="0.11764706">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Renderer2DPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="0" selection-start="1317" selection-end="1317" vertical-scroll-proportion="0.5068836">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

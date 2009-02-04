@@ -262,7 +262,7 @@
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="svn" />
+    <mapping directory="" vcs="Git" />
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
   <component name="com.intellij.jsf.UserDefinedFacesConfigs">
@@ -284,7 +284,7 @@
   <component name="libraryTable">
     <library name="CDK">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/../../cdk/branches/cdk-1.2.x/dist/jar/cdk-1.1.4.20090105.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../cdk/branches/cdk-1.2.x-with-jcp/dist/jar/cdk-1.1.4.20090105.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
