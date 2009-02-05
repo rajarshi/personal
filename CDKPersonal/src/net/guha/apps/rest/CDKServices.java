@@ -24,8 +24,11 @@ public class CDKServices extends Application {
         router.attach("/descriptors/tpsa/{smiles}", TPSAResource.class);
         router.attach("/descriptors/xlogp/{smiles}", TPSAResource.class);
 
+        // the second route allows for POST requests here we match
+        // multiple SMILES
         router.attach("/substruct/{target}/{query}", SubstructureSearchResource.class);
-
+        router.attach("/substruct", SubstructureSearchResource.class);
+        
         // fingerprints, using default values. If no type is specified
         // use the standard fingerprinterit 
         router.attach("/fingerprint/{type}/{smiles}", FingerprinterResource.class);
