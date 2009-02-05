@@ -17,6 +17,8 @@ import org.restlet.data.Request;
 import org.restlet.data.Response;
 import org.restlet.resource.*;
 
+import java.util.BitSet;
+
 
 public class FingerprinterResource extends Resource {
 
@@ -47,7 +49,14 @@ public class FingerprinterResource extends Resource {
                 else if (type.equals("maccs")) fp = new MACCSFingerprinter();
                 else if (type.equals("estate")) fp = new EStateFingerprinter();
                 else throw new CDKException("Invalid fingerprint type was specified");
-                result = fp.getFingerprint(mol).toString();
+                BitSet bitset = fp.getFingerprint(mol);
+
+                StringBuffer sb = new StringBuffer(fp.getSize());
+                for (int i = 0; i < fp.getSize(); i++) sb.append(0);
+                for (int i = bitset.nextSetBit(0); i >= 0; i = bitset.nextSetBit(i + 1)) {
+                    sb.setCharAt(i, '1');
+                }
+                result = sb.toString();
             } catch (InvalidSmilesException e) {
                 throw new ResourceException(e);
             } catch (CDKException e) {
