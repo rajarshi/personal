@@ -13,18 +13,18 @@ import org.restlet.resource.*;
 /**
  * Perform substructure searches.
  * <p/>
- * The class supports matching a single query against
+ * The class supports matching a single klass against
  * a single target using a GET request. Also the service only
- * determines whether the target contains the query, returning "true" if
+ * determines whether the target contains the klass, returning "true" if
  * present and "false" otherwise.
  * <p/>
  * If the target SMILES cannot be parsed, it returns "fail"
  * <p/>
  * If the SMARTS is invalid, a HTTP 500 is returned
  * <p/>
- * Using POST you can match multiple targets against a query. In this
+ * Using POST you can match multiple targets against a klass. In this
  * case the POST request should have two form elements called "target", whose value
- * should be a comma separated list of SMILES and "query" which should be
+ * should be a comma separated list of SMILES and "klass" which should be
  * a single SMARTS pattern. The return value is a plain/text document with
  * N lines for N input SMILES. Each line is either "true", "false" or 'fail"
  */
@@ -67,7 +67,7 @@ public class SubstructureSearchResource extends Resource {
     public void acceptRepresentation(Representation representation) throws ResourceException {
         if (representation.getMediaType().equals(MediaType.APPLICATION_WWW_FORM)) {
             Form form = new Form(representation);
-            String query = form.getFirstValue("query");
+            String query = form.getFirstValue("klass");
             String targets = form.getFirstValue("target");
             if (query == null || targets == null) throw new ResourceException(new CDKException("No form elements specified"));
             String[] smiles = targets.split(",");
@@ -87,7 +87,7 @@ public class SubstructureSearchResource extends Resource {
     private String doMatch(String[] smiles, String query) throws CDKException {
         SmilesParser sp = new SmilesParser(DefaultChemObjectBuilder.getInstance());
         SMARTSQueryTool sqt = new SMARTSQueryTool("C");
-        if (query == null) throw new CDKException("No query pattern specified");        
+        if (query == null) throw new CDKException("No klass pattern specified");
         sqt.setSmarts(Reference.decode(query));
         StringBuffer result = new StringBuffer();
         for (String s : smiles) {

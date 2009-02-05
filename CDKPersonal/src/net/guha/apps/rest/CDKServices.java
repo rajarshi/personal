@@ -37,6 +37,9 @@ public class CDKServices extends Application {
         // molecular weight and formulae
         router.attach("/cdk/mw/{smiles}", MWResource.class);
         router.attach("/cdk/mf/{smiles}", MFResource.class);
+
+        router.attach("/cdk/descriptor/{klass}", DescriptorResource.class);
+        router.attach("/cdk/descriptor/{klass}/{smiles}", DescriptorResource.class);
         return router;
     }
 
