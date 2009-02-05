@@ -119,32 +119,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DepictionResource.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DepictionResource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="8" selection-start="994" selection-end="994" vertical-scroll-proportion="0.47434294">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CDKServices.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="CDKServices.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="87" selection-start="892" selection-end="892" vertical-scroll-proportion="0.38265306">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SubstructureSearchResource.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/SubstructureSearchResource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="22" selection-start="759" selection-end="759" vertical-scroll-proportion="0.37546933">
+            <state line="35" column="98" selection-start="1404" selection-end="1404" vertical-scroll-proportion="0.44515306">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -961,13 +939,6 @@
     <option name="myLastEditedConfigurable" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../cdk/branches/cdk-1.2.x/src/main/org/openscience/cdk/io/ReaderFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="304" column="35" selection-start="11823" selection-end="11823" vertical-scroll-proportion="0.57908165">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Misc.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="98" column="76" selection-start="3753" selection-end="3753" vertical-scroll-proportion="0.48811013">
@@ -1062,9 +1033,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/SubstructureSearchResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="87" selection-start="892" selection-end="892" vertical-scroll-proportion="0.38265306">
+        <state line="20" column="22" selection-start="759" selection-end="759" vertical-scroll-proportion="0.37546933">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1080,9 +1051,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/SubstructureSearchResource.java">
+    <entry file="jar://$PROJECT_DIR$/libs/org.restlet.jar!/org/restlet/Component.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="22" selection-start="759" selection-end="759" vertical-scroll-proportion="0.37546933">
+        <state line="71" column="16" selection-start="3497" selection-end="3497" vertical-scroll-proportion="0.36862245">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="98" selection-start="1404" selection-end="1404" vertical-scroll-proportion="0.44515306">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
