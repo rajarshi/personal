@@ -13,12 +13,20 @@ import org.restlet.resource.*;
 /**
  * Perform substructure searches.
  * <p/>
- * The class currently only supports matching a single query against
+ * The class supports matching a single query against
  * a single target using a GET request. Also the service only
- * determines whether the target contains the query, return "true" if
+ * determines whether the target contains the query, returning "true" if
  * present and "false" otherwise.
- *
+ * <p/>
  * If the target SMILES cannot be parsed, it returns "fail"
+ * <p/>
+ * If the SMARTS is invalid, a HTTP 500 is returned
+ * <p/>
+ * Using POST you can match multiple targets against a query. In this
+ * case the POST request should have two form elements called "target", whose value
+ * should be a comma separated list of SMILES and "query" which should be
+ * a single SMARTS pattern. The return value is a plain/text document with
+ * N lines for N input SMILES. Each line is either "true", "false" or 'fail"
  */
 public class SubstructureSearchResource extends Resource {
 

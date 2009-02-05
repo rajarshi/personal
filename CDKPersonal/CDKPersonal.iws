@@ -119,10 +119,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SubstructureSearchResource.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SubstructureSearchResource.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/SubstructureSearchResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="59" selection-start="789" selection-end="789" vertical-scroll-proportion="-1.484472">
+            <state line="17" column="62" selection-start="670" selection-end="670" vertical-scroll-proportion="0.31914893">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -130,10 +130,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CDKServices.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="CDKServices.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="26" selection-start="979" selection-end="979" vertical-scroll-proportion="0.6217949">
+            <state line="26" column="54" selection-start="940" selection-end="940" vertical-scroll-proportion="0.35204083">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -833,7 +833,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24938676" order="2" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
       <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37228915" order="2" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37228915" order="2" />
       <window_info id="JarSpy" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="File View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Dependency Cycles" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
@@ -1060,18 +1060,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/SubstructureSearchResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="26" selection-start="979" selection-end="979" vertical-scroll-proportion="0.6217949">
+        <state line="17" column="62" selection-start="670" selection-end="670" vertical-scroll-proportion="0.31914893">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/SubstructureSearchResource.java">
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="59" selection-start="789" selection-end="789" vertical-scroll-proportion="-1.484472">
+        <state line="26" column="54" selection-start="940" selection-end="940" vertical-scroll-proportion="0.35204083">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
