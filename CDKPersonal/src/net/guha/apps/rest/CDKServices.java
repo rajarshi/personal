@@ -6,7 +6,7 @@ import org.restlet.*;
 import org.restlet.data.Protocol;
 
 
-public class RESTApplications extends Application {
+public class CDKServices extends Application {
     public synchronized Restlet createRoot() {
         Router router = new Router(getContext());
 
@@ -23,7 +23,7 @@ public class RESTApplications extends Application {
     public static void main(String[] args) throws Exception {
         Component component = new Component();
         component.getServers().add(Protocol.HTTP, 8182);
-        component.getDefaultHost().attach(new RESTApplications());
+        component.getDefaultHost().attach(new CDKServices());
 //        component.getDefaultHost().attach("/trace/{user}", new TracerRestlet());
         component.start();
     }

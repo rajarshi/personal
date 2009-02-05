@@ -130,10 +130,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RESTApplications.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/RESTApplications.java">
+      <file leaf-file-name="CDKServices.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="96" selection-start="558" selection-end="558" vertical-scroll-proportion="0.21045919">
+            <state line="8" column="20" selection-start="212" selection-end="212" vertical-scroll-proportion="0.095663264">
               <folding />
             </state>
           </provider>
@@ -230,58 +230,6 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
         </PATH_ELEMENT>
       </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="CDKPersonal" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="CDKPersonal" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="net.guha" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="apps" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="rest" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="resources" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="CDKPersonal" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="CDKPersonal" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="net.guha" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="apps" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="rest" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="representations" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-        </PATH_ELEMENT>
-      </PATH>
     </subPane>
   </component>
   <component name="PerforceChangeBrowserSettings">
@@ -370,9 +318,9 @@
       <recent name="net.guha.apps" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RESTApplications">
-    <tempConfiguration default="false" name="RESTApplications" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" value="net.guha.apps.rest.RESTApplications" />
+  <component name="RunManager" selected="Application.CDKServices">
+    <tempConfiguration default="false" name="CDKServices" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" value="net.guha.apps.rest.CDKServices" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -384,9 +332,6 @@
       <module name="CDKPersonal" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method>
-        <option name="Make" value="true" />
-      </method>
     </tempConfiguration>
     <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="" />
@@ -747,20 +692,34 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
+    <configuration default="false" name="CDKServices" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" value="net.guha.apps.rest.CDKServices" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="CDKPersonal" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+    </configuration>
     <list size="13">
-      <item index="0" class="java.lang.String" itemvalue="Application.RESTApplications" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Fingerprinting" />
-      <item index="2" class="java.lang.String" itemvalue="Application.CLT" />
-      <item index="3" class="java.lang.String" itemvalue="Application.smilestest" />
-      <item index="4" class="java.lang.String" itemvalue="Application.ShapesDemo2D" />
-      <item index="5" class="java.lang.String" itemvalue="Application.AtomTypeQA" />
-      <item index="6" class="java.lang.String" itemvalue="Application.MomentSimilarity" />
-      <item index="7" class="java.lang.String" itemvalue="Application.simmat" />
-      <item index="8" class="java.lang.String" itemvalue="Application.sims" />
-      <item index="9" class="java.lang.String" itemvalue="JUnit.SearchBruteForceTest" />
-      <item index="10" class="java.lang.String" itemvalue="JUnit.ConfSearchUtilsTest" />
-      <item index="11" class="java.lang.String" itemvalue="Applet.AssayNetwork" />
-      <item index="12" class="java.lang.String" itemvalue="Applet.ClusteringDemo" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Fingerprinting" />
+      <item index="1" class="java.lang.String" itemvalue="Application.CLT" />
+      <item index="2" class="java.lang.String" itemvalue="Application.smilestest" />
+      <item index="3" class="java.lang.String" itemvalue="Application.ShapesDemo2D" />
+      <item index="4" class="java.lang.String" itemvalue="Application.AtomTypeQA" />
+      <item index="5" class="java.lang.String" itemvalue="Application.MomentSimilarity" />
+      <item index="6" class="java.lang.String" itemvalue="Application.simmat" />
+      <item index="7" class="java.lang.String" itemvalue="Application.sims" />
+      <item index="8" class="java.lang.String" itemvalue="JUnit.SearchBruteForceTest" />
+      <item index="9" class="java.lang.String" itemvalue="JUnit.ConfSearchUtilsTest" />
+      <item index="10" class="java.lang.String" itemvalue="Applet.AssayNetwork" />
+      <item index="11" class="java.lang.String" itemvalue="Applet.ClusteringDemo" />
+      <item index="12" class="java.lang.String" itemvalue="Application.RESTApplications" />
     </list>
   </component>
   <component name="StarteamConfiguration">
@@ -1091,9 +1050,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/RESTApplications.java">
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="96" selection-start="558" selection-end="558" vertical-scroll-proportion="0.21045919">
+        <state line="8" column="20" selection-start="212" selection-end="212" vertical-scroll-proportion="0.095663264">
           <folding />
         </state>
       </provider>
