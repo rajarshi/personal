@@ -122,7 +122,18 @@
       <file leaf-file-name="CDKServices.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="98" selection-start="1404" selection-end="1404" vertical-scroll-proportion="0.44515306">
+            <state line="29" column="0" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.55484694">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FingerprinterResource.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/FingerprinterResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="48" column="86" selection-start="2175" selection-end="2175" vertical-scroll-proportion="0.8072591">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -939,29 +950,6 @@
     <option name="myLastEditedConfigurable" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Misc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="76" selection-start="3753" selection-end="3753" vertical-scroll-proportion="0.48811013">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../restlet/restlet-1.1.2/lib/org.restlet.jar!/org/restlet/Application.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="149" selection-end="149" vertical-scroll-proportion="0.12820514">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../restlet/restlet-1.1.2/lib/org.restlet.jar!/org/restlet/Router.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="29" selection-start="1375" selection-end="1375" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/TracerRestlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="54" selection-start="732" selection-end="732" vertical-scroll-proportion="0.5590062">
@@ -1058,9 +1046,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/FingerprinterResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="86" selection-start="2175" selection-end="2175" vertical-scroll-proportion="0.8072591">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="98" selection-start="1404" selection-end="1404" vertical-scroll-proportion="0.44515306">
+        <state line="29" column="0" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.55484694">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -1,8 +1,6 @@
 package net.guha.apps.rest;
 
-import net.guha.apps.rest.resources.DepictionResource;
-import net.guha.apps.rest.resources.SubstructureSearchResource;
-import net.guha.apps.rest.resources.TPSAResource;
+import net.guha.apps.rest.resources.*;
 import org.apache.commons.cli.*;
 import org.restlet.*;
 import org.restlet.data.Protocol;
@@ -27,6 +25,9 @@ public class CDKServices extends Application {
         router.attach("/descriptors/xlogp/{smiles}", TPSAResource.class);
 
         router.attach("/substruct/{target}/{query}", SubstructureSearchResource.class);
+
+        router.attach("/fingerprint/{type}/{smiles}", FingerprinterResource.class);
+        router.attach("/fingerprint/{smiles}", new Redirector(getContext(), "/fingerprint/std/{smiles}", Redirector.MODE_CLIENT_PERMANENT));
         return router;
     }
 
