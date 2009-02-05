@@ -13,6 +13,8 @@ import org.restlet.resource.Resource;
 import org.restlet.resource.ResourceException;
 import org.restlet.resource.Variant;
 
+import java.awt.*;
+
 
 public class DepictionResource extends Resource {
 
@@ -23,7 +25,8 @@ public class DepictionResource extends Resource {
     public DepictionResource(Context context, Request request, Response response) {
         super(context, request, response);
 
-        smiles = Reference.decode((String) request.getAttributes().get("smiles"));
+        smiles = (String) request.getAttributes().get("smiles");
+        if (smiles != null) smiles = Reference.decode(smiles);
 
         Object width = request.getAttributes().get("width");
         Object height = request.getAttributes().get("height");
@@ -36,6 +39,8 @@ public class DepictionResource extends Resource {
     public Representation represent(Variant variant) throws ResourceException {
         Representation representation = null;
         if (variant.getMediaType().equals(MediaType.IMAGE_JPEG)) {
+            if (GraphicsEnvironment.isHeadless()) throw new ResourceException(new CDKException("Running headless!"));
+            if (smiles == null) throw new ResourceException(new CDKException("No SMILES specified?")); 
             StructureDiagram sdg = new StructureDiagram();
             byte[] image;
             try {

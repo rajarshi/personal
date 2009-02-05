@@ -69,6 +69,7 @@ public class SubstructureSearchResource extends Resource {
             Form form = new Form(representation);
             String query = form.getFirstValue("query");
             String targets = form.getFirstValue("target");
+            if (query == null || targets == null) throw new ResourceException(new CDKException("No form elements specified"));
             String[] smiles = targets.split(",");
             getResponse().setStatus(Status.SUCCESS_OK);
             String result = null;
@@ -86,6 +87,7 @@ public class SubstructureSearchResource extends Resource {
     private String doMatch(String[] smiles, String query) throws CDKException {
         SmilesParser sp = new SmilesParser(DefaultChemObjectBuilder.getInstance());
         SMARTSQueryTool sqt = new SMARTSQueryTool("C");
+        if (query == null) throw new CDKException("No query pattern specified");        
         sqt.setSmarts(Reference.decode(query));
         StringBuffer result = new StringBuffer();
         for (String s : smiles) {
