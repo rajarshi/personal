@@ -18,25 +18,25 @@ public class CDKServices extends Application {
         Router router = new Router(getContext());
 
         // setup depiction service
-        router.attach("/depict/{width}/{height}/{smiles}", DepictionResource.class);
-        router.attach("/depict/{smiles}", new Redirector(getContext(), "/depict/200/200/{smiles}", Redirector.MODE_CLIENT_PERMANENT));
+        router.attach("/cdk/depict/{width}/{height}/{smiles}", DepictionResource.class);
+        router.attach("/cdk/depict/{smiles}", new Redirector(getContext(), "/depict/200/200/{smiles}", Redirector.MODE_CLIENT_PERMANENT));
 
-        router.attach("/descriptors/tpsa/{smiles}", TPSAResource.class);
-        router.attach("/descriptors/xlogp/{smiles}", TPSAResource.class);
+        router.attach("/cdk/descriptors/tpsa/{smiles}", TPSAResource.class);
+        router.attach("/cdk/descriptors/xlogp/{smiles}", TPSAResource.class);
 
         // the second route allows for POST requests where we match
         // multiple SMILES
-        router.attach("/substruct/{target}/{query}", SubstructureSearchResource.class);
-        router.attach("/substruct", SubstructureSearchResource.class);
+        router.attach("/cdk/substruct/{target}/{query}", SubstructureSearchResource.class);
+        router.attach("/cdk/substruct", SubstructureSearchResource.class);
         
         // fingerprints, using default values. If no type is specified
         // use the standard fingerprinterit 
-        router.attach("/fingerprint/{type}/{smiles}", FingerprinterResource.class);
-        router.attach("/fingerprint/{smiles}", new Redirector(getContext(), "/fingerprint/std/{smiles}", Redirector.MODE_CLIENT_PERMANENT));
+        router.attach("/cdk/fingerprint/{type}/{smiles}", FingerprinterResource.class);
+        router.attach("/cdk/fingerprint/{smiles}", new Redirector(getContext(), "/fingerprint/std/{smiles}", Redirector.MODE_CLIENT_PERMANENT));
 
         // molecular weight and formulae
-        router.attach("/mw/{smiles}", MWResource.class);
-        router.attach("/mf/{smiles}", MFResource.class);
+        router.attach("/cdk/mw/{smiles}", MWResource.class);
+        router.attach("/cdk/mf/{smiles}", MFResource.class);
         return router;
     }
 
