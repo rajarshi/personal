@@ -92,8 +92,8 @@
       <property name="field_breakpoints_groupByClasses" value="true" />
       <property name="method_breakpoints_groupByClasses" value="true" />
       <property name="exception_breakpoints_viewId" value="TABLE" />
-      <property name="field_breakpoints_viewId" value="TABLE" />
       <property name="exception_breakpoints_groupByClasses" value="true" />
+      <property name="field_breakpoints_viewId" value="TABLE" />
       <property name="method_breakpoints_groupByMethods" value="false" />
     </ui_properties>
   </component>
@@ -119,22 +119,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DepictionResource.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="DepictionResource.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DepictionResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="16" selection-start="161" selection-end="161" vertical-scroll-proportion="0.124223605">
-              <folding />
+            <state line="29" column="8" selection-start="994" selection-end="994" vertical-scroll-proportion="0.7412008">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RESTApplications.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="RESTApplications.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/RESTApplications.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="8" selection-start="707" selection-end="707" vertical-scroll-proportion="0.621118">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="14" column="96" selection-start="558" selection-end="558" vertical-scroll-proportion="0.3525641">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -142,10 +142,8 @@
       <file leaf-file-name="TPSAResource.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/TPSAResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="42" selection-start="901" selection-end="901" vertical-scroll-proportion="0.5362319">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="23" column="42" selection-start="901" selection-end="901" vertical-scroll-proportion="0.310559">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -350,8 +348,8 @@
     <property name="cvs_file_history_flatOrder2" value="2" />
     <property name="cvs_file_history_flatOrder3" value="3" />
     <property name="cvs_file_history_flatOrder0" value="0" />
-    <property name="GenerateAntBuildDialog.forceTargetJdk" value="false" />
     <property name="cvs_file_history_flatOrder1" value="1" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
   </component>
@@ -390,17 +388,23 @@
         <option name="Make" value="true" />
       </method>
     </tempConfiguration>
-    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
+      <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
+      <option name="ADDITIONAL_CLASS_PATH" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
       <method>
         <option name="Make" value="true" />
       </method>
@@ -416,13 +420,6 @@
       <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
       <option name="BASE_DIRECTORY_NAME" value="" />
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
       <module name="" />
@@ -452,27 +449,6 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="ADDITIONAL_CLASS_PATH" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -484,6 +460,28 @@
       <option name="VM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
       <method>
         <option name="Make" value="true" />
       </method>
@@ -750,19 +748,19 @@
       </method>
     </configuration>
     <list size="13">
-      <item index="0" class="java.lang.String" itemvalue="Application.Fingerprinting" />
-      <item index="1" class="java.lang.String" itemvalue="Application.CLT" />
-      <item index="2" class="java.lang.String" itemvalue="Application.smilestest" />
-      <item index="3" class="java.lang.String" itemvalue="Application.ShapesDemo2D" />
-      <item index="4" class="java.lang.String" itemvalue="Application.AtomTypeQA" />
-      <item index="5" class="java.lang.String" itemvalue="Application.MomentSimilarity" />
-      <item index="6" class="java.lang.String" itemvalue="Application.simmat" />
-      <item index="7" class="java.lang.String" itemvalue="Application.sims" />
-      <item index="8" class="java.lang.String" itemvalue="JUnit.SearchBruteForceTest" />
-      <item index="9" class="java.lang.String" itemvalue="JUnit.ConfSearchUtilsTest" />
-      <item index="10" class="java.lang.String" itemvalue="Applet.AssayNetwork" />
-      <item index="11" class="java.lang.String" itemvalue="Applet.ClusteringDemo" />
-      <item index="12" class="java.lang.String" itemvalue="Application.RESTApplications" />
+      <item index="0" class="java.lang.String" itemvalue="Application.RESTApplications" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Fingerprinting" />
+      <item index="2" class="java.lang.String" itemvalue="Application.CLT" />
+      <item index="3" class="java.lang.String" itemvalue="Application.smilestest" />
+      <item index="4" class="java.lang.String" itemvalue="Application.ShapesDemo2D" />
+      <item index="5" class="java.lang.String" itemvalue="Application.AtomTypeQA" />
+      <item index="6" class="java.lang.String" itemvalue="Application.MomentSimilarity" />
+      <item index="7" class="java.lang.String" itemvalue="Application.simmat" />
+      <item index="8" class="java.lang.String" itemvalue="Application.sims" />
+      <item index="9" class="java.lang.String" itemvalue="JUnit.SearchBruteForceTest" />
+      <item index="10" class="java.lang.String" itemvalue="JUnit.ConfSearchUtilsTest" />
+      <item index="11" class="java.lang.String" itemvalue="Applet.AssayNetwork" />
+      <item index="12" class="java.lang.String" itemvalue="Applet.ClusteringDemo" />
     </list>
   </component>
   <component name="StarteamConfiguration">
@@ -834,7 +832,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1296" y="0" width="1260" height="974" extended-state="0" />
+    <frame x="1280" y="25" width="1260" height="974" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
@@ -974,15 +972,6 @@
     <option name="myLastEditedConfigurable" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/anv/ClusteringDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="58" selection-start="3984" selection-end="4034" vertical-scroll-proportion="-0.27450982">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/anv/AssayNetwork.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="18" selection-start="799" selection-end="799" vertical-scroll-proportion="0.018773466">
@@ -1077,16 +1066,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DepictionResource.java">
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/TPSAResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="16" selection-start="161" selection-end="161" vertical-scroll-proportion="0.124223605">
+        <state line="23" column="42" selection-start="901" selection-end="901" vertical-scroll-proportion="0.310559">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/TPSAResource.java">
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/XLOGPResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="42" selection-start="901" selection-end="901" vertical-scroll-proportion="0.5362319">
+        <state line="44" column="46" selection-start="1965" selection-end="1965" vertical-scroll-proportion="0.68085104">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1095,7 +1084,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/RESTApplications.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="8" selection-start="707" selection-end="707" vertical-scroll-proportion="0.621118">
+        <state line="14" column="96" selection-start="558" selection-end="558" vertical-scroll-proportion="0.3525641">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DepictionResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="8" selection-start="994" selection-end="994" vertical-scroll-proportion="0.7412008">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

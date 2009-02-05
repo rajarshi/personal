@@ -26,8 +26,8 @@ public class DepictionResource extends Resource {
 
         Object width = request.getAttributes().get("width");
         Object height = request.getAttributes().get("height");
-        if (width != null) this.width = Integer.parseInt((String) width);
-        if (height != null) this.height = Integer.parseInt((String) height);     
+        this.width = Integer.parseInt((String) width);
+        this.height = Integer.parseInt((String) height);     
         getVariants().add(new Variant(MediaType.IMAGE_JPEG));
     }
 
