@@ -1,6 +1,7 @@
 package net.guha.apps.rest;
 
 import net.guha.apps.rest.resources.DepictionResource;
+import net.guha.apps.rest.resources.SubstructureSearchResource;
 import net.guha.apps.rest.resources.TPSAResource;
 import org.restlet.*;
 import org.restlet.data.Protocol;
@@ -17,12 +18,13 @@ public class CDKServices extends Application {
         router.attach("/descriptors/tpsa/{smiles}", TPSAResource.class);
         router.attach("/descriptors/xlogp/{smiles}", TPSAResource.class);
 
+        router.attach("/substruct/{target}/{query}", SubstructureSearchResource.class);
         return router;
     }
 
     public static void main(String[] args) throws Exception {
         Component component = new Component();
-        component.getServers().add(Protocol.HTTP, 8182);
+        component.getServers().add(Protocol.HTTP, "rguha.ath.cx", 8182);
         component.getDefaultHost().attach(new CDKServices());
 //        component.getDefaultHost().attach("/trace/{user}", new TracerRestlet());
         component.start();
