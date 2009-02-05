@@ -19,7 +19,7 @@ public class CDKServices extends Application {
 
         // setup depiction service
         router.attach("/cdk/depict/{width}/{height}/{smiles}", DepictionResource.class);
-        router.attach("/cdk/depict/{smiles}", new Redirector(getContext(), "/depict/200/200/{smiles}", Redirector.MODE_CLIENT_PERMANENT));
+        router.attach("/cdk/depict/{smiles}", new Redirector(getContext(), "/cdk/depict/200/200/{smiles}", Redirector.MODE_CLIENT_PERMANENT));
 
         router.attach("/cdk/descriptors/tpsa/{smiles}", TPSAResource.class);
         router.attach("/cdk/descriptors/xlogp/{smiles}", TPSAResource.class);
@@ -32,7 +32,7 @@ public class CDKServices extends Application {
         // fingerprints, using default values. If no type is specified
         // use the standard fingerprinterit 
         router.attach("/cdk/fingerprint/{type}/{smiles}", FingerprinterResource.class);
-        router.attach("/cdk/fingerprint/{smiles}", new Redirector(getContext(), "/fingerprint/std/{smiles}", Redirector.MODE_CLIENT_PERMANENT));
+        router.attach("/cdk/fingerprint/{smiles}", new Redirector(getContext(), "/cdk/fingerprint/std/{smiles}", Redirector.MODE_CLIENT_PERMANENT));
 
         // molecular weight and formulae
         router.attach("/cdk/mw/{smiles}", MWResource.class);
