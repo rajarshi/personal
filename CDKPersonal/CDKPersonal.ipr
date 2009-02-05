@@ -284,9 +284,9 @@
   <component name="libraryTable">
     <library name="CDK">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/../../cdk/branches/cdk-1.2.x-with-jcp/dist/jar/cdk-1.1.4.20090105.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../cicc-grid/cdkws/trunk/libs/jai_core.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../cicc-grid/cdkws/trunk/libs/jai_codec.jar!/" />
+        <root url="jar://$PROJECT_DIR$/libs/jai_codec.jar!/" />
+        <root url="jar://$PROJECT_DIR$/libs/cdk-1.1.4.20090105.jar!/" />
+        <root url="jar://$PROJECT_DIR$/libs/jai_core.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
@@ -295,8 +295,8 @@
     </library>
     <library name="RESTLet">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/../../restlet/restlet-1.1.2/lib/com.noelios.restlet.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../restlet/restlet-1.1.2/lib/org.restlet.jar!/" />
+        <root url="jar://$PROJECT_DIR$/libs/org.restlet.jar!/" />
+        <root url="jar://$PROJECT_DIR$/libs/com.noelios.restlet.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
