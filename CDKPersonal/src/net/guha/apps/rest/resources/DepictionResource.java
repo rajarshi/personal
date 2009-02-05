@@ -5,6 +5,7 @@ import net.guha.apps.rest.representations.ByteRepresentation;
 import org.openscience.cdk.exception.CDKException;
 import org.restlet.Context;
 import org.restlet.data.MediaType;
+import org.restlet.data.Reference;
 import org.restlet.data.Request;
 import org.restlet.data.Response;
 import org.restlet.resource.Representation;
@@ -22,7 +23,7 @@ public class DepictionResource extends Resource {
     public DepictionResource(Context context, Request request, Response response) {
         super(context, request, response);
 
-        smiles = (String) request.getAttributes().get("smiles");
+        smiles = Reference.decode((String) request.getAttributes().get("smiles"));
 
         Object width = request.getAttributes().get("width");
         Object height = request.getAttributes().get("height");

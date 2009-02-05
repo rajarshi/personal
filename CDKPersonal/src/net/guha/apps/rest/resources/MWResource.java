@@ -4,13 +4,11 @@ import org.openscience.cdk.DefaultChemObjectBuilder;
 import org.openscience.cdk.aromaticity.CDKHueckelAromaticityDetector;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.exception.InvalidSmilesException;
-import org.openscience.cdk.fingerprint.EStateFingerprinter;
-import org.openscience.cdk.fingerprint.Fingerprinter;
-import org.openscience.cdk.fingerprint.IFingerprinter;
-import org.openscience.cdk.fingerprint.MACCSFingerprinter;
 import org.openscience.cdk.interfaces.IMolecule;
 import org.openscience.cdk.smiles.SmilesParser;
+import org.openscience.cdk.tools.CDKHydrogenAdder;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
+import org.openscience.cdk.tools.manipulator.MolecularFormulaManipulator;
 import org.restlet.Context;
 import org.restlet.data.MediaType;
 import org.restlet.data.Reference;
@@ -18,18 +16,14 @@ import org.restlet.data.Request;
 import org.restlet.data.Response;
 import org.restlet.resource.*;
 
-import java.util.BitSet;
 
-
-public class FingerprinterResource extends Resource {
+public class MWResource extends Resource {
 
     String smiles = "";
-    String type;
 
-    public FingerprinterResource(Context context, Request request, Response response) {
+    public MWResource(Context context, Request request, Response response) {
         super(context, request, response);
         smiles = Reference.decode((String) request.getAttributes().get("smiles"));
-        type = (String) request.getAttributes().get("type");
         getVariants().add(new Variant(MediaType.TEXT_PLAIN));
     }
 
@@ -44,20 +38,9 @@ public class FingerprinterResource extends Resource {
             try {
                 mol = sp.parseSmiles(smiles);
                 AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(mol);
-                CDKHueckelAromaticityDetector.detectAromaticity(mol);
-                IFingerprinter fp;
-                if (type.equals("std")) fp = new Fingerprinter();
-                else if (type.equals("maccs")) fp = new MACCSFingerprinter();
-                else if (type.equals("estate")) fp = new EStateFingerprinter();
-                else throw new CDKException("Invalid fingerprint type was specified");
-                BitSet bitset = fp.getFingerprint(mol);
-
-                StringBuffer sb = new StringBuffer(fp.getSize());
-                for (int i = 0; i < fp.getSize(); i++) sb.append(0);
-                for (int i = bitset.nextSetBit(0); i >= 0; i = bitset.nextSetBit(i + 1)) {
-                    sb.setCharAt(i, '1');
-                }
-                result = sb.toString();
+                CDKHueckelAromaticityDetector.detectAromaticity(mol);               
+                AtomContainerManipulator.convertImplicitToExplicitHydrogens(mol);
+                result = String.valueOf(MolecularFormulaManipulator.getNaturalExactMass(MolecularFormulaManipulator.getMolecularFormula(mol)));
             } catch (InvalidSmilesException e) {
                 throw new ResourceException(e);
             } catch (CDKException e) {

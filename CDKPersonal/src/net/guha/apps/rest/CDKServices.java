@@ -28,6 +28,8 @@ public class CDKServices extends Application {
 
         router.attach("/fingerprint/{type}/{smiles}", FingerprinterResource.class);
         router.attach("/fingerprint/{smiles}", new Redirector(getContext(), "/fingerprint/std/{smiles}", Redirector.MODE_CLIENT_PERMANENT));
+
+        router.attach("/mw/{smiles}", MWResource.class);
         return router;
     }
 
