@@ -26,9 +26,12 @@ public class CDKServices extends Application {
 
         router.attach("/substruct/{target}/{query}", SubstructureSearchResource.class);
 
+        // fingerprints, using default values. If no type is specified
+        // use the standard fingerprinterit 
         router.attach("/fingerprint/{type}/{smiles}", FingerprinterResource.class);
         router.attach("/fingerprint/{smiles}", new Redirector(getContext(), "/fingerprint/std/{smiles}", Redirector.MODE_CLIENT_PERMANENT));
 
+        // molecular weight and formulae
         router.attach("/mw/{smiles}", MWResource.class);
         router.attach("/mf/{smiles}", MFResource.class);
         return router;
