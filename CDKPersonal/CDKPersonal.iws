@@ -122,7 +122,7 @@
       <file leaf-file-name="DescriptorsResource.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DescriptorsResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="78" selection-start="2067" selection-end="2067" vertical-scroll-proportion="0.7559449">
+            <state line="39" column="18" selection-start="1481" selection-end="1481" vertical-scroll-proportion="0.45556948">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -144,7 +144,7 @@
       <file leaf-file-name="CDKServices.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="34" selection-start="1282" selection-end="1282" vertical-scroll-proportion="0.019132653">
+            <state line="32" column="34" selection-start="1282" selection-end="1282" vertical-scroll-proportion="0.47831634">
               <folding />
             </state>
           </provider>
@@ -1039,19 +1039,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="34" selection-start="1282" selection-end="1282" vertical-scroll-proportion="0.019132653">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DescriptorResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="39" column="41" selection-start="1606" selection-end="1606" vertical-scroll-proportion="0.5494368">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="34" selection-start="1282" selection-end="1282" vertical-scroll-proportion="0.47831634">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1066,7 +1066,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DescriptorsResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="78" selection-start="2067" selection-end="2067" vertical-scroll-proportion="0.7559449">
+        <state line="39" column="18" selection-start="1481" selection-end="1481" vertical-scroll-proportion="0.45556948">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

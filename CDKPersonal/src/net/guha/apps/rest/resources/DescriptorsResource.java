@@ -31,10 +31,14 @@ public class DescriptorsResource extends Resource {
     @Override
     public Representation represent(Variant variant) throws ResourceException {
         Representation representation = null;
-        String result = "";
         try {
             String[] names = DescriptorUtils.getAvailableDescriptorNames("all");
-            representation = new StringRepresentation(namesToXml(names), MediaType.TEXT_XML);
+            if (variant.getMediaType().equals(MediaType.TEXT_PLAIN)) {
+                StringBuffer result = new StringBuffer();
+                for (String s : names) result.append(s + "\n");
+                representation = new StringRepresentation(result, MediaType.TEXT_PLAIN);
+            } else
+                representation = new StringRepresentation(namesToXml(names), MediaType.TEXT_XML);
         } catch (CDKException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         } catch (MalformedURLException e) {
@@ -49,7 +53,7 @@ public class DescriptorsResource extends Resource {
         Element root = new Element("descriptor-list");
         for (String s : names) {
             Element element = new Element("descriptor-ref");
-            element.addAttribute(new Attribute("href", host + "cdk/descriptor/"+s));
+            element.addAttribute(new Attribute("href", host + "cdk/descriptor/" + s));
             root.appendChild(element);
         }
         return root.toXML();
