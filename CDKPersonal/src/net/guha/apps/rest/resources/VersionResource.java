@@ -18,6 +18,12 @@ public class VersionResource extends Resource {
 
     @Override
     public Representation represent(Variant variant) throws ResourceException {
-        return new StringRepresentation(Constants.CDKREST_VERSION + " 'Rajarshi Guha'", MediaType.TEXT_PLAIN);
+        String java_version = System.getProperty("java.runtime.version");
+        String os = System.getProperty("os.name");
+        return new StringRepresentation(Constants.CDKREST_VERSION +
+                " JRE:" +
+                java_version +
+                " OS:" +
+                os, MediaType.TEXT_PLAIN);
     }
 }
