@@ -92,8 +92,8 @@
       <property name="field_breakpoints_groupByClasses" value="true" />
       <property name="method_breakpoints_groupByClasses" value="true" />
       <property name="exception_breakpoints_viewId" value="TABLE" />
-      <property name="exception_breakpoints_groupByClasses" value="true" />
       <property name="field_breakpoints_viewId" value="TABLE" />
+      <property name="exception_breakpoints_groupByClasses" value="true" />
       <property name="method_breakpoints_groupByMethods" value="false" />
     </ui_properties>
   </component>
@@ -119,10 +119,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DescriptorsResource.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DescriptorsResource.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DescriptorsResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="0" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.17307693">
+            <state line="33" column="70" selection-start="1230" selection-end="1230" vertical-scroll-proportion="0.6057572">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DescriptorResource.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DescriptorResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="41" selection-start="1606" selection-end="1606" vertical-scroll-proportion="0.5494368">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DescriptorUtils.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/DescriptorUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="82" column="18" selection-start="3446" selection-end="3446" vertical-scroll-proportion="0.3112245">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -133,10 +155,8 @@
       <file leaf-file-name="CDKServices.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="34" selection-start="1282" selection-end="1282" vertical-scroll-proportion="0.49358973">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="32" column="34" selection-start="1282" selection-end="1282" vertical-scroll-proportion="0.019132653">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -315,8 +335,8 @@
     <property name="cvs_file_history_flatOrder2" value="2" />
     <property name="cvs_file_history_flatOrder3" value="3" />
     <property name="cvs_file_history_flatOrder0" value="0" />
-    <property name="cvs_file_history_flatOrder1" value="1" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="false" />
+    <property name="cvs_file_history_flatOrder1" value="1" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
   </component>
@@ -352,6 +372,55 @@
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
     </tempConfiguration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote">
+      <option name="WORKING_DIRECTORY" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="8080" />
+      <option name="LOCAL" value="false" />
+      <option name="OPEN_IN_BROWSER" value="true" />
+      <option name="OPEN_IN_BROWSER_URL" value="/" />
+      <option name="COMMON_VM_ARGUMENTS" value="" />
+      <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
+      <option name="BASE_DIRECTORY_NAME" value="" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -372,18 +441,6 @@
       <method>
         <option name="Make" value="true" />
       </method>
-    </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote">
-      <option name="WORKING_DIRECTORY" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="8080" />
-      <option name="LOCAL" value="false" />
-      <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="/" />
-      <option name="COMMON_VM_ARGUMENTS" value="" />
-      <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
-      <option name="BASE_DIRECTORY_NAME" value="" />
-      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
       <module name="" />
@@ -409,43 +466,6 @@
       <option name="PROPERTIES_FILE" />
       <properties />
       <listeners />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
       <method>
         <option name="Make" value="true" />
       </method>
@@ -711,34 +731,20 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="CDKServices" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" value="net.guha.apps.rest.CDKServices" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="CDKPersonal" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-    </configuration>
     <list size="13">
-      <item index="0" class="java.lang.String" itemvalue="Application.Fingerprinting" />
-      <item index="1" class="java.lang.String" itemvalue="Application.CLT" />
-      <item index="2" class="java.lang.String" itemvalue="Application.smilestest" />
-      <item index="3" class="java.lang.String" itemvalue="Application.ShapesDemo2D" />
-      <item index="4" class="java.lang.String" itemvalue="Application.AtomTypeQA" />
-      <item index="5" class="java.lang.String" itemvalue="Application.MomentSimilarity" />
-      <item index="6" class="java.lang.String" itemvalue="Application.simmat" />
-      <item index="7" class="java.lang.String" itemvalue="Application.sims" />
-      <item index="8" class="java.lang.String" itemvalue="JUnit.SearchBruteForceTest" />
-      <item index="9" class="java.lang.String" itemvalue="JUnit.ConfSearchUtilsTest" />
-      <item index="10" class="java.lang.String" itemvalue="Applet.AssayNetwork" />
-      <item index="11" class="java.lang.String" itemvalue="Applet.ClusteringDemo" />
-      <item index="12" class="java.lang.String" itemvalue="Application.RESTApplications" />
+      <item index="0" class="java.lang.String" itemvalue="Application.CDKServices" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Fingerprinting" />
+      <item index="2" class="java.lang.String" itemvalue="Application.CLT" />
+      <item index="3" class="java.lang.String" itemvalue="Application.smilestest" />
+      <item index="4" class="java.lang.String" itemvalue="Application.ShapesDemo2D" />
+      <item index="5" class="java.lang.String" itemvalue="Application.AtomTypeQA" />
+      <item index="6" class="java.lang.String" itemvalue="Application.MomentSimilarity" />
+      <item index="7" class="java.lang.String" itemvalue="Application.simmat" />
+      <item index="8" class="java.lang.String" itemvalue="Application.sims" />
+      <item index="9" class="java.lang.String" itemvalue="JUnit.SearchBruteForceTest" />
+      <item index="10" class="java.lang.String" itemvalue="JUnit.ConfSearchUtilsTest" />
+      <item index="11" class="java.lang.String" itemvalue="Applet.AssayNetwork" />
+      <item index="12" class="java.lang.String" itemvalue="Applet.ClusteringDemo" />
     </list>
   </component>
   <component name="StarteamConfiguration">
@@ -833,7 +839,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24938676" order="2" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
       <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37228915" order="2" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37228915" order="2" />
       <window_info id="JarSpy" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="File View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Dependency Cycles" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
@@ -950,13 +956,6 @@
     <option name="myLastEditedConfigurable" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/libs/org.restlet.jar!/org/restlet/Component.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="16" selection-start="3497" selection-end="3497" vertical-scroll-proportion="0.36862245">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../cdk/branches/cdk-1.2.x/src/main/org/openscience/cdk/tools/CDKHydrogenAdder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="107" column="16" selection-start="4351" selection-end="4351" vertical-scroll-proportion="0.33290815">
@@ -1053,7 +1052,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="34" selection-start="1282" selection-end="1282" vertical-scroll-proportion="0.49358973">
+        <state line="32" column="34" selection-start="1282" selection-end="1282" vertical-scroll-proportion="0.019132653">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DescriptorsResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="70" selection-start="1230" selection-end="1230" vertical-scroll-proportion="0.6057572">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/DescriptorUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="18" selection-start="3446" selection-end="3446" vertical-scroll-proportion="0.3112245">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1062,16 +1077,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DescriptorResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="1215" selection-end="1215" vertical-scroll-proportion="0.525641">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DescriptorsResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.17307693">
+        <state line="39" column="41" selection-start="1606" selection-end="1606" vertical-scroll-proportion="0.5494368">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
