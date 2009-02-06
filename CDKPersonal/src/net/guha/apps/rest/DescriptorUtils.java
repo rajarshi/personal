@@ -199,15 +199,5 @@ public class DescriptorUtils {
         }
         Document descriptorDoc = new Document(root);
         return descriptorDoc.toXML();
-    }
-
-    public static String namesToXml(String[] names) {
-        Element root = new Element("descriptor-list");
-        for (String s : names) {
-            Element element = new Element("descriptor-ref");
-            element.addAttribute(new Attribute("href", s));
-            root.appendChild(element);
-        }
-        return root.toXML();
-    }
+    } 
 }

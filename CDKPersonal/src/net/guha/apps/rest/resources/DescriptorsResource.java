@@ -11,6 +11,9 @@ import org.restlet.resource.*;
 
 import java.net.MalformedURLException;
 
+import nu.xom.Element;
+import nu.xom.Attribute;
+
 
 public class DescriptorsResource extends Resource {
 
@@ -31,19 +34,26 @@ public class DescriptorsResource extends Resource {
         String result = "";
         try {
             String[] names = DescriptorUtils.getAvailableDescriptorNames("all");
-            representation = new StringRepresentation(DescriptorUtils.namesToXml(names), MediaType.TEXT_XML);
+            representation = new StringRepresentation(namesToXml(names), MediaType.TEXT_XML);
         } catch (CDKException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         } catch (MalformedURLException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
-
         return representation;
     }
 
- 
-
-
+    public String namesToXml(String[] names) {
+        String host = "http://" + getRequest().getHostRef().getHostDomain() + ":" +
+                getRequest().getHostRef().getHostPort() + "/";
+        Element root = new Element("descriptor-list");
+        for (String s : names) {
+            Element element = new Element("descriptor-ref");
+            element.addAttribute(new Attribute("href", host + "cdk/descriptor/"+s));
+            root.appendChild(element);
+        }
+        return root.toXML();
+    }
 
 
 }

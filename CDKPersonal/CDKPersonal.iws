@@ -119,21 +119,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DescriptorsResource.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="DescriptorsResource.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DescriptorsResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="70" selection-start="1230" selection-end="1230" vertical-scroll-proportion="0.6057572">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DescriptorResource.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DescriptorResource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="41" selection-start="1606" selection-end="1606" vertical-scroll-proportion="0.5494368">
+            <state line="51" column="78" selection-start="2067" selection-end="2067" vertical-scroll-proportion="0.7559449">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -144,7 +133,7 @@
       <file leaf-file-name="DescriptorUtils.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/DescriptorUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="18" selection-start="3446" selection-end="3446" vertical-scroll-proportion="0.3112245">
+            <state line="201" column="5" selection-start="9588" selection-end="9588" vertical-scroll-proportion="0.8469388">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1057,9 +1046,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DescriptorsResource.java">
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DescriptorResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="70" selection-start="1230" selection-end="1230" vertical-scroll-proportion="0.6057572">
+        <state line="39" column="41" selection-start="1606" selection-end="1606" vertical-scroll-proportion="0.5494368">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1068,16 +1057,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/DescriptorUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="18" selection-start="3446" selection-end="3446" vertical-scroll-proportion="0.3112245">
+        <state line="201" column="5" selection-start="9588" selection-end="9588" vertical-scroll-proportion="0.8469388">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DescriptorResource.java">
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DescriptorsResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="41" selection-start="1606" selection-end="1606" vertical-scroll-proportion="0.5494368">
+        <state line="51" column="78" selection-start="2067" selection-end="2067" vertical-scroll-proportion="0.7559449">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
