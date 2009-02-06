@@ -35,11 +35,14 @@ public class DescriptorsResource extends Resource {
             String[] names = DescriptorUtils.getAvailableDescriptorNames("all");
             if (variant.getMediaType().equals(MediaType.TEXT_PLAIN)) {
                 StringBuffer result = new StringBuffer();
-                for (String s : names) result.append(s + "\n");
-                result.deleteCharAt(result.length()-1);
+                for (String s : names) {
+                    if (smiles == null) result.append(getHost() + s + "\n");
+                    else result.append(getHost() + s + "/" + smiles + "\n");
+                }
+                result.deleteCharAt(result.length() - 1);
                 representation = new StringRepresentation(result, MediaType.TEXT_PLAIN);
             } else
-                representation = new StringRepresentation(namesToXml(names), MediaType.TEXT_XML);
+                representation = new StringRepresentation(namesToXml(names, smiles), MediaType.TEXT_XML);
         } catch (CDKException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         } catch (MalformedURLException e) {
@@ -48,13 +51,18 @@ public class DescriptorsResource extends Resource {
         return representation;
     }
 
-    public String namesToXml(String[] names) {
-        String host = "http://" + getRequest().getHostRef().getHostDomain() + ":" +
+    private String getHost() {
+        return "http://" + getRequest().getHostRef().getHostDomain() + ":" +
                 getRequest().getHostRef().getHostPort() + "/";
+    }
+
+    public String namesToXml(String[] names, String extra) {
+        if (extra == null) extra = "";
+        else extra = "/" + extra;
         Element root = new Element("descriptor-list");
         for (String s : names) {
             Element element = new Element("descriptor-ref");
-            element.addAttribute(new Attribute("href", host + "cdk/descriptor/" + s));
+            element.addAttribute(new Attribute("href", getHost() + "cdk/descriptor/" + s + extra));
             root.appendChild(element);
         }
         return root.toXML();
