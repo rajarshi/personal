@@ -40,6 +40,7 @@ public class CDKServices extends Application {
 
         router.attach("/cdk/descriptor/{klass}", DescriptorResource.class);
         router.attach("/cdk/descriptor/{klass}/{smiles}", DescriptorResource.class);
+        router.attach("/cdk/descriptors", DescriptorsResource.class);
         return router;
     }
 

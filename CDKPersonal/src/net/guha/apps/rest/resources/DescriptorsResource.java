@@ -31,85 +31,44 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class DescriptorResource extends Resource {
-    String klass = "";
+public class DescriptorsResource extends Resource {
+
     String smiles;
 
-    public DescriptorResource(Context context, Request request, Response response) {
+    public DescriptorsResource(Context context, Request request, Response response) {
         super(context, request, response);
-        klass = (String) request.getAttributes().get("klass");
-        if (klass != null) klass = Reference.decode(klass);
         smiles = (String) request.getAttributes().get("smiles");
         if (smiles != null) smiles = Reference.decode(smiles);
         getVariants().add(new Variant(MediaType.TEXT_PLAIN));
+        getVariants().add(new Variant(MediaType.TEXT_XML));
+        getVariants().add(new Variant(MediaType.APPLICATION_XML));
     }
 
     @Override
     public Representation represent(Variant variant) throws ResourceException {
         Representation representation = null;
         String result = "";
-        if (klass == null)
-            throw new ResourceException(new CDKException("Must provide a descriptor class and/or SMILES"));
         try {
-            if (klass.startsWith("org") && smiles == null) {
-                result = getDescriptorSpecifications(new String[]{klass});
-                representation = new StringRepresentation(result, MediaType.TEXT_XML);
-            } else if (klass.startsWith("org") && smiles != null) {
-                result = evaluateDescriptors(new String[]{klass}, smiles);
-                representation = new StringRepresentation(result, MediaType.TEXT_XML);
-            }
-        } catch (MalformedURLException e) {
-            throw new ResourceException(new CDKException("Must provide a descriptor class or SMILES"));
+            String[] names = getAvailableDescriptorNames("all");
+            representation = new StringRepresentation(namesToXml(names), MediaType.TEXT_XML);
         } catch (CDKException e) {
-            throw new ResourceException(new CDKException("Must provide a descriptor class or SMILES"));
-        } catch (ClassNotFoundException e) {
-            throw new ResourceException(new CDKException("Invalid descriptor class"));
-        } catch (IllegalAccessException e) {
-            throw new ResourceException(new CDKException("Must provide a descriptor class or SMILES"));
-        } catch (InstantiationException e) {
-            throw new ResourceException(new CDKException("Error loading descriptor class"));
-        } catch (IOException e) {
-            throw new ResourceException(new CDKException("Error loading descriptor dictionary"));
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        } catch (MalformedURLException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
+
         return representation;
     }
 
-    public String getDescriptorSpecifications(String[] classNames) throws MalformedURLException, CDKException, ClassNotFoundException, IllegalAccessException, InstantiationException {
-        if (classNames == null || classNames.length == 0) classNames = getAvailableDescriptorNames("");
-        Element root = new Element("DescriptorSpecificationList");
-        for (String className : classNames) {
-            Class klass = Class.forName(className);
-            IMolecularDescriptor descriptor = (IMolecularDescriptor) klass.newInstance();
-            DescriptorSpecification spec = descriptor.getSpecification();
-
-            Element element = new Element("DescriptorSpecification");
-            element.addAttribute(new Attribute("class", className));
-
-            Element impid = new Element("ImplementationIdentifier");
-            impid.appendChild(spec.getImplementationIdentifier());
-
-            Element imptitle = new Element("ImplementationTitle");
-            imptitle.appendChild(spec.getImplementationTitle());
-
-            Element impvendor = new Element("ImplementationVendor");
-            impvendor.appendChild(spec.getImplementationVendor());
-
-            Element specref = new Element("SpecificationReference");
-            specref.appendChild(spec.getSpecificationReference());
-
-            element.appendChild(specref);
-            element.appendChild(imptitle);
-            element.appendChild(impid);
-            element.appendChild(impvendor);
-
+    public String namesToXml(String[] names) {
+        Element root = new Element("descriptor-list");
+        for (String s: names) {
+            Element element = new Element("descriptor-ref");
+            element.addAttribute(new Attribute("href", s));
             root.appendChild(element);
         }
-
-        Document descriptorDoc = new Document(root);
-        return descriptorDoc.toXML();
-
+        return root.toXML();
     }
-
     /**
      * Get a list of the descriptor names.
      * <p/>
