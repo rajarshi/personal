@@ -36,6 +36,7 @@ public class DescriptorsResource extends Resource {
             if (variant.getMediaType().equals(MediaType.TEXT_PLAIN)) {
                 StringBuffer result = new StringBuffer();
                 for (String s : names) result.append(s + "\n");
+                result.deleteCharAt(result.length()-1);
                 representation = new StringRepresentation(result, MediaType.TEXT_PLAIN);
             } else
                 representation = new StringRepresentation(namesToXml(names), MediaType.TEXT_XML);

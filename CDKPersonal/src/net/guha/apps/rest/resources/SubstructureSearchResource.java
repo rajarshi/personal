@@ -100,6 +100,7 @@ public class SubstructureSearchResource extends Resource {
                 result.append("fail\n");
             }
         }
+        result.deleteCharAt(result.length()-1);
         return result.toString();
     }
 }
