@@ -50,6 +50,8 @@ public class SubstructureSearchResource extends Resource {
             } catch (CDKException e) {
                 throw new ResourceException(e);
             }
+            if (result.equals("fail")) getResponse().setStatus(Status.CLIENT_ERROR_BAD_REQUEST);
+            else getResponse().setStatus(Status.SUCCESS_OK);
             representation = new StringRepresentation(result, MediaType.TEXT_PLAIN);
         }
         return representation;

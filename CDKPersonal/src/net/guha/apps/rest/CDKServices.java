@@ -12,17 +12,21 @@ import java.util.logging.Logger;
 
 public class CDKServices extends Application {
 
+    static final String CDKREST_VERSION = "0.1";
+    
     private static Logger logger = Logger.getLogger("net.guha");
 
     public synchronized Restlet createRoot() {
         Router router = new Router(getContext());
 
+        router.attach("/cdk", VersionResource.class);
+        
         // setup depiction service
         router.attach("/cdk/depict/{width}/{height}/{smiles}", DepictionResource.class);
         router.attach("/cdk/depict/{smiles}", new Redirector(getContext(), "/cdk/depict/200/200/{smiles}", Redirector.MODE_CLIENT_PERMANENT));
 
-        router.attach("/cdk/descriptors/tpsa/{smiles}", TPSAResource.class);
-        router.attach("/cdk/descriptors/xlogp/{smiles}", TPSAResource.class);
+        router.attach("/cdk/descriptor/tpsa/{smiles}", TPSAResource.class);
+        router.attach("/cdk/descriptor/xlogp/{smiles}", TPSAResource.class);
 
         // the second route allows for POST requests where we match
         // multiple SMILES

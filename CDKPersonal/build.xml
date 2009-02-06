@@ -16,7 +16,10 @@
     <property name="project.classpath" value="project.libs" />
 
     <target id="clean" name="clean">
-	<delete dir="${build.dir}" />
+      <delete dir="${build.dir}" />
+      <delete>
+	<fileset dir="." includes="cdkrest-src*" />
+      </delete>
     </target>
 
     <!-- for internal use -->
@@ -48,27 +51,36 @@
 	</jar>
     </target>
 
-    <target id="srcdist" name="srcdist" depends="clean">
-	<loadfile property="version.line" srcfile="src/main/java/net/claribole/zgrviewer/Messages.java">
+    <target id="srcdist-rest" name="srcdist-rest" depends="clean">
+	<loadfile property="version.line" srcfile="src/net/guha/apps/rest/CDKServices.java">
 	    <filterchain>
 		<linecontainsregexp>
-		    <regexp pattern="static final String SALI_VERSION ="/>
+		    <regexp pattern="static final String CDKREST_VERSION ="/>
 		</linecontainsregexp>
 	    </filterchain>
 	</loadfile>
 	<propertyregex property="version" input="${version.line}"
-		       regexp="([0-9]*\.[0-9]*\.[0-9]*)"
+		       regexp="([0-9]+?\.[0-9]+?)"
 		       select="\1"/>
 	<tar
-	    destfile="sali-src-${version}.tgz"
+	    destfile="cdkrest-src-${version}.tgz"
 	    basedir="${basedir}"
 	    compression="gzip"
-	    excludes=".git/**, .gitignore/**, *.ipr, *.iws, *.iml">
+	    excludes=".git/**, .gitignore/**, *.ipr, *.iws, *.iml, src/**, cdkrest*, module* nohup*">
+	  <fileset dir=".">
+	    <include name="src/net/guha/apps/rest/**" />
+	    <include name="COPYING" />
+	  </fileset>
 	</tar>
 	<zip
-	    zipfile="sali-src-${version}.zip"
+	    zipfile="cdkrest-src-${version}.zip"
 	    basedir="${basedir}"
-	    excludes=".git/**, .gitignore/**, *.ipr, *.iws, *.iml, sali-src-${version}.tgz">
+	    excludes=".git/**, .gitignore/**, *.ipr, *.iws, *.iml, src/**, cdkrest*, module* nohup*">
+	  <fileset dir=".">
+	    <include name="src/net/guha/apps/rest/**" />
+	    <include name="COPYING" />
+	  </fileset>
+	  
 	</zip>
     </target>
 
@@ -80,9 +92,10 @@
 	<echo message=" " />
 	<echo message="info           This message" />
 	<echo message="clean          Remove build directory" />
+	<echo message="                               " />
 	<echo message="compile-rest   Compile CDK REST sources" />
+	<echo message="srcdist-rest   Generate source distribution" />
 	<echo message="rest           Build CDK REST jar file" />
-	<echo message="srcdist   Generate source distribution" />
     </target>
 
 </project>
