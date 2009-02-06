@@ -33,6 +33,7 @@ public class CDKServices extends Application {
         // use the standard fingerprinterit 
         router.attach("/cdk/fingerprint/{type}/{smiles}", FingerprinterResource.class);
         router.attach("/cdk/fingerprint/{smiles}", new Redirector(getContext(), "/cdk/fingerprint/std/{smiles}", Redirector.MODE_CLIENT_PERMANENT));
+        router.attach("/cdk/fingerprint", FingerprinterResource.class);
 
         // molecular weight and formulae
         router.attach("/cdk/mw/{smiles}", MWResource.class);
