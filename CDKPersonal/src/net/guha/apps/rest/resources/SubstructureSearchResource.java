@@ -69,7 +69,7 @@ public class SubstructureSearchResource extends Resource {
     public void acceptRepresentation(Representation representation) throws ResourceException {
         if (representation.getMediaType().equals(MediaType.APPLICATION_WWW_FORM)) {
             Form form = new Form(representation);
-            String query = form.getFirstValue("klass");
+            String query = form.getFirstValue("query");
             String targets = form.getFirstValue("target");
             if (query == null || targets == null) throw new ResourceException(new CDKException("No form elements specified"));
             String[] smiles = targets.split(",");
