@@ -57,11 +57,17 @@ public class DescriptorsResource extends Resource {
     }
 
     public String namesToXml(String[] names, String extra) {
+        String elemContainer = "specification-list";
+	String elemName = "specification-ref";
         if (extra == null) extra = "";
-        else extra = "/" + extra;
-        Element root = new Element("descriptor-list");
+        else {
+		extra = "/" + extra;
+		elemContainer = "descriptor-list";
+		elemName = "descriptor-ref";
+	}
+        Element root = new Element(elemContainer);
         for (String s : names) {
-            Element element = new Element("descriptor-ref");
+            Element element = new Element(elemName);
             element.addAttribute(new Attribute("href", getHost() + "cdk/descriptor/" + s + extra));
             root.appendChild(element);
         }
