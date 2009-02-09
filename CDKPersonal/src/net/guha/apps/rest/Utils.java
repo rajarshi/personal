@@ -1,29 +1,31 @@
 package net.guha.apps.rest;
 
-import org.openscience.cdk.exception.CDKException;
-import org.openscience.cdk.exception.InvalidSmilesException;
-import org.openscience.cdk.qsar.DescriptorEngine;
-import org.openscience.cdk.qsar.IMolecularDescriptor;
-import org.openscience.cdk.qsar.DescriptorValue;
-import org.openscience.cdk.qsar.DescriptorSpecification;
-import org.openscience.cdk.qsar.result.*;
-import org.openscience.cdk.interfaces.IAtomContainer;
-import org.openscience.cdk.smiles.SmilesParser;
-import org.openscience.cdk.DefaultChemObjectBuilder;
-import org.openscience.cdk.ChemFile;
-import org.openscience.cdk.ChemObject;
-import org.openscience.cdk.tools.manipulator.ChemFileManipulator;
-import org.openscience.cdk.io.MDLV2000Reader;
-
-import java.net.MalformedURLException;
-import java.util.List;
-import java.util.ArrayList;
-import java.io.IOException;
-import java.io.StringReader;
-
-import nu.xom.Element;
 import nu.xom.Attribute;
 import nu.xom.Document;
+import nu.xom.Element;
+import org.openscience.cdk.ChemFile;
+import org.openscience.cdk.ChemObject;
+import org.openscience.cdk.DefaultChemObjectBuilder;
+import org.openscience.cdk.exception.CDKException;
+import org.openscience.cdk.exception.InvalidSmilesException;
+import org.openscience.cdk.interfaces.IAtomContainer;
+import org.openscience.cdk.interfaces.IChemModel;
+import org.openscience.cdk.interfaces.IChemSequence;
+import org.openscience.cdk.interfaces.IMoleculeSet;
+import org.openscience.cdk.io.MDLV2000Reader;
+import org.openscience.cdk.qsar.DescriptorEngine;
+import org.openscience.cdk.qsar.DescriptorSpecification;
+import org.openscience.cdk.qsar.DescriptorValue;
+import org.openscience.cdk.qsar.IMolecularDescriptor;
+import org.openscience.cdk.qsar.result.*;
+import org.openscience.cdk.smiles.SmilesParser;
+import org.openscience.cdk.tools.manipulator.ChemFileManipulator;
+
+import java.io.IOException;
+import java.io.StringReader;
+import java.net.MalformedURLException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Utils {
@@ -205,18 +207,21 @@ public class Utils {
      * Get a molecule from its string representation.
      *
      * @param str A string representing the molecule. Can be a SMILES, Base64
-     * encoded SMILES or an SDF. Note that it assumes the string has been
-     * decoded from the URL encoded form
+     *            encoded SMILES or an SDF. Note that it assumes the string has been
+     *            decoded from the URL encoded form
      * @return The molecule
      * @throws CDKException if there was an error during parsing
      */
     public static IAtomContainer getMolecule(String str) throws CDKException {
         if (str == null) throw new CDKException("Null molecule string");
 
-        IAtomContainer atomContainer  = null;
+        IAtomContainer atomContainer = null;
 
         // first try SMILES or base64 encoded SMILES
         if (str.contains("V2000")) { // parse SDF
+            MDLV2000Reader reader = new MDLV2000Reader(new StringReader(str));
+            ChemFile chemFile = (ChemFile) reader.read(new ChemFile());
+            atomContainer = ChemFileManipulator.getAllAtomContainers(chemFile).get(0);
         } else { // some form of SMILES
             SmilesParser sp = new SmilesParser(DefaultChemObjectBuilder.getInstance());
             try {
