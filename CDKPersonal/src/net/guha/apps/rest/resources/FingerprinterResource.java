@@ -1,5 +1,6 @@
 package net.guha.apps.rest.resources;
 
+import net.guha.apps.rest.Utils;
 import org.openscience.cdk.DefaultChemObjectBuilder;
 import org.openscience.cdk.aromaticity.CDKHueckelAromaticityDetector;
 import org.openscience.cdk.exception.CDKException;
@@ -36,11 +37,9 @@ public class FingerprinterResource extends Resource {
         Representation representation = null;
         String result = "";
         if (variant.getMediaType().equals(MediaType.TEXT_PLAIN)) {
-
-            SmilesParser sp = new SmilesParser(DefaultChemObjectBuilder.getInstance());
-            IMolecule mol = null;
+            IMolecule mol;
             try {
-                mol = sp.parseSmiles(smiles);
+                mol = (IMolecule) Utils.getMolecule(smiles);
                 AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(mol);
                 CDKHueckelAromaticityDetector.detectAromaticity(mol);
                 IFingerprinter fp;
