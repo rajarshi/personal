@@ -1,8 +1,10 @@
 package net.guha.apps.rest.resources;
 
+import net.guha.apps.rest.Utils;
 import org.openscience.cdk.DefaultChemObjectBuilder;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.exception.InvalidSmilesException;
+import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IMolecule;
 import org.openscience.cdk.smiles.SmilesParser;
 import org.openscience.cdk.smiles.smarts.SMARTSQueryTool;
@@ -37,6 +39,10 @@ public class SubstructureSearchResource extends Resource {
         super(context, request, response);
         target = (String) request.getAttributes().get("target");
         query = (String) request.getAttributes().get("query");
+
+        if (target != null) target = Reference.decode(target);
+        if (query != null) query = Reference.decode(query);
+
         getVariants().add(new Variant(MediaType.TEXT_PLAIN));
     }
 
@@ -45,8 +51,9 @@ public class SubstructureSearchResource extends Resource {
         Representation representation = null;
         String result;
         if (variant.getMediaType().equals(MediaType.TEXT_PLAIN)) {
+            if (query == null || target == null) throw new ResourceException(new CDKException("No query or target specified?"));
             try {
-                result = doMatch(new String[]{target}, query);
+                result = doMatch(Utils.getMolecule(target), query);
             } catch (CDKException e) {
                 throw new ResourceException(e);
             }
@@ -74,7 +81,7 @@ public class SubstructureSearchResource extends Resource {
             if (query == null || targets == null)
                 throw new ResourceException(new CDKException("No form elements specified"));
             String[] smiles = targets.split(",");
-            String result = null;
+            String result;
             try {
                 result = doMatch(smiles, query);
             } catch (CDKException e) {
@@ -87,11 +94,23 @@ public class SubstructureSearchResource extends Resource {
         }
     }
 
+    private String doMatch(IAtomContainer molecule, String query) throws CDKException {
+        SMARTSQueryTool sqt = new SMARTSQueryTool("C");
+        try {
+            sqt.setSmarts(Reference.decode(query));
+        } catch (CDKException e) {
+            throw new CDKException("Invalid SMARTS string");
+        }
+        String result;
+        if (sqt.matches(molecule)) result = "true";
+        else result = "false";
+        return result;
+    }
+
     private String doMatch(String[] smiles, String query) throws CDKException {
         SmilesParser sp = new SmilesParser(DefaultChemObjectBuilder.getInstance());
         SMARTSQueryTool sqt = new SMARTSQueryTool("C");
-        if (query == null) throw new CDKException("No query pattern specified");
-        sqt.setSmarts(Reference.decode(query));
+        sqt.setSmarts(query);
         StringBuffer result = new StringBuffer();
         for (String s : smiles) {
             s = Reference.decode(s);

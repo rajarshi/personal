@@ -1,5 +1,6 @@
 package net.guha.apps.rest.resources;
 
+import net.guha.apps.rest.Utils;
 import org.openscience.cdk.DefaultChemObjectBuilder;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.exception.InvalidSmilesException;
@@ -30,11 +31,10 @@ public class MFResource extends Resource {
     public Representation represent(Variant variant) throws ResourceException {
         Representation representation = null;
         String result = "";
-
-        SmilesParser sp = new SmilesParser(DefaultChemObjectBuilder.getInstance());
+        
         IMolecule mol;
         try {
-            mol = sp.parseSmiles(smiles);
+            mol = (IMolecule) Utils.getMolecule(smiles);
             AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(mol);
             AtomContainerManipulator.convertImplicitToExplicitHydrogens(mol);
         } catch (InvalidSmilesException e) {
