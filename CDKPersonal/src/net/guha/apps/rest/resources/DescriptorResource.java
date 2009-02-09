@@ -1,6 +1,7 @@
 package net.guha.apps.rest.resources;
 
 import net.guha.apps.rest.DescriptorUtils;
+import net.guha.apps.rest.Utils;
 import org.openscience.cdk.exception.CDKException;
 import org.restlet.Context;
 import org.restlet.data.MediaType;
@@ -34,10 +35,10 @@ public class DescriptorResource extends Resource {
             throw new ResourceException(new CDKException("Must provide a descriptor class and/or SMILES"));
         try {
             if (klass.startsWith("org") && smiles == null) {
-                result = DescriptorUtils.getDescriptorSpecifications(new String[]{klass});
+                result = Utils.getDescriptorSpecifications(new String[]{klass});
                 representation = new StringRepresentation(result, MediaType.TEXT_XML);
             } else if (klass.startsWith("org") && smiles != null) {
-                result = DescriptorUtils.evaluateDescriptors(new String[]{klass}, smiles);
+                result = Utils.evaluateDescriptors(new String[]{klass}, smiles);
                 representation = new StringRepresentation(result, MediaType.TEXT_XML);
             }
         } catch (MalformedURLException e) {

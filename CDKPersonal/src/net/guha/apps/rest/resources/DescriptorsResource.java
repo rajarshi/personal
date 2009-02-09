@@ -1,6 +1,8 @@
 package net.guha.apps.rest.resources;
 
-import net.guha.apps.rest.DescriptorUtils;
+import net.guha.apps.rest.Utils;
+import nu.xom.Attribute;
+import nu.xom.Element;
 import org.openscience.cdk.exception.CDKException;
 import org.restlet.Context;
 import org.restlet.data.MediaType;
@@ -10,9 +12,6 @@ import org.restlet.data.Response;
 import org.restlet.resource.*;
 
 import java.net.MalformedURLException;
-
-import nu.xom.Element;
-import nu.xom.Attribute;
 
 
 public class DescriptorsResource extends Resource {
@@ -32,7 +31,7 @@ public class DescriptorsResource extends Resource {
     public Representation represent(Variant variant) throws ResourceException {
         Representation representation = null;
         try {
-            String[] names = DescriptorUtils.getAvailableDescriptorNames("all");
+            String[] names = Utils.getAvailableDescriptorNames("all");
             if (variant.getMediaType().equals(MediaType.TEXT_PLAIN)) {
                 StringBuffer result = new StringBuffer();
                 for (String s : names) {

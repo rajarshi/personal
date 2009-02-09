@@ -26,7 +26,7 @@ import nu.xom.Attribute;
 import nu.xom.Document;
 
 
-public class DescriptorUtils {
+public class Utils {
     /**
      * Get a list of the descriptor names.
      * <p/>
