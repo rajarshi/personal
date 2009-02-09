@@ -122,7 +122,7 @@
       <file leaf-file-name="SubstructureSearchResource.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/SubstructureSearchResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="28" selection-start="3529" selection-end="3529" vertical-scroll-proportion="0.9102564">
+            <state line="86" column="28" selection-start="3529" selection-end="3529" vertical-scroll-proportion="0.94666666">
               <folding />
             </state>
           </provider>
@@ -131,7 +131,7 @@
       <file leaf-file-name="Utils.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="222" column="49" selection-start="10549" selection-end="10549" vertical-scroll-proportion="1.0662394">
+            <state line="222" column="49" selection-start="10549" selection-end="10549" vertical-scroll-proportion="1.1088889">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -139,10 +139,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DepictionResource.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DepictionResource.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DepictionResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="47" selection-start="875" selection-end="875" vertical-scroll-proportion="0.49358973">
+            <state line="27" column="47" selection-start="875" selection-end="875" vertical-scroll-proportion="0.5133333">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StructureDiagram.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/StructureDiagram.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="180" column="14" selection-start="6818" selection-end="6818" vertical-scroll-proportion="0.9">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -153,7 +164,7 @@
       <file leaf-file-name="CDKServices.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="34" selection-start="900" selection-end="900" vertical-scroll-proportion="0.60897434">
+            <state line="26" column="34" selection-start="900" selection-end="900" vertical-scroll-proportion="0.6333333">
               <folding />
             </state>
           </provider>
@@ -1032,15 +1043,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/StructureDiagram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="23" selection-start="4622" selection-end="4622" vertical-scroll-proportion="-0.68367344">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/Base64.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="974" column="25" selection-start="41954" selection-end="41954" vertical-scroll-proportion="-1.2051282">
@@ -1050,14 +1052,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/SubstructureSearchResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="28" selection-start="3529" selection-end="3529" vertical-scroll-proportion="0.9102564">
+        <state line="86" column="28" selection-start="3529" selection-end="3529" vertical-scroll-proportion="0.94666666">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="222" column="49" selection-start="10549" selection-end="10549" vertical-scroll-proportion="1.0662394">
+        <state line="222" column="49" selection-start="10549" selection-end="10549" vertical-scroll-proportion="1.1088889">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1066,14 +1068,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="34" selection-start="900" selection-end="900" vertical-scroll-proportion="0.60897434">
+        <state line="26" column="34" selection-start="900" selection-end="900" vertical-scroll-proportion="0.6333333">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DepictionResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="47" selection-start="875" selection-end="875" vertical-scroll-proportion="0.49358973">
+        <state line="27" column="47" selection-start="875" selection-end="875" vertical-scroll-proportion="0.5133333">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/StructureDiagram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="180" column="14" selection-start="6818" selection-end="6818" vertical-scroll-proportion="0.9">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

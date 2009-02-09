@@ -155,6 +155,7 @@ public class StructureDiagram extends JPanel implements IViewEventRelay {
         try {
             AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(molecule);
             CDKHueckelAromaticityDetector.detectAromaticity(molecule);
+            AtomContainerManipulator.removeHydrogens(molecule);            
 
             StructureDiagramGenerator sdg = new StructureDiagramGenerator();
             sdg.setTemplateHandler(new TemplateHandler(DefaultChemObjectBuilder.getInstance()));
@@ -177,6 +178,8 @@ public class StructureDiagram extends JPanel implements IViewEventRelay {
             hub.getIJava2DRenderer().getRenderer2DModel().setUseAntiAliasing(true);
             hub.getIJava2DRenderer().getRenderer2DModel().setIsCompact(false);
             hub.getIJava2DRenderer().getRenderer2DModel().setZoomFactor(scale);
+            //hub.getIJava2DRenderer().getRenderer2DModel().setShowExplicitHydrogens(false);
+            hub.getIJava2DRenderer().getRenderer2DModel().setShowImplicitHydrogens(false);
 
             frame.getContentPane().add(this);
             frame.pack();
