@@ -1,6 +1,5 @@
 package net.guha.apps.rest.resources;
 
-import net.guha.apps.rest.DescriptorUtils;
 import net.guha.apps.rest.Utils;
 import org.openscience.cdk.exception.CDKException;
 import org.restlet.Context;
