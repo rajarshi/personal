@@ -199,5 +199,38 @@ public class Utils {
         }
         Document descriptorDoc = new Document(root);
         return descriptorDoc.toXML();
-    } 
+    }
+
+    /**
+     * Get a molecule from its string representation.
+     *
+     * @param str A string representing the molecule. Can be a SMILES, Base64
+     * encoded SMILES or an SDF. Note that it assumes the string has been
+     * decoded from the URL encoded form
+     * @return The molecule
+     * @throws CDKException if there was an error during parsing
+     */
+    public static IAtomContainer getMolecule(String str) throws CDKException {
+        if (str == null) throw new CDKException("Null molecule string");
+
+        IAtomContainer atomContainer  = null;
+
+        // first try SMILES or base64 encoded SMILES
+        if (str.contains("V2000")) { // parse SDF
+        } else { // some form of SMILES
+            SmilesParser sp = new SmilesParser(DefaultChemObjectBuilder.getInstance());
+            try {
+                atomContainer = sp.parseSmiles(str);
+            } catch (InvalidSmilesException e) { // OK, maybe Base64?
+                byte[] bytes = Base64.decode(str);
+                str = new String(bytes);
+                try {
+                    atomContainer = sp.parseSmiles(str);
+                } catch (InvalidSmilesException e1) {
+                    throw new CDKException("Invalid SMILES string specified");
+                }
+            }
+        }
+        return atomContainer;
+    }
 }

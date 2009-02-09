@@ -1,6 +1,7 @@
 package net.guha.apps.rest.resources;
 
 import net.guha.apps.rest.StructureDiagram;
+import net.guha.apps.rest.Utils;
 import net.guha.apps.rest.representations.ByteRepresentation;
 import org.openscience.cdk.exception.CDKException;
 import org.restlet.Context;
@@ -44,7 +45,7 @@ public class DepictionResource extends Resource {
             StructureDiagram sdg = new StructureDiagram();
             byte[] image;
             try {
-                image = sdg.getDiagram(smiles, width, height, 0.9);
+                image = sdg.getDiagram(Utils.getMolecule(smiles), width, height, 0.9);
             } catch (CDKException e) {
                 throw new ResourceException(e);
             }

@@ -128,10 +128,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Utils.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Utils.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="13" selection-start="972" selection-end="972" vertical-scroll-proportion="0.095663264">
+            <state line="224" column="0" selection-start="10515" selection-end="10515" vertical-scroll-proportion="0.7130102">
               <folding />
             </state>
           </provider>
@@ -140,16 +140,7 @@
       <file leaf-file-name="DepictionResource.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DepictionResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="13" selection-start="562" selection-end="562" vertical-scroll-proportion="0.09386733">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DescriptorResource.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DescriptorResource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="38" selection-end="38" vertical-scroll-proportion="-0.16395494">
+            <state line="47" column="63" selection-start="1863" selection-end="1863" vertical-scroll-proportion="0.6747449">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -818,7 +809,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12428454" order="1" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12365145" order="1" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32771084" order="1" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35697114" order="4" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
@@ -826,11 +817,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855567" order="8" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32048193" order="8" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19087137" order="1" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19087137" order="1" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21244814" order="0" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2373444" order="0" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2373444" order="0" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24938676" order="2" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
@@ -952,20 +943,6 @@
     <option name="myLastEditedConfigurable" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/StructureDiagram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="13" selection-start="1183" selection-end="1183" vertical-scroll-proportion="0.018773466">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/org.restlet.jar!/org/restlet/data/MediaType.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="19" selection-start="160" selection-end="160" vertical-scroll-proportion="-0.8992347">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/libs/org.restlet.jar!/org/restlet/resource/XmlRepresentation.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="22" selection-start="167" selection-end="167" vertical-scroll-proportion="-0.21045919">
@@ -1040,13 +1017,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="13" selection-start="972" selection-end="972" vertical-scroll-proportion="0.095663264">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DescriptorsResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="0" selection-start="39" selection-end="39" vertical-scroll-proportion="0.037546933">
@@ -1056,19 +1026,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DepictionResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="562" selection-end="562" vertical-scroll-proportion="0.09386733">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DescriptorResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="0" selection-start="38" selection-end="38" vertical-scroll-proportion="-0.16395494">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/StructureDiagram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="132" column="23" selection-start="4622" selection-end="4622" vertical-scroll-proportion="-0.68367344">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/Base64.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="974" column="25" selection-start="41954" selection-end="41954" vertical-scroll-proportion="-1.2051282">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DepictionResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="63" selection-start="1863" selection-end="1863" vertical-scroll-proportion="0.6747449">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="224" column="0" selection-start="10515" selection-end="10515" vertical-scroll-proportion="0.7130102">
+          <folding />
         </state>
       </provider>
     </entry>

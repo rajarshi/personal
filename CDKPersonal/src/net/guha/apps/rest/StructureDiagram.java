@@ -9,6 +9,7 @@ import org.openscience.cdk.controller.ControllerHub;
 import org.openscience.cdk.controller.ControllerModel;
 import org.openscience.cdk.controller.IViewEventRelay;
 import org.openscience.cdk.exception.CDKException;
+import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IChemModel;
 import org.openscience.cdk.interfaces.IMolecule;
 import org.openscience.cdk.interfaces.IMoleculeSet;
@@ -129,14 +130,14 @@ public class StructureDiagram extends JPanel implements IViewEventRelay {
     /**
      * Gets the 2D structure diagram of a SMILES structure.
      *
-     * @param smiles The input molecule
+     * @param molecule The input molecule
      * @param width  The width of the image
      * @param height The height of the image
      * @param scale  The scale of the image
      * @return The bytes representing the JPEG image
      * @throws CDKException if there is an error in parsing the SMILES or generating the image
      */
-    public byte[] getDiagram(String smiles, int width, int height, double scale) throws CDKException {
+    public byte[] getDiagram(IAtomContainer molecule, int width, int height, double scale) throws CDKException {
         if (width <= 0) {
             width = 300;
         }
@@ -152,15 +153,12 @@ public class StructureDiagram extends JPanel implements IViewEventRelay {
 
         ByteArrayOutputStream baos = null;
         try {
-            SmilesParser sp = new SmilesParser(DefaultChemObjectBuilder.getInstance());
-            IMolecule molecule = sp.parseSmiles(smiles);
-
             AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(molecule);
             CDKHueckelAromaticityDetector.detectAromaticity(molecule);
 
             StructureDiagramGenerator sdg = new StructureDiagramGenerator();
             sdg.setTemplateHandler(new TemplateHandler(DefaultChemObjectBuilder.getInstance()));
-            sdg.setMolecule(molecule);
+            sdg.setMolecule((IMolecule) molecule);
             sdg.generateCoordinates(new Vector2d(0, 1));
             mol2d = sdg.getMolecule();
 
