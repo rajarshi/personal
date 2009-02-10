@@ -42,7 +42,7 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
      * @param x   width of the panel
      * @param y   height of the panel
      */
-    public Renderer2DPanel(IAtomContainer mol, int x, int y) {
+    public Renderer2DPanel(IMolecule mol, int x, int y) {
         this(mol, null, x, y, false, "NA", -9999.0);
     }
 
@@ -60,11 +60,11 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
      * @param name         The name of the molecule
      * @param activity     The activity associated with the molecule
      */
-    public Renderer2DPanel(IAtomContainer mol, IAtomContainer needle, int x, int y,
+    public Renderer2DPanel(IMolecule mol, IAtomContainer needle, int x, int y,
                            boolean withHydrogen, String name, double activity) {
         this.title = name;
         this.activity = activity;
-        this.molecule = (IMolecule) mol;
+        this.molecule = mol;
 
         setPreferredSize(new Dimension(x, y));
         setBackground(Color.WHITE);
