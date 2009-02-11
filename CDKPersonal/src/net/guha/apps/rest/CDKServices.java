@@ -26,6 +26,8 @@ public class CDKServices extends Application {
         router.attach("/cdk/depict/{smiles}", new Redirector(getContext(), "/cdk/depict/200/200/{smiles}", Redirector.MODE_CLIENT_PERMANENT));
         router.attach("/cdk/depict", DepictionResource.class);
 
+        router.attach("/cdk/ssdepict/{smiles}/{query}", SSDepictionResource.class);
+
         router.attach("/cdk/descriptor/tpsa/{smiles}", TPSAResource.class);
         router.attach("/cdk/descriptor/xlogp/{smiles}", TPSAResource.class);
 

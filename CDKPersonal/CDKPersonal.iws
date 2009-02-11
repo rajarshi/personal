@@ -119,13 +119,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SSDepictionResource.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SSDepictionResource.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/SSDepictionResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="40" selection-start="2809" selection-end="2809" vertical-scroll-proportion="0.70153064">
+            <state line="44" column="45" selection-start="1800" selection-end="1800" vertical-scroll-proportion="0.18494898">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CDKServices.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="68" column="20" selection-start="3079" selection-end="3079" vertical-scroll-proportion="0.9375">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -355,30 +364,7 @@
       <recent name="net.guha.apps" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Recap">
-    <tempConfiguration default="false" name="Recap" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" value="net.guha.apps.recap.Recap" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="CDKPersonal" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="57621" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </tempConfiguration>
+  <component name="RunManager" selected="Application.CDKServices">
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
@@ -738,6 +724,23 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
+    <configuration default="false" name="CDKServices" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" value="net.guha.apps.rest.CDKServices" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="CDKPersonal" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
     <list size="13">
       <item index="0" class="java.lang.String" itemvalue="Application.Fingerprinting" />
       <item index="1" class="java.lang.String" itemvalue="Application.CLT" />
@@ -751,7 +754,7 @@
       <item index="9" class="java.lang.String" itemvalue="JUnit.ConfSearchUtilsTest" />
       <item index="10" class="java.lang.String" itemvalue="Applet.AssayNetwork" />
       <item index="11" class="java.lang.String" itemvalue="Applet.ClusteringDemo" />
-      <item index="12" class="java.lang.String" itemvalue="Application.Recap" />
+      <item index="12" class="java.lang.String" itemvalue="Application.CDKServices" />
     </list>
   </component>
   <component name="StarteamConfiguration">
@@ -963,15 +966,6 @@
     <option name="myLastEditedConfigurable" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/FingerprinterResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="29" selection-start="912" selection-end="912" vertical-scroll-proportion="0.21045919">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/TPSAResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="25" selection-start="1381" selection-end="1381" vertical-scroll-proportion="0.5408163">
@@ -1082,10 +1076,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/SSDepictionResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="40" selection-start="2809" selection-end="2809" vertical-scroll-proportion="0.70153064">
+        <state line="44" column="45" selection-start="1800" selection-end="1800" vertical-scroll-proportion="0.18494898">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="20" selection-start="3079" selection-end="3079" vertical-scroll-proportion="0.9375">
+          <folding />
         </state>
       </provider>
     </entry>
