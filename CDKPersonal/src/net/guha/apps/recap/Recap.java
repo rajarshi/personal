@@ -246,7 +246,7 @@ public class Recap {
         return bondList;
     }
 
-    protected String[] getUniqueFragments(List<IAtomContainer> frags) {
+    protected String[] getUniqueFragmentsAasSmiles(List<IAtomContainer> frags) {
         SmilesGenerator sg = new SmilesGenerator();
         List<String> cansmi = new ArrayList<String>();
         for (IAtomContainer frag : frags) cansmi.add(sg.createSMILES(frag.getBuilder().newMolecule(frag)));

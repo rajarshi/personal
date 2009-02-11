@@ -63,7 +63,7 @@ public class RecapUI extends JFrame {
         AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(mol);
         Recap recap = new Recap();
         List<IAtomContainer> frags = recap.fragment(mol);
-        String[] fragsmi = recap.getUniqueFragments(frags);
+        String[] fragsmi = recap.getUniqueFragmentsAasSmiles(frags);
 
         List<IAtomContainer> ufrag = new ArrayList<IAtomContainer>();
         ufrag.add(mol);
