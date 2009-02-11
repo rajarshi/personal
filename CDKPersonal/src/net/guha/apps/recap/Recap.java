@@ -11,22 +11,19 @@ import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IBond;
 import org.openscience.cdk.interfaces.IMolecule;
 import org.openscience.cdk.ringsearch.AllRingsFinder;
+import org.openscience.cdk.smiles.SmilesGenerator;
 import org.openscience.cdk.smiles.SmilesParser;
 import org.openscience.cdk.smiles.smarts.SMARTSQueryTool;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
-import javax.swing.*;
-import javax.swing.border.EtchedBorder;
-import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 
 public class Recap {
+    private boolean verbose = false;
+
     SMARTSQueryTool sqt;
     private int minFragSize = 3;
-    private boolean repeatCycle = true;
-
     private String[] patterns = {
             "[NX3][$([CD3]=O)]", // rule 1
             "[OD2][$([CD3]=O)]", //rule 2
@@ -41,20 +38,43 @@ public class Recap {
             "[ND3][$(S(=O)(=O)*)]", // rule 11
     };
 
-    public Recap() throws CDKException {
-        sqt = new SMARTSQueryTool("C");
-    }
+    public List<IAtomContainer> fragment(IAtomContainer atomContainer) throws Exception {
 
-    public List<IAtomContainer> fragment(IAtomContainer atomContainer) throws CDKException {
+        sqt = new SMARTSQueryTool("C");
         AllRingsFinder arf = new AllRingsFinder();
         arf.findAllRings(atomContainer);
 
-        List<IAtomContainer> frags = new ArrayList<IAtomContainer>();
+        List<IAtomContainer> frags = dofrag(atomContainer);
+        List<IAtomContainer> newFrags = new ArrayList<IAtomContainer>();
+        List<IAtomContainer> fragsToDelete = new ArrayList<IAtomContainer>();
+        while (true) {
+            for (IAtomContainer frag : frags) {
+                List<IAtomContainer> tmp = dofrag(frag);
+                if (tmp.size() > 0) {
+                    newFrags.addAll(tmp);
+                    fragsToDelete.add(frag);
+                }
+            }
+            if (fragsToDelete.size() > 0) {
+                for (IAtomContainer frag : fragsToDelete) {
+                    frags.remove(frag);
+                }
+                frags.addAll(newFrags);
+                newFrags.clear();
+                fragsToDelete.clear();
+            } else break;
+        }
+        return frags;
+    }
 
+    private List<IAtomContainer> dofrag(IAtomContainer atomContainer) throws CDKException {
+        List<IAtomContainer> frags = new ArrayList<IAtomContainer>();
         for (int i = 1; i < patterns.length + 1; i++) {
-            List<IAtomContainer> tmp;
+            List<IAtomContainer> tmp = null;
             if (i == 4) {
                 tmp = recapRule04(patterns[i - 1], atomContainer);
+            } else if (i == 10) {
+                continue;
             } else {
                 tmp = recapRule2Atom(patterns[i - 1], atomContainer);
             }
@@ -71,7 +91,7 @@ public class Recap {
         sqt.setSmarts(pattern);
         if (!sqt.matches(atomContainer)) return null;
         List<List<Integer>> matches = sqt.getUniqueMatchingAtoms();
-        System.out.println("rule 1 : " + matches.size());
+        if (verbose) System.out.println("rule " + pattern + " : " + matches.size());
         List<IAtomContainer> ret = new ArrayList<IAtomContainer>();
         for (List<Integer> path : matches) {
             IAtom left = atomContainer.getAtom(path.get(0));
@@ -79,6 +99,7 @@ public class Recap {
             IBond splitBond = atomContainer.getBond(left, right);
             if (splitBond.getFlag(CDKConstants.ISINRING)) continue;
             IAtomContainer[] parts = splitMolecule(atomContainer, splitBond);
+            if (parts[0].getAtomCount() == 1 || parts[1].getAtomCount() == 1) return null;
             ret.add(parts[0]);
             ret.add(parts[1]);
         }
@@ -89,7 +110,7 @@ public class Recap {
         sqt.setSmarts(pattern);
         if (!sqt.matches(atomContainer)) return null;
         List<List<Integer>> matches = sqt.getUniqueMatchingAtoms();
-        System.out.println("rule 4 : " + matches.size());
+        if (verbose) System.out.println("rule " + pattern + " : " + matches.size());
         List<IAtomContainer> ret = new ArrayList<IAtomContainer>();
         for (List<Integer> path : matches) {
             IAtom c = null;
@@ -113,11 +134,11 @@ public class Recap {
 
 
     // TODO find out why it doesn't match
-    private List<IAtomContainer> recapRule09(IAtomContainer atomContainer) throws CDKException {
+    private List<IAtomContainer> recapRule09(String pattern, IAtomContainer atomContainer) throws CDKException {
         sqt.setSmarts("[R0]-[$([NRD3][CR]=O)]");
         if (!sqt.matches(atomContainer)) return null;
         List<List<Integer>> matches = sqt.getUniqueMatchingAtoms();
-        System.out.println("rule 9 : " + matches.size());
+        if (verbose) System.out.println("rule " + pattern + ": " + matches.size());
         List<IAtomContainer> ret = new ArrayList<IAtomContainer>();
         for (List<Integer> path : matches) {
             IAtom left = atomContainer.getAtom(path.get(0));
@@ -188,6 +209,23 @@ public class Recap {
         return bondList;
     }
 
+    private String[] getUniqueFragments(List<IAtomContainer> frags) {
+        SmilesGenerator sg = new SmilesGenerator();
+        List<String> cansmi = new ArrayList<String>();
+        for (IAtomContainer frag : frags) cansmi.add(sg.createSMILES(frag.getBuilder().newMolecule(frag)));
+        Set<String> uniqsmi = new HashSet<String>(cansmi);
+        return uniqsmi.toArray(new String[]{});
+    }
+
+    public void displayFrags(List<IAtomContainer> frags) throws Exception {
+        Renderer2DPanel[] panels = new Renderer2DPanel[frags.size()];
+        for (int i = 0; i < frags.size(); i++)
+            panels[i] = new Renderer2DPanel(Misc.get2DCoords(frags.get(i)), 300, 300);
+        MultiStructurePanel msp = new MultiStructurePanel(panels, 4, 300, 300);
+        msp.setTitle(frags.size() + " fragments");
+        msp.setVisible(true);
+    }
+
     public static void main(String[] args) throws Exception {
         Recap recap = new Recap();
 
@@ -214,16 +252,10 @@ public class Recap {
 
         List<IAtomContainer> f = recap.fragment(mol);
         System.out.println("f.size() = " + f.size());
+        recap.displayFrags(f);
+        String[] cansmi = recap.getUniqueFragments(f);
+        for (String s : cansmi) System.out.println(s);
 
-        Renderer2DPanel[] panels = new Renderer2DPanel[f.size() + 1];
-        panels[0] = new Renderer2DPanel(Misc.get2DCoords(mol), 300, 300);
-        panels[0].setBorder(BorderFactory.createEtchedBorder(
-                EtchedBorder.LOWERED, Color.red, Color.gray));
-
-        for (int i = 0; i < f.size(); i++)
-            panels[i + 1] = new Renderer2DPanel(Misc.get2DCoords(f.get(i)), 300, 300);
-        MultiStructurePanel msp = new MultiStructurePanel(panels, 4, 300, 300);
-        msp.setVisible(true);
 
     }
 }
