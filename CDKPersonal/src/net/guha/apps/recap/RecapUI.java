@@ -87,6 +87,8 @@ public class RecapUI extends JFrame {
         List<IAtomContainer> frags = recap.fragment(mol);
         String[] fragsmi = recap.getUniqueFragmentsAasSmiles(frags);
 
+        for (String s : fragsmi) System.out.println(s);
+        
         List<IAtomContainer> ufrag = new ArrayList<IAtomContainer>();
         ufrag.add(mol);
         for (String s : fragsmi) {

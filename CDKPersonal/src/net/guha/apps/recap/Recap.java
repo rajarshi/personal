@@ -3,13 +3,11 @@ package net.guha.apps.recap;
 import net.guha.util.cdk.Misc;
 import net.guha.util.cdk.MultiStructurePanel;
 import net.guha.util.cdk.Renderer2DPanel;
+import org.openscience.cdk.Bond;
 import org.openscience.cdk.CDKConstants;
 import org.openscience.cdk.DefaultChemObjectBuilder;
 import org.openscience.cdk.exception.CDKException;
-import org.openscience.cdk.interfaces.IAtom;
-import org.openscience.cdk.interfaces.IAtomContainer;
-import org.openscience.cdk.interfaces.IBond;
-import org.openscience.cdk.interfaces.IMolecule;
+import org.openscience.cdk.interfaces.*;
 import org.openscience.cdk.ringsearch.AllRingsFinder;
 import org.openscience.cdk.smiles.SmilesGenerator;
 import org.openscience.cdk.smiles.SmilesParser;
@@ -220,8 +218,14 @@ public class Recap {
     }
 
     private IAtomContainer makeAtomContainer(IAtom atom, List<IBond> parts) {
+        IPseudoAtom pseudoAtom = atom.getBuilder().newPseudoAtom("*");
+
         IAtomContainer partContainer = DefaultChemObjectBuilder.getInstance().newAtomContainer();
         partContainer.addAtom(atom);
+
+        partContainer.addAtom(pseudoAtom);
+        partContainer.addBond(new Bond(atom, pseudoAtom));
+
         for (IBond aBond : parts) {
             for (IAtom bondedAtom : aBond.atoms()) {
                 if (!partContainer.contains(bondedAtom))
