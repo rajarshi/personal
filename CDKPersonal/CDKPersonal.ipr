@@ -246,7 +246,7 @@
       <module fileurl="file://$PROJECT_DIR$/CDKPersonal.iml" filepath="$PROJECT_DIR$/CDKPersonal.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.5" project-jdk-type="JavaSDK" />
   <component name="ResourceManagerContainer">
     <option name="myResourceBundles">
       <value>
@@ -263,6 +263,24 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+  </component>
+  <component name="VcsRevisionGraphProjectComponent">
+    <option name="_useTwoTagConvention" value="true" />
+    <option name="_showTags" value="true" />
+    <option name="_tagNaming" value="TAG_$T_MERGE_$S_TO_$D" />
+    <option name="_tagFilter" value="" />
+    <option name="_branchFilter" />
+    <option name="_showRevisionFilter" value="false" />
+    <option name="_afterDateTimeFilter" value="false" />
+    <option name="_beforeDateTimeFilter" value="false" />
+    <option name="_afterDateTime" value="" />
+    <option name="_beforeDateTime" value="" />
+    <option name="_projectRoot" value="&lt;Use repository root&gt;" />
+    <option name="_trunk" value="trunk" />
+    <option name="_branches" value="branches" />
+    <option name="_tags" value="tags" />
+    <option name="_showTagFilter" value="false" />
+    <option name="_showBranchFilter" value="false" />
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
   <component name="com.intellij.jsf.UserDefinedFacesConfigs">
@@ -287,7 +305,7 @@
         <root url="jar://$PROJECT_DIR$/libs/jai_codec.jar!/" />
         <root url="jar://$PROJECT_DIR$/libs/jai_core.jar!/" />
         <root url="jar://$PROJECT_DIR$/libs/commons-cli-1.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../cdk/branches/cdk-1.2.x-with-jcp/dist/jar/cdk-1.1.4.20090105.jar!/" />
+        <root url="jar://$PROJECT_DIR$/libs/cdk-1.1.4.20090105.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>

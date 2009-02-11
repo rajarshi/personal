@@ -39,12 +39,12 @@ public class Recap {
         arf.findAllRings(atomContainer);
 
         List<IAtomContainer> frags = new ArrayList<IAtomContainer>();
-        frags.addAll(recapRule06(atomContainer));
+        frags.addAll(recapRule02(atomContainer));
         return frags;
     }
 
     private List<IAtomContainer> recapRule01(IAtomContainer atomContainer) throws CDKException {
-        sqt.setSmarts("[NX3]C=O");
+        sqt.setSmarts("[NX3][CD3]=O");
         if (!sqt.matches(atomContainer)) return null;
         List<List<Integer>> matches = sqt.getUniqueMatchingAtoms();
         System.out.println("rule 1 : " + matches.size());
@@ -66,20 +66,15 @@ public class Recap {
     }
 
     private List<IAtomContainer> recapRule02(IAtomContainer atomContainer) throws CDKException {
-        sqt.setSmarts("[OD2]C=O");
+//        sqt.setSmarts("[OD2][CD3]=O");
+        sqt.setSmarts("[OD2][$([CD3]=O)]");
         if (!sqt.matches(atomContainer)) return null;
         List<List<Integer>> matches = sqt.getUniqueMatchingAtoms();
         System.out.println("rule 1 : " + matches.size());
         List<IAtomContainer> ret = new ArrayList<IAtomContainer>();
         for (List<Integer> path : matches) {
-            IAtom left = null;
-            IAtom right = null;
-            for (Integer atomidx : path) {
-                IAtom atom = atomContainer.getAtom(atomidx);
-                if (atom.getSymbol().equals("O") && atom.getAtomTypeName().equals("O.sp3"))
-                    left = atom;
-                if (atom.getSymbol().equals("C")) right = atom;
-            }
+            IAtom left = atomContainer.getAtom(path.get(0));
+            IAtom right = atomContainer.getAtom(path.get(1));
             IBond splitBond = atomContainer.getBond(left, right);
             if (splitBond.getFlag(CDKConstants.ISINRING)) continue;
             IAtomContainer[] parts = splitMolecule(atomContainer, splitBond);
@@ -197,8 +192,8 @@ public class Recap {
 //        String smiles = "N(C)(C)C(=O)CCCC(=O)N(N)C";
 //        String smiles = "CCN(C)CN";
 //        String smiles = "CNSCNN";
-//        String smiles = "CC(=O)OC";
-        String smiles = "CC=CCC=CN";
+        String smiles = "CC(=O)OC";
+//        String smiles = "CC=CCC=CN";
         IMolecule mol = sp.parseSmiles(smiles);
         IBond breakBond = mol.getBond(3);
         AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(mol);
