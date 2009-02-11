@@ -57,10 +57,10 @@ public class RecapUI extends JFrame {
         getContentPane().add(scrollpane, BorderLayout.CENTER);
         getContentPane().add(statusBar, BorderLayout.SOUTH);
 
+        // add some keyboard handling to the text field
         InputMap im = textField.getInputMap();
         im.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), "enter");
         im.put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), "escape");
-
         ActionMap am = textField.getActionMap();
         am.put("enter", new AbstractAction() {
             public void actionPerformed(ActionEvent ae) {
@@ -153,10 +153,6 @@ public class RecapUI extends JFrame {
     }
 
     class StatusBar extends JLabel {
-
-        /**
-         * Creates a new instance of StatusBar
-         */
         public StatusBar() {
             super();
             setMessage("Ready");

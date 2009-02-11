@@ -23,7 +23,7 @@ import java.util.Set;
 
 
 public class Recap {
-    private boolean verbose = false;
+    private boolean verbose = true;
 
     SMARTSQueryTool sqt;
     private int minFragSize = 3;
@@ -36,7 +36,9 @@ public class Recap {
             "C=C", // rule 6
             "[ND4+]-*", // rule 7
             "n[CD4]", // rule 8
-            "[R0]-[$([NRD3][CR]=O)]", // rule 9
+
+            //   [!R]-[$([NRD3][CR]=O)] seems to work but [R0]-[$([NRD3][CR]=O)] does not
+            "[!R]-[$([NRD3][CR]=O)]", // rule 9
             "c-c", // rule 10
             "[ND3][$(S(=O)(=O)*)]", // rule 11
     };
@@ -83,8 +85,6 @@ public class Recap {
             List<IAtomContainer> tmp = null;
             if (i == 4) {
                 tmp = recapRule04(patterns[i - 1], atomContainer);
-            } else if (i == 9) {
-                tmp = recapRule09(patterns[i - 1], atomContainer);
             } else if (i == 10) {
                 continue;
             } else {
@@ -114,7 +114,7 @@ public class Recap {
             if (splitBond.getFlag(CDKConstants.ISINRING)) continue;
 
             // TODO is this correct?
-            if (isTerminal(atomContainer, splitBond)) return null;
+            if (isTerminal(atomContainer, splitBond)) continue;
             
             IAtomContainer[] parts = splitMolecule(atomContainer, splitBond);            
             ret.add(parts[0]);
