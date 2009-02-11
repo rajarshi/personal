@@ -103,13 +103,19 @@ public class Recap {
             IAtom left = atomContainer.getAtom(path.get(0));
             IAtom right = atomContainer.getAtom(path.get(1));
             IBond splitBond = atomContainer.getBond(left, right);
-            if (splitBond.getFlag(CDKConstants.ISINRING)) continue;
+            if (splitBond.getFlag(CDKConstants.ISINRING) || isTerminal(atomContainer, splitBond)) continue;
             IAtomContainer[] parts = splitMolecule(atomContainer, splitBond);
-            if (parts[0].getAtomCount() == 1 || parts[1].getAtomCount() == 1) return null;
             ret.add(parts[0]);
             ret.add(parts[1]);
         }
         return ret;
+    }
+
+    private boolean isTerminal(IAtomContainer atomContainer, IBond bond) {
+        for (IAtom atom : bond.atoms()) {
+            if (atomContainer.getConnectedAtomsCount(atom) == 1) return true;
+        }
+        return false;
     }
 
     private List<IAtomContainer> recapRule04(String pattern, IAtomContainer atomContainer) throws CDKException {
@@ -246,6 +252,8 @@ public class Recap {
     }
 
     public static void main(String[] args) throws Exception {
+        RecapUI ui = new RecapUI();
+        ui.setVisible(true);
         Recap recap = new Recap();
 
         SmilesParser sp = new SmilesParser(DefaultChemObjectBuilder.getInstance());
@@ -256,7 +264,7 @@ public class Recap {
 //        String smiles = "CC(=O)OC";
 //        String smiles = "CC=CCC=CN";
 //        String smiles = "N(C)(C)CCCC";
-        String smiles = "N1(CC)C(=O)CCCC1";
+//        String smiles = "N1(CC)C(=O)CCCC1";
 //        String smiles = "N(CCC)(C)S(=O)(=O)CC(=O)CC";
 //        String smiles = "CNOCN";
 //        String smiles = "N(Cl)(I)C(=O)N(F)(Br)";
@@ -266,20 +274,22 @@ public class Recap {
 //        String smiles = "n1cn(C(C)(C)C)cc1";
 
 //        String smiles = "COC1CN(CCC1NC(=O)C2=CC(=C(C=C2OC)N)Cl)CCCOC3=CC=C(C=C3)F";
+        String smiles = "Fc1ccccc1OC";
         IMolecule mol = sp.parseSmiles(smiles);
         AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(mol);
 
-
-        List<IAtomContainer> s1 = recap.recapRule09("[R0][ND3R][CR]=O", mol);
-        s1.add(0, mol);
-        recap.displayFrags(s1);
-        System.exit(-1);
-        
-        List<IAtomContainer> f = recap.fragment(mol);
-        System.out.println("f.size() = " + f.size());
-        recap.displayFrags(f);
-        String[] cansmi = recap.getUniqueFragments(f);
-        for (String s : cansmi) System.out.println(s);
+//        List<IAtomContainer> s1 = recap.recapRule09("[R0][ND3R][CR]=O", mol);
+//        List<IAtomContainer> s1 = recap.recapRule2Atom("[OD2]-*", mol);
+//        if (s1 != null) {
+//            s1.add(0, mol);
+//            recap.displayFrags(s1);
+//        } else System.out.println("no fragments");
+//
+//        List<IAtomContainer> f = recap.fragment(mol);
+//        System.out.println("f.size() = " + f.size());
+//        recap.displayFrags(f);
+//        String[] cansmi = recap.getUniqueFragments(f);
+//        for (String s : cansmi) System.out.println(s);
 
 
     }
