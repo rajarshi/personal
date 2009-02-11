@@ -112,7 +112,10 @@ public class Recap {
             IAtom right = atomContainer.getAtom(path.get(1));
             IBond splitBond = atomContainer.getBond(left, right);
             if (splitBond.getFlag(CDKConstants.ISINRING)) continue;
+
+            // TODO is this correct?
             if (isTerminal(atomContainer, splitBond)) return null;
+            
             IAtomContainer[] parts = splitMolecule(atomContainer, splitBond);            
             ret.add(parts[0]);
             ret.add(parts[1]);
@@ -243,7 +246,7 @@ public class Recap {
         return bondList;
     }
 
-    private String[] getUniqueFragments(List<IAtomContainer> frags) {
+    protected String[] getUniqueFragments(List<IAtomContainer> frags) {
         SmilesGenerator sg = new SmilesGenerator();
         List<String> cansmi = new ArrayList<String>();
         for (IAtomContainer frag : frags) cansmi.add(sg.createSMILES(frag.getBuilder().newMolecule(frag)));
@@ -262,7 +265,7 @@ public class Recap {
 
     public static void main(String[] args) throws Exception {
         RecapUI ui = new RecapUI();
-//        ui.setVisible(true);
+        ui.setVisible(true);
         Recap recap = new Recap();
 
         SmilesParser sp = new SmilesParser(DefaultChemObjectBuilder.getInstance());
@@ -294,11 +297,11 @@ public class Recap {
 //            recap.displayFrags(s1);
 //        } else System.out.println("no fragments");
 //
-        List<IAtomContainer> f = recap.fragment(mol);
-        System.out.println("f.size() = " + f.size());
-        recap.displayFrags(f);
-        String[] cansmi = recap.getUniqueFragments(f);
-        for (String s : cansmi) System.out.println(s);
+//        List<IAtomContainer> f = recap.fragment(mol);
+//        System.out.println("f.size() = " + f.size());
+//        recap.displayFrags(f);
+//        String[] cansmi = recap.getUniqueFragments(f);
+//        for (String s : cansmi) System.out.println(s);
 
 
     }

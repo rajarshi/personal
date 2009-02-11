@@ -13,6 +13,7 @@ import javax.swing.border.EtchedBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -21,6 +22,7 @@ public class RecapUI extends JFrame {
     private JTextField textField;
     private JPanel structurePane;
     private StatusBar statusBar = new StatusBar();
+    private SmilesParser sp = new SmilesParser(DefaultChemObjectBuilder.getInstance());
 
     public RecapUI() throws HeadlessException {
         setTitle(title);
@@ -57,13 +59,18 @@ public class RecapUI extends JFrame {
 
     private void doFragment(ActionEvent e) throws Exception {
         String smiles = textField.getText().trim();
-        SmilesParser sp = new SmilesParser(DefaultChemObjectBuilder.getInstance());
         IAtomContainer mol = sp.parseSmiles(smiles);
         AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(mol);
         Recap recap = new Recap();
         List<IAtomContainer> frags = recap.fragment(mol);
-        frags.add(0, mol);
-        displayStructures(frags, 3);
+        String[] fragsmi = recap.getUniqueFragments(frags);
+
+        List<IAtomContainer> ufrag = new ArrayList<IAtomContainer>();
+        ufrag.add(mol);
+        for (String s : fragsmi) {
+            ufrag.add(sp.parseSmiles(s));
+        }
+        displayStructures(ufrag, 3);
     }
 
     private void displayStructures(List<IAtomContainer> frags, int ncol) throws Exception {

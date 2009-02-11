@@ -119,10 +119,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Recap.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Recap.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/recap/Recap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="77" selection-start="4668" selection-end="4668" vertical-scroll-proportion="0.4931164">
+            <state line="248" column="13" selection-start="9684" selection-end="9684" vertical-scroll-proportion="0.17396747">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -130,10 +130,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RecapUI.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="RecapUI.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/recap/RecapUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="41" selection-start="1250" selection-end="1250" vertical-scroll-proportion="-0.88235295">
+            <state line="72" column="31" selection-start="2745" selection-end="2745" vertical-scroll-proportion="0.6007509">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1036,18 +1036,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/recap/RecapUI.java">
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/recap/Recap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="41" selection-start="1250" selection-end="1250" vertical-scroll-proportion="-0.88235295">
+        <state line="248" column="13" selection-start="9684" selection-end="9684" vertical-scroll-proportion="0.17396747">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/recap/Recap.java">
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/recap/RecapUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="77" selection-start="4668" selection-end="4668" vertical-scroll-proportion="0.4931164">
+        <state line="72" column="31" selection-start="2745" selection-end="2745" vertical-scroll-proportion="0.6007509">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
