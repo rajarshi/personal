@@ -16,7 +16,10 @@ import org.openscience.cdk.smiles.SmilesParser;
 import org.openscience.cdk.smiles.smarts.SMARTSQueryTool;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 
 public class Recap {
@@ -38,9 +41,12 @@ public class Recap {
             "[ND3][$(S(=O)(=O)*)]", // rule 11
     };
 
+    public Recap() throws CDKException {
+        sqt = new SMARTSQueryTool("C");
+    }
+
     public List<IAtomContainer> fragment(IAtomContainer atomContainer) throws Exception {
 
-        sqt = new SMARTSQueryTool("C");
         AllRingsFinder arf = new AllRingsFinder();
         arf.findAllRings(atomContainer);
 
@@ -73,8 +79,8 @@ public class Recap {
             List<IAtomContainer> tmp = null;
             if (i == 4) {
                 tmp = recapRule04(patterns[i - 1], atomContainer);
-            } else if (i == 10) {
-                continue;
+            } else if (i == 9) {
+                tmp = recapRule09(patterns[i - 1], atomContainer);
             } else {
                 tmp = recapRule2Atom(patterns[i - 1], atomContainer);
             }
@@ -134,17 +140,30 @@ public class Recap {
 
 
     // TODO find out why it doesn't match
+    //[R0]-[$([NRD3][CR]=O)]
+    // [R0][ND3R][CR]=O
     private List<IAtomContainer> recapRule09(String pattern, IAtomContainer atomContainer) throws CDKException {
-        sqt.setSmarts("[R0]-[$([NRD3][CR]=O)]");
+        sqt.setSmarts(pattern);
         if (!sqt.matches(atomContainer)) return null;
         List<List<Integer>> matches = sqt.getUniqueMatchingAtoms();
         if (verbose) System.out.println("rule " + pattern + ": " + matches.size());
         List<IAtomContainer> ret = new ArrayList<IAtomContainer>();
         for (List<Integer> path : matches) {
-            IAtom left = atomContainer.getAtom(path.get(0));
-            IAtom right = atomContainer.getAtom(path.get(1));
-            IBond splitBond = atomContainer.getBond(left, right);
-            if (splitBond.getFlag(CDKConstants.ISINRING)) continue;
+            IAtom n = null;
+            for (Integer idx : path) {
+                IAtom atom = atomContainer.getAtom(idx);
+                if (atom.getSymbol().equals("N")) {
+                    n = atom;
+                    break;
+                }
+            }
+            IBond splitBond = null;
+            for (IBond bond : atomContainer.getConnectedBondsList(n)) {
+                if (!bond.getFlag(CDKConstants.ISINRING) && !bond.getOrder().equals(IBond.Order.DOUBLE)) {
+                    splitBond = bond;
+                    break;
+                }
+            }
             IAtomContainer[] parts = splitMolecule(atomContainer, splitBond);
             ret.add(parts[0]);
             ret.add(parts[1]);
@@ -237,7 +256,7 @@ public class Recap {
 //        String smiles = "CC(=O)OC";
 //        String smiles = "CC=CCC=CN";
 //        String smiles = "N(C)(C)CCCC";
-//        String smiles = "N1(CC)C(=O)CCCC1";
+        String smiles = "N1(CC)C(=O)CCCC1";
 //        String smiles = "N(CCC)(C)S(=O)(=O)CC(=O)CC";
 //        String smiles = "CNOCN";
 //        String smiles = "N(Cl)(I)C(=O)N(F)(Br)";
@@ -246,10 +265,16 @@ public class Recap {
 //        String smiles = "c1cccn1C(C)(C)CC";
 //        String smiles = "n1cn(C(C)(C)C)cc1";
 
-        String smiles = "COC1CN(CCC1NC(=O)C2=CC(=C(C=C2OC)N)Cl)CCCOC3=CC=C(C=C3)F";
+//        String smiles = "COC1CN(CCC1NC(=O)C2=CC(=C(C=C2OC)N)Cl)CCCOC3=CC=C(C=C3)F";
         IMolecule mol = sp.parseSmiles(smiles);
         AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(mol);
 
+
+        List<IAtomContainer> s1 = recap.recapRule09("[R0][ND3R][CR]=O", mol);
+        s1.add(0, mol);
+        recap.displayFrags(s1);
+        System.exit(-1);
+        
         List<IAtomContainer> f = recap.fragment(mol);
         System.out.println("f.size() = " + f.size());
         recap.displayFrags(f);
