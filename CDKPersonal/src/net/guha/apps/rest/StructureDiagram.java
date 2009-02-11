@@ -16,7 +16,7 @@ import org.openscience.cdk.interfaces.IMoleculeSet;
 import org.openscience.cdk.layout.StructureDiagramGenerator;
 import org.openscience.cdk.layout.TemplateHandler;
 import org.openscience.cdk.renderer.IntermediateRenderer;
-import org.openscience.cdk.smiles.SmilesParser;
+import org.openscience.cdk.smiles.smarts.SMARTSQueryTool;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
 import javax.media.jai.JAI;
@@ -26,6 +26,7 @@ import javax.vecmath.Vector2d;
 import java.awt.*;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * @author rguha
@@ -127,13 +128,24 @@ public class StructureDiagram extends JPanel implements IViewEventRelay {
         renderer.repaint(g);
     }
 
+    private IAtomContainer getNeedle(IAtomContainer target, String query) throws CDKException {
+        SMARTSQueryTool sqt = new SMARTSQueryTool(query);
+        if (!sqt.matches(target)) return null;
+        List<List<Integer>> matches = sqt.getUniqueMatchingAtoms();
+        IAtomContainer ret = target.getBuilder().newAtomContainer();
+        for (List<Integer> match : matches) {
+            for (Integer idx : match) ret.addAtom(target.getAtom(idx));
+        }
+        return ret;
+    }
+
     /**
      * Gets the 2D structure diagram of a SMILES structure.
      *
      * @param molecule The input molecule
-     * @param width  The width of the image
-     * @param height The height of the image
-     * @param scale  The scale of the image
+     * @param width    The width of the image
+     * @param height   The height of the image
+     * @param scale    The scale of the image
      * @return The bytes representing the JPEG image
      * @throws CDKException if there is an error in parsing the SMILES or generating the image
      */
@@ -155,13 +167,16 @@ public class StructureDiagram extends JPanel implements IViewEventRelay {
         try {
             AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(molecule);
             CDKHueckelAromaticityDetector.detectAromaticity(molecule);
-            AtomContainerManipulator.removeHydrogens(molecule);            
+            AtomContainerManipulator.removeHydrogens(molecule);
 
             StructureDiagramGenerator sdg = new StructureDiagramGenerator();
             sdg.setTemplateHandler(new TemplateHandler(DefaultChemObjectBuilder.getInstance()));
             sdg.setMolecule((IMolecule) molecule);
             sdg.generateCoordinates(new Vector2d(0, 1));
             mol2d = sdg.getMolecule();
+
+            IAtomContainer needle = null;
+            if (ssquery != null) needle = getNeedle(molecule, ssquery);
 
             IMoleculeSet moleculeSet = DefaultChemObjectBuilder.getInstance().newMoleculeSet();
             moleculeSet.addMolecule(mol2d);
@@ -180,6 +195,11 @@ public class StructureDiagram extends JPanel implements IViewEventRelay {
             hub.getIJava2DRenderer().getRenderer2DModel().setZoomFactor(scale);
             //hub.getIJava2DRenderer().getRenderer2DModel().setShowExplicitHydrogens(false);
             hub.getIJava2DRenderer().getRenderer2DModel().setShowImplicitHydrogens(false);
+
+            if (needle != null) {
+                hub.getIJava2DRenderer().getRenderer2DModel().setExternalHighlightColor(Color.red);
+                hub.getIJava2DRenderer().getRenderer2DModel().setExternalSelectedPart(needle);
+            }
 
             frame.getContentPane().add(this);
             frame.pack();

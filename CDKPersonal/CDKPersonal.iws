@@ -122,7 +122,7 @@
       <file leaf-file-name="SSDepictionResource.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/SSDepictionResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="27" selection-start="1846" selection-end="1846" vertical-scroll-proportion="0.21902378">
+            <state line="71" column="40" selection-start="2809" selection-end="2809" vertical-scroll-proportion="0.70153064">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -133,8 +133,10 @@
       <file leaf-file-name="StructureDiagram.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/StructureDiagram.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="139" column="68" selection-start="4998" selection-end="4998" vertical-scroll-proportion="0.28660825">
-              <folding />
+            <state line="198" column="33" selection-start="7673" selection-end="7673" vertical-scroll-proportion="0.86734694">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -836,11 +838,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855567" order="8" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3192771" order="8" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1900415" order="1" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1900415" order="1" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21244814" order="0" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16348548" order="0" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16348548" order="0" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24938676" order="2" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
@@ -1071,14 +1073,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/StructureDiagram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="139" column="68" selection-start="4998" selection-end="4998" vertical-scroll-proportion="0.28660825">
-          <folding />
+        <state line="198" column="33" selection-start="7673" selection-end="7673" vertical-scroll-proportion="0.86734694">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/SSDepictionResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="27" selection-start="1846" selection-end="1846" vertical-scroll-proportion="0.21902378">
+        <state line="71" column="40" selection-start="2809" selection-end="2809" vertical-scroll-proportion="0.70153064">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
