@@ -23,7 +23,7 @@ import java.util.Set;
 
 
 public class Recap {
-    private boolean verbose = true;
+    private boolean verbose = false;
 
     SMARTSQueryTool sqt;
     private int minFragSize = 3;

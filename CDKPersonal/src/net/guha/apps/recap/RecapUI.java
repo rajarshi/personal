@@ -13,6 +13,7 @@ import javax.swing.border.EtchedBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,6 +56,27 @@ public class RecapUI extends JFrame {
         getContentPane().add(entryPanel, BorderLayout.NORTH);
         getContentPane().add(scrollpane, BorderLayout.CENTER);
         getContentPane().add(statusBar, BorderLayout.SOUTH);
+
+        InputMap im = textField.getInputMap();
+        im.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), "enter");
+        im.put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), "escape");
+
+        ActionMap am = textField.getActionMap();
+        am.put("enter", new AbstractAction() {
+            public void actionPerformed(ActionEvent ae) {
+                try {
+                    doFragment(null);
+                } catch (Exception e) {
+                    statusBar.setMessage("Error parsing SMILES");
+                }
+            }
+        });
+        am.put("escape", new AbstractAction() {
+            public void actionPerformed(ActionEvent ae) {
+                textField.setText("");
+            }
+        });
+
     }
 
     private void doFragment(ActionEvent e) throws Exception {
@@ -137,7 +159,6 @@ public class RecapUI extends JFrame {
          */
         public StatusBar() {
             super();
-//            super.setPreferredSize(new Dimension(100, 16));
             setMessage("Ready");
             setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
         }

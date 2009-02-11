@@ -35,6 +35,14 @@
 	</javac>
     </target>
 
+    <target id="compile-rest" name="compile-recap" depends="prep">
+	<javac srcdir="${sources}/net/guha/apps/recap:${sources}/net/guha/util/cdk"
+	       destdir="${build.dir}"
+	       > 
+	    <classpath refid="${project.classpath}" />
+	</javac>
+    </target>
+
 
     <target id="rest" name="rest" depends="compile-rest">
 	<unjar dest="${build.dir}" >
@@ -44,6 +52,23 @@
 	<jar jarfile="cdkrest.jar">
 	    <manifest>
 		<attribute name="Main-Class" value="net.guha.apps.rest.CDKServices" />
+	    </manifest>
+	    <fileset dir="${build.dir}"> 
+		<include name="**/*" />
+	    </fileset>
+	</jar>
+    </target>
+
+    <target id="recap" name="recap" depends="compile-recap">
+<!--
+	<unjar dest="${build.dir}" >
+	    <fileset dir="${lib.dir}"
+		     includes="" />
+	</unjar>
+-->
+	<jar jarfile="recap.jar">
+	    <manifest>
+		<attribute name="Main-Class" value="net.guha.apps.recap.Recap" />
 	    </manifest>
 	    <fileset dir="${build.dir}"> 
 		<include name="**/*" />
