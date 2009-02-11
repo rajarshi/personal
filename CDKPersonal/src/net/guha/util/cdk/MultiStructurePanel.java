@@ -7,7 +7,7 @@ import java.awt.*;
 public class MultiStructurePanel extends JFrame {
     public MultiStructurePanel(Renderer2DPanel[] panels,
                                int ncol, int cellx, int celly) throws HeadlessException {
-                int pad = 5;
+        int pad = 5;
 
         int extra = panels.length % ncol;
         int block = panels.length - extra;
@@ -16,8 +16,8 @@ public class MultiStructurePanel extends JFrame {
         int i;
         int j;
 
-        JFrame frame = new JFrame("Molecule Fragmenter");
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setTitle("Molecule Fragmenter");
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         JPanel spane = new JPanel(new GridBagLayout(), true);
         GridBagConstraints gbc = new GridBagConstraints();
@@ -48,14 +48,14 @@ public class MultiStructurePanel extends JFrame {
         JScrollPane scrollpane = new JScrollPane(spane,
                 JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
                 JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        frame.getContentPane().add(scrollpane);
+        getContentPane().add(scrollpane);
 
         // start the show!
-        frame.pack();
+        pack();
         if (nrow > 3) {
-            frame.setSize(ncol * cellx + pad, 3 * celly + pad);
+            setSize(ncol * cellx + pad, 3 * celly + pad);
         } else {
-            frame.setSize(ncol * cellx + pad, nrow * celly + pad);
+            setSize(ncol * cellx + pad, nrow * celly + pad);
         }
     }
 }

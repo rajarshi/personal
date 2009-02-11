@@ -16,7 +16,6 @@ import java.text.DecimalFormat;
 
 /**
  * A JPanel to display 2D depictions.
- *
  */
 public class Renderer2DPanel extends JPanel implements IViewEventRelay {
     private IntermediateRenderer renderer;
@@ -42,13 +41,12 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
      * @param x   width of the panel
      * @param y   height of the panel
      */
-    public Renderer2DPanel(IMolecule mol, int x, int y) {
+    public Renderer2DPanel(IAtomContainer mol, int x, int y) {
         this(mol, null, x, y, false, "NA", -9999.0);
     }
 
     /**
      * Create an instance of the rendering panel.
-     *
      *
      * @param mol          molecule to render. Should have 2D coordinates
      * @param needle       A fragment representing a substructure of the above molecule.
@@ -60,11 +58,11 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
      * @param name         The name of the molecule
      * @param activity     The activity associated with the molecule
      */
-    public Renderer2DPanel(IMolecule mol, IAtomContainer needle, int x, int y,
+    public Renderer2DPanel(IAtomContainer mol, IAtomContainer needle, int x, int y,
                            boolean withHydrogen, String name, double activity) {
         this.title = name;
         this.activity = activity;
-        this.molecule = mol;
+        this.molecule = (IMolecule) mol;
 
         setPreferredSize(new Dimension(x, y));
         setBackground(Color.WHITE);
@@ -162,7 +160,6 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
             this.paintFromCache(g2);
         } else {
             this.paintChemModel(g2, new Rectangle(0, 0, getWidth(), getHeight()));
-
         }
     }
 

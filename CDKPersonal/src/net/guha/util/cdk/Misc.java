@@ -2,12 +2,15 @@ package net.guha.util.cdk;
 
 import org.openscience.cdk.ChemFile;
 import org.openscience.cdk.DefaultChemObjectBuilder;
+import org.openscience.cdk.Molecule;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IChemFile;
+import org.openscience.cdk.interfaces.IMolecule;
 import org.openscience.cdk.io.ISimpleChemObjectReader;
 import org.openscience.cdk.io.MDLWriter;
 import org.openscience.cdk.io.ReaderFactory;
+import org.openscience.cdk.layout.StructureDiagramGenerator;
 import org.openscience.cdk.tools.manipulator.ChemFileManipulator;
 
 import java.io.File;
@@ -76,7 +79,7 @@ public class Misc {
      * <p/>
      * This method does not need knowledge of the format since it is
      * autodetected.
-     *
+     * <p/>
      * <b>NOTE</B> It does not perform aromaticity detection
      *
      * @param filenames An array of String's containing the filenames of the
@@ -119,6 +122,11 @@ public class Misc {
         return retValues;
     }
 
-
+    public static IMolecule get2DCoords(IAtomContainer mol) throws Exception {
+        StructureDiagramGenerator sdg = new StructureDiagramGenerator();
+        sdg.setMolecule(new Molecule(mol));
+        sdg.generateCoordinates();
+        return sdg.getMolecule();
+    }
 
 }
