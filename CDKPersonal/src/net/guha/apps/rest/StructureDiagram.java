@@ -16,6 +16,8 @@ import org.openscience.cdk.interfaces.IMoleculeSet;
 import org.openscience.cdk.layout.StructureDiagramGenerator;
 import org.openscience.cdk.layout.TemplateHandler;
 import org.openscience.cdk.renderer.IntermediateRenderer;
+import org.openscience.cdk.renderer.RendererModel;
+import org.openscience.cdk.renderer.generators.ExternalHighlightGenerator;
 import org.openscience.cdk.smiles.smarts.SMARTSQueryTool;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
@@ -189,6 +191,7 @@ public class StructureDiagram extends JPanel implements IViewEventRelay {
             controllerModel = new ControllerModel();
             hub = new ControllerHub(controllerModel, renderer, chemModel, this);
 
+            RendererModel rm = hub.getIJava2DRenderer().getRenderer2DModel();
             hub.getIJava2DRenderer().getRenderer2DModel().setShowAromaticity(true);
             hub.getIJava2DRenderer().getRenderer2DModel().setUseAntiAliasing(true);
             hub.getIJava2DRenderer().getRenderer2DModel().setIsCompact(false);
@@ -196,7 +199,11 @@ public class StructureDiagram extends JPanel implements IViewEventRelay {
             //hub.getIJava2DRenderer().getRenderer2DModel().setShowExplicitHydrogens(false);
             hub.getIJava2DRenderer().getRenderer2DModel().setShowImplicitHydrogens(false);
 
+
             if (needle != null) {
+                
+//                rm.getSelection().
+//                this.generators.add(new ExternalHighlightGenerator(hub.getIJava2DRenderer().getRenderer2DModel()));
                 hub.getIJava2DRenderer().getRenderer2DModel().setExternalHighlightColor(Color.red);
                 hub.getIJava2DRenderer().getRenderer2DModel().setExternalSelectedPart(needle);
             }

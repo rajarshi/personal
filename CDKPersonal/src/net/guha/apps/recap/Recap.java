@@ -264,7 +264,7 @@ public class Recap {
         msp.setVisible(true);
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args)  throws Exception {
         RecapUI ui = new RecapUI();
         ui.setVisible(true);
         Recap recap = new Recap();

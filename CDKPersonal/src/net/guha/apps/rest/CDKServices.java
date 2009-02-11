@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 
 public class CDKServices extends Application {
 
-    static final String CDKREST_VERSION = "0.1";
+    static final String CDKREST_VERSION = "0.2";
     
     private static Logger logger = Logger.getLogger("net.guha");
 
