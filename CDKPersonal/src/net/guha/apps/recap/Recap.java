@@ -23,7 +23,7 @@ import java.util.Set;
 
 
 public class Recap {
-    private boolean verbose = false;
+    private boolean verbose = true;
 
     SMARTSQueryTool sqt;
     private int minFragSize = 3;
@@ -53,6 +53,8 @@ public class Recap {
         List<IAtomContainer> frags = dofrag(atomContainer);
         List<IAtomContainer> newFrags = new ArrayList<IAtomContainer>();
         List<IAtomContainer> fragsToDelete = new ArrayList<IAtomContainer>();
+
+        if (verbose) System.out.println("Start with frags "+frags.size());
         while (true) {
             for (IAtomContainer frag : frags) {
                 List<IAtomContainer> tmp = dofrag(frag);
@@ -62,12 +64,14 @@ public class Recap {
                 }
             }
             if (fragsToDelete.size() > 0) {
+                if (verbose) System.out.println("Will delete frags "+fragsToDelete.size());
                 for (IAtomContainer frag : fragsToDelete) {
                     frags.remove(frag);
                 }
                 frags.addAll(newFrags);
                 newFrags.clear();
                 fragsToDelete.clear();
+                if (verbose) System.out.println("Starting again with frags "+frags.size());
             } else break;
         }
         return frags;
@@ -81,6 +85,8 @@ public class Recap {
                 tmp = recapRule04(patterns[i - 1], atomContainer);
             } else if (i == 9) {
                 tmp = recapRule09(patterns[i - 1], atomContainer);
+            } else if (i == 10) {
+                continue;
             } else {
                 tmp = recapRule2Atom(patterns[i - 1], atomContainer);
             }
@@ -93,6 +99,8 @@ public class Recap {
         return frags;
     }
 
+    // this method handles patterns where we are supposed to split
+    // at a single bond and so can be defined by a 2 atom SMARTS
     private List<IAtomContainer> recapRule2Atom(String pattern, IAtomContainer atomContainer) throws CDKException {
         sqt.setSmarts(pattern);
         if (!sqt.matches(atomContainer)) return null;
@@ -103,8 +111,9 @@ public class Recap {
             IAtom left = atomContainer.getAtom(path.get(0));
             IAtom right = atomContainer.getAtom(path.get(1));
             IBond splitBond = atomContainer.getBond(left, right);
-            if (splitBond.getFlag(CDKConstants.ISINRING) || isTerminal(atomContainer, splitBond)) continue;
-            IAtomContainer[] parts = splitMolecule(atomContainer, splitBond);
+            if (splitBond.getFlag(CDKConstants.ISINRING)) continue;
+            if (isTerminal(atomContainer, splitBond)) return null;
+            IAtomContainer[] parts = splitMolecule(atomContainer, splitBond);            
             ret.add(parts[0]);
             ret.add(parts[1]);
         }
@@ -253,7 +262,7 @@ public class Recap {
 
     public static void main(String[] args) throws Exception {
         RecapUI ui = new RecapUI();
-        ui.setVisible(true);
+//        ui.setVisible(true);
         Recap recap = new Recap();
 
         SmilesParser sp = new SmilesParser(DefaultChemObjectBuilder.getInstance());
@@ -273,8 +282,8 @@ public class Recap {
 //        String smiles = "c1cccn1C(C)(C)CC";
 //        String smiles = "n1cn(C(C)(C)C)cc1";
 
-//        String smiles = "COC1CN(CCC1NC(=O)C2=CC(=C(C=C2OC)N)Cl)CCCOC3=CC=C(C=C3)F";
-        String smiles = "Fc1ccccc1OC";
+        String smiles = "COC1CN(CCC1NC(=O)C2=CC(=C(C=C2OC)N)Cl)CCCOC3=CC=C(C=C3)F";
+//        String smiles = "Fc1ccccc1OC";
         IMolecule mol = sp.parseSmiles(smiles);
         AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(mol);
 
@@ -285,11 +294,11 @@ public class Recap {
 //            recap.displayFrags(s1);
 //        } else System.out.println("no fragments");
 //
-//        List<IAtomContainer> f = recap.fragment(mol);
-//        System.out.println("f.size() = " + f.size());
-//        recap.displayFrags(f);
-//        String[] cansmi = recap.getUniqueFragments(f);
-//        for (String s : cansmi) System.out.println(s);
+        List<IAtomContainer> f = recap.fragment(mol);
+        System.out.println("f.size() = " + f.size());
+        recap.displayFrags(f);
+        String[] cansmi = recap.getUniqueFragments(f);
+        for (String s : cansmi) System.out.println(s);
 
 
     }
