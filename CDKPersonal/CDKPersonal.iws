@@ -122,7 +122,7 @@
       <file leaf-file-name="Recap.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/recap/Recap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="61" selection-start="3078" selection-end="3078" vertical-scroll-proportion="0.37117904">
+            <state line="222" column="68" selection-start="9050" selection-end="9050" vertical-scroll-proportion="0.70305675">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -998,13 +998,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Renderer2DPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="641" selection-end="641" vertical-scroll-proportion="-0.279476">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/MultiStructurePanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="13" selection-start="84" selection-end="84" vertical-scroll-proportion="0.08733624">
@@ -1019,9 +1012,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Renderer2DPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="13" selection-start="641" selection-end="641" vertical-scroll-proportion="0.12227074">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/recap/Recap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="61" selection-start="3078" selection-end="3078" vertical-scroll-proportion="0.37117904">
+        <state line="222" column="68" selection-start="9050" selection-end="9050" vertical-scroll-proportion="0.70305675">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
