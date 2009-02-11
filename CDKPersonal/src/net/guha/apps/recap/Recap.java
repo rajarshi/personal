@@ -24,10 +24,21 @@ import java.util.List;
 
 public class Recap {
     SMARTSQueryTool sqt;
+    private int minFragSize = 3;
+    private boolean repeatCycle = true;
 
-    //patterns
-    String[] patterns = {
-            "c-c"
+    private String[] patterns = {
+            "[NX3][$([CD3]=O)]", // rule 1
+            "[OD2][$([CD3]=O)]", //rule 2
+            "[ND3]-*", // rule 3
+            "[ND3][$([CD3](=O))][ND3]", //rule 4
+            "[OD2]-*", // rule 5
+            "C=C", // rule 6
+            "[ND4+]-*", // rule 7
+            "n[CD4]", // rule 8
+            "[R0]-[$([NRD3][CR]=O)]", // rule 9
+            "c-c", // rule 10
+            "[ND3][$(S(=O)(=O)*)]", // rule 11
     };
 
     public Recap() throws CDKException {
@@ -39,12 +50,25 @@ public class Recap {
         arf.findAllRings(atomContainer);
 
         List<IAtomContainer> frags = new ArrayList<IAtomContainer>();
-        frags.addAll(recapRule08(atomContainer));
+
+        for (int i = 1; i < patterns.length + 1; i++) {
+            List<IAtomContainer> tmp;
+            if (i == 4) {
+                tmp = recapRule04(patterns[i - 1], atomContainer);
+            } else {
+                tmp = recapRule2Atom(patterns[i - 1], atomContainer);
+            }
+            if (tmp != null) {
+                for (IAtomContainer frag : tmp) {
+                    if (frag.getAtomCount() >= minFragSize) frags.add(frag);
+                }
+            }
+        }
         return frags;
     }
 
-    private List<IAtomContainer> recapRule01(IAtomContainer atomContainer) throws CDKException {
-        sqt.setSmarts("[NX3][$([CD3]=O)]");
+    private List<IAtomContainer> recapRule2Atom(String pattern, IAtomContainer atomContainer) throws CDKException {
+        sqt.setSmarts(pattern);
         if (!sqt.matches(atomContainer)) return null;
         List<List<Integer>> matches = sqt.getUniqueMatchingAtoms();
         System.out.println("rule 1 : " + matches.size());
@@ -61,45 +85,8 @@ public class Recap {
         return ret;
     }
 
-    private List<IAtomContainer> recapRule02(IAtomContainer atomContainer) throws CDKException {
-        sqt.setSmarts("[OD2][$([CD3]=O)]");
-        if (!sqt.matches(atomContainer)) return null;
-        List<List<Integer>> matches = sqt.getUniqueMatchingAtoms();
-        System.out.println("rule 2 : " + matches.size());
-        List<IAtomContainer> ret = new ArrayList<IAtomContainer>();
-        for (List<Integer> path : matches) {
-            IAtom left = atomContainer.getAtom(path.get(0));
-            IAtom right = atomContainer.getAtom(path.get(1));
-            IBond splitBond = atomContainer.getBond(left, right);
-            if (splitBond.getFlag(CDKConstants.ISINRING)) continue;
-            IAtomContainer[] parts = splitMolecule(atomContainer, splitBond);
-            ret.add(parts[0]);
-            ret.add(parts[1]);
-        }
-        return ret;
-    }
-
-    private List<IAtomContainer> recapRule03(IAtomContainer atomContainer) throws CDKException {
-        sqt.setSmarts("[ND3]-*");
-        if (!sqt.matches(atomContainer)) return null;
-        List<List<Integer>> matches = sqt.getUniqueMatchingAtoms();
-        System.out.println("rule 3 : " + matches.size());
-        List<IAtomContainer> ret = new ArrayList<IAtomContainer>();
-        for (List<Integer> path : matches) {
-            IAtom left = atomContainer.getAtom(path.get(0));
-            IAtom right = atomContainer.getAtom(path.get(1));
-            IBond splitBond = atomContainer.getBond(left, right);
-            if (splitBond.getFlag(CDKConstants.ISINRING)) continue;
-            IAtomContainer[] parts = splitMolecule(atomContainer, splitBond);
-            ret.add(parts[0]);
-            ret.add(parts[1]);
-        }
-        return ret;
-    }
-
-
-    private List<IAtomContainer> recapRule04(IAtomContainer atomContainer) throws CDKException {
-        sqt.setSmarts("[ND3][$([CD3](=O))][ND3]");
+    private List<IAtomContainer> recapRule04(String pattern, IAtomContainer atomContainer) throws CDKException {
+        sqt.setSmarts(pattern);
         if (!sqt.matches(atomContainer)) return null;
         List<List<Integer>> matches = sqt.getUniqueMatchingAtoms();
         System.out.println("rule 4 : " + matches.size());
@@ -124,77 +111,6 @@ public class Recap {
         return ret;
     }
 
-    private List<IAtomContainer> recapRule05(IAtomContainer atomContainer) throws CDKException {
-        sqt.setSmarts("[OD2]-*");
-        if (!sqt.matches(atomContainer)) return null;
-        List<List<Integer>> matches = sqt.getUniqueMatchingAtoms();
-        System.out.println("rule 5 : " + matches.size());
-        List<IAtomContainer> ret = new ArrayList<IAtomContainer>();
-        for (List<Integer> path : matches) {
-            IAtom left = atomContainer.getAtom(path.get(0));
-            IAtom right = atomContainer.getAtom(path.get(1));
-            IBond splitBond = atomContainer.getBond(left, right);
-            if (splitBond.getFlag(CDKConstants.ISINRING)) continue;
-            IAtomContainer[] parts = splitMolecule(atomContainer, splitBond);
-            ret.add(parts[0]);
-            ret.add(parts[1]);
-        }
-        return ret;
-    }
-
-    private List<IAtomContainer> recapRule07(IAtomContainer atomContainer) throws CDKException {
-        sqt.setSmarts("[ND4+]-*");
-        if (!sqt.matches(atomContainer)) return null;
-        List<List<Integer>> matches = sqt.getUniqueMatchingAtoms();
-        System.out.println("rule 7 : " + matches.size());
-        List<IAtomContainer> ret = new ArrayList<IAtomContainer>();
-        for (List<Integer> path : matches) {
-            IAtom left = atomContainer.getAtom(path.get(0));
-            IAtom right = atomContainer.getAtom(path.get(1));
-            IBond splitBond = atomContainer.getBond(left, right);
-            if (splitBond.getFlag(CDKConstants.ISINRING)) continue;
-            IAtomContainer[] parts = splitMolecule(atomContainer, splitBond);
-            ret.add(parts[0]);
-            ret.add(parts[1]);
-        }
-        return ret;
-    }
-
-    private List<IAtomContainer> recapRule06(IAtomContainer atomContainer) throws CDKException {
-        sqt.setSmarts("C=C");
-        if (!sqt.matches(atomContainer)) return null;
-        List<List<Integer>> matches = sqt.getUniqueMatchingAtoms();
-        System.out.println("rule 6 : " + matches.size());
-        List<IAtomContainer> ret = new ArrayList<IAtomContainer>();
-        for (List<Integer> path : matches) {
-            IAtom left = atomContainer.getAtom(path.get(0));
-            IAtom right = atomContainer.getAtom(path.get(1));
-            IBond splitBond = atomContainer.getBond(left, right);
-            if (splitBond.getFlag(CDKConstants.ISINRING)) continue;
-            IAtomContainer[] parts = splitMolecule(atomContainer, splitBond);
-            ret.add(parts[0]);
-            ret.add(parts[1]);
-        }
-        return ret;
-    }
-
-    private List<IAtomContainer> recapRule08(IAtomContainer atomContainer) throws CDKException {
-        sqt.setSmarts("n[CD4]");
-        if (!sqt.matches(atomContainer)) return null;
-        List<List<Integer>> matches = sqt.getUniqueMatchingAtoms();
-        System.out.println("rule 6 : " + matches.size());
-        List<IAtomContainer> ret = new ArrayList<IAtomContainer>();
-        for (List<Integer> path : matches) {
-            IAtom left = atomContainer.getAtom(path.get(0));
-            IAtom right = atomContainer.getAtom(path.get(1));
-            IBond splitBond = atomContainer.getBond(left, right);
-            if (splitBond.getFlag(CDKConstants.ISINRING)) continue;
-            IAtomContainer[] parts = splitMolecule(atomContainer, splitBond);
-            ret.add(parts[0]);
-            ret.add(parts[1]);
-        }
-        return ret;
-    }
 
     // TODO find out why it doesn't match
     private List<IAtomContainer> recapRule09(IAtomContainer atomContainer) throws CDKException {
@@ -214,44 +130,6 @@ public class Recap {
         }
         return ret;
     }
-
-
-    private List<IAtomContainer> recapRule10(IAtomContainer atomContainer) throws CDKException {
-        sqt.setSmarts("c-c");
-        if (!sqt.matches(atomContainer)) return null;
-        List<List<Integer>> matches = sqt.getUniqueMatchingAtoms();
-        System.out.println("rule 10 : " + matches.size());
-        List<IAtomContainer> ret = new ArrayList<IAtomContainer>();
-        for (List<Integer> path : matches) {
-            IAtom left = atomContainer.getAtom(path.get(0));
-            IAtom right = atomContainer.getAtom(path.get(1));
-            IBond splitBond = atomContainer.getBond(left, right);
-            if (splitBond.getFlag(CDKConstants.ISINRING)) continue;
-            IAtomContainer[] parts = splitMolecule(atomContainer, splitBond);
-            ret.add(parts[0]);
-            ret.add(parts[1]);
-        }
-        return ret;
-    }
-
-    private List<IAtomContainer> recapRule11(IAtomContainer atomContainer) throws CDKException {
-        sqt.setSmarts("[ND3][$(S(=O)(=O)*)]");
-        if (!sqt.matches(atomContainer)) return null;
-        List<List<Integer>> matches = sqt.getUniqueMatchingAtoms();
-        System.out.println("rule 11 : " + matches.size());
-        List<IAtomContainer> ret = new ArrayList<IAtomContainer>();
-        for (List<Integer> path : matches) {
-            IAtom left = atomContainer.getAtom(path.get(0));
-            IAtom right = atomContainer.getAtom(path.get(1));
-            IBond splitBond = atomContainer.getBond(left, right);
-            if (splitBond.getFlag(CDKConstants.ISINRING)) continue;
-            IAtomContainer[] parts = splitMolecule(atomContainer, splitBond);
-            ret.add(parts[0]);
-            ret.add(parts[1]);
-        }
-        return ret;
-    }
-
 
     /**
      * Split a molecule into two parts at the specified bond.
@@ -310,12 +188,6 @@ public class Recap {
         return bondList;
     }
 
-    private IAtomContainer getNeedle(IAtomContainer atomContainer, IBond bond) {
-        IAtomContainer ret = atomContainer.getBuilder().newAtomContainer();
-        ret.addBond(bond);
-        return ret;
-    }
-
     public static void main(String[] args) throws Exception {
         Recap recap = new Recap();
 
@@ -334,7 +206,9 @@ public class Recap {
 //        String smiles = "[N+](C)(C)(CCC)(C)";
 
 //        String smiles = "c1cccn1C(C)(C)CC";
-        String smiles = "n1cn(C(C)(C)C)cc1";
+//        String smiles = "n1cn(C(C)(C)C)cc1";
+
+        String smiles = "COC1CN(CCC1NC(=O)C2=CC(=C(C=C2OC)N)Cl)CCCOC3=CC=C(C=C3)F";
         IMolecule mol = sp.parseSmiles(smiles);
         AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(mol);
 
@@ -342,13 +216,13 @@ public class Recap {
         System.out.println("f.size() = " + f.size());
 
         Renderer2DPanel[] panels = new Renderer2DPanel[f.size() + 1];
-        panels[0] = new Renderer2DPanel(Misc.get2DCoords(mol), 200, 200);
+        panels[0] = new Renderer2DPanel(Misc.get2DCoords(mol), 300, 300);
         panels[0].setBorder(BorderFactory.createEtchedBorder(
                 EtchedBorder.LOWERED, Color.red, Color.gray));
 
         for (int i = 0; i < f.size(); i++)
-            panels[i + 1] = new Renderer2DPanel(Misc.get2DCoords(f.get(i)), 200, 200);
-        MultiStructurePanel msp = new MultiStructurePanel(panels, 4, 200, 200);
+            panels[i + 1] = new Renderer2DPanel(Misc.get2DCoords(f.get(i)), 300, 300);
+        MultiStructurePanel msp = new MultiStructurePanel(panels, 4, 300, 300);
         msp.setVisible(true);
 
     }
