@@ -39,6 +39,8 @@ public class Recap {
 
             //   [!R]-[$([NRD3][CR]=O)] seems to work but [R0]-[$([NRD3][CR]=O)] does not
             "[!R]-[$([NRD3][CR]=O)]", // rule 9
+
+            // broken :(
             "c-c", // rule 10
             "[ND3][$(S(=O)(=O)*)]", // rule 11
     };
