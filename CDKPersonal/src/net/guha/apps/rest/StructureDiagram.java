@@ -137,7 +137,7 @@ public class StructureDiagram extends JPanel implements IViewEventRelay {
      * @return The bytes representing the JPEG image
      * @throws CDKException if there is an error in parsing the SMILES or generating the image
      */
-    public byte[] getDiagram(IAtomContainer molecule, int width, int height, double scale) throws CDKException {
+    public byte[] getDiagram(IAtomContainer molecule, String ssquery, int width, int height, double scale) throws CDKException {
         if (width <= 0) {
             width = 300;
         }

@@ -40,7 +40,7 @@ public class DepictionResource extends Resource {
             StructureDiagram sdg = new StructureDiagram();
             byte[] image;
             try {
-                image = sdg.getDiagram(Utils.getMolecule(smiles), width, height, 0.9);
+                image = sdg.getDiagram(Utils.getMolecule(smiles), null, width, height, 0.9);
             } catch (CDKException e) {
                 throw new ResourceException(e);
             }
@@ -84,7 +84,7 @@ public class DepictionResource extends Resource {
             StructureDiagram sdg = new StructureDiagram();
             byte[] image;
             try {
-                image = sdg.getDiagram(atomContainer,w, h, 0.9);
+                image = sdg.getDiagram(atomContainer, null, w, h, 0.9);
             } catch (CDKException e) {
                 throw new ResourceException(e);
             }
