@@ -159,7 +159,6 @@ public class Recap {
     }
 
 
-    // TODO find out why it doesn't match
     //[R0]-[$([NRD3][CR]=O)]
     // [R0][ND3R][CR]=O
     private List<IAtomContainer> recapRule09(String pattern, IAtomContainer atomContainer) throws CDKException {
