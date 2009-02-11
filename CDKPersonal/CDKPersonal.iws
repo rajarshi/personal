@@ -142,7 +142,7 @@
       <file leaf-file-name="RecapUI.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/recap/RecapUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="134" column="0" selection-start="4440" selection-end="4440" vertical-scroll-proportion="0.7371715">
+            <state line="36" column="41" selection-start="1250" selection-end="1250" vertical-scroll-proportion="0.018773466">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1056,7 +1056,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/recap/RecapUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="0" selection-start="4440" selection-end="4440" vertical-scroll-proportion="0.7371715">
+        <state line="36" column="41" selection-start="1250" selection-end="1250" vertical-scroll-proportion="0.018773466">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

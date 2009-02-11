@@ -34,7 +34,7 @@ public class RecapUI extends JFrame {
                 try {
                     doFragment(e);
                 } catch (Exception e1) {
-                    System.out.println("Error parsing SMILES");
+                    statusBar.setMessage("Error parsing SMILES");
                 }
             }
         });
