@@ -39,7 +39,7 @@ public class Recap {
         arf.findAllRings(atomContainer);
 
         List<IAtomContainer> frags = new ArrayList<IAtomContainer>();
-        frags.addAll(recapRule03(atomContainer));
+        frags.addAll(recapRule09(atomContainer));
         return frags;
     }
 
@@ -118,6 +118,26 @@ public class Recap {
         }
         return ret;
     }
+
+    // TODO find out why it doesn't match
+    private List<IAtomContainer> recapRule09(IAtomContainer atomContainer) throws CDKException {
+          sqt.setSmarts("[R0]-[$([NRD3][CR]=O)]");
+          if (!sqt.matches(atomContainer)) return null;
+          List<List<Integer>> matches = sqt.getUniqueMatchingAtoms();
+          System.out.println("rule 9 : " + matches.size());
+          List<IAtomContainer> ret = new ArrayList<IAtomContainer>();
+          for (List<Integer> path : matches) {
+              IAtom left = atomContainer.getAtom(path.get(0));
+              IAtom right = atomContainer.getAtom(path.get(1));
+              IBond splitBond = atomContainer.getBond(left, right);
+              if (splitBond.getFlag(CDKConstants.ISINRING)) continue;
+              IAtomContainer[] parts = splitMolecule(atomContainer, splitBond);
+              ret.add(parts[0]);
+              ret.add(parts[1]);
+          }
+          return ret;
+      }
+
 
     private List<IAtomContainer> recapRule10(IAtomContainer atomContainer) throws CDKException {
         sqt.setSmarts("c-c");
@@ -211,8 +231,8 @@ public class Recap {
 //        String smiles = "CNSCNN";
 //        String smiles = "CC(=O)OC";
 //        String smiles = "CC=CCC=CN";
-        String smiles = "N(C)(C)CCCC";
-
+//        String smiles = "N(C)(C)CCCC";
+        String smiles = "N1(CC)C(=O)CCCC1";
         IMolecule mol = sp.parseSmiles(smiles);
         AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(mol);
 
