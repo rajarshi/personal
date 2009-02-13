@@ -9,9 +9,6 @@ import org.openscience.cdk.DefaultChemObjectBuilder;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.exception.InvalidSmilesException;
 import org.openscience.cdk.interfaces.IAtomContainer;
-import org.openscience.cdk.interfaces.IChemModel;
-import org.openscience.cdk.interfaces.IChemSequence;
-import org.openscience.cdk.interfaces.IMoleculeSet;
 import org.openscience.cdk.io.MDLV2000Reader;
 import org.openscience.cdk.qsar.DescriptorEngine;
 import org.openscience.cdk.qsar.DescriptorSpecification;
@@ -26,6 +23,8 @@ import java.io.StringReader;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import net.guha.util.cdk.Base64;
 
 
 public class Utils {

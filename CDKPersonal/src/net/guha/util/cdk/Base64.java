@@ -1,4 +1,4 @@
-package net.guha.apps.rest;
+package net.guha.util.cdk;
 
 /**
  * <p>Encodes and decodes to and from Base64 notation.</p>

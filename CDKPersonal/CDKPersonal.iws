@@ -119,42 +119,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Renderer2DPanel.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Renderer2DPanel.java">
+      <file leaf-file-name="RecapUI.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/recap/RecapUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="178" column="0" selection-start="7657" selection-end="7657" vertical-scroll-proportion="2.580357">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SSDepictionResource.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/SSDepictionResource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="17" selection-start="2536" selection-end="2536" vertical-scroll-proportion="1.2627552">
+            <state line="34" column="88" selection-start="1215" selection-end="1215" vertical-scroll-proportion="0.6195244">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StructureDiagram.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/StructureDiagram.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="30" selection-start="1355" selection-end="1355" vertical-scroll-proportion="0.42091838">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CDKServices.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="54" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.38265306">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -285,6 +256,28 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
         </PATH_ELEMENT>
       </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="CDKPersonal" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="CDKPersonal" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="net.guha" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="apps" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="recap" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+        </PATH_ELEMENT>
+      </PATH>
     </subPane>
   </component>
   <component name="PerforceChangeBrowserSettings">
@@ -366,14 +359,21 @@
       <recent name="net.guha.apps.matching" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="net.guha.util.cdk" />
       <recent name="net.guha.apps.rest.resources" />
       <recent name="net.guha.apps.rest.representations" />
       <recent name="net.guha.apps.sim3d" />
       <recent name="temporary" />
-      <recent name="net.guha.apps" />
     </key>
   </component>
   <component name="RunManager" selected="Application.CDKServices">
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
@@ -385,27 +385,6 @@
       <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
       <option name="BASE_DIRECTORY_NAME" value="" />
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="ADDITIONAL_CLASS_PATH" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <method>
-        <option name="Make" value="true" />
-      </method>
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
       <module name="" />
@@ -435,12 +414,41 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="ADDITIONAL_CLASS_PATH" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <method>
+        <option name="Make" value="true" />
+      </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" />
@@ -453,21 +461,6 @@
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method>
         <option name="Make" value="true" />
       </method>
@@ -859,7 +852,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12365145" order="1" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12365145" order="1" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32650602" order="1" />
       <window_info id="Profile" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.50203526" order="4" />
@@ -993,13 +986,6 @@
     <option name="myLastEditedConfigurable" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../cdk/branches/cdk-1.2.x/src/main/org/openscience/cdk/interfaces/IMolecule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="17" selection-start="1187" selection-end="1187" vertical-scroll-proportion="0.20650813">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/MultiStructurePanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="58" column="19" selection-start="272" selection-end="1698" vertical-scroll-proportion="0.90613264">
@@ -1011,33 +997,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="74" column="36" selection-start="2488" selection-end="2488" vertical-scroll-proportion="0.84981227">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/recap/Recap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="13" selection-start="835" selection-end="835" vertical-scroll-proportion="0.33291614">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/recap/RecapUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="13" selection-start="691" selection-end="691" vertical-scroll-proportion="0.33291614">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Misc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="39" selection-start="4974" selection-end="4974" vertical-scroll-proportion="0.79349184">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1062,13 +1021,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="53" selection-start="108" selection-end="108" vertical-scroll-proportion="0.07682458">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/VersionResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="13" selection-start="313" selection-end="313" vertical-scroll-proportion="0.13141426">
@@ -1083,10 +1035,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Renderer2DPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/SSDepictionResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="178" column="0" selection-start="7657" selection-end="7657" vertical-scroll-proportion="2.580357">
-          <folding />
+        <state line="66" column="17" selection-start="2536" selection-end="2536" vertical-scroll-proportion="1.2627552">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1097,18 +1051,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/SSDepictionResource.java">
+    <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Renderer2DPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="17" selection-start="2536" selection-end="2536" vertical-scroll-proportion="1.2627552">
+        <state line="178" column="0" selection-start="7657" selection-end="7657" vertical-scroll-proportion="2.580357">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/recap/Recap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="13" selection-start="835" selection-end="835" vertical-scroll-proportion="0.095663264">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Base64.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="25" selection-start="25" selection-end="25" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Misc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="24" selection-start="52" selection-end="52" vertical-scroll-proportion="0.037546933">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/StructureDiagram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="13" selection-start="1010" selection-end="1010" vertical-scroll-proportion="0.5535714">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/StructureDiagram.java">
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="30" selection-start="1355" selection-end="1355" vertical-scroll-proportion="0.42091838">
+        <state line="4" column="53" selection-start="108" selection-end="108" vertical-scroll-proportion="0.075093865">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/recap/RecapUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="88" selection-start="1215" selection-end="1215" vertical-scroll-proportion="0.6195244">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

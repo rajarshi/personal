@@ -1,17 +1,17 @@
 package net.guha.util.cdk;
 
+import net.guha.util.cdk.Base64;
 import org.openscience.cdk.ChemFile;
 import org.openscience.cdk.DefaultChemObjectBuilder;
-import org.openscience.cdk.Molecule;
 import org.openscience.cdk.exception.CDKException;
-import org.openscience.cdk.interfaces.IAtomContainer;
-import org.openscience.cdk.interfaces.IChemFile;
-import org.openscience.cdk.interfaces.IMolecule;
+import org.openscience.cdk.interfaces.*;
 import org.openscience.cdk.io.ISimpleChemObjectReader;
 import org.openscience.cdk.io.MDLWriter;
 import org.openscience.cdk.io.ReaderFactory;
 import org.openscience.cdk.layout.StructureDiagramGenerator;
 import org.openscience.cdk.layout.TemplateHandler;
+import org.openscience.cdk.smiles.smarts.SMARTSQueryTool;
+import org.openscience.cdk.smiles.smarts.parser.TokenMgrError;
 import org.openscience.cdk.tools.manipulator.ChemFileManipulator;
 
 import javax.vecmath.Vector2d;
@@ -129,8 +129,47 @@ public class Misc {
         sdg.setTemplateHandler(new TemplateHandler(DefaultChemObjectBuilder.getInstance()));
         sdg.setMolecule((IMolecule) mol);
         sdg.generateCoordinates(new Vector2d(0, 1));
-
         return sdg.getMolecule();
+    }
+
+    /**
+     * Get the substructure of a target structure based on a SMARTS pattern.
+     *
+     * @param target   The target molecule
+     * @param pattern The SMARTS pattern for the substructure. The string can be a
+     * plain SMARTS or a Base64 encoded string
+     * @return A fragment representing the fragmentif present, null otherwise
+     * @throws org.openscience.cdk.exception.CDKException if there is an error during SMARTS
+     * parsing or matching
+     */
+    public static IAtomContainer getNeedle(IAtomContainer target, String pattern) throws CDKException {
+        SMARTSQueryTool sqt = null;
+
+        try {
+            sqt = new SMARTSQueryTool(pattern);
+        } catch (TokenMgrError e) {
+            try {
+                sqt = new SMARTSQueryTool(new String(Base64.decode(pattern)));
+            } catch (CDKException e1) {
+                throw new CDKException("Couldn't parse query");
+            }
+        }
+
+        if (!sqt.matches(target)) return null;
+        List<List<Integer>> matches = sqt.getUniqueMatchingAtoms();
+        IAtomContainer ret = target.getBuilder().newAtomContainer();
+        for (List<Integer> match : matches) {
+            for (Integer idx : match) ret.addAtom(target.getAtom(idx));
+        }
+
+        // need to add the bonds, we only consider 2 atom bonds
+        for (IBond bond : target.bonds()) {
+            IAtom atom1 = bond.getAtom(0);
+            IAtom atom2 = bond.getAtom(1);
+            if (ret.contains(atom1) && ret.contains(atom2)) ret.addBond(bond);
+        }
+
+        return ret;
     }
 
 }

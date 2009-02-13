@@ -5,6 +5,7 @@ import com.sun.media.jai.codec.ImageEncoder;
 import com.sun.media.jai.codec.JPEGEncodeParam;
 import net.guha.util.cdk.Misc;
 import net.guha.util.cdk.Renderer2DPanel;
+import net.guha.util.cdk.Base64;
 import org.openscience.cdk.aromaticity.CDKHueckelAromaticityDetector;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.IAtom;
