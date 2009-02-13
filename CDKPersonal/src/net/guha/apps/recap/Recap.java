@@ -6,6 +6,7 @@ import net.guha.util.cdk.Renderer2DPanel;
 import org.openscience.cdk.Bond;
 import org.openscience.cdk.CDKConstants;
 import org.openscience.cdk.DefaultChemObjectBuilder;
+import org.openscience.cdk.aromaticity.CDKHueckelAromaticityDetector;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.*;
 import org.openscience.cdk.ringsearch.AllRingsFinder;
@@ -196,7 +197,7 @@ public class Recap {
      * @return A 2-element array of IAtomContainer's representing the fragments
      */
     private IAtomContainer[] splitMolecule(IAtomContainer atomContainer,
-                                           IBond bond) {
+                                           IBond bond) throws CDKException {
         IAtomContainer[] ret = new IAtomContainer[2];
 
 
@@ -217,12 +218,11 @@ public class Recap {
         return ret;
     }
 
-    private IAtomContainer makeAtomContainer(IAtom atom, List<IBond> parts) {
-        IPseudoAtom pseudoAtom = atom.getBuilder().newPseudoAtom("*");
-
+    private IAtomContainer makeAtomContainer(IAtom atom, List<IBond> parts) throws CDKException {
         IAtomContainer partContainer = DefaultChemObjectBuilder.getInstance().newAtomContainer();
         partContainer.addAtom(atom);
 
+        IPseudoAtom pseudoAtom = atom.getBuilder().newPseudoAtom("*");
         partContainer.addAtom(pseudoAtom);
         partContainer.addBond(new Bond(atom, pseudoAtom));
 
@@ -233,6 +233,8 @@ public class Recap {
             }
             partContainer.addBond(aBond);
         }
+      
+        CDKHueckelAromaticityDetector.detectAromaticity(partContainer);
         return partContainer;
     }
 

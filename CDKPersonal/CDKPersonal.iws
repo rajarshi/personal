@@ -119,10 +119,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Recap.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/recap/Recap.java">
+      <file leaf-file-name="Renderer2DPanel.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Renderer2DPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="220" column="67" selection-start="8541" selection-end="8541" vertical-scroll-proportion="0.8285124">
+            <state line="178" column="0" selection-start="7657" selection-end="7657" vertical-scroll-proportion="1.234315">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -130,10 +130,48 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RecapUI.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/recap/RecapUI.java">
+      <file leaf-file-name="StructureDiagram.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/StructureDiagram.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="8" selection-start="3422" selection-end="3422" vertical-scroll-proportion="0.5495868">
+            <state line="44" column="75" selection-start="1390" selection-end="1390" vertical-scroll-proportion="0.36031333">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CDKServices.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="0" selection-start="317" selection-end="317" vertical-scroll-proportion="-0.7637076">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VersionResource.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/VersionResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="13" selection-start="313" selection-end="313" vertical-scroll-proportion="0.13444301">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Constants.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/Constants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="53" selection-start="108" selection-end="108" vertical-scroll-proportion="0.07682458">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SSDepictionResource.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/SSDepictionResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="30" selection-start="534" selection-end="534" vertical-scroll-proportion="0.3916449">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -259,6 +297,32 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
+          <option name="myItemId" value="rest" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="resources" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="CDKPersonal" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="CDKPersonal" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="net.guha" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="apps" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
           <option name="myItemId" value="recap" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
         </PATH_ELEMENT>
@@ -351,7 +415,7 @@
       <recent name="net.guha.apps" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Recap">
+  <component name="RunManager" selected="Application.CDKServices">
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
@@ -776,7 +840,7 @@
   <component name="StructureViewFactory">
     <option name="AUTOSCROLL_MODE" value="false" />
     <option name="AUTOSCROLL_FROM_SOURCE" value="false" />
-    <option name="ACTIVE_ACTIONS" value="ALPHA_COMPARATOR,SHOW_FIELDS,SHOW_INHERITED" />
+    <option name="ACTIVE_ACTIONS" value="SHOW_NON_PUBLIC,SHOW_INHERITED,ALPHA_COMPARATOR,SHOW_FIELDS" />
   </component>
   <component name="Struts Assistant">
     <option name="showInputs" value="true" />
@@ -832,7 +896,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1282" y="0" width="1260" height="974" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
@@ -855,7 +919,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24938676" order="2" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
       <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37108433" order="2" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37108433" order="2" />
       <window_info id="JarSpy" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="File View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Dependency Cycles" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
@@ -978,37 +1042,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Misc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="13" selection-start="856" selection-end="856" vertical-scroll-proportion="-0.93886465">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Renderer2DPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="641" selection-end="641" vertical-scroll-proportion="0.12227074">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/Fragmenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="307" column="66" selection-start="11198" selection-end="11308" vertical-scroll-proportion="0.3409091">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/MultiStructurePanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="58" column="19" selection-start="272" selection-end="1698" vertical-scroll-proportion="0.90613264">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DepictionResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="27" selection-start="1669" selection-end="1669" vertical-scroll-proportion="0.21902378">
           <folding />
         </state>
       </provider>
@@ -1020,62 +1056,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/cdk-1.1.4.20090105.jar!/org/openscience/cdk/controller/ControllerHub.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="55" selection-start="719" selection-end="728" vertical-scroll-proportion="0.13833992">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/cdk-1.1.4.20090105.jar!/org/openscience/cdk/renderer/generators/ExternalHighlightGenerator.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="22" selection-start="384" selection-end="384" vertical-scroll-proportion="0.15306123">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/SSDepictionResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="45" selection-start="1800" selection-end="1800" vertical-scroll-proportion="0.18494898">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/cdk-1.1.4.20090105.jar!/org/openscience/cdk/renderer/IntermediateRenderer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="11" selection-start="899" selection-end="899" vertical-scroll-proportion="0.33290815">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="0.038265307">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="53" selection-start="108" selection-end="108" vertical-scroll-proportion="0.075093865">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/StructureDiagram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="203" column="16" selection-start="7895" selection-end="7895" vertical-scroll-proportion="0.42857143">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/recap/Recap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="220" column="67" selection-start="8541" selection-end="8541" vertical-scroll-proportion="0.8285124">
+        <state line="23" column="13" selection-start="835" selection-end="835" vertical-scroll-proportion="0.33291614">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1084,10 +1067,88 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/recap/RecapUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="8" selection-start="3422" selection-end="3422" vertical-scroll-proportion="0.5495868">
+        <state line="21" column="13" selection-start="691" selection-end="691" vertical-scroll-proportion="0.33291614">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Misc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="39" selection-start="4974" selection-end="4974" vertical-scroll-proportion="0.79349184">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Renderer2DPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="178" column="0" selection-start="7657" selection-end="7657" vertical-scroll-proportion="1.234315">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/Fragmenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="13" selection-start="1286" selection-end="1286" vertical-scroll-proportion="-0.41301626">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/SSDepictionResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="30" selection-start="534" selection-end="534" vertical-scroll-proportion="0.3916449">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/DepictionResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="50" selection-start="1692" selection-end="1692" vertical-scroll-proportion="0.6195244">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="214" column="33" selection-start="10152" selection-end="10152" vertical-scroll-proportion="0.36862245">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/StructureDiagram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="75" selection-start="1390" selection-end="1390" vertical-scroll-proportion="0.36031333">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="317" selection-end="317" vertical-scroll-proportion="-0.7637076">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/VersionResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="13" selection-start="313" selection-end="313" vertical-scroll-proportion="0.13444301">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="53" selection-start="108" selection-end="108" vertical-scroll-proportion="0.07682458">
+          <folding />
         </state>
       </provider>
     </entry>

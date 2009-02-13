@@ -3,6 +3,7 @@ package net.guha.apps.recap;
 import net.guha.util.cdk.Misc;
 import net.guha.util.cdk.Renderer2DPanel;
 import org.openscience.cdk.DefaultChemObjectBuilder;
+import org.openscience.cdk.aromaticity.CDKHueckelAromaticityDetector;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.smiles.SmilesParser;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
@@ -88,11 +89,12 @@ public class RecapUI extends JFrame {
         String[] fragsmi = recap.getUniqueFragmentsAasSmiles(frags);
 
         for (String s : fragsmi) System.out.println(s);
-        
         List<IAtomContainer> ufrag = new ArrayList<IAtomContainer>();
         ufrag.add(mol);
         for (String s : fragsmi) {
-            ufrag.add(sp.parseSmiles(s));
+            IAtomContainer a = sp.parseSmiles(s);
+            CDKHueckelAromaticityDetector.detectAromaticity(a);
+            ufrag.add(a);
         }
         displayStructures(ufrag, 3);
     }

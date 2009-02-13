@@ -8,83 +8,95 @@ import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IChemModel;
 import org.openscience.cdk.interfaces.IMolecule;
 import org.openscience.cdk.interfaces.IMoleculeSet;
-import org.openscience.cdk.renderer.IntermediateRenderer;
+import org.openscience.cdk.renderer.RendererModel;
+import org.openscience.cdk.renderer.RenderingParameters;
+import org.openscience.cdk.renderer.font.AWTFontManager;
+import org.openscience.cdk.renderer.generators.BasicAtomGenerator;
+import org.openscience.cdk.renderer.generators.HighlightGenerator;
+import org.openscience.cdk.renderer.generators.IGenerator;
+import org.openscience.cdk.renderer.generators.RingGenerator;
+import org.openscience.cdk.renderer.visitor.AWTDrawVisitor;
+import org.openscience.cdk.renderer.visitor.IDrawVisitor;
 
 import javax.swing.*;
 import java.awt.*;
-import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 /**
  * A JPanel to display 2D depictions.
+ * <p/>
+ * @author Rajarshi Guha
  */
 public class Renderer2DPanel extends JPanel implements IViewEventRelay {
-    private IntermediateRenderer renderer;
+    private org.openscience.cdk.renderer.Renderer renderer;
     private boolean isNewChemModel;
     private ControllerHub hub;
-    private ControllerModel controllerModel;
     private boolean shouldPaintFromCache;
-    IMolecule molecule;
-    boolean fitToScreen = true;
-
-    String title = "NA";
-    double activity = -9999.0;
-    DecimalFormat activityFormat = new DecimalFormat("############.00");
-
+    RendererModel rendererModel;
 
     /**
      * Create an instance of the rendering panel.
      * <p/>
      * This is a simplified constructor that uses defaults for the molecule
      * title and activity. Also it does not allow one to highlight substructures.
+     * The diagram will display colored atoms and will have a white background.
      *
      * @param mol molecule to render. Should have 2D coordinates
      * @param x   width of the panel
      * @param y   height of the panel
      */
     public Renderer2DPanel(IAtomContainer mol, int x, int y) {
-        this(mol, null, x, y, false, "NA", -9999.0);
+        this(mol, null, x, y, true, Color.white);
     }
 
     /**
      * Create an instance of the rendering panel.
      *
-     * @param mol          molecule to render. Should have 2D coordinates
-     * @param needle       A fragment representing a substructure of the above molecule.
-     *                     This substructure will be highlighted in the depiction. If no substructure
-     *                     is to be highlighted, then set this to null
-     * @param x            width of the panel
-     * @param y            height of the panel
-     * @param withHydrogen Should hydrogens be displayed
-     * @param name         The name of the molecule
-     * @param activity     The activity associated with the molecule
+     * @param mol    molecule to render. Should have 2D coordinates
+     * @param needle A fragment representing a substructure of the above molecule.
+     *               This substructure will be highlighted in the depiction. If no substructure
+     *               is to be highlighted, then set this to null
+     * @param x      width of the panel
+     * @param y      height of the panel
+     * @param showAtomColors should atoms be colored?
+     * @param backgroundColor requested background color
      */
     public Renderer2DPanel(IAtomContainer mol, IAtomContainer needle, int x, int y,
-                           boolean withHydrogen, String name, double activity) {
-        this.title = name;
-        this.activity = activity;
-        this.molecule = (IMolecule) mol;
-
+                           boolean showAtomColors, Color backgroundColor) {
         setPreferredSize(new Dimension(x, y));
-        setBackground(Color.WHITE);
+        setBackground(backgroundColor);
 
         IMoleculeSet moleculeSet = DefaultChemObjectBuilder.getInstance().newMoleculeSet();
-        moleculeSet.addMolecule(this.molecule);
+        moleculeSet.addMolecule((IMolecule) mol);
         IChemModel chemModel = DefaultChemObjectBuilder.getInstance().newChemModel();
         chemModel.setMoleculeSet(moleculeSet);
 
-        renderer = new IntermediateRenderer();
-        renderer.setFitToScreen(true);
-        controllerModel = new ControllerModel();
+        rendererModel = new RendererModel();
+        rendererModel.setShowAromaticity(true);
+
+        java.util.List<IGenerator> generators = new ArrayList<IGenerator>();
+        generators.add(new RingGenerator(rendererModel));
+        generators.add(new BasicAtomGenerator(rendererModel));
+        generators.add(new HighlightGenerator(rendererModel));
+//        generators.add(new ExternalHighlightGenerator(rendererModel));
+
+        renderer = new org.openscience.cdk.renderer.Renderer(generators, new AWTFontManager());
+
+        ControllerModel controllerModel = new ControllerModel();
         hub = new ControllerHub(controllerModel, renderer, chemModel, this);
+        hub.getRenderer().getRenderer2DModel().setColorAtomsByType(showAtomColors);
+        hub.getRenderer().getRenderer2DModel().setShowAromaticity(true);
+        hub.getRenderer().getRenderer2DModel().setFitToScreen(true);
+        hub.getRenderer().getRenderer2DModel().setUseAntiAliasing(true);
+        hub.getRenderer().getRenderer2DModel().setBackColor(backgroundColor);
+        hub.getRenderer().getRenderer2DModel().setZoomFactor(0.9);
 
-        hub.getIJava2DRenderer().getRenderer2DModel().setShowAromaticity(true);
-        hub.getIJava2DRenderer().getRenderer2DModel().setUseAntiAliasing(true);
-        hub.getIJava2DRenderer().getRenderer2DModel().setIsCompact(false);
-        hub.getIJava2DRenderer().getRenderer2DModel().setColorAtomsByType(false);
-
-        if (needle != null) {
-            hub.getIJava2DRenderer().getRenderer2DModel().setExternalHighlightColor(Color.red);
-            hub.getIJava2DRenderer().getRenderer2DModel().setExternalSelectedPart(needle);
+        if (needle != null) {            
+//            hub.getRenderer().getRenderer2DModel().getSelection().select(needle);
+            hub.getRenderer().getRenderer2DModel().setExternalSelectedPart(needle);
+//            hub.getRenderer().getRenderer2DModel().setExternalHighlightColor(Color.red);
+            hub.getRenderer().getRenderer2DModel().setHighlightRadiusModel(0);
+            hub.getRenderer().getRenderer2DModel().setSelectionShape(RenderingParameters.AtomShape.SQUARE);
         }
 
         isNewChemModel = true;
@@ -113,8 +125,6 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
 
         IChemModel chemModel = hub.getIChemModel();
         if (chemModel != null && chemModel.getMoleculeSet() != null) {
-
-            // determine the size the canvas needs to be in order to fit the model
             Rectangle diagramBounds = renderer.calculateScreenBounds(chemModel);
             if (this.overlaps(screenBounds, diagramBounds)) {
                 Rectangle union = screenBounds.union(diagramBounds);
@@ -132,8 +142,10 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
                 || screenBounds.getMaxY() < diagramBounds.getMaxY();
     }
 
+
     private void paintChemModel(IChemModel chemModel, Graphics2D g, Rectangle bounds) {
-        renderer.paintChemModel(chemModel, g, bounds, isNewChemModel);
+        IDrawVisitor drawVisitor = new AWTDrawVisitor(g);
+        renderer.paintChemModel(chemModel, drawVisitor, bounds, isNewChemModel);
         isNewChemModel = false;
 
         /*
@@ -159,21 +171,18 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
         if (this.shouldPaintFromCache) {
             this.paintFromCache(g2);
         } else {
+            this.paintChemModel(g2, this.getBounds());
             this.paintChemModel(g2, new Rectangle(0, 0, getWidth(), getHeight()));
+
         }
     }
 
     private void paintFromCache(Graphics2D g) {
-        renderer.repaint(g);
+        renderer.repaint(new AWTDrawVisitor(g));
     }
-
 
     public void updateView() {
         this.shouldPaintFromCache = false;
         this.repaint();
-    }
-
-    public void setFitToScreen(boolean fitToScreen) {
-        this.renderer.setFitToScreen(fitToScreen);
     }
 }

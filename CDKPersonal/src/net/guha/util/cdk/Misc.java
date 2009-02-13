@@ -11,8 +11,10 @@ import org.openscience.cdk.io.ISimpleChemObjectReader;
 import org.openscience.cdk.io.MDLWriter;
 import org.openscience.cdk.io.ReaderFactory;
 import org.openscience.cdk.layout.StructureDiagramGenerator;
+import org.openscience.cdk.layout.TemplateHandler;
 import org.openscience.cdk.tools.manipulator.ChemFileManipulator;
 
+import javax.vecmath.Vector2d;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -124,8 +126,10 @@ public class Misc {
 
     public static IMolecule get2DCoords(IAtomContainer mol) throws Exception {
         StructureDiagramGenerator sdg = new StructureDiagramGenerator();
-        sdg.setMolecule(new Molecule(mol));
-        sdg.generateCoordinates();
+        sdg.setTemplateHandler(new TemplateHandler(DefaultChemObjectBuilder.getInstance()));
+        sdg.setMolecule((IMolecule) mol);
+        sdg.generateCoordinates(new Vector2d(0, 1));
+
         return sdg.getMolecule();
     }
 

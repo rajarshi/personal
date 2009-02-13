@@ -305,7 +305,7 @@
         <root url="jar://$PROJECT_DIR$/libs/jai_codec.jar!/" />
         <root url="jar://$PROJECT_DIR$/libs/jai_core.jar!/" />
         <root url="jar://$PROJECT_DIR$/libs/commons-cli-1.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/libs/cdk-1.1.4.20090105.jar!/" />
+        <root url="jar://$PROJECT_DIR$/libs/cdk-1.1.5.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
