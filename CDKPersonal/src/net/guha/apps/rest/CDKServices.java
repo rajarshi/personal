@@ -25,12 +25,14 @@ public class CDKServices extends Application {
         router.attach("/cdk/depict", DepictionResource.class);
 
         router.attach("/cdk/ssdepict/{smiles}/{query}", SSDepictionResource.class);
+        router.attach("/cdk/ssdepict/{width}/{height}/{smiles}/{query}", SSDepictionResource.class);
 
         router.attach("/cdk/descriptor/tpsa/{smiles}", TPSAResource.class);
         router.attach("/cdk/descriptor/xlogp/{smiles}", TPSAResource.class);
 
         // the second route allows for POST requests where we match
         // multiple SMILES
+        router.attach("/cdk/substruct/{target}/{query}", SubstructureSearchResource.class);
         router.attach("/cdk/substruct/{target}/{query}", SubstructureSearchResource.class);
         router.attach("/cdk/substruct", SubstructureSearchResource.class);
         

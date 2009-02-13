@@ -128,13 +128,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SSDepictionResource.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SSDepictionResource.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/SSDepictionResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="17" selection-start="2536" selection-end="2536" vertical-scroll-proportion="0.33290815">
+            <state line="66" column="17" selection-start="2536" selection-end="2536" vertical-scroll-proportion="1.2627552">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CDKServices.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="54" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.38265306">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1056,13 +1065,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="317" selection-end="317" vertical-scroll-proportion="0.019132653">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/StructureDiagram.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="44" column="75" selection-start="1390" selection-end="1390" vertical-scroll-proportion="0.019132653">
@@ -1086,10 +1088,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/SSDepictionResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="17" selection-start="2536" selection-end="2536" vertical-scroll-proportion="0.33290815">
+        <state line="66" column="17" selection-start="2536" selection-end="2536" vertical-scroll-proportion="1.2627552">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="54" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.38265306">
+          <folding />
         </state>
       </provider>
     </entry>
