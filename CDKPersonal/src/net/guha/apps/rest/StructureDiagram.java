@@ -12,6 +12,7 @@ import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IBond;
 import org.openscience.cdk.interfaces.IMolecule;
 import org.openscience.cdk.smiles.smarts.SMARTSQueryTool;
+import org.openscience.cdk.smiles.smarts.parser.TokenMgrError;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
 import javax.media.jai.JAI;
@@ -40,7 +41,7 @@ public class StructureDiagram {
 
         try {
             sqt = new SMARTSQueryTool(query);
-        } catch (CDKException e) {
+        } catch (TokenMgrError e) {
             try {
                 sqt = new SMARTSQueryTool(new String(Base64.decode(query)));
             } catch (CDKException e1) {
