@@ -92,8 +92,8 @@
       <property name="field_breakpoints_groupByClasses" value="true" />
       <property name="method_breakpoints_groupByClasses" value="true" />
       <property name="exception_breakpoints_viewId" value="TABLE" />
-      <property name="exception_breakpoints_groupByClasses" value="true" />
       <property name="field_breakpoints_viewId" value="TABLE" />
+      <property name="exception_breakpoints_groupByClasses" value="true" />
       <property name="method_breakpoints_groupByMethods" value="false" />
     </ui_properties>
   </component>
@@ -122,59 +122,17 @@
       <file leaf-file-name="Renderer2DPanel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Renderer2DPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="178" column="0" selection-start="7657" selection-end="7657" vertical-scroll-proportion="1.234315">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StructureDiagram.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/StructureDiagram.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="75" selection-start="1390" selection-end="1390" vertical-scroll-proportion="0.36031333">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CDKServices.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="317" selection-end="317" vertical-scroll-proportion="-0.7637076">
+            <state line="178" column="0" selection-start="7657" selection-end="7657" vertical-scroll-proportion="0.7436224">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VersionResource.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/VersionResource.java">
+      <file leaf-file-name="build.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="13" selection-start="313" selection-end="313" vertical-scroll-proportion="0.13444301">
+            <state line="81" column="76" selection-start="2357" selection-end="2357" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Constants.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/Constants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="53" selection-start="108" selection-end="108" vertical-scroll-proportion="0.07682458">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SSDepictionResource.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/SSDepictionResource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="30" selection-start="534" selection-end="534" vertical-scroll-proportion="0.3916449">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -279,54 +237,6 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
         </PATH_ELEMENT>
       </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="CDKPersonal" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="CDKPersonal" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="net.guha" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="apps" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="rest" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="resources" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="CDKPersonal" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="CDKPersonal" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="net.guha" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="apps" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="recap" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-        </PATH_ELEMENT>
-      </PATH>
     </subPane>
   </component>
   <component name="PerforceChangeBrowserSettings">
@@ -382,19 +292,19 @@
     <property name="cvs_file_history_treeWidth2" value="361" />
     <property name="cvs_file_history_flatWidth2" value="361" />
     <property name="cvs_file_history_treeWidth3" value="361" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="cvs_file_history_treeOrder0" value="0" />
     <property name="cvs_file_history_flatWidth3" value="361" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="cvs_file_history_flatWidth0" value="361" />
-    <property name="cvs_file_history_flatWidth1" value="360" />
     <property name="GoToClass.includeLibraries" value="false" />
+    <property name="cvs_file_history_flatWidth1" value="360" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="RunManagerConfig.compileBeforeRunning" value="false" />
     <property name="cvs_file_history_flatOrder2" value="2" />
     <property name="cvs_file_history_flatOrder3" value="3" />
     <property name="cvs_file_history_flatOrder0" value="0" />
-    <property name="GenerateAntBuildDialog.forceTargetJdk" value="false" />
     <property name="cvs_file_history_flatOrder1" value="1" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
   </component>
@@ -901,7 +811,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12365145" order="1" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12365145" order="1" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32650602" order="1" />
       <window_info id="Profile" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.50203526" order="4" />
@@ -1083,28 +993,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Renderer2DPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="178" column="0" selection-start="7657" selection-end="7657" vertical-scroll-proportion="1.234315">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/Fragmenter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="40" column="13" selection-start="1286" selection-end="1286" vertical-scroll-proportion="-0.41301626">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/SSDepictionResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="30" selection-start="534" selection-end="534" vertical-scroll-proportion="0.3916449">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1122,32 +1014,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/StructureDiagram.java">
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="75" selection-start="1390" selection-end="1390" vertical-scroll-proportion="0.36031333">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="317" selection-end="317" vertical-scroll-proportion="-0.7637076">
+        <state line="4" column="53" selection-start="108" selection-end="108" vertical-scroll-proportion="0.07682458">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/VersionResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="313" selection-end="313" vertical-scroll-proportion="0.13444301">
+        <state line="12" column="13" selection-start="313" selection-end="313" vertical-scroll-proportion="0.13141426">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/Constants.java">
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/CDKServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="53" selection-start="108" selection-end="108" vertical-scroll-proportion="0.07682458">
+        <state line="13" column="0" selection-start="317" selection-end="317" vertical-scroll-proportion="0.019132653">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/StructureDiagram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="75" selection-start="1390" selection-end="1390" vertical-scroll-proportion="0.019132653">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/apps/rest/resources/SSDepictionResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="30" selection-start="534" selection-end="534" vertical-scroll-proportion="0.019132653">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Renderer2DPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="178" column="0" selection-start="7657" selection-end="7657" vertical-scroll-proportion="0.7436224">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="76" selection-start="2357" selection-end="2357" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

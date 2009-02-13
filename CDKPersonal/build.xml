@@ -28,14 +28,14 @@
     </target>
 
     <target id="compile-rest" name="compile-rest" depends="prep">
-	<javac srcdir="${sources}/net/guha/apps/rest"
+	<javac srcdir="${sources}/net/guha/apps/rest:${sources}/net/guha/util/cdk"
 	       destdir="${build.dir}"
 	       > 
 	    <classpath refid="${project.classpath}" />
 	</javac>
     </target>
 
-    <target id="compile-rest" name="compile-recap" depends="prep">
+    <target id="compile-recap" name="compile-recap" depends="prep">
 	<javac srcdir="${sources}/net/guha/apps/recap:${sources}/net/guha/util/cdk"
 	       destdir="${build.dir}"
 	       > 
@@ -47,7 +47,7 @@
     <target id="rest" name="rest" depends="compile-rest">
 	<unjar dest="${build.dir}" >
 	    <fileset dir="${lib.dir}"
-		     includes="cdk-1.1.4.20090105.jar,com.noelios.restlet.jar,jai_codec.jar,jai_core.jar,org.restlet.jar,commons-cli-1.0.jar" />
+		     includes="cdk-1.1.5.jar,com.noelios.restlet.jar,jai_codec.jar,jai_core.jar,org.restlet.jar,commons-cli-1.0.jar" />
 	</unjar>
 	<jar jarfile="cdkrest.jar">
 	    <manifest>
@@ -77,7 +77,7 @@
     </target>
 
     <target id="srcdist-rest" name="srcdist-rest" depends="clean">
-	<loadfile property="version.line" srcfile="src/net/guha/apps/rest/CDKServices.java">
+	<loadfile property="version.line" srcfile="src/net/guha/apps/rest/Constants.java">
 	    <filterchain>
 		<linecontainsregexp>
 		    <regexp pattern="static final String CDKREST_VERSION ="/>
