@@ -16,8 +16,8 @@ public class SSDepictionResource extends Resource {
 
     String smiles = "";
     String query = "";
-    int width = 300;
-    int height = 300;
+    int width = 150;
+    int height = 150;
 
     public SSDepictionResource(Context context, Request request, Response response) {
         super(context, request, response);
