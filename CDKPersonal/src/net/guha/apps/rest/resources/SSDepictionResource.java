@@ -18,6 +18,7 @@ public class SSDepictionResource extends Resource {
     String query = "";
     int width = 150;
     int height = 150;
+    MediaType contentType = MediaType.IMAGE_PNG;
 
     public SSDepictionResource(Context context, Request request, Response response) {
         super(context, request, response);
@@ -32,13 +33,13 @@ public class SSDepictionResource extends Resource {
         Object height = request.getAttributes().get("height");
         if (width != null) this.width = Integer.parseInt((String) width);
         if (height != null) this.height = Integer.parseInt((String) height);
-        getVariants().add(new Variant(MediaType.IMAGE_JPEG));
+        getVariants().add(new Variant(contentType));
     }
 
     @Override
     public Representation represent(Variant variant) throws ResourceException {
         Representation representation = null;
-        if (variant.getMediaType().equals(MediaType.IMAGE_JPEG)) {
+        if (variant.getMediaType().equals(contentType)) {
             if (GraphicsEnvironment.isHeadless()) throw new ResourceException(new CDKException("Running headless!"));
             if (smiles == null || query == null) throw new ResourceException(new CDKException("No SMILES or query specified?"));
             StructureDiagram sdg = new StructureDiagram();
@@ -49,7 +50,7 @@ public class SSDepictionResource extends Resource {
                 throw new ResourceException(e);
             }
             assert image != null;
-            representation = new ByteRepresentation(image, MediaType.IMAGE_JPEG, image.length);
+            representation = new ByteRepresentation(image, contentType, image.length);
         }
         return representation;
     }
@@ -93,7 +94,7 @@ public class SSDepictionResource extends Resource {
                 throw new ResourceException(e);
             }
             assert image != null;
-            representation = new ByteRepresentation(image, MediaType.IMAGE_JPEG, image.length);
+            representation = new ByteRepresentation(image, contentType, image.length);
             getResponse().setStatus(Status.SUCCESS_OK);
             getResponse().setEntity(representation);
         } else

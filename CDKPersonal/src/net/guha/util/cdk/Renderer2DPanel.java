@@ -11,10 +11,7 @@ import org.openscience.cdk.interfaces.IMoleculeSet;
 import org.openscience.cdk.renderer.RendererModel;
 import org.openscience.cdk.renderer.RenderingParameters;
 import org.openscience.cdk.renderer.font.AWTFontManager;
-import org.openscience.cdk.renderer.generators.BasicAtomGenerator;
-import org.openscience.cdk.renderer.generators.HighlightGenerator;
-import org.openscience.cdk.renderer.generators.IGenerator;
-import org.openscience.cdk.renderer.generators.RingGenerator;
+import org.openscience.cdk.renderer.generators.*;
 import org.openscience.cdk.renderer.visitor.AWTDrawVisitor;
 import org.openscience.cdk.renderer.visitor.IDrawVisitor;
 
@@ -25,14 +22,15 @@ import java.util.ArrayList;
 /**
  * A JPanel to display 2D depictions.
  * <p/>
+ *
  * @author Rajarshi Guha
  */
 public class Renderer2DPanel extends JPanel implements IViewEventRelay {
     private org.openscience.cdk.renderer.Renderer renderer;
     private boolean isNewChemModel;
     private ControllerHub hub;
-    private boolean shouldPaintFromCache;
     RendererModel rendererModel;
+    boolean isNew = true;
 
     /**
      * Create an instance of the rendering panel.
@@ -52,13 +50,13 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
     /**
      * Create an instance of the rendering panel.
      *
-     * @param mol    molecule to render. Should have 2D coordinates
-     * @param needle A fragment representing a substructure of the above molecule.
-     *               This substructure will be highlighted in the depiction. If no substructure
-     *               is to be highlighted, then set this to null
-     * @param x      width of the panel
-     * @param y      height of the panel
-     * @param showAtomColors should atoms be colored?
+     * @param mol             molecule to render. Should have 2D coordinates
+     * @param needle          A fragment representing a substructure of the above molecule.
+     *                        This substructure will be highlighted in the depiction. If no substructure
+     *                        is to be highlighted, then set this to null
+     * @param x               width of the panel
+     * @param y               height of the panel
+     * @param showAtomColors  should atoms be colored?
      * @param backgroundColor requested background color
      */
     public Renderer2DPanel(IAtomContainer mol, IAtomContainer needle, int x, int y,
@@ -71,32 +69,32 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
         IChemModel chemModel = DefaultChemObjectBuilder.getInstance().newChemModel();
         chemModel.setMoleculeSet(moleculeSet);
 
-        rendererModel = new RendererModel();
-        rendererModel.setShowAromaticity(true);
-
         java.util.List<IGenerator> generators = new ArrayList<IGenerator>();
-        generators.add(new RingGenerator(rendererModel));
-        generators.add(new BasicAtomGenerator(rendererModel));
-        generators.add(new HighlightGenerator(rendererModel));
-//        generators.add(new ExternalHighlightGenerator(rendererModel));
-
+        generators.add(new RingGenerator());
+        generators.add(new BasicAtomGenerator());
+        generators.add(new HighlightGenerator());
+        generators.add(new ExternalHighlightGenerator());
         renderer = new org.openscience.cdk.renderer.Renderer(generators, new AWTFontManager());
 
         ControllerModel controllerModel = new ControllerModel();
         hub = new ControllerHub(controllerModel, renderer, chemModel, this);
-        hub.getRenderer().getRenderer2DModel().setColorAtomsByType(showAtomColors);
-        hub.getRenderer().getRenderer2DModel().setShowAromaticity(true);
-        hub.getRenderer().getRenderer2DModel().setFitToScreen(true);
-        hub.getRenderer().getRenderer2DModel().setUseAntiAliasing(true);
-        hub.getRenderer().getRenderer2DModel().setBackColor(backgroundColor);
-        hub.getRenderer().getRenderer2DModel().setZoomFactor(0.9);
+        final RendererModel rendererModel = renderer.getRenderer2DModel();
+        rendererModel.setColorAtomsByType(showAtomColors);
+        rendererModel.setShowAromaticity(true);
+        rendererModel.setFitToScreen(true);
+        rendererModel.setUseAntiAliasing(true);
+        rendererModel.setBackColor(backgroundColor);
+        rendererModel.setZoomFactor(0.9);
 
-        if (needle != null) {            
-//            hub.getRenderer().getRenderer2DModel().getSelection().select(needle);
-            hub.getRenderer().getRenderer2DModel().setExternalSelectedPart(needle);
-//            hub.getRenderer().getRenderer2DModel().setExternalHighlightColor(Color.red);
-            hub.getRenderer().getRenderer2DModel().setHighlightRadiusModel(0);
-            hub.getRenderer().getRenderer2DModel().setSelectionShape(RenderingParameters.AtomShape.SQUARE);
+
+        if (needle != null) {
+//            rendererModel.getSelection().select(needle);
+            rendererModel.setExternalSelectedPart(needle);
+//            rendererModel.setExternalHighlightColor(Color.red);
+            rendererModel.setHighlightDistance(2);
+//            rendererModel.setSelectedPartColor(Color.red);
+            rendererModel.setSelectionShape(RenderingParameters.AtomShape.SQUARE);
+            rendererModel.setCompactShape(RenderingParameters.AtomShape.SQUARE);
         }
 
         isNewChemModel = true;
@@ -122,7 +120,6 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
     }
 
     public void paintChemModel(Graphics2D g, Rectangle screenBounds) {
-
         IChemModel chemModel = hub.getIChemModel();
         if (chemModel != null && chemModel.getMoleculeSet() != null) {
             Rectangle diagramBounds = renderer.calculateScreenBounds(chemModel);
@@ -133,7 +130,9 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
             }
             this.paintChemModel(chemModel, g, screenBounds);
         }
+
     }
+
 
     private boolean overlaps(Rectangle screenBounds, Rectangle diagramBounds) {
         return screenBounds.getMinX() > diagramBounds.getMinX()
@@ -156,7 +155,6 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
          * If set to true, then any change in dimensions requires a call to
          * updateView() - by setting to false, we don't need to call updateView()
          */
-        this.shouldPaintFromCache = false;
     }
 
     public void setIsNewChemModel(boolean isNewChemModel) {
@@ -164,25 +162,18 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
     }
 
     public void paint(Graphics g) {
-        this.setBackground(renderer.getRenderer2DModel().getBackColor());
         super.paint(g);
         Graphics2D g2 = (Graphics2D) g;
-        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        if (this.shouldPaintFromCache) {
-            this.paintFromCache(g2);
-        } else {
-            this.paintChemModel(g2, this.getBounds());
-            this.paintChemModel(g2, new Rectangle(0, 0, getWidth(), getHeight()));
+        this.renderer.paintChemModel(
+                this.hub.getIChemModel(),
+                new AWTDrawVisitor(g2),
+                this.getBounds(),
+                isNew);
+        isNew = false;
 
-        }
-    }
-
-    private void paintFromCache(Graphics2D g) {
-        renderer.repaint(new AWTDrawVisitor(g));
     }
 
     public void updateView() {
-        this.shouldPaintFromCache = false;
         this.repaint();
     }
 }

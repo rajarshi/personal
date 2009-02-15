@@ -18,6 +18,8 @@ public class DepictionResource extends Resource {
     int width = 300;
     int height = 300;
 
+    MediaType contentType = MediaType.IMAGE_PNG;
+
     public DepictionResource(Context context, Request request, Response response) {
         super(context, request, response);
 
@@ -28,13 +30,13 @@ public class DepictionResource extends Resource {
         Object height = request.getAttributes().get("height");
         if (width != null) this.width = Integer.parseInt((String) width);
         if (height != null) this.height = Integer.parseInt((String) height);
-        getVariants().add(new Variant(MediaType.IMAGE_JPEG));
+        getVariants().add(new Variant(contentType));
     }
 
     @Override
     public Representation represent(Variant variant) throws ResourceException {
         Representation representation = null;
-        if (variant.getMediaType().equals(MediaType.IMAGE_JPEG)) {
+        if (variant.getMediaType().equals(contentType)) {
             if (GraphicsEnvironment.isHeadless()) throw new ResourceException(new CDKException("Running headless!"));
             if (smiles == null) throw new ResourceException(new CDKException("No SMILES specified?"));
             StructureDiagram sdg = new StructureDiagram();
@@ -45,7 +47,7 @@ public class DepictionResource extends Resource {
                 throw new ResourceException(e);
             }
             assert image != null;
-            representation = new ByteRepresentation(image, MediaType.IMAGE_JPEG, image.length);
+            representation = new ByteRepresentation(image, contentType, image.length);
         }
         return representation;
     }
@@ -89,7 +91,7 @@ public class DepictionResource extends Resource {
                 throw new ResourceException(e);
             }
             assert image != null;
-            representation = new ByteRepresentation(image, MediaType.IMAGE_JPEG, image.length);
+            representation = new ByteRepresentation(image, contentType, image.length);
             getResponse().setStatus(Status.SUCCESS_OK);
             getResponse().setEntity(representation);
         } else

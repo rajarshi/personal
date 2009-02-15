@@ -3,9 +3,10 @@ package net.guha.apps.rest;
 import com.sun.media.jai.codec.ImageCodec;
 import com.sun.media.jai.codec.ImageEncoder;
 import com.sun.media.jai.codec.JPEGEncodeParam;
+import com.sun.media.jai.codec.PNGEncodeParam;
+import net.guha.util.cdk.Base64;
 import net.guha.util.cdk.Misc;
 import net.guha.util.cdk.Renderer2DPanel;
-import net.guha.util.cdk.Base64;
 import org.openscience.cdk.aromaticity.CDKHueckelAromaticityDetector;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.IAtom;
@@ -62,7 +63,7 @@ public class StructureDiagram {
             IAtom atom2 = bond.getAtom(1);
             if (ret.contains(atom1) && ret.contains(atom2)) ret.addBond(bond);
         }
-        
+
         return ret;
     }
 
@@ -104,9 +105,11 @@ public class StructureDiagram {
             frame.pack();
             Image img = panel.takeSnapshot();
             RenderedOp image = JAI.create("AWTImage", img);
-            JPEGEncodeParam params = new JPEGEncodeParam();
+            PNGEncodeParam params = new PNGEncodeParam.RGB();
+            ((PNGEncodeParam.RGB) params).setBackgroundRGB(new int[]{1, 1, 1});
+
             baos = new ByteArrayOutputStream();
-            ImageEncoder encoder = ImageCodec.createImageEncoder("JPEG", baos, params);
+            ImageEncoder encoder = ImageCodec.createImageEncoder("PNG", baos, params);
             encoder.encode(image);
             baos.close();
         } catch (NullPointerException npe) {
