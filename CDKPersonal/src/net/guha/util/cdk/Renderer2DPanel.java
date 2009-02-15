@@ -11,10 +11,7 @@ import org.openscience.cdk.interfaces.IMoleculeSet;
 import org.openscience.cdk.renderer.RendererModel;
 import org.openscience.cdk.renderer.RenderingParameters;
 import org.openscience.cdk.renderer.font.AWTFontManager;
-import org.openscience.cdk.renderer.generators.BasicAtomGenerator;
-import org.openscience.cdk.renderer.generators.HighlightGenerator;
-import org.openscience.cdk.renderer.generators.IGenerator;
-import org.openscience.cdk.renderer.generators.RingGenerator;
+import org.openscience.cdk.renderer.generators.*;
 import org.openscience.cdk.renderer.visitor.AWTDrawVisitor;
 import org.openscience.cdk.renderer.visitor.IDrawVisitor;
 
@@ -71,32 +68,30 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
         IChemModel chemModel = DefaultChemObjectBuilder.getInstance().newChemModel();
         chemModel.setMoleculeSet(moleculeSet);
 
-        rendererModel = new RendererModel();
-        rendererModel.setShowAromaticity(true);
-
+               
         java.util.List<IGenerator> generators = new ArrayList<IGenerator>();
-        generators.add(new RingGenerator(rendererModel));
-        generators.add(new BasicAtomGenerator(rendererModel));
-        generators.add(new HighlightGenerator(rendererModel));
-//        generators.add(new ExternalHighlightGenerator(rendererModel));
-
+        generators.add(new RingGenerator());
+        generators.add(new BasicAtomGenerator());
+        generators.add(new HighlightGenerator());
+        generators.add(new ExternalHighlightGenerator());
         renderer = new org.openscience.cdk.renderer.Renderer(generators, new AWTFontManager());
 
         ControllerModel controllerModel = new ControllerModel();
         hub = new ControllerHub(controllerModel, renderer, chemModel, this);
-        hub.getRenderer().getRenderer2DModel().setColorAtomsByType(showAtomColors);
-        hub.getRenderer().getRenderer2DModel().setShowAromaticity(true);
-        hub.getRenderer().getRenderer2DModel().setFitToScreen(true);
-        hub.getRenderer().getRenderer2DModel().setUseAntiAliasing(true);
-        hub.getRenderer().getRenderer2DModel().setBackColor(backgroundColor);
-        hub.getRenderer().getRenderer2DModel().setZoomFactor(0.9);
+        final RendererModel rendererModel = renderer.getRenderer2DModel();
+        rendererModel.setColorAtomsByType(showAtomColors);
+        rendererModel.setShowAromaticity(true);
+        rendererModel.setFitToScreen(true);
+        rendererModel.setUseAntiAliasing(true);
+        rendererModel.setBackColor(backgroundColor);
+        rendererModel.setZoomFactor(0.9);
 
         if (needle != null) {            
-//            hub.getRenderer().getRenderer2DModel().getSelection().select(needle);
-            hub.getRenderer().getRenderer2DModel().setExternalSelectedPart(needle);
-//            hub.getRenderer().getRenderer2DModel().setExternalHighlightColor(Color.red);
-            hub.getRenderer().getRenderer2DModel().setHighlightRadiusModel(0);
-            hub.getRenderer().getRenderer2DModel().setSelectionShape(RenderingParameters.AtomShape.SQUARE);
+//            rendererModel.getSelection().select(needle);
+            rendererModel.setExternalSelectedPart(needle);
+//            rendererModel.setExternalHighlightColor(Color.red);
+//            rendererModel.setHighlightRadiusModel(0);
+            rendererModel.setSelectionShape(RenderingParameters.AtomShape.SQUARE);
         }
 
         isNewChemModel = true;
