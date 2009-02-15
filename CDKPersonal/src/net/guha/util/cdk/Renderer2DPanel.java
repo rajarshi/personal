@@ -69,7 +69,6 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
         IChemModel chemModel = DefaultChemObjectBuilder.getInstance().newChemModel();
         chemModel.setMoleculeSet(moleculeSet);
 
-
         java.util.List<IGenerator> generators = new ArrayList<IGenerator>();
         generators.add(new RingGenerator());
         generators.add(new BasicAtomGenerator());
@@ -87,12 +86,14 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
         rendererModel.setBackColor(backgroundColor);
         rendererModel.setZoomFactor(0.9);
 
+
         if (needle != null) {
 //            rendererModel.getSelection().select(needle);
             rendererModel.setExternalSelectedPart(needle);
 //            rendererModel.setExternalHighlightColor(Color.red);
-//            rendererModel.setHighlightRadiusModel(0);
+            rendererModel.setHighlightDistance(0);
             rendererModel.setSelectionShape(RenderingParameters.AtomShape.SQUARE);
+            rendererModel.setCompactShape(RenderingParameters.AtomShape.SQUARE);
         }
 
         isNewChemModel = true;
