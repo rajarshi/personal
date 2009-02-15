@@ -63,7 +63,7 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
                            boolean showAtomColors, Color backgroundColor) {
         setPreferredSize(new Dimension(x, y));
         setBackground(backgroundColor);
-        
+
         IMoleculeSet moleculeSet = DefaultChemObjectBuilder.getInstance().newMoleculeSet();
         moleculeSet.addMolecule((IMolecule) mol);
         IChemModel chemModel = DefaultChemObjectBuilder.getInstance().newChemModel();
@@ -119,7 +119,6 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
     }
 
     public void paintChemModel(Graphics2D g, Rectangle screenBounds) {
-
         IChemModel chemModel = hub.getIChemModel();
         if (chemModel != null && chemModel.getMoleculeSet() != null) {
             Rectangle diagramBounds = renderer.calculateScreenBounds(chemModel);
@@ -130,7 +129,9 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
             }
             this.paintChemModel(chemModel, g, screenBounds);
         }
+
     }
+
 
     private boolean overlaps(Rectangle screenBounds, Rectangle diagramBounds) {
         return screenBounds.getMinX() > diagramBounds.getMinX()
