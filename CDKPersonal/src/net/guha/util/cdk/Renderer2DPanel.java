@@ -22,14 +22,15 @@ import java.util.ArrayList;
 /**
  * A JPanel to display 2D depictions.
  * <p/>
+ *
  * @author Rajarshi Guha
  */
 public class Renderer2DPanel extends JPanel implements IViewEventRelay {
     private org.openscience.cdk.renderer.Renderer renderer;
     private boolean isNewChemModel;
     private ControllerHub hub;
-    private boolean shouldPaintFromCache;
     RendererModel rendererModel;
+    boolean isNew = true;
 
     /**
      * Create an instance of the rendering panel.
@@ -49,26 +50,26 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
     /**
      * Create an instance of the rendering panel.
      *
-     * @param mol    molecule to render. Should have 2D coordinates
-     * @param needle A fragment representing a substructure of the above molecule.
-     *               This substructure will be highlighted in the depiction. If no substructure
-     *               is to be highlighted, then set this to null
-     * @param x      width of the panel
-     * @param y      height of the panel
-     * @param showAtomColors should atoms be colored?
+     * @param mol             molecule to render. Should have 2D coordinates
+     * @param needle          A fragment representing a substructure of the above molecule.
+     *                        This substructure will be highlighted in the depiction. If no substructure
+     *                        is to be highlighted, then set this to null
+     * @param x               width of the panel
+     * @param y               height of the panel
+     * @param showAtomColors  should atoms be colored?
      * @param backgroundColor requested background color
      */
     public Renderer2DPanel(IAtomContainer mol, IAtomContainer needle, int x, int y,
                            boolean showAtomColors, Color backgroundColor) {
         setPreferredSize(new Dimension(x, y));
         setBackground(backgroundColor);
-
+        
         IMoleculeSet moleculeSet = DefaultChemObjectBuilder.getInstance().newMoleculeSet();
         moleculeSet.addMolecule((IMolecule) mol);
         IChemModel chemModel = DefaultChemObjectBuilder.getInstance().newChemModel();
         chemModel.setMoleculeSet(moleculeSet);
 
-               
+
         java.util.List<IGenerator> generators = new ArrayList<IGenerator>();
         generators.add(new RingGenerator());
         generators.add(new BasicAtomGenerator());
@@ -86,7 +87,7 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
         rendererModel.setBackColor(backgroundColor);
         rendererModel.setZoomFactor(0.9);
 
-        if (needle != null) {            
+        if (needle != null) {
 //            rendererModel.getSelection().select(needle);
             rendererModel.setExternalSelectedPart(needle);
 //            rendererModel.setExternalHighlightColor(Color.red);
@@ -151,7 +152,6 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
          * If set to true, then any change in dimensions requires a call to
          * updateView() - by setting to false, we don't need to call updateView()
          */
-        this.shouldPaintFromCache = false;
     }
 
     public void setIsNewChemModel(boolean isNewChemModel) {
@@ -159,25 +159,18 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
     }
 
     public void paint(Graphics g) {
-        this.setBackground(renderer.getRenderer2DModel().getBackColor());
         super.paint(g);
         Graphics2D g2 = (Graphics2D) g;
-        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        if (this.shouldPaintFromCache) {
-            this.paintFromCache(g2);
-        } else {
-            this.paintChemModel(g2, this.getBounds());
-            this.paintChemModel(g2, new Rectangle(0, 0, getWidth(), getHeight()));
+        this.renderer.paintChemModel(
+                this.hub.getIChemModel(),
+                new AWTDrawVisitor(g2),
+                this.getBounds(),
+                isNew);
+        isNew = false;
 
-        }
-    }
-
-    private void paintFromCache(Graphics2D g) {
-        renderer.repaint(new AWTDrawVisitor(g));
     }
 
     public void updateView() {
-        this.shouldPaintFromCache = false;
         this.repaint();
     }
 }

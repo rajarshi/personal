@@ -119,10 +119,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Renderer2DPanel.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Renderer2DPanel.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Renderer2DPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="13" selection-start="945" selection-end="945" vertical-scroll-proportion="0.33333334">
+            <state line="141" column="87" selection-start="5914" selection-end="5914" vertical-scroll-proportion="0.06633907">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -130,10 +130,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DepictTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DepictTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/guha/test/DepictTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="17" selection-start="1820" selection-end="1820" vertical-scroll-proportion="0.8951965">
+            <state line="57" column="17" selection-start="1820" selection-end="1820" vertical-scroll-proportion="1.5110565">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -408,23 +408,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.DepictTest">
-    <tempConfiguration default="false" name="DepictTest" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" value="net.guha.test.DepictTest" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="CDKPersonal" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </tempConfiguration>
     <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -818,6 +801,23 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
+    <configuration default="false" name="DepictTest" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" value="net.guha.test.DepictTest" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="CDKPersonal" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
     <list size="15">
       <item index="0" class="java.lang.String" itemvalue="Application.Fingerprinting" />
       <item index="1" class="java.lang.String" itemvalue="Application.CLT" />
@@ -906,7 +906,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="7" y="31" width="1420" height="860" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
@@ -923,7 +923,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12365145" order="1" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37042063" order="2" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37042063" order="2" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24938676" order="2" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21244814" order="0" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.50203526" order="4" />
@@ -1143,18 +1143,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Renderer2DPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/net/guha/test/DepictTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="13" selection-start="945" selection-end="945" vertical-scroll-proportion="0.33333334">
+        <state line="57" column="17" selection-start="1820" selection-end="1820" vertical-scroll-proportion="1.5110565">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/guha/test/DepictTest.java">
+    <entry file="file://$PROJECT_DIR$/src/net/guha/util/cdk/Renderer2DPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="17" selection-start="1820" selection-end="1820" vertical-scroll-proportion="0.8951965">
+        <state line="141" column="87" selection-start="5914" selection-end="5914" vertical-scroll-proportion="0.06633907">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
