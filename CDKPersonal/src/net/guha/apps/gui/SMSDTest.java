@@ -1,4 +1,4 @@
-package net.guha.apps;
+package net.guha.apps.gui;
 
 import chemlib.ebi.core.tools.EBIAtomContainerManipulator;
 import chemlib.ebi.core.tools.EBIMCSCalculator;

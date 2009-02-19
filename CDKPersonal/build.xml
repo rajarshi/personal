@@ -1,7 +1,7 @@
 <project name="cdkpersonal" default="info" basedir=".">
-    <property name="build.dir" value="classes" />
-    <property name="sources" value="src" />
-    <property name="lib.dir" value="libs/" />
+    <property name="build.dir" value="classes"/>
+    <property name="sources" value="src"/>
+    <property name="lib.dir" value="libs/"/>
 
 
     <!-- Pull in ant-contrib -->
@@ -9,118 +9,141 @@
 
     <!-- Set up the CLASSPATH -->
     <path id="project.libs">
-	<fileset dir="${lib.dir}">
-	    <include name="*.jar" />
-	</fileset>
+        <fileset dir="${lib.dir}">
+            <include name="*.jar"/>
+        </fileset>
     </path>
-    <property name="project.classpath" value="project.libs" />
+    <property name="project.classpath" value="project.libs"/>
 
     <target id="clean" name="clean">
-      <delete dir="${build.dir}" />
-      <delete>
-	<fileset dir="." includes="cdkrest-src*" />
-      </delete>
+        <delete dir="${build.dir}"/>
+        <delete>
+            <fileset dir="." includes="cdkrest-src*"/>
+        </delete>
     </target>
 
     <!-- for internal use -->
     <target id="prep" name="prep">
-	<mkdir dir="${build.dir}" />
+        <mkdir dir="${build.dir}"/>
     </target>
 
     <target id="compile-rest" name="compile-rest" depends="prep">
-	<javac srcdir="${sources}/net/guha/apps/rest:${sources}/net/guha/util/cdk"
-	       destdir="${build.dir}"
-	       > 
-	    <classpath refid="${project.classpath}" />
-	</javac>
+        <javac srcdir="${sources}/net/guha/apps/rest:${sources}/net/guha/util/cdk"
+               destdir="${build.dir}"
+                >
+            <classpath refid="${project.classpath}"/>
+        </javac>
     </target>
 
     <target id="compile-recap" name="compile-recap" depends="prep">
-	<javac srcdir="${sources}/net/guha/apps/recap:${sources}/net/guha/util/cdk"
-	       destdir="${build.dir}"
-	       > 
-	    <classpath refid="${project.classpath}" />
-	</javac>
+        <javac srcdir="${sources}/net/guha/apps/recap:${sources}/net/guha/util/cdk"
+               destdir="${build.dir}"
+                >
+            <classpath refid="${project.classpath}"/>
+        </javac>
+    </target>
+
+    <target id="compile-smds" name="compile-smds" depends="prep">
+        <javac srcdir="${sources}/net/guha/apps/recap:${sources}/net/guha/util/cdk"
+               destdir="${build.dir}"
+                >
+            <classpath refid="${project.classpath}"/>
+        </javac>
     </target>
 
 
     <target id="rest" name="rest" depends="compile-rest">
-	<unjar dest="${build.dir}" >
-	    <fileset dir="${lib.dir}"
-		     includes="cdk-1.1.5.jar,com.noelios.restlet.jar,jai_codec.jar,jai_core.jar,org.restlet.jar,commons-cli-1.0.jar" />
-	</unjar>
-	<jar jarfile="cdkrest.jar">
-	    <manifest>
-		<attribute name="Main-Class" value="net.guha.apps.rest.CDKServices" />
-	    </manifest>
-	    <fileset dir="${build.dir}"> 
-		<include name="**/*" />
-	    </fileset>
-	</jar>
+        <unjar dest="${build.dir}">
+            <fileset dir="${lib.dir}"
+                     includes="cdk-1.1.5.jar,com.noelios.restlet.jar,jai_codec.jar,jai_core.jar,org.restlet.jar,commons-cli-1.0.jar"/>
+        </unjar>
+        <jar jarfile="cdkrest.jar">
+            <manifest>
+                <attribute name="Main-Class" value="net.guha.apps.rest.CDKServices"/>
+            </manifest>
+            <fileset dir="${build.dir}">
+                <include name="**/*"/>
+            </fileset>
+        </jar>
+    </target>
+
+    <target id="smds" name="smds" depends="compile-smds">
+        <unjar dest="${build.dir}">
+            <fileset dir="${lib.dir}"
+                     includes="cdk-1.1.5.jar,SMSD.jar"/>
+        </unjar>
+        <jar jarfile="smsdgui.jar">
+            <manifest>
+                <attribute name="Main-Class" value="net.guha.apps.gui.SMSDTest"/>
+            </manifest>
+            <fileset dir="${build.dir}">
+                <include name="**/*"/>
+            </fileset>
+        </jar>
     </target>
 
     <target id="recap" name="recap" depends="compile-recap">
-<!--
-	<unjar dest="${build.dir}" >
-	    <fileset dir="${lib.dir}"
-		     includes="" />
-	</unjar>
--->
-	<jar jarfile="recap.jar">
-	    <manifest>
-		<attribute name="Main-Class" value="net.guha.apps.recap.Recap" />
-	    </manifest>
-	    <fileset dir="${build.dir}"> 
-		<include name="**/*" />
-	    </fileset>
-	</jar>
+        <!--
+            <unjar dest="${build.dir}" >
+                <fileset dir="${lib.dir}"
+                     includes="" />
+            </unjar>
+        -->
+        <jar jarfile="recap.jar">
+            <manifest>
+                <attribute name="Main-Class" value="net.guha.apps.recap.Recap"/>
+            </manifest>
+            <fileset dir="${build.dir}">
+                <include name="**/*"/>
+            </fileset>
+        </jar>
     </target>
 
     <target id="srcdist-rest" name="srcdist-rest" depends="clean">
-	<loadfile property="version.line" srcfile="src/net/guha/apps/rest/Constants.java">
-	    <filterchain>
-		<linecontainsregexp>
-		    <regexp pattern="static final String CDKREST_VERSION ="/>
-		</linecontainsregexp>
-	    </filterchain>
-	</loadfile>
-	<propertyregex property="version" input="${version.line}"
-		       regexp="([0-9]+?\.[0-9]+?)"
-		       select="\1"/>
-	<tar
-	    destfile="cdkrest-src-${version}.tgz"
-	    basedir="${basedir}"
-	    compression="gzip"
-	    excludes=".git/**, .gitignore/**, *.ipr, *.iws, *.iml, src/**, cdkrest*, module* nohup*">
-	  <fileset dir=".">
-	    <include name="src/net/guha/apps/rest/**" />
-	    <include name="COPYING" />
-	  </fileset>
-	</tar>
-	<zip
-	    zipfile="cdkrest-src-${version}.zip"
-	    basedir="${basedir}"
-	    excludes=".git/**, .gitignore/**, *.ipr, *.iws, *.iml, src/**, cdkrest*, module* nohup*">
-	  <fileset dir=".">
-	    <include name="src/net/guha/apps/rest/**" />
-	    <include name="COPYING" />
-	  </fileset>
-	  
-	</zip>
+        <loadfile property="version.line" srcfile="src/net/guha/apps/rest/Constants.java">
+            <filterchain>
+                <linecontainsregexp>
+                    <regexp pattern="static final String CDKREST_VERSION ="/>
+                </linecontainsregexp>
+            </filterchain>
+        </loadfile>
+        <propertyregex property="version" input="${version.line}"
+                       regexp="([0-9]+?\.[0-9]+?)"
+                       select="\1"/>
+        <tar
+                destfile="cdkrest-src-${version}.tgz"
+                basedir="${basedir}"
+                compression="gzip"
+                excludes=".git/**, .gitignore/**, *.ipr, *.iws, *.iml, src/**, cdkrest*, module* nohup*">
+            <fileset dir=".">
+                <include name="src/net/guha/apps/rest/**"/>
+                <include name="COPYING"/>
+            </fileset>
+        </tar>
+        <zip
+                zipfile="cdkrest-src-${version}.zip"
+                basedir="${basedir}"
+                excludes=".git/**, .gitignore/**, *.ipr, *.iws, *.iml, src/**, cdkrest*, module* nohup*">
+            <fileset dir=".">
+                <include name="src/net/guha/apps/rest/**"/>
+                <include name="COPYING"/>
+            </fileset>
+
+        </zip>
     </target>
 
     <target id="info" name="info">
-	<echo message="SALI Viewer (based on ZGRViewer)" />
-	<echo message="Rajarshi Guha (rajarshi.guha@gmail.com) " />
-	<echo message=" " />
-	<echo message="Available targets:" />
-	<echo message=" " />
-	<echo message="info           This message" />
-	<echo message="clean          Remove build directory" />
-	<echo message="                               " />
-	<echo message="compile-rest   Compile CDK REST sources" />
-	<echo message="srcdist-rest   Generate source distribution" />
-	<echo message="rest           Build CDK REST jar file" />
+        <echo message="SALI Viewer (based on ZGRViewer)"/>
+        <echo message="Rajarshi Guha (rajarshi.guha@gmail.com) "/>
+        <echo message=" "/>
+        <echo message="Available targets:"/>
+        <echo message=" "/>
+        <echo message="info           This message"/>
+        <echo message="clean          Remove build directory"/>
+        <echo message="                               "/>
+        <echo message="compile-rest   Compile CDK REST sources"/>
+        <echo message="srcdist-rest   Generate source distribution"/>
+        <echo message="rest           Build CDK REST jar file"/>
     </target>
 
 </project>
