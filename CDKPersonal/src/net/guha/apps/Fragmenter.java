@@ -3,19 +3,15 @@
  */
 package net.guha.apps;
 
-import org.openscience.cdk.CDKConstants;
+import net.guha.util.cdk.MultiStructurePanel;
+import net.guha.util.cdk.Renderer2DPanel;
 import org.openscience.cdk.DefaultChemObjectBuilder;
-import org.openscience.cdk.Molecule;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.exception.InvalidSmilesException;
-import org.openscience.cdk.geometry.GeometryTools;
 import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IBond;
 import org.openscience.cdk.interfaces.IRingSet;
-import org.openscience.cdk.layout.StructureDiagramGenerator;
-import org.openscience.cdk.renderer.Renderer2D;
-import org.openscience.cdk.renderer.Renderer2DModel;
 import org.openscience.cdk.ringsearch.AllRingsFinder;
 import org.openscience.cdk.smiles.SmilesParser;
 
@@ -23,7 +19,6 @@ import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -69,16 +64,13 @@ public class Fragmenter {
 
         // find the splitable bonds
         ArrayList<IBond> splitableBonds = new ArrayList<IBond>();
-        Iterator bonds = atomContainer.bonds();
-        while (bonds.hasNext()) {
-
-            IBond bond = (IBond) bonds.next();
+        for (IBond bond : atomContainer.bonds()) {
             boolean isInRing = false;
             boolean isTerminal = false;
 
             // lets see if it's in a ring
-            List rings = allRings.getRings(bond);
-            if (rings.size() != 0)
+            IRingSet rings = allRings.getRings(bond);
+            if (rings.getAtomContainerCount() != 0)
                 isInRing = true;
 
             // lets see if it is a terminal bond
@@ -174,10 +166,7 @@ public class Fragmenter {
     private List<IAtomContainer> splitMolecule(IAtomContainer atomContainer,
                                                IBond bond) {
         List<IAtomContainer> ret = new ArrayList<IAtomContainer>();
-
-        Iterator atoms = bond.atoms();
-        while (atoms.hasNext()) {
-            IAtom atom = (IAtom) atoms.next();
+        for (IAtom atom : bond.atoms()) {
             List<IBond> part = new ArrayList<IBond>();
             part.add(bond);
             part = traverse(atomContainer, atom, part);
@@ -211,9 +200,7 @@ public class Fragmenter {
                 .newAtomContainer();
         partContainer.addAtom(atom);
         for (IBond aBond : parts) {
-            Iterator bondedAtoms = aBond.atoms();
-            while (bondedAtoms.hasNext()) {
-                IAtom bondedAtom = (IAtom) bondedAtoms.next();
+            for (IAtom bondedAtom : aBond.atoms()) {
                 if (!partContainer.contains(bondedAtom))
                     partContainer.addAtom(bondedAtom);
             }
@@ -303,137 +290,23 @@ public class Fragmenter {
             int y = 200;
             Renderer2DPanel[] panels = new Renderer2DPanel[l.size() + 1];
             System.out.println("Creating image for specified molecule");
-            panels[0] = new Renderer2DPanel(mol, x, y, false);
+            panels[0] = new Renderer2DPanel(mol, x, y);
             panels[0].setBorder(BorderFactory.createEtchedBorder(
                     EtchedBorder.LOWERED, Color.red, Color.gray));
 
             int counter = 0;
             for (IAtomContainer atomContainer : l) {
-                panels[counter + 1] = new Renderer2DPanel(atomContainer, x, y,
-                        false);
+                panels[counter + 1] = new Renderer2DPanel(atomContainer, x, y);
                 panels[counter + 1].setBorder(BorderFactory
                         .createEtchedBorder(EtchedBorder.LOWERED));
                 counter++;
             }
 
-            JFrame frame = multiStructurePanel(panels, 3, x, y);
+            JFrame frame = new MultiStructurePanel(panels, 3, 100, 100);
             frame.pack();
             frame.setVisible(true);
         }
     }
 
-    public static JFrame multiStructurePanel(Renderer2DPanel[] data, int ncol,
-                                             int cellx, int celly) {
 
-        int pad = 5;
-
-        int extra = data.length % ncol;
-        int block = data.length - extra;
-        int nrow = block / ncol;
-
-        int i;
-        int j;
-
-        JFrame frame = new JFrame("Molecule Fragmenter");
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-        JPanel spane = new JPanel(new GridBagLayout(), true);
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        //gbc.insets = new Insets(2, 2, 2, 2);
-
-        int cnt = 0;
-        for (i = 0; i < nrow; i++) {
-            for (j = 0; j < ncol; j++) {
-                gbc.gridx = j;
-                gbc.gridy = i;
-                spane.add(data[cnt], gbc);
-                cnt += 1;
-            }
-        }
-        j = 0;
-        while (cnt < data.length) {
-            gbc.gridy = nrow;
-            gbc.gridx = j;
-            spane.add(data[cnt], gbc);
-            cnt += 1;
-            j += 1;
-        }
-
-        if (extra != 0)
-            nrow += 1;
-
-        JScrollPane scrollpane = new JScrollPane(spane,
-                JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
-                JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        frame.getContentPane().add(scrollpane);
-
-        // start the show!
-        frame.pack();
-        if (nrow > 3) {
-            frame.setSize(ncol * cellx + pad, 3 * celly + pad);
-        } else {
-            frame.setSize(ncol * cellx + pad, nrow * celly + pad);
-        }
-
-        return frame;
-    }
-
-    static class Renderer2DPanel extends JPanel {
-        /**
-         *
-         */
-        private static final long serialVersionUID = 1L;
-
-        IAtomContainer mol;
-
-        boolean withHydrogen = true;
-
-        Renderer2DModel r2dm;
-
-        Renderer2D renderer;
-
-        public Renderer2DPanel() {
-        }
-
-        public Renderer2DPanel(IAtomContainer mol, int x, int y,
-                               boolean withHydrogen) {
-            r2dm = new Renderer2DModel();
-            renderer = new Renderer2D(r2dm);
-            Dimension screenSize = new Dimension(x, y);
-            setPreferredSize(screenSize);
-            r2dm.setBackgroundDimension(screenSize); // make sure it is synched with the JPanel size
-            setBackground(r2dm.getBackColor());
-
-            this.mol = mol;
-            this.withHydrogen = withHydrogen;
-
-            try {
-                StructureDiagramGenerator sdg = new StructureDiagramGenerator();
-                sdg.setMolecule(new Molecule(mol));
-                sdg.generateCoordinates();
-                this.mol = sdg.getMolecule();
-
-                r2dm.setDrawNumbers(false);
-                r2dm.setUseAntiAliasing(true);
-                r2dm.setColorAtomsByType(false);
-                r2dm.setShowImplicitHydrogens(false);
-                r2dm.setShowAromaticity(true);
-
-                GeometryTools.translateAllPositive(this.mol, r2dm
-                        .getRenderingCoordinates());
-                GeometryTools.scaleMolecule(this.mol, getPreferredSize(), 0.9,
-                        r2dm.getRenderingCoordinates());
-                GeometryTools.center(this.mol, getPreferredSize(), r2dm
-                        .getRenderingCoordinates());
-            } catch (Exception exc) {
-                exc.printStackTrace();
-            }
-        }
-
-        public void paint(Graphics g) {
-            super.paint(g);
-            renderer.paintMolecule(this.mol, (Graphics2D) g);
-		}
-	}
 }
