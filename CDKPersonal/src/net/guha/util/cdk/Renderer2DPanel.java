@@ -90,9 +90,9 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
         if (needle != null) {
 //            rendererModel.getSelection().select(needle);
             rendererModel.setExternalSelectedPart(needle);
-            rendererModel.setExternalHighlightColor(Color.red);
+//            rendererModel.setExternalHighlightColor(Color.red);
             rendererModel.setHighlightDistance(2);
-            rendererModel.setSelectedPartColor(Color.red);
+//            rendererModel.setSelectedPartColor(Color.red);
             rendererModel.setSelectionShape(RenderingParameters.AtomShape.SQUARE);
             rendererModel.setCompactShape(RenderingParameters.AtomShape.SQUARE);
         }
