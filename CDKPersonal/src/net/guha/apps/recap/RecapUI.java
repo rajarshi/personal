@@ -2,6 +2,7 @@ package net.guha.apps.recap;
 
 import net.guha.util.cdk.Misc;
 import net.guha.util.cdk.Renderer2DPanel;
+import net.guha.util.cdk.StatusBar;
 import org.openscience.cdk.DefaultChemObjectBuilder;
 import org.openscience.cdk.aromaticity.CDKHueckelAromaticityDetector;
 import org.openscience.cdk.interfaces.IAtomContainer;
@@ -9,7 +10,6 @@ import org.openscience.cdk.smiles.SmilesParser;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
 import javax.swing.*;
-import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -156,15 +156,4 @@ public class RecapUI extends JFrame {
         }
     }
 
-    class StatusBar extends JLabel {
-        public StatusBar() {
-            super();
-            setMessage("Ready");
-            setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
-        }
-
-        public void setMessage(String message) {
-            setText(message);
-        }
-    }
 }

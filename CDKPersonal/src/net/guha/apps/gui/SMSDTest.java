@@ -4,6 +4,7 @@ import chemlib.ebi.core.tools.EBIAtomContainerManipulator;
 import chemlib.ebi.core.tools.EBIMCSCalculator;
 import net.guha.util.cdk.Misc;
 import net.guha.util.cdk.Renderer2DPanel;
+import net.guha.util.cdk.StatusBar;
 import org.openscience.cdk.DefaultChemObjectBuilder;
 import org.openscience.cdk.aromaticity.CDKHueckelAromaticityDetector;
 import org.openscience.cdk.exception.InvalidSmilesException;
@@ -27,6 +28,7 @@ public class SMSDTest extends JFrame {
     JPanel structurePane;
     JRadioButton rbCommon;
     JRadioButton rbDifference;
+    StatusBar statusBar;
 
     boolean doCommon = true;
 
@@ -79,6 +81,8 @@ public class SMSDTest extends JFrame {
                 JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         content.add(scrollpane, BorderLayout.CENTER);
 
+        JPanel bottomPanel = new JPanel(new BorderLayout());
+
         JButton go = new JButton("Go");
         go.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -91,7 +95,11 @@ public class SMSDTest extends JFrame {
                 }
             }
         });
-        content.add(go, BorderLayout.SOUTH);
+        bottomPanel.add(go, BorderLayout.NORTH);
+        statusBar = new StatusBar();
+        bottomPanel.add(statusBar, BorderLayout.SOUTH);
+
+        content.add(bottomPanel, BorderLayout.SOUTH);
 
         setContentPane(content);
     }
@@ -129,11 +137,14 @@ public class SMSDTest extends JFrame {
         A2 = (IMolecule) EBIAtomContainerManipulator.removeHydrogensAndPreserveAtomID(A2);
 
         // bond sensitive
+        long start = System.currentTimeMillis();
         EBIMCSCalculator comparison = new EBIMCSCalculator(true, false);
         comparison.init(A1, A2);
 
         List<Integer> solution = comparison.getFirstMapping();
+        long end = System.currentTimeMillis();
 
+        statusBar.setMessage((solution.size()/2)+" atoms matched in "+((end-start)/1000.0)+"s");
         // render the match
         IAtomContainer mol1 = Misc.get2DCoords(A1);
         IAtomContainer mol2 = Misc.get2DCoords(A2);
