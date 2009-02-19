@@ -321,6 +321,13 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="SMSD">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/libs/SMSD.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
   </component>
 </project>
 
