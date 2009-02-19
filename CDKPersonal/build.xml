@@ -44,7 +44,7 @@
     </target>
 
     <target id="compile-smds" name="compile-smds" depends="prep">
-        <javac srcdir="${sources}/net/guha/apps/recap:${sources}/net/guha/util/cdk"
+        <javac srcdir="${sources}/net/guha/apps/gui:${sources}/net/guha/util/cdk"
                destdir="${build.dir}"
                 >
             <classpath refid="${project.classpath}"/>

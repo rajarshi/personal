@@ -34,7 +34,7 @@ public class SMSDTest extends JFrame {
         setTitle("SMSDTest");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         JPanel content = new JPanel(new BorderLayout());
-        setSize(300, 300);
+        setSize(600, 300);
 
         molfield1 = new JTextField(50);
         molfield2 = new JTextField(50);
