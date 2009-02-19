@@ -78,7 +78,9 @@ public class StructureDiagram {
      * @return The bytes representing the JPEG image
      * @throws CDKException if there is an error in parsing the SMILES or generating the image
      */
-    public byte[] getDiagram(IAtomContainer molecule, String ssquery, int width, int height, double scale) throws CDKException {
+    public byte[] getDiagram(IAtomContainer molecule, String ssquery,
+                             int width, int height, double scale,
+                             boolean colorAtoms) throws CDKException {
         if (width <= 0) {
             width = 300;
         }
@@ -99,7 +101,7 @@ public class StructureDiagram {
             IAtomContainer needle = null;
             if (ssquery != null) needle = getNeedle(mol2d, ssquery);
 
-            Renderer2DPanel panel = new Renderer2DPanel(mol2d, needle, width, height, true, Color.white);
+            Renderer2DPanel panel = new Renderer2DPanel(mol2d, needle, width, height, colorAtoms, Color.white);
             frame = new JFrame();
             frame.getContentPane().add(panel);
             frame.pack();

@@ -45,7 +45,7 @@ public class SSDepictionResource extends Resource {
             StructureDiagram sdg = new StructureDiagram();
             byte[] image;
             try {
-                image = sdg.getDiagram(Utils.getMolecule(smiles), query, width, height, 0.9);
+                image = sdg.getDiagram(Utils.getMolecule(smiles), query, width, height, 0.9, true);
             } catch (CDKException e) {
                 throw new ResourceException(e);
             }
@@ -89,7 +89,7 @@ public class SSDepictionResource extends Resource {
             StructureDiagram sdg = new StructureDiagram();
             byte[] image;
             try {
-                image = sdg.getDiagram(atomContainer, null, w, h, 0.9);
+                image = sdg.getDiagram(atomContainer, null, w, h, 0.9, true);
             } catch (CDKException e) {
                 throw new ResourceException(e);
             }

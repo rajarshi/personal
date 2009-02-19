@@ -17,19 +17,39 @@ public class DepictionResource extends Resource {
     String smiles = "";
     int width = 300;
     int height = 300;
+    boolean showAtomColors = true;
 
     MediaType contentType = MediaType.IMAGE_PNG;
 
     public DepictionResource(Context context, Request request, Response response) {
         super(context, request, response);
 
+
         smiles = (String) request.getAttributes().get("smiles");
         if (smiles != null) smiles = Reference.decode(smiles);
 
+        System.out.println("smiles = " + smiles);
+        
         Object width = request.getAttributes().get("width");
         Object height = request.getAttributes().get("height");
         if (width != null) this.width = Integer.parseInt((String) width);
         if (height != null) this.height = Integer.parseInt((String) height);
+
+        // process args if we got them
+        if (smiles.startsWith("XXX")) {
+            System.out.println("processing kwargs");
+            smiles = smiles.substring(1);
+            String[] pairs = smiles.split("&");
+            smiles = null;
+            for (String pair : pairs) {
+                String[] arg = pair.split("=");
+                if (arg[0].equals("w")) this.width = Integer.parseInt(arg[1].trim());
+                else if (arg[0].equals("h")) this.height = Integer.parseInt(arg[1].trim());
+                else if (arg[0].equals("s")) smiles = Reference.decode(arg[1].trim());
+                else if (arg[0].equals("ac") && arg[1].equals("t")) showAtomColors = true;
+                else if (arg[0].equals("ac") && arg[1].equals("f")) showAtomColors = false; 
+            }
+        }
         getVariants().add(new Variant(contentType));
     }
 
@@ -42,7 +62,7 @@ public class DepictionResource extends Resource {
             StructureDiagram sdg = new StructureDiagram();
             byte[] image;
             try {
-                image = sdg.getDiagram(Utils.getMolecule(smiles), null, width, height, 0.9);
+                image = sdg.getDiagram(Utils.getMolecule(smiles), null, width, height, 0.9, showAtomColors);
             } catch (CDKException e) {
                 throw new ResourceException(e);
             }
@@ -66,6 +86,8 @@ public class DepictionResource extends Resource {
             String str = form.getFirstValue("molecule");
             String width = form.getFirstValue("width");
             String height = form.getFirstValue("height");
+            String atomColor = form.getFirstValue("colorAtoms");
+
             if (str == null)
                 throw new ResourceException(new CDKException("Must specify a molecule"));
 
@@ -73,7 +95,7 @@ public class DepictionResource extends Resource {
             int h = 200;
             if (width != null) w = Integer.parseInt(width);
             if (height != null) h = Integer.parseInt(height);
-
+            if (atomColor != null && atomColor.equals("false")) showAtomColors = false;
             // get the molecule
             IAtomContainer atomContainer;
             try {
@@ -86,7 +108,7 @@ public class DepictionResource extends Resource {
             StructureDiagram sdg = new StructureDiagram();
             byte[] image;
             try {
-                image = sdg.getDiagram(atomContainer, null, w, h, 0.9);
+                image = sdg.getDiagram(atomContainer, null, w, h, 0.9, showAtomColors);
             } catch (CDKException e) {
                 throw new ResourceException(e);
             }
