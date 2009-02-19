@@ -167,7 +167,6 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
         this.renderer.paintChemModel(
                 this.hub.getIChemModel(),
                 new AWTDrawVisitor(g2),
-//                this.getBounds(),
                 new Rectangle(0,0,getWidth(),getHeight()),
                 isNew);
         isNew = false;

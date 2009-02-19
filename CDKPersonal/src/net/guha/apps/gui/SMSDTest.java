@@ -85,9 +85,9 @@ public class SMSDTest extends JFrame {
                 try {
                     doMCSS();
                 } catch (InvalidSmilesException e1) {
-                    System.out.println("e1 = " + e1);
+                    JOptionPane.showMessageDialog(molfield1, "Error parsing SMILES");
                 } catch (Exception e1) {
-                    System.out.println("e1 = " + e1);
+                    JOptionPane.showMessageDialog(molfield1, "Some error\n" + e1.toString());
                 }
             }
         });
@@ -106,7 +106,7 @@ public class SMSDTest extends JFrame {
                 try {
                     doMCSS();
                 } catch (Exception e) {
-
+                    JOptionPane.showMessageDialog(molfield1, "Some error\n" + e.toString());
                 }
             }
         });
@@ -169,8 +169,8 @@ public class SMSDTest extends JFrame {
             List<Integer> tmp = new ArrayList<Integer>();
             for (int i = 0; i < solution.size(); i += 2) tmp.add(solution.get(i));
             for (int i = 0; i < mol1.getAtomCount(); i++) {
-                if (tmp.contains(i)) continue;
-                else needle1.addAtom(mol1.getAtom(i));
+                if (!tmp.contains(i))
+                    needle1.addAtom(mol1.getAtom(i));
             }
             for (IBond bond : mol1.bonds()) {
                 if (needle1.contains(bond.getAtom(0)) &&
@@ -180,8 +180,8 @@ public class SMSDTest extends JFrame {
             tmp.clear();
             for (int i = 1; i < solution.size(); i += 2) tmp.add(solution.get(i));
             for (int i = 0; i < mol2.getAtomCount(); i++) {
-                if (tmp.contains(i)) continue;
-                else needle2.addAtom(mol2.getAtom(i));
+                if (!tmp.contains(i))
+                    needle2.addAtom(mol2.getAtom(i));
             }
             for (IBond bond : mol2.bonds()) {
                 if (needle2.contains(bond.getAtom(0)) &&
@@ -198,6 +198,8 @@ public class SMSDTest extends JFrame {
 
         gbc.ipadx = 10;
         gbc.ipady = 10;
+        gbc.weightx = 1.0;
+        gbc.weighty = 1.0;
 
         gbc.gridx = 0;
         gbc.gridy = 0;
