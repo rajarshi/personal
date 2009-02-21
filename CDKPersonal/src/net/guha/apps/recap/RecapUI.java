@@ -29,7 +29,7 @@ public class RecapUI extends JFrame {
     public RecapUI() throws HeadlessException {
         setTitle(title);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setSize(600, 400);
+        setSize(600, 450);
 
         JButton button = new JButton("Fragment!");
         button.setName("fragmentButton");
@@ -49,9 +49,10 @@ public class RecapUI extends JFrame {
                 JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
                 JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
-        JPanel entryPanel = new JPanel(new BorderLayout());
-        entryPanel.add(textField, BorderLayout.WEST);
-        entryPanel.add(button, BorderLayout.EAST);
+        JPanel entryPanel = new JPanel();
+        entryPanel.setLayout(new BoxLayout(entryPanel, BoxLayout.LINE_AXIS));
+        entryPanel.add(textField);
+        entryPanel.add(button);
 
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(entryPanel, BorderLayout.NORTH);
@@ -123,7 +124,9 @@ public class RecapUI extends JFrame {
         statusBar.setMessage(frags.size() + " fragments");
 
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.fill = GridBagConstraints.BOTH;
+        gbc.weightx = 1.0;
+        gbc.weighty = 1.0;
         //gbc.insets = new Insets(2, 2, 2, 2);
 
         int cnt = 0;
