@@ -72,19 +72,19 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
         java.util.List<IGenerator> generators = new ArrayList<IGenerator>();
         generators.add(new RingGenerator());
         generators.add(new BasicAtomGenerator());
-        generators.add(new HighlightGenerator());
-        generators.add(new ExternalHighlightGenerator());
+        generators.add(new FancyHighlightGenerator());
+
         renderer = new org.openscience.cdk.renderer.Renderer(generators, new AWTFontManager());
 
         ControllerModel controllerModel = new ControllerModel();
-        hub = new ControllerHub(controllerModel, renderer, chemModel, this);
+        hub = new ControllerHub(controllerModel, renderer, chemModel, this, null, null);
         final RendererModel rendererModel = renderer.getRenderer2DModel();
         rendererModel.setColorAtomsByType(showAtomColors);
         rendererModel.setShowAromaticity(true);
         rendererModel.setFitToScreen(true);
         rendererModel.setUseAntiAliasing(true);
         rendererModel.setBackColor(backgroundColor);
-        rendererModel.setZoomFactor(0.9);
+//        rendererModel.setZoomFactor(0.5);
 
 
         if (needle != null) {
@@ -167,7 +167,7 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
         this.renderer.paintChemModel(
                 this.hub.getIChemModel(),
                 new AWTDrawVisitor(g2),
-                new Rectangle(0,0,getWidth(),getHeight()),
+                new Rectangle(0, 0, getWidth(), getHeight()),
                 isNew);
         isNew = false;
 

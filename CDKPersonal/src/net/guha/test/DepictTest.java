@@ -59,7 +59,7 @@ public class DepictTest {
         sdg.setMolecule((IMolecule) molecule);
         sdg.generateCoordinates();
         molecule = sdg.getMolecule();
-        IAtomContainer needle = Misc.getNeedle(molecule, "CC#N");
+        IAtomContainer needle = Misc.getNeedle(molecule, "CC=CC#N");
         Renderer2DPanel rendererPanel = new Renderer2DPanel(molecule, needle, 200, 200, true, Color.white);
 
         rendererPanel.setName("rendererPanel");

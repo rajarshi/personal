@@ -27,9 +27,19 @@
         <mkdir dir="${build.dir}"/>
     </target>
 
+    <target id="compile-utils" name="compile-utils" depends="prep">
+        <javac srcdir="${sources}/net/guha/util"
+               destdir="${build.dir}"
+               target="1.5"
+                >
+            <classpath refid="${project.classpath}"/>
+        </javac>
+    </target>
+
     <target id="compile-rest" name="compile-rest" depends="prep">
         <javac srcdir="${sources}/net/guha/apps/rest:${sources}/net/guha/util/cdk"
                destdir="${build.dir}"
+               target="1.5"
                 >
             <classpath refid="${project.classpath}"/>
         </javac>
@@ -38,6 +48,7 @@
     <target id="compile-recap" name="compile-recap" depends="prep">
         <javac srcdir="${sources}/net/guha/apps/recap:${sources}/net/guha/util/cdk"
                destdir="${build.dir}"
+               target="1.5"
                 >
             <classpath refid="${project.classpath}"/>
         </javac>
@@ -46,6 +57,7 @@
     <target id="compile-smds" name="compile-smds" depends="prep">
         <javac srcdir="${sources}/net/guha/apps/gui:${sources}/net/guha/util/cdk"
                destdir="${build.dir}"
+               target="1.5"
                 >
             <classpath refid="${project.classpath}"/>
         </javac>
@@ -81,6 +93,15 @@
             </fileset>
         </jar>
     </target>
+
+    <target id="utils" name="utils" depends="compile-utils">
+        <jar jarfile="guhautils.jar">
+            <fileset dir="${build.dir}">
+                <include name="**/*"/>
+            </fileset>
+        </jar>
+    </target>
+
 
     <target id="recap" name="recap" depends="compile-recap">
         <!--
