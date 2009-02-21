@@ -54,7 +54,7 @@ public class DepictTest {
     }
 
     public void runCase2() throws Exception {
-        String smiles = "c1cc(CC=CC#N)ccn1";
+        String smiles = "c1cc(CC=CC#N)cc(CC(=O)CCl)n1";
         IAtomContainer molecule = smilesParser.parseSmiles(smiles);
         sdg.setMolecule((IMolecule) molecule);
         sdg.generateCoordinates();
