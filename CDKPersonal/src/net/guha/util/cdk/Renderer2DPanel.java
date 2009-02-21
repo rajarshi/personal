@@ -9,7 +9,6 @@ import org.openscience.cdk.interfaces.IChemModel;
 import org.openscience.cdk.interfaces.IMolecule;
 import org.openscience.cdk.interfaces.IMoleculeSet;
 import org.openscience.cdk.renderer.RendererModel;
-import org.openscience.cdk.renderer.RenderingParameters;
 import org.openscience.cdk.renderer.font.AWTFontManager;
 import org.openscience.cdk.renderer.generators.*;
 import org.openscience.cdk.renderer.visitor.AWTDrawVisitor;
@@ -71,6 +70,7 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
 
         java.util.List<IGenerator> generators = new ArrayList<IGenerator>();
         generators.add(new RingGenerator());
+        generators.add(new BasicBondGenerator());
         generators.add(new BasicAtomGenerator());
         generators.add(new FancyHighlightGenerator());
 
@@ -84,8 +84,6 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
         rendererModel.setFitToScreen(true);
         rendererModel.setUseAntiAliasing(true);
         rendererModel.setBackColor(backgroundColor);
-//        rendererModel.setZoomFactor(0.5);
-
 
         if (needle != null) {
 //            rendererModel.getSelection().select(needle);
@@ -93,8 +91,6 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
 //            rendererModel.setExternalHighlightColor(Color.red);
             rendererModel.setHighlightDistance(2);
 //            rendererModel.setSelectedPartColor(Color.red);
-            rendererModel.setSelectionShape(RenderingParameters.AtomShape.SQUARE);
-            rendererModel.setCompactShape(RenderingParameters.AtomShape.SQUARE);
         }
 
         isNewChemModel = true;

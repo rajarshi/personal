@@ -39,7 +39,7 @@ public class Recap {
             //   [!R]-[$([NRD3][CR]=O)] seems to work but [R0]-[$([NRD3][CR]=O)] does not
             "[!R]-[$([NRD3][CR]=O)]", // rule 9
 
-            // broken :(
+            // TODO broken :(
             "c-c", // rule 10
             "[ND3][$(S(=O)(=O)*)]", // rule 11
     };
@@ -53,31 +53,28 @@ public class Recap {
         AllRingsFinder arf = new AllRingsFinder();
         arf.findAllRings(atomContainer);
 
+        // get initial set of fragments
         List<IAtomContainer> frags = dofrag(atomContainer);
-        List<IAtomContainer> newFrags = new ArrayList<IAtomContainer>();
-        List<IAtomContainer> fragsToDelete = new ArrayList<IAtomContainer>();
 
-        if (verbose) System.out.println("Start with frags "+frags.size());
-        while (true) {
-            for (IAtomContainer frag : frags) {
-                List<IAtomContainer> tmp = dofrag(frag);
-                if (tmp.size() > 0) {
-                    newFrags.addAll(tmp);
-                    fragsToDelete.add(frag);
-                }
-            }
-            if (fragsToDelete.size() > 0) {
-                if (verbose) System.out.println("Will delete frags "+fragsToDelete.size());
-                for (IAtomContainer frag : fragsToDelete) {
-                    frags.remove(frag);
-                }
-                frags.addAll(newFrags);
-                newFrags.clear();
-                fragsToDelete.clear();
-                if (verbose) System.out.println("Starting again with frags "+frags.size());
-            } else break;
-        }
+        // try and decompose them recursively
+        dofragrec(frags);
+
         return frags;
+    }
+
+    private void dofragrec(List<IAtomContainer> frags) throws CDKException {
+        System.out.println("Will process " + frags.size() + " frags");
+        for (String s : getUniqueFragmentsAasSmiles(frags)) System.out.println("s = " + s);
+        List<IAtomContainer> holder = new ArrayList<IAtomContainer>();
+        for (IAtomContainer frag : frags) {
+            List<IAtomContainer> tmp = dofrag(frag);
+            if (tmp.size() > 0) holder.addAll(tmp);
+        }
+        if (holder.size() > 0 && holder.size() != frags.size()) {
+            frags.clear();
+            frags.addAll(holder);
+            dofragrec(frags);
+        }
     }
 
     private List<IAtomContainer> dofrag(IAtomContainer atomContainer) throws CDKException {
@@ -106,7 +103,7 @@ public class Recap {
         sqt.setSmarts(pattern);
         if (!sqt.matches(atomContainer)) return null;
         List<List<Integer>> matches = sqt.getUniqueMatchingAtoms();
-        if (verbose) System.out.println("rule " + pattern + " : " + matches.size());
+//        if (verbose) System.out.println("rule " + pattern + " : " + matches.size());
         List<IAtomContainer> ret = new ArrayList<IAtomContainer>();
         for (List<Integer> path : matches) {
             IAtom left = atomContainer.getAtom(path.get(0));
@@ -116,8 +113,8 @@ public class Recap {
 
             // TODO is this correct?
             if (isTerminal(atomContainer, splitBond)) continue;
-            
-            IAtomContainer[] parts = splitMolecule(atomContainer, splitBond);            
+
+            IAtomContainer[] parts = splitMolecule(atomContainer, splitBond);
             ret.add(parts[0]);
             ret.add(parts[1]);
         }
@@ -135,7 +132,7 @@ public class Recap {
         sqt.setSmarts(pattern);
         if (!sqt.matches(atomContainer)) return null;
         List<List<Integer>> matches = sqt.getUniqueMatchingAtoms();
-        if (verbose) System.out.println("rule " + pattern + " : " + matches.size());
+//        if (verbose) System.out.println("rule " + pattern + " : " + matches.size());
         List<IAtomContainer> ret = new ArrayList<IAtomContainer>();
         for (List<Integer> path : matches) {
             IAtom c = null;
@@ -143,12 +140,15 @@ public class Recap {
                 if (atomContainer.getAtom(atomidx).getSymbol().equals("C"))
                     c = atomContainer.getAtom(atomidx);
             }
-            System.out.println("c = " + c);
+//            System.out.println("c = " + c);
             List<IBond> connectedBonds = atomContainer.getConnectedBondsList(c);
             for (IBond bond : connectedBonds) {
                 if (!bond.getOrder().equals(IBond.Order.DOUBLE) &&
                         !bond.getFlag(CDKConstants.ISINRING)) {
                     IAtomContainer[] parts = splitMolecule(atomContainer, bond);
+
+                    // take the part that doesn't have the carbonyl
+
                     ret.add(parts[0]);
                     ret.add(parts[1]);
                 }
@@ -164,7 +164,7 @@ public class Recap {
         sqt.setSmarts(pattern);
         if (!sqt.matches(atomContainer)) return null;
         List<List<Integer>> matches = sqt.getUniqueMatchingAtoms();
-        if (verbose) System.out.println("rule " + pattern + ": " + matches.size());
+//        if (verbose) System.out.println("rule " + pattern + ": " + matches.size());
         List<IAtomContainer> ret = new ArrayList<IAtomContainer>();
         for (List<Integer> path : matches) {
             IAtom n = null;
@@ -233,7 +233,7 @@ public class Recap {
             }
             partContainer.addBond(aBond);
         }
-      
+
         CDKHueckelAromaticityDetector.detectAromaticity(partContainer);
         return partContainer;
     }
@@ -270,7 +270,7 @@ public class Recap {
         msp.setVisible(true);
     }
 
-    public static void main(String[] args)  throws Exception {
+    public static void main(String[] args) throws Exception {
         RecapUI ui = new RecapUI();
         ui.setVisible(true);
         Recap recap = new Recap();
