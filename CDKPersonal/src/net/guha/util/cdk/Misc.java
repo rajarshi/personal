@@ -124,6 +124,13 @@ public class Misc {
         return retValues;
     }
 
+    /**
+     * Get a molecule with 2D coordinates.
+     *
+     * @param mol the input molecule
+     * @return a new molecule with 2D coordinates
+     * @throws Exception if there was an error generating coordinates
+     */
     public static IMolecule get2DCoords(IAtomContainer mol) throws Exception {
         StructureDiagramGenerator sdg = new StructureDiagramGenerator();
         sdg.setTemplateHandler(new TemplateHandler(DefaultChemObjectBuilder.getInstance()));
@@ -135,12 +142,13 @@ public class Misc {
     /**
      * Get the substructure of a target structure based on a SMARTS pattern.
      *
-     * @param target   The target molecule
+     * @param target  The target molecule
      * @param pattern The SMARTS pattern for the substructure. The string can be a
-     * plain SMARTS or a Base64 encoded string
+     *                plain SMARTS or a Base64 encoded string
      * @return A fragment representing the fragmentif present, null otherwise
-     * @throws org.openscience.cdk.exception.CDKException if there is an error during SMARTS
-     * parsing or matching
+     * @throws org.openscience.cdk.exception.CDKException
+     *          if there is an error during SMARTS
+     *          parsing or matching
      */
     public static IAtomContainer getNeedle(IAtomContainer target, String pattern) throws CDKException {
         SMARTSQueryTool sqt = null;

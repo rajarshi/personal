@@ -3,6 +3,10 @@ package net.guha.util.cdk;
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 
+/**
+ * Simplistic status bar widget that can be included in GUI's.
+ * 
+ */
 public class StatusBar extends JLabel {
     public StatusBar() {
         super();

@@ -3,8 +3,21 @@ package net.guha.util.cdk;
 import javax.swing.*;
 import java.awt.*;
 
-
+/**
+ * A helper class to display multiple depictions.
+ *
+ */
 public class MultiStructurePanel extends JFrame {
+
+    /**
+     * Create a JFrame holdingmultiple depictions.
+     *
+     * @param panels An array of {@link net.guha.util.cdk.Renderer2DPanel} objects
+     * @param ncol How many columns should be displayed
+     * @param cellx Width of each panel
+     * @param celly Height of each panel
+     * @throws HeadlessException if running headless
+     */
     public MultiStructurePanel(Renderer2DPanel[] panels,
                                int ncol, int cellx, int celly) throws HeadlessException {
         int pad = 5;

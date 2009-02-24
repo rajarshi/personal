@@ -21,7 +21,11 @@ import java.util.ArrayList;
 /**
  * A JPanel to display 2D depictions.
  * <p/>
+ * It is assumed that you have generated 2D coordinates. See
+ * {@link net.guha.util.cdk.Misc#get2DCoords(org.openscience.cdk.interfaces.IAtomContainer)}
+ * <p/>
  *
+ * @see net.guha.util.cdk.Misc
  * @author Rajarshi Guha
  */
 public class Renderer2DPanel extends JPanel implements IViewEventRelay {
@@ -57,6 +61,7 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
      * @param y               height of the panel
      * @param showAtomColors  should atoms be colored?
      * @param backgroundColor requested background color
+     * @see net.guha.util.cdk.Misc#get2DCoords(org.openscience.cdk.interfaces.IAtomContainer)
      */
     public Renderer2DPanel(IAtomContainer mol, IAtomContainer needle, int x, int y,
                            boolean showAtomColors, Color backgroundColor) {
@@ -97,10 +102,27 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
 
     }
 
+    /**
+     * Capture the panel as an Image.
+     * <p/>
+     * This can then be saved to disk if desired.
+     *
+     * @return an Image object
+     */
     public Image takeSnapshot() {
         return this.takeSnapshot(this.getBounds());
     }
 
+    /**
+     * Capture a specific region of the panel.
+     * <p/>
+     * This can then be saved to disk if desired. In general
+     * you will probably want to capture the whole panel.
+     *
+     * @param bounds the region of the panel to capture
+     * @return an Image object
+     * @see #takeSnapshot()
+     */
     public Image takeSnapshot(Rectangle bounds) {
         Image image = GraphicsEnvironment
                 .getLocalGraphicsEnvironment()
@@ -118,7 +140,7 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
     public void paintChemModel(Graphics2D g, Rectangle screenBounds) {
         IChemModel chemModel = hub.getIChemModel();
         if (chemModel != null && chemModel.getMoleculeSet() != null) {
-            Rectangle diagramBounds = renderer.calculateScreenBounds(chemModel);
+            Rectangle diagramBounds = renderer.calculateScreenBounds(screenBounds);
             if (this.overlaps(screenBounds, diagramBounds)) {
                 Rectangle union = screenBounds.union(diagramBounds);
                 this.setPreferredSize(union.getSize());
@@ -142,15 +164,6 @@ public class Renderer2DPanel extends JPanel implements IViewEventRelay {
         IDrawVisitor drawVisitor = new AWTDrawVisitor(g);
         renderer.paintChemModel(chemModel, drawVisitor, bounds, isNewChemModel);
         isNewChemModel = false;
-
-        /*
-         * This is dangerous, but necessary to allow fast
-         * repainting when scrolling the canvas.
-         *
-         * I set this to false, but the original code has it set to true.
-         * If set to true, then any change in dimensions requires a call to
-         * updateView() - by setting to false, we don't need to call updateView()
-         */
     }
 
     public void setIsNewChemModel(boolean isNewChemModel) {
