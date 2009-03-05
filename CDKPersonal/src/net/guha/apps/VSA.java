@@ -7,6 +7,7 @@ import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IBond;
+import org.openscience.cdk.qsar.descriptors.molecular.BCUTDescriptor;
 import org.openscience.cdk.smiles.SmilesParser;
 import org.openscience.cdk.tools.CDKHydrogenAdder;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
@@ -30,6 +31,14 @@ import java.util.Map;
  * <p/>
  * The class does not attempt to add or remove hydrogens, but expects explicit H's to be
  * present.
+ *
+ * @cdk.author Rajarshi Guha
+ * @cdk.created 2009-03-05
+ * @cdk.keyword ASA
+ * @cdk.keyword surface area
+ * @cdk.keyword smiles
+ * @cdk.module extra
+ *
  */
 public class VSA {
     private Map<String, Double> bondLengths = new HashMap<String, Double>();
