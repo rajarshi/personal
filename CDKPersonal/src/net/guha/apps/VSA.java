@@ -9,7 +9,6 @@ import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IBond;
 import org.openscience.cdk.smiles.SmilesParser;
 import org.openscience.cdk.tools.CDKHydrogenAdder;
-import org.openscience.cdk.tools.PeriodicTable;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
 import java.io.BufferedReader;
@@ -151,7 +150,7 @@ public class VSA {
      * @param atomContainer The molecule to consider.
      * @return An array of ASA values in the order of the atoms in the molecule
      */
-    public double[] getAtomVSA(IAtomContainer atomContainer) {
+    public double[] getAtomVSA(IAtomContainer atomContainer) throws CDKException {
         double[] vi = new double[atomContainer.getAtomCount()];
         for (int i = 0; i < atomContainer.getAtomCount(); i++) {
             IAtom atom = atomContainer.getAtom(i);
@@ -168,9 +167,8 @@ public class VSA {
                     key = connectedAtom.getSymbol() + atom.getSymbol();
 
                 Double ideal = bondLengths.get(key);
-                if (ideal == null) {
-                    System.out.println(key);
-                }
+                if (ideal == null)
+                    throw new CDKException("Don't know about this bond type: "+atom.getSymbol()+" "+connectedAtom.getSymbol());
 
                 IBond bond = atomContainer.getBond(atom, connectedAtom);
                 if (bond.getFlag(CDKConstants.ISAROMATIC)) ideal = ideal - 0.1;
@@ -194,8 +192,8 @@ public class VSA {
      * @param atomContainer The molecule to consider.
      * @return The ASA of the molecule
      */
-    public double getVSA(IAtomContainer atomContainer) {
-        double[] ret = getAtomVSA(atomContainer);
+    public double getVSA(IAtomContainer atomContainer) throws CDKException {
+        double[] ret = getAtomVSA(tomContainer);
         double vsa = 0.0;
         for (double aRet : ret) vsa += aRet;
         return vsa;
