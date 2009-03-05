@@ -149,6 +149,9 @@ public class VSA {
      *
      * @param atomContainer The molecule to consider.
      * @return An array of ASA values in the order of the atoms in the molecule
+     * @throws org.openscience.cdk.exception.CDKException
+     *          if a bond not listed in the original
+     *          Labute paper was encountered
      */
     public double[] getAtomVSA(IAtomContainer atomContainer) throws CDKException {
         double[] vi = new double[atomContainer.getAtomCount()];
@@ -168,7 +171,7 @@ public class VSA {
 
                 Double ideal = bondLengths.get(key);
                 if (ideal == null)
-                    throw new CDKException("Don't know about this bond type: "+atom.getSymbol()+" "+connectedAtom.getSymbol());
+                    throw new CDKException("Don't know about this bond type: " + atom.getSymbol() + " " + connectedAtom.getSymbol());
 
                 IBond bond = atomContainer.getBond(atom, connectedAtom);
                 if (bond.getFlag(CDKConstants.ISAROMATIC)) ideal = ideal - 0.1;
@@ -191,9 +194,12 @@ public class VSA {
      *
      * @param atomContainer The molecule to consider.
      * @return The ASA of the molecule
+     * @throws org.openscience.cdk.exception.CDKException
+     *          if a bond not listed in the original
+     *          Labute paper was encountered
      */
     public double getVSA(IAtomContainer atomContainer) throws CDKException {
-        double[] ret = getAtomVSA(tomContainer);
+        double[] ret = getAtomVSA(atomContainer);
         double vsa = 0.0;
         for (double aRet : ret) vsa += aRet;
         return vsa;
