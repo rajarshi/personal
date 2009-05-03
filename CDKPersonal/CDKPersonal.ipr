@@ -7,8 +7,9 @@
       <antReference projectDefault="true" />
       <customJdkName value="" />
       <maximumHeapSize value="128" />
+      <maximumStackSize value="32" />
       <properties />
-      <executeOn event="beforeRun" target="compile-rest" runConfigurationType="Application" runConfigurationName="CDKServices" />
+      <executeOn event="beforeRun" target="compile-rest" />
     </buildFile>
   </component>
   <component name="BuildJarProjectSettings">
@@ -41,6 +42,9 @@
       <entry name="?*.tld" />
     </wildcardResourcePatterns>
   </component>
+  <component name="CopyrightManager" default="">
+    <module2copyright />
+  </component>
   <component name="DependenciesAnalyzeManager">
     <option name="myForwardDirection" value="false" />
   </component>
@@ -61,6 +65,7 @@
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
     <option name="MAXIMUM_HEAP_SIZE" value="128" />
   </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
@@ -241,13 +246,17 @@
       </item>
     </group>
   </component>
+  <component name="ProjectDetails">
+    <option name="projectName" value="CDKPersonal" />
+  </component>
   <component name="ProjectFileVersion" converted="true" />
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CDKPersonal.iml" filepath="$PROJECT_DIR$/CDKPersonal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rghadoop/rghadoop.iml" filepath="$PROJECT_DIR$/rghadoop/rghadoop.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK" />
   <component name="ResourceManagerContainer">
     <option name="myResourceBundles">
       <value>
@@ -272,6 +281,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
+    <mapping directory="$PROJECT_DIR$/rghadoop" vcs="Git" />
   </component>
   <component name="VcsRevisionGraphProjectComponent">
     <option name="_useTwoTagConvention" value="true" />
@@ -317,9 +327,7 @@
         <root url="jar://$PROJECT_DIR$/libs/cdk-1.1.5.jar!/" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES>
-        <root url="file://$PROJECT_DIR$/../../cdk/branches/cdk-1.2.x/src/main" />
-      </SOURCES>
+      <SOURCES />
     </library>
     <library name="RESTLet">
       <CLASSES>
@@ -335,6 +343,18 @@
       </CLASSES>
       <JAVADOC />
       <SOURCES />
+    </library>
+    <library name="Hadoop">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../hadoop-0.20.0/hadoop-0.20.0-ant.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../hadoop-0.20.0/hadoop-0.20.0-tools.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../hadoop-0.20.0/hadoop-0.20.0-core.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="file://$PROJECT_DIR$/../../hadoop-0.20.0/src/tools" />
+        <root url="file://$PROJECT_DIR$/../../hadoop-0.20.0/src/core" />
+      </SOURCES>
     </library>
   </component>
 </project>

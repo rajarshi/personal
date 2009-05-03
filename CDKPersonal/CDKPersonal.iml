@@ -22,7 +22,7 @@
     <orderEntry type="library" name="CDK" level="project" />
     <orderEntry type="library" name="RESTLet" level="project" />
     <orderEntry type="library" name="SMSD" level="project" />
-    <orderEntryProperties />
+    <orderEntry type="library" name="Hadoop" level="project" />
   </component>
 </module>
 

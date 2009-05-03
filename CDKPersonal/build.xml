@@ -120,6 +120,17 @@
         </jar>
     </target>
 
+    <target id="hadoop" name="hadoop">
+        <jar jarfile="rghadoop.jar">
+            <manifest>
+                <attribute name="Main-Class" value="net.rguha.dc.WordCount"/>
+            </manifest>
+            <fileset dir="rghadoop/classes">
+                <include name="**/*"/>
+            </fileset>
+        </jar>
+    </target>
+
     <target id="srcdist-rest" name="srcdist-rest" depends="clean">
         <loadfile property="version.line" srcfile="src/net/guha/apps/rest/Constants.java">
             <filterchain>
