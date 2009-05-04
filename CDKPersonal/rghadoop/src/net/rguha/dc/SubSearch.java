@@ -37,7 +37,7 @@ public class SubSearch {
     private final static IntWritable one = new IntWritable(1);
     private final static IntWritable zero = new IntWritable(0);
 
-    public static class TokenizerMapper extends Mapper<Object, Text, Text, IntWritable> {
+    public static class MoleculeMapper extends Mapper<Object, Text, Text, IntWritable> {
 
 
         private Text matches = new Text();
@@ -61,7 +61,7 @@ public class SubSearch {
         }
     }
 
-    public static class IntSumReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+    public static class SMARTSMatchReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
         private IntWritable result = new IntWritable();
 
         public void reduce(Text key, Iterable<IntWritable> values,
@@ -82,11 +82,11 @@ public class SubSearch {
             System.err.println("Usage: subsearch <in> <out> <pattern>");
             System.exit(2);
         }
-        Job job = new Job(conf, "id count");
+        Job job = new Job(conf, "id 1");
         job.setJarByClass(SubSearch.class);
-        job.setMapperClass(TokenizerMapper.class);
-        job.setCombinerClass(IntSumReducer.class);
-        job.setReducerClass(IntSumReducer.class);
+        job.setMapperClass(MoleculeMapper.class);
+        job.setCombinerClass(SMARTSMatchReducer.class);
+        job.setReducerClass(SMARTSMatchReducer.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
         job.setInputFormatClass(SDFInputFormat.class);
