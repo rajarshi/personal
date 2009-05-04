@@ -29,18 +29,20 @@ public class SubSearch {
         try {
             sqt = new SMARTSQueryTool("C");
         } catch (CDKException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
     }
 
-    private static String pattern;
     private final static IntWritable one = new IntWritable(1);
     private final static IntWritable zero = new IntWritable(0);
 
     public static class MoleculeMapper extends Mapper<Object, Text, Text, IntWritable> {
 
-
         private Text matches = new Text();
+        private String pattern;
+
+        public void setup(Context context) {
+            pattern = context.getConfiguration().get("net.rguha.dc.data.pattern");
+        }
 
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
             try {
@@ -77,11 +79,18 @@ public class SubSearch {
 
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
+
+//        conf.set("mapred.job.tracker", "local");
+        
         String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
         if (otherArgs.length != 3) {
             System.err.println("Usage: subsearch <in> <out> <pattern>");
             System.exit(2);
         }
+
+        // need to set it before we create the Job object
+        conf.set("net.rguha.dc.data.pattern", otherArgs[2]);
+        
         Job job = new Job(conf, "id 1");
         job.setJarByClass(SubSearch.class);
         job.setMapperClass(MoleculeMapper.class);
@@ -92,7 +101,7 @@ public class SubSearch {
         job.setInputFormatClass(SDFInputFormat.class);
         FileInputFormat.addInputPath(job, new Path(otherArgs[0]));
         FileOutputFormat.setOutputPath(job, new Path(otherArgs[1]));
-        pattern = otherArgs[2];
+
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
 }
