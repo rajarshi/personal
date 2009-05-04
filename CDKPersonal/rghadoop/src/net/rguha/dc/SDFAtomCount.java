@@ -38,7 +38,6 @@ public class SDFAtomCount {
                 ChemFile chemFile = (ChemFile)reader.read((ChemObject)new ChemFile());
                 List<IAtomContainer> containersList = ChemFileManipulator.getAllAtomContainers(chemFile);
                 IAtomContainer molecule = containersList.get(0);
-
                 haCount.set(String.valueOf(molecule.getAtomCount()));
                 context.write(haCount, one);
             } catch (CDKException e) {

@@ -18,13 +18,13 @@ public class SDFRecordReader extends RecordReader<LongWritable, Text> {
     private long start, end;
     private boolean more = true;
 
-    private LongWritable key = null;
-    private Text value = null;
+    private LongWritable key = new LongWritable();
+    private Text value = new Text();
 
     private FSDataInputStream fsin;
     private DataOutputBuffer buffer = new DataOutputBuffer();
 
-    private byte[] endTag = "$$$$".getBytes();
+    private byte[] endTag = "$$$$\n".getBytes();
 
     public void initialize(InputSplit inputSplit, TaskAttemptContext taskAttemptContext) throws IOException, InterruptedException {
         FileSplit split = (FileSplit) inputSplit;
@@ -36,16 +36,16 @@ public class SDFRecordReader extends RecordReader<LongWritable, Text> {
         end = split.getStart() + split.getLength();
         fsin.seek(start);
         start = fsin.getPos();
-
     }
 
     public boolean nextKeyValue() throws IOException, InterruptedException {
         if (fsin.getPos() < end) {
             if (readUntilMatch(endTag, true)) {
                 try {
-//                    key.set(Long.toString(fsin.getPos()));
-                    key.set(fsin.getPos());
+                    value = new Text();
                     value.set(buffer.getData(), 0, buffer.getLength());
+                    String record = value.toString();                    
+                    key = new LongWritable(fsin.getPos());
                     return true;
                 } finally {
                     buffer.reset();
@@ -85,8 +85,6 @@ public class SDFRecordReader extends RecordReader<LongWritable, Text> {
                 i++;
                 if (i >= match.length) return true;
             } else i = 0;
-            // see if we've passed the stop point:
-            if (!withinBlock && i == 0 && fsin.getPos() >= end) return false;
         }
     }
 
