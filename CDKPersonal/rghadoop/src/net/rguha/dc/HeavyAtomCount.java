@@ -20,8 +20,7 @@ import java.io.IOException;
 public class HeavyAtomCount {
     static SmilesParser sp = new SmilesParser(DefaultChemObjectBuilder.getInstance());
 
-    public static class TokenizerMapper
-            extends Mapper<Object, Text, Text, IntWritable> {
+    public static class TokenizerMapper extends Mapper<Object, Text, Text, IntWritable> {
 
         private final static IntWritable one = new IntWritable(1);
         private Text word = new Text();
