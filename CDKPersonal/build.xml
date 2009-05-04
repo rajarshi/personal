@@ -12,6 +12,9 @@
         <fileset dir="${lib.dir}">
             <include name="*.jar"/>
         </fileset>
+        <fileset dir="../../hadoop-0.20.0/">
+            <include name="*jar"/>
+        </fileset>
     </path>
     <property name="project.classpath" value="project.libs"/>
 
@@ -121,9 +124,20 @@
     </target>
 
     <target id="hadoop" name="hadoop">
+        <javac srcdir="rghadoop/src"
+               destdir="rghadoop/classes"
+               target="1.6"
+                >
+            <classpath refid="${project.classpath}"/>
+        </javac>
+<!--        <unjar dest="rghadoop/classes">
+            <fileset dir="libs"
+                     includes="cdk-1.1.5.jar"/>
+        </unjar>
+        -->
         <jar jarfile="rghadoop.jar">
             <manifest>
-                <attribute name="Main-Class" value="net.rguha.dc.WordCount"/>
+                <attribute name="Main-Class" value="net.rguha.dc.HeavyAtomCount"/>
             </manifest>
             <fileset dir="rghadoop/classes">
                 <include name="**/*"/>

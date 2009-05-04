@@ -350,7 +350,9 @@
         <root url="jar://$PROJECT_DIR$/../../hadoop-0.20.0/hadoop-0.20.0-tools.jar!/" />
         <root url="jar://$PROJECT_DIR$/../../hadoop-0.20.0/hadoop-0.20.0-core.jar!/" />
       </CLASSES>
-      <JAVADOC />
+      <JAVADOC>
+        <root url="file://$PROJECT_DIR$/../../hadoop-0.20.0/docs/api" />
+      </JAVADOC>
       <SOURCES>
         <root url="file://$PROJECT_DIR$/../../hadoop-0.20.0/src/tools" />
         <root url="file://$PROJECT_DIR$/../../hadoop-0.20.0/src/core" />
