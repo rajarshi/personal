@@ -43,8 +43,7 @@ public class SDFRecordReader extends RecordReader<LongWritable, Text> {
             if (readUntilMatch(endTag, true)) {
                 try {
                     value = new Text();
-                    value.set(buffer.getData(), 0, buffer.getLength());
-                    String record = value.toString();                    
+                    value.set(buffer.getData(), 0, buffer.getLength());               
                     key = new LongWritable(fsin.getPos());
                     return true;
                 } finally {
