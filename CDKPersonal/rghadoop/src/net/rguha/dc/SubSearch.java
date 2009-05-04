@@ -24,35 +24,36 @@ import java.io.StringReader;
 import java.util.List;
 
 public class SubSearch {
-    static SMARTSQueryTool sqt;
-    static String pattern;
-
-    public SubSearch() {
+    static SMARTSQueryTool sqt;static {
         try {
             sqt = new SMARTSQueryTool("C");
         } catch (CDKException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
     }
 
+    private static String pattern;
+    private final static IntWritable one = new IntWritable(1);
+    private final static IntWritable zero = new IntWritable(0);
+
     public static class TokenizerMapper extends Mapper<Object, Text, Text, IntWritable> {
 
-        private final static IntWritable one = new IntWritable(1);
-        private final static IntWritable zero = new IntWritable(0);
+
         private Text matches = new Text();
 
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
             try {
                 StringReader sreader = new StringReader(value.toString());
                 MDLV2000Reader reader = new MDLV2000Reader(sreader);
-                ChemFile chemFile = (ChemFile)reader.read((ChemObject)new ChemFile());
+                ChemFile chemFile = (ChemFile) reader.read((ChemObject) new ChemFile());
                 List<IAtomContainer> containersList = ChemFileManipulator.getAllAtomContainers(chemFile);
                 IAtomContainer molecule = containersList.get(0);
 
                 sqt.setSmarts(pattern);
                 boolean matched = sqt.matches(molecule);
-                matches.set((String)molecule.getProperty(CDKConstants.TITLE));
+                matches.set((String) molecule.getProperty(CDKConstants.TITLE));
                 if (matched) context.write(matches, one);
-                else context.write(matches,  zero);
+                else context.write(matches, zero);
             } catch (CDKException e) {
                 e.printStackTrace();
             }
@@ -64,12 +65,12 @@ public class SubSearch {
 
         public void reduce(Text key, Iterable<IntWritable> values,
                            Context context) throws IOException, InterruptedException {
-            int sum = 0;
             for (IntWritable val : values) {
-                sum += val.get();
+                if (val.compareTo(one) == 0) {
+                    result.set(1);
+                    context.write(key, result);
+                }
             }
-            result.set(sum);
-            context.write(key, result);
         }
     }
 
