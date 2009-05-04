@@ -12,6 +12,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
 import org.openscience.cdk.DefaultChemObjectBuilder;
 import org.openscience.cdk.exception.InvalidSmilesException;
+import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.smiles.SmilesParser;
 
@@ -28,8 +29,10 @@ public class HeavyAtomCount {
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
             try {
                 IAtomContainer molecule = sp.parseSmiles(value.toString());
-                word.set(String.valueOf(molecule.getAtomCount()));
-                context.write(word, one);
+                for (IAtom atom : molecule.atoms()) {
+                    word.set(atom.getSymbol());
+                    context.write(word, one);
+                }
             } catch (InvalidSmilesException e) {
                 // do nothing for now
             }
