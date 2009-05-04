@@ -41,7 +41,7 @@ public class SDFAtomCount {
                 haCount.set(String.valueOf(molecule.getAtomCount()));
                 context.write(haCount, one);
             } catch (CDKException e) {
-                // do nothing for now
+                e.printStackTrace();
             }
         }
     }
