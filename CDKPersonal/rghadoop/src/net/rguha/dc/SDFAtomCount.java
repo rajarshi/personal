@@ -1,5 +1,6 @@
 package net.rguha.dc;
 
+import net.rguha.dc.io.SDFInputFormat;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
@@ -12,21 +13,17 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
 import org.openscience.cdk.ChemFile;
 import org.openscience.cdk.ChemObject;
-import org.openscience.cdk.DefaultChemObjectBuilder;
 import org.openscience.cdk.exception.CDKException;
+import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.io.MDLV2000Reader;
-import org.openscience.cdk.smiles.SmilesParser;
 import org.openscience.cdk.tools.manipulator.ChemFileManipulator;
 
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.List;
 
-import net.rguha.dc.io.SDFInputFormat;
-
-public class SDFAtomCount {
-    static SmilesParser sp = new SmilesParser(DefaultChemObjectBuilder.getInstance());
+public class SDFAtomCount {   
 
     public static class TokenizerMapper extends Mapper<Object, Text, Text, IntWritable> {
 
@@ -40,8 +37,10 @@ public class SDFAtomCount {
                 ChemFile chemFile = (ChemFile)reader.read((ChemObject)new ChemFile());
                 List<IAtomContainer> containersList = ChemFileManipulator.getAllAtomContainers(chemFile);
                 IAtomContainer molecule = containersList.get(0);
-                haCount.set(String.valueOf(molecule.getAtomCount()));
-                context.write(haCount, one);
+                for (IAtom atom : molecule.atoms()) {
+                    haCount.set(atom.getSymbol());
+                    context.write(haCount, one);
+                }
             } catch (CDKException e) {
                 e.printStackTrace();
             }
