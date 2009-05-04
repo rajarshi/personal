@@ -82,7 +82,7 @@ public class SubSearch {
             System.err.println("Usage: subsearch <in> <out> <pattern>");
             System.exit(2);
         }
-        Job job = new Job(conf, "foo count");
+        Job job = new Job(conf, "id count");
         job.setJarByClass(SubSearch.class);
         job.setMapperClass(TokenizerMapper.class);
         job.setCombinerClass(IntSumReducer.class);
