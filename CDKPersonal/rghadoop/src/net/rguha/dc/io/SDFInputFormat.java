@@ -1,4 +1,4 @@
-package net.rguha.dc;
+package net.rguha.dc.io;
 
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;

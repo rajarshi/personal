@@ -1,4 +1,4 @@
-package net.rguha.dc;
+package net.rguha.dc.io;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataInputStream;

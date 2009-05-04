@@ -23,6 +23,8 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.util.List;
 
+import net.rguha.dc.io.SDFInputFormat;
+
 public class SDFAtomCount {
     static SmilesParser sp = new SmilesParser(DefaultChemObjectBuilder.getInstance());
 

@@ -1,5 +1,6 @@
 package net.rguha.dc;
 
+import net.rguha.dc.io.SDFInputFormat;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
