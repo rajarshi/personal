@@ -1,0 +1,8 @@
+This repository is a collection of various things
+that I work on currently. While it's a public repository
+much of it is not really ready for release. Various paths
+are hard coded and external libraries not in the repo are
+used during building.
+
+build.xml contains some targets that should cleanly compile
+but no guarantees.
