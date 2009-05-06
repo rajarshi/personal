@@ -140,7 +140,7 @@
         </javac>
         <jar jarfile="rghadoop.jar">
             <manifest>
-                <attribute name="Main-Class" value="net.rguha.dc.Identity"/>
+                <attribute name="Main-Class" value="net.rguha.dc.PSearch"/>
             </manifest>
             <fileset dir="rghadoop/classes">
                 <include name="**/*"/>

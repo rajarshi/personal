@@ -326,10 +326,12 @@
         <root url="jar://$PROJECT_DIR$/libs/jai_codec.jar!/" />
         <root url="jar://$PROJECT_DIR$/libs/jai_core.jar!/" />
         <root url="jar://$PROJECT_DIR$/libs/commons-cli-1.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/libs/cdk-1.1.5.jar!/" />
+        <root url="jar://$PROJECT_DIR$/libs/cdk-1.2.2.jar!/" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES />
+      <SOURCES>
+        <root url="file://$PROJECT_DIR$/../../cdk/src/main" />
+      </SOURCES>
     </library>
     <library name="RESTLet">
       <CLASSES>
