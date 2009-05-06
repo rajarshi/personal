@@ -1,0 +1,3 @@
+jdk.home.jdk_1.5=/usr/local/share/java/jdk1.5.0_07
+cdk.libs=/home/rguha/src/java/cdk/trunk/dist/jar
+cdk.deps=/home/rguha/src/java/cdk/trunk/jar
