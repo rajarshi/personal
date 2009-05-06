@@ -16,7 +16,8 @@ import java.io.IOException;
 
 public class SDFRecordReader extends RecordReader<LongWritable, Text> {
     private long start, end;
-    private boolean more = true;
+    private boolean beyondSplitEnd = false;
+    private boolean readOneExtra = false;
 
     private LongWritable key = new LongWritable();
     private Text value = new Text();
@@ -33,22 +34,30 @@ public class SDFRecordReader extends RecordReader<LongWritable, Text> {
         FileSystem fs = path.getFileSystem(conf);
 
         fsin = fs.open(path);
+        start = split.getStart();
         end = split.getStart() + split.getLength();
         fsin.seek(start);
-        start = fsin.getPos();
+
+        // if we're not at the beginning of the input file,
+        // sread and discard the current (possibly incomplete) record
+        // and flag that we should read the last record even if it goes
+        // beyond the end of the current chunk.
+        if (start != 0) {
+            readUntilMatch(endTag, false);
+            readOneExtra = true;
+        }
     }
 
-    public boolean nextKeyValue() throws IOException, InterruptedException {
-        if (fsin.getPos() < end) {
-            if (readUntilMatch(endTag, true)) {
-                try {
-                    value = new Text();
-                    value.set(buffer.getData(), 0, buffer.getLength());               
-                    key = new LongWritable(fsin.getPos());
-                    return true;
-                } finally {
-                    buffer.reset();
-                }
+    public boolean nextKeyValue() throws IOException {
+        if (readUntilMatch(endTag, true)) {
+            try {
+                value = new Text();
+                value.set(buffer.getData(), 0, buffer.getLength());
+                key = new LongWritable(fsin.getPos());
+                buffer.reset();
+                return true;
+            } finally {
+                buffer.reset();
             }
         }
         return false;
@@ -82,7 +91,16 @@ public class SDFRecordReader extends RecordReader<LongWritable, Text> {
             // check if we're matching:
             if (b == match[i]) {
                 i++;
-                if (i >= match.length) return true;
+                // if we started from the middle of the input file,
+                // we will have read  and discarded the first record  of this
+                // chunk (which is likely
+                // incomplete), but indicated that we should then read the last
+                // record of the chunk, even if we go beyond the chunk. But after
+                // reading this last record, we must indicate no more records in
+                // this chunk.
+                if (i >= match.length) {
+                    return !readOneExtra;
+                }
             } else i = 0;
         }
     }
