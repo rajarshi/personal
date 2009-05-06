@@ -25,6 +25,7 @@ import org.openscience.cdk.tools.manipulator.ChemFileManipulator;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.StringBufferInputStream;
 import java.io.StringReader;
 import java.util.List;
 
@@ -38,18 +39,19 @@ public class PSearch {
     public static class MoleculeMapper extends Mapper<Object, Text, Text, IntWritable> {
 
         private Text matches = new Text();
-        private PharmacophoreQuery query;
-
 
         public void setup(Context context) {
             String pattern = context.getConfiguration().get("net.rguha.dc.data.pcoredef");
             try {
-                List<PharmacophoreQuery> defs = PharmacophoreUtils.readPharmacophoreDefinitions(pattern);
-                query = defs.get(0);
+                StringBufferInputStream sbis = new StringBufferInputStream(pattern);
+                List<PharmacophoreQuery> defs = PharmacophoreUtils.readPharmacophoreDefinitions(sbis);
+                if (defs.size() < 1) throw new CDKException("Must provide at least 1 pharmacophore definition");
+                PharmacophoreQuery query = defs.get(0);
+                pmatcher.setPharmacophoreQuery(query);
             } catch (CDKException e) {
-                System.out.println("Error parsing pharmacophore definition");
+                System.out.println(e.getMessage());
             } catch (IOException e) {
-                System.out.println("Error reading pharmacophore definition");
+                System.out.println("Error in map setup: "+e.getMessage());
 
             }
         }
@@ -99,12 +101,14 @@ public class PSearch {
 
         // read in the 
         StringBuffer sb = new StringBuffer();
+        String line;
         BufferedReader reader = new BufferedReader(new FileReader(otherArgs[2]));
-        char[] chars = new char[1024];
-        int numRead = 0;
-        while ((numRead = reader.read(chars)) > -1) {
-            sb.append(String.valueOf(chars));
+        while (true) {
+            line = reader.readLine();
+            if (line == null) break;
+            else sb.append(line);
         }
+        reader.close();
 
         // need to set it before we create the Job object
         conf.set("net.rguha.dc.data.pcoredef", sb.toString());
