@@ -126,6 +126,11 @@
         </jar>
     </target>
 
+    <target id="hadoop-clean" name="hadoop-clean">
+        <delete>
+            <fileset dir="rghadoop/classes" includes="**/*" />
+        </delete>
+    </target>
     <target id="hadoop" name="hadoop">
         <javac srcdir="rghadoop/src"
                destdir="rghadoop/classes"
@@ -134,7 +139,6 @@
             <classpath refid="${project.classpath}"/>
         </javac>
         <jar jarfile="rghadoop.jar">
-
             <manifest>
                 <attribute name="Main-Class" value="net.rguha.dc.Identity"/>
             </manifest>
