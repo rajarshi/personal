@@ -15,6 +15,9 @@
         <fileset dir="../../hadoop-0.20.0/">
             <include name="*jar"/>
         </fileset>
+        <fileset dir="../../hadoop-0.20.0/lib">
+            <include name="commons-logging-1.0.4.jar"/>
+        </fileset>
     </path>
     <property name="project.classpath" value="project.libs"/>
 
@@ -130,14 +133,10 @@
                 >
             <classpath refid="${project.classpath}"/>
         </javac>
-<!--        <unjar dest="rghadoop/classes">
-            <fileset dir="libs"
-                     includes="cdk-1.1.5.jar"/>
-        </unjar>
-        -->
         <jar jarfile="rghadoop.jar">
+
             <manifest>
-                <attribute name="Main-Class" value="net.rguha.dc.HeavyAtomCount"/>
+                <attribute name="Main-Class" value="net.rguha.dc.Identity"/>
             </manifest>
             <fileset dir="rghadoop/classes">
                 <include name="**/*"/>

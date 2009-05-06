@@ -349,6 +349,8 @@
         <root url="jar://$PROJECT_DIR$/../../hadoop-0.20.0/hadoop-0.20.0-ant.jar!/" />
         <root url="jar://$PROJECT_DIR$/../../hadoop-0.20.0/hadoop-0.20.0-tools.jar!/" />
         <root url="jar://$PROJECT_DIR$/../../hadoop-0.20.0/hadoop-0.20.0-core.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../hadoop-0.20.0/lib/commons-logging-api-1.0.4.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../hadoop-0.20.0/lib/commons-logging-1.0.4.jar!/" />
       </CLASSES>
       <JAVADOC>
         <root url="file://$PROJECT_DIR$/../../hadoop-0.20.0/docs/api" />
