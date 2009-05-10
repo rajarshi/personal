@@ -128,9 +128,30 @@
 
     <target id="hadoop-clean" name="hadoop-clean">
         <delete>
-            <fileset dir="rghadoop/classes" includes="**/*" />
+            <fileset dir="rghadoop/classes" includes="**/*"/>
         </delete>
     </target>
+    <target id="hadoop-big" name="hadoop-big">
+        <javac srcdir="rghadoop/src"
+               destdir="rghadoop/classes"
+               target="1.6"
+                >
+            <classpath refid="${project.classpath}"/>
+        </javac>
+        <unjar dest="rghadoop/classes">
+            <fileset dir="${lib.dir}"
+                     includes="cdk-1.2.2.jar"/>
+        </unjar>
+        <jar jarfile="rghadoop.jar">
+            <manifest>
+                <attribute name="Main-Class" value="net.rguha.dc.PSearch"/>
+            </manifest>
+            <fileset dir="rghadoop/classes">
+                <include name="**/*"/>
+            </fileset>
+        </jar>
+    </target>
+
     <target id="hadoop" name="hadoop">
         <javac srcdir="rghadoop/src"
                destdir="rghadoop/classes"
