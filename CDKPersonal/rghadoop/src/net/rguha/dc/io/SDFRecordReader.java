@@ -18,11 +18,9 @@ public class SDFRecordReader implements RecordReader<LongWritable, Text> {
     private long end;
     private boolean stillInChunk = true;
 
-    private LongWritable key = new LongWritable();
-    private Text value = new Text();
-
     private FSDataInputStream fsin;
     private DataOutputBuffer buffer = new DataOutputBuffer();
+    private long totalLength;
 
     private byte[] endTag = "$$$$\n".getBytes();
 
@@ -36,6 +34,7 @@ public class SDFRecordReader implements RecordReader<LongWritable, Text> {
         long start = split.getStart();
         end = split.getStart() + split.getLength();
         fsin.seek(start);
+        totalLength = split.getLength();
 
         if (start != 0) {
             // we are probably starting in the middle of a record
@@ -45,7 +44,7 @@ public class SDFRecordReader implements RecordReader<LongWritable, Text> {
         }
     }
 
-    public boolean next(LongWritable key, Text value) throws IOException {
+    public boolean next(LongWritable key, Text value) throws IOException {                          
 
         if (!stillInChunk) return false;
 
@@ -54,7 +53,6 @@ public class SDFRecordReader implements RecordReader<LongWritable, Text> {
         // read beyond the chunk it will be false
         boolean status = readUntilMatch(endTag, true);
 
-        value = new Text();
         value.set(buffer.getData(), 0, buffer.getLength());
         key = new LongWritable(fsin.getPos());
         buffer.reset();
@@ -83,7 +81,7 @@ public class SDFRecordReader implements RecordReader<LongWritable, Text> {
     }
 
     public float getProgress() throws IOException {
-        return 0;
+        return ((float)getPos()) / totalLength;
     }
 
     private boolean readUntilMatch(byte[] match, boolean withinBlock) throws IOException {

@@ -1,37 +1,8 @@
 package net.rguha.dc;
 
-import net.rguha.dc.io.SDFInputFormat;
-import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.IntWritable;
-import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapreduce.Job;
-import org.apache.hadoop.mapreduce.Mapper;
-import org.apache.hadoop.mapreduce.Reducer;
-import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
-import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
-import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
-import org.apache.hadoop.util.GenericOptionsParser;
-import org.openscience.cdk.CDKConstants;
-import org.openscience.cdk.ChemFile;
-import org.openscience.cdk.ChemObject;
-import org.openscience.cdk.exception.CDKException;
-import org.openscience.cdk.interfaces.IAtomContainer;
-import org.openscience.cdk.io.MDLV2000Reader;
-import org.openscience.cdk.pharmacophore.PharmacophoreMatcher;
-import org.openscience.cdk.pharmacophore.PharmacophoreQuery;
-import org.openscience.cdk.pharmacophore.PharmacophoreUtils;
-import org.openscience.cdk.tools.manipulator.ChemFileManipulator;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.StringBufferInputStream;
-import java.io.StringReader;
-import java.util.List;
-
 public class PSearch {
 
+    /*
     private static PharmacophoreMatcher pmatcher = new PharmacophoreMatcher();
 
     private final static IntWritable one = new IntWritable(1);
@@ -128,4 +99,5 @@ public class PSearch {
 
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
+    */
 }

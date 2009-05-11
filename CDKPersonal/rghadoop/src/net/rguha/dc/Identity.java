@@ -32,7 +32,7 @@ public class Identity {
 
     private final static IntWritable one = new IntWritable(1);
 
-    public static class MoleculeMapper extends MapReduceBase implements Mapper<LongWritable, Text, Text, IntWritable> {
+    public static class MapperClass extends MapReduceBase implements Mapper<LongWritable, Text, Text, IntWritable> {
 
         private Text matches = new Text();
 
@@ -54,7 +54,7 @@ public class Identity {
 
     }
 
-    public static class SMARTSMatchReducer
+    public static class ReducerClass
                 extends MapReduceBase
                 implements Reducer<Text, IntWritable, Text, IntWritable> {
         private IntWritable result = new IntWritable();
@@ -74,13 +74,14 @@ public class Identity {
     public static int run(String[] args, Configuration configuration) throws Exception {
         JobConf conf = new JobConf(configuration, HeavyAtomCount.class);
         conf.setJobName("identity");
+//        conf.set("mapred.job.tracker", "local");
 
         conf.setOutputKeyClass(Text.class);
         conf.setOutputValueClass(IntWritable.class);
 
-        conf.setMapperClass(MoleculeMapper.class);
-        conf.setCombinerClass(SMARTSMatchReducer.class);
-        conf.setReducerClass(SMARTSMatchReducer.class);
+        conf.setMapperClass(MapperClass.class);
+        conf.setCombinerClass(ReducerClass.class);
+        conf.setReducerClass(ReducerClass.class);
         conf.setInputFormat(SDFInputFormat.class);
 
         FileInputFormat.setInputPaths(conf, args[0]);
