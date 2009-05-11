@@ -4,13 +4,17 @@ import net.rguha.dc.io.SDFInputFormat;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapreduce.Job;
-import org.apache.hadoop.mapreduce.Mapper;
-import org.apache.hadoop.mapreduce.Reducer;
-import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
-import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
-import org.apache.hadoop.util.GenericOptionsParser;
+import org.apache.hadoop.mapred.FileInputFormat;
+import org.apache.hadoop.mapred.FileOutputFormat;
+import org.apache.hadoop.mapred.JobClient;
+import org.apache.hadoop.mapred.JobConf;
+import org.apache.hadoop.mapred.MapReduceBase;
+import org.apache.hadoop.mapred.Mapper;
+import org.apache.hadoop.mapred.OutputCollector;
+import org.apache.hadoop.mapred.Reducer;
+import org.apache.hadoop.mapred.Reporter;
 import org.openscience.cdk.CDKConstants;
 import org.openscience.cdk.ChemFile;
 import org.openscience.cdk.ChemObject;
@@ -21,18 +25,20 @@ import org.openscience.cdk.tools.manipulator.ChemFileManipulator;
 
 import java.io.IOException;
 import java.io.StringReader;
+import java.util.Iterator;
 import java.util.List;
 
 public class Identity {
 
     private final static IntWritable one = new IntWritable(1);
-    private final static IntWritable zero = new IntWritable(0);
 
-    public static class MoleculeMapper extends Mapper<Object, Text, Text, IntWritable> {
+    public static class MoleculeMapper extends MapReduceBase implements Mapper<LongWritable, Text, Text, IntWritable> {
 
         private Text matches = new Text();
 
-        public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
+        public void map(LongWritable key, Text value,
+                        OutputCollector<Text, IntWritable> output,
+                        Reporter reporter) throws IOException {
             try {
                 StringReader sreader = new StringReader(value.toString());
                 MDLV2000Reader reader = new MDLV2000Reader(sreader);
@@ -40,47 +46,57 @@ public class Identity {
                 List<IAtomContainer> containersList = ChemFileManipulator.getAllAtomContainers(chemFile);
                 IAtomContainer molecule = containersList.get(0);
                 matches.set((String) molecule.getProperty(CDKConstants.TITLE));
-                context.write(matches, one);
+                output.collect(matches, one);
             } catch (CDKException e) {
                 e.printStackTrace();
             }
         }
+
     }
 
-    public static class SMARTSMatchReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+    public static class SMARTSMatchReducer
+                extends MapReduceBase
+                implements Reducer<Text, IntWritable, Text, IntWritable> {
         private IntWritable result = new IntWritable();
 
-        public void reduce(Text key, Iterable<IntWritable> values,
-                           Context context) throws IOException, InterruptedException {
-            for (IntWritable val : values) {
+        public void reduce(Text key, Iterator<IntWritable> values,
+                           OutputCollector<Text, IntWritable> output,
+                           Reporter reporter) throws IOException {
+            while (values.hasNext()) {
+                values.next().get();
                 result.set(1);
-                context.write(key, result);
+                output.collect(key, result);
             }
+
         }
+    }
+
+    public static int run(String[] args, Configuration configuration) throws Exception {
+        JobConf conf = new JobConf(configuration, HeavyAtomCount.class);
+        conf.setJobName("identity");
+
+        conf.setOutputKeyClass(Text.class);
+        conf.setOutputValueClass(IntWritable.class);
+
+        conf.setMapperClass(MoleculeMapper.class);
+        conf.setCombinerClass(SMARTSMatchReducer.class);
+        conf.setReducerClass(SMARTSMatchReducer.class);
+        conf.setInputFormat(SDFInputFormat.class);
+
+        FileInputFormat.setInputPaths(conf, args[0]);
+        FileOutputFormat.setOutputPath(conf, new Path(args[1]));
+
+        JobClient.runJob(conf);
+        return 0;
     }
 
     public static void main(String[] args) throws Exception {
-        Configuration conf = new Configuration();
-
-//        conf.set("mapred.job.tracker", "local");
-
-        String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
-        if (otherArgs.length != 2) {
-            System.err.println("Usage: identity <in> <out>");
-            System.exit(2);
+        if (args.length != 2) {
+            System.out.println("Usage: identity <in> <out>");
+            System.exit(-1);
         }
-
-        Job job = new Job(conf, "id 1");
-        job.setJarByClass(Identity.class);
-        job.setMapperClass(MoleculeMapper.class);
-        job.setCombinerClass(SMARTSMatchReducer.class);
-        job.setReducerClass(SMARTSMatchReducer.class);
-        job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(IntWritable.class);
-        job.setInputFormatClass(SDFInputFormat.class);
-        FileInputFormat.addInputPath(job, new Path(otherArgs[0]));
-        FileOutputFormat.setOutputPath(job, new Path(otherArgs[1]));
-
-        System.exit(job.waitForCompletion(true) ? 0 : 1);
+        int res = run(args, new Configuration());
+        System.exit(res);
     }
+
 }

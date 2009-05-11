@@ -7,14 +7,14 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.DataOutputBuffer;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapreduce.InputSplit;
-import org.apache.hadoop.mapreduce.RecordReader;
-import org.apache.hadoop.mapreduce.TaskAttemptContext;
-import org.apache.hadoop.mapreduce.lib.input.FileSplit;
+import org.apache.hadoop.mapred.FileSplit;
+import org.apache.hadoop.mapred.InputSplit;
+import org.apache.hadoop.mapred.RecordReader;
 
 import java.io.IOException;
 
-public class SDFRecordReader extends RecordReader<LongWritable, Text> {
+public class SDFRecordReader implements RecordReader<LongWritable, Text> {
+
     private long end;
     private boolean stillInChunk = true;
 
@@ -26,11 +26,11 @@ public class SDFRecordReader extends RecordReader<LongWritable, Text> {
 
     private byte[] endTag = "$$$$\n".getBytes();
 
-    public void initialize(InputSplit inputSplit, TaskAttemptContext taskAttemptContext) throws IOException, InterruptedException {
+
+    public SDFRecordReader(Configuration jobConf, InputSplit inputSplit) throws IOException {
         FileSplit split = (FileSplit) inputSplit;
-        Configuration conf = taskAttemptContext.getConfiguration();
         Path path = split.getPath();
-        FileSystem fs = path.getFileSystem(conf);
+        FileSystem fs = path.getFileSystem(jobConf);
 
         fsin = fs.open(path);
         long start = split.getStart();
@@ -45,14 +45,15 @@ public class SDFRecordReader extends RecordReader<LongWritable, Text> {
         }
     }
 
-    public boolean nextKeyValue() throws IOException {
+    public boolean next(LongWritable key, Text value) throws IOException {
+
         if (!stillInChunk) return false;
 
         // status is true as long as we're still within the
         // chunk we got (i.e., fsin.getPos() < end). If we've
         // read beyond the chunk it will be false
         boolean status = readUntilMatch(endTag, true);
-        
+
         value = new Text();
         value.set(buffer.getData(), 0, buffer.getLength());
         key = new LongWritable(fsin.getPos());
@@ -65,20 +66,24 @@ public class SDFRecordReader extends RecordReader<LongWritable, Text> {
         return true;
     }
 
-    public LongWritable getCurrentKey() throws IOException, InterruptedException {
-        return key;
+    public LongWritable createKey() {
+        return new LongWritable();
     }
 
-    public Text getCurrentValue() throws IOException, InterruptedException {
-        return value;
+    public Text createValue() {
+        return new Text();
     }
 
-    public float getProgress() throws IOException, InterruptedException {
-        return 0;
+    public long getPos() throws IOException {
+        return fsin.getPos();
     }
 
     public void close() throws IOException {
         fsin.close();
+    }
+
+    public float getProgress() throws IOException {
+        return 0;
     }
 
     private boolean readUntilMatch(byte[] match, boolean withinBlock) throws IOException {
