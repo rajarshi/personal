@@ -12,10 +12,10 @@
         <fileset dir="${lib.dir}">
             <include name="*.jar"/>
         </fileset>
-        <fileset dir="../../hadoop-0.20.0/">
+        <fileset dir="../../hadoop-0.18.3/">
             <include name="*jar"/>
         </fileset>
-        <fileset dir="../../hadoop-0.20.0/lib">
+        <fileset dir="../../hadoop-0.18.3/lib">
             <include name="commons-logging-1.0.4.jar"/>
         </fileset>
     </path>
@@ -161,7 +161,7 @@
         </javac>
         <jar jarfile="rghadoop.jar">
             <manifest>
-                <attribute name="Main-Class" value="net.rguha.dc.PSearch"/>
+                <attribute name="Main-Class" value="net.rguha.dc.Identity"/>
             </manifest>
             <fileset dir="rghadoop/classes">
                 <include name="**/*"/>
