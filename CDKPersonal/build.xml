@@ -186,7 +186,7 @@
                 compression="gzip"
                 excludes=".git/**, .gitignore/**, *.ipr, *.iws, *.iml, src/**, cdkrest*, module* nohup*">
             <fileset dir=".">
-                <include name="src/net/guha/apps/rest/**"/>
+                <include name="src/net/guha/apps/rest/**/*"/>
                 <include name="COPYING"/>
             </fileset>
         </tar>
@@ -195,7 +195,7 @@
                 basedir="${basedir}"
                 excludes=".git/**, .gitignore/**, *.ipr, *.iws, *.iml, src/**, cdkrest*, module* nohup*">
             <fileset dir=".">
-                <include name="src/net/guha/apps/rest/**"/>
+                <include name="src/net/guha/apps/rest/**/*"/>
                 <include name="COPYING"/>
             </fileset>
 

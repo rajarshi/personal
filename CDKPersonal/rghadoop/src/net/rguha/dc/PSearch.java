@@ -105,7 +105,8 @@ public class PSearch {
         Configuration configuration = new Configuration();
         JobConf conf = new JobConf(configuration, PSearch.class);
 
-        conf.set("mapred.job.tracker", "local");
+//        conf.set("mapred.job.tracker", "local");
+        conf.set("mapred.map.tasks", "20");
 
         String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
         if (otherArgs.length != 3) {
