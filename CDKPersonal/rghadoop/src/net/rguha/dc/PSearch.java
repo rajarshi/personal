@@ -62,8 +62,6 @@ public class PSearch extends Configured implements Tool {
     private static PharmacophoreMatcher pmatcher = new PharmacophoreMatcher();
 
     private final static IntWritable one = new IntWritable(1);
-    private final static IntWritable zero = new IntWritable(0);
-
 
     public static class MoleculeMapper extends MapReduceBase implements Mapper<LongWritable, Text, Text, IntWritable> {
 
