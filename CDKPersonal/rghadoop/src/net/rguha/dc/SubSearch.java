@@ -20,7 +20,6 @@
 
 package net.rguha.dc;
 
-import net.rguha.dc.io.SDFInputFormat;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
@@ -101,10 +100,7 @@ public class SubSearch extends Configured implements Tool {
 
         conf.setOutputKeyClass(Text.class);
         conf.setOutputValueClass(IntWritable.class);
-
-        conf.setMapperClass(MoleculeMapper.class);
-        conf.setInputFormat(SDFInputFormat.class);
-
+        conf.setMapperClass(MoleculeMapper.class);        
         FileInputFormat.setInputPaths(conf, args[0]);
         FileOutputFormat.setOutputPath(conf, new Path(args[1]));
 
