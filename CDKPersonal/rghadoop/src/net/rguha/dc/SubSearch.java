@@ -76,7 +76,11 @@ public class SubSearch extends Configured implements Tool {
             try {
                 IAtomContainer molecule = parser.parseSmiles(value.toString());
                 boolean matched = sqt.matches(molecule);
-                matches.set((String) molecule.getProperty(CDKConstants.TITLE));
+
+                String title = (String) molecule.getProperty(CDKConstants.TITLE);
+                if (title == null) title = value.toString();
+
+                matches.set(title);
                 if (matched) output.collect(matches, one);
             } catch (CDKException e) {
                 e.printStackTrace();
