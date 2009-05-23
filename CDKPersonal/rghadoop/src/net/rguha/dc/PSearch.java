@@ -2,6 +2,7 @@ package net.rguha.dc;
 
 import net.rguha.dc.io.SDFInputFormat;
 import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
@@ -15,7 +16,8 @@ import org.apache.hadoop.mapred.Mapper;
 import org.apache.hadoop.mapred.OutputCollector;
 import org.apache.hadoop.mapred.Reducer;
 import org.apache.hadoop.mapred.Reporter;
-import org.apache.hadoop.util.GenericOptionsParser;
+import org.apache.hadoop.util.Tool;
+import org.apache.hadoop.util.ToolRunner;
 import org.openscience.cdk.CDKConstants;
 import org.openscience.cdk.ChemFile;
 import org.openscience.cdk.ChemObject;
@@ -35,12 +37,13 @@ import java.io.StringReader;
 import java.util.Iterator;
 import java.util.List;
 
-public class PSearch {
+public class PSearch extends Configured implements Tool {
 
     private static PharmacophoreMatcher pmatcher = new PharmacophoreMatcher();
 
     private final static IntWritable one = new IntWritable(1);
     private final static IntWritable zero = new IntWritable(0);
+
 
     public static class MoleculeMapper extends MapReduceBase implements Mapper<LongWritable, Text, Text, IntWritable> {
 
@@ -101,23 +104,25 @@ public class PSearch {
         }
     }
 
-    public static void main(String[] args) throws Exception {
-        Configuration configuration = new Configuration();
-        JobConf conf = new JobConf(configuration, PSearch.class);
-
-//        conf.set("mapred.job.tracker", "local");
-        conf.set("mapred.map.tasks", "20");
-
-        String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
-        if (otherArgs.length != 3) {
+    /**
+     * Execute the command with the given arguments.
+     *
+     * @param args command specific arguments.
+     * @return exit code.
+     * @throws Exception
+     */
+    public int run(String[] args) throws Exception {
+        if (args.length != 3) {
             System.err.println("Usage: psearch <in> <out> <pcorefile>");
             System.exit(2);
         }
 
-        // read in the 
+        JobConf conf = new JobConf(getConf(), PSearch.class);
+        conf.setJobName("psearch");
+
         StringBuffer sb = new StringBuffer();
         String line;
-        BufferedReader reader = new BufferedReader(new FileReader(otherArgs[2]));
+        BufferedReader reader = new BufferedReader(new FileReader(args[2]));
         while (true) {
             line = reader.readLine();
             if (line == null) break;
@@ -140,6 +145,11 @@ public class PSearch {
         FileOutputFormat.setOutputPath(conf, new Path(args[1]));
 
         JobClient.runJob(conf);
-        System.exit(0);
+        return 0;
+    }
+
+    public static void main(String[] args) throws Exception {
+        int res = ToolRunner.run(new Configuration(), new PSearch(), args);
+        System.exit(res);
     }
 }
