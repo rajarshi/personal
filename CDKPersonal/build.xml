@@ -144,7 +144,7 @@
         </unjar>
         <jar jarfile="rghadoop.jar">
             <manifest>
-                <attribute name="Main-Class" value="net.rguha.dc.PSearch"/>
+                <attribute name="Main-Class" value="net.rguha.dc.SubSearch"/>
             </manifest>
             <fileset dir="rghadoop/classes">
                 <include name="**/*"/>
@@ -169,6 +169,13 @@
         </jar>
     </target>
 
+    <target id="hadoop-dist" name="hadoop-dist">
+        <tar destfile="hadoop-cdk.tgz"
+             compression="gzip"
+             basedir="rghadoop/src">
+        </tar>
+    </target>
+    
     <target id="srcdist-rest" name="srcdist-rest" depends="clean">
         <loadfile property="version.line" srcfile="src/net/guha/apps/rest/Constants.java">
             <filterchain>
