@@ -78,8 +78,9 @@ public class PSearch extends Configured implements Tool {
 
                 boolean matched = pmatcher.matches(molecule);
                 matches.set((String) molecule.getProperty(CDKConstants.TITLE));
+
+                // we only emit if we get a match
                 if (matched) output.collect(matches, one);
-                else output.collect(matches, zero);
             } catch (CDKException e) {
                 e.printStackTrace();
             }
@@ -137,8 +138,6 @@ public class PSearch extends Configured implements Tool {
         conf.setOutputValueClass(IntWritable.class);
 
         conf.setMapperClass(MoleculeMapper.class);
-        conf.setCombinerClass(PCoreMatchReducer.class);
-        conf.setReducerClass(PCoreMatchReducer.class);
         conf.setInputFormat(SDFInputFormat.class);
 
         FileInputFormat.setInputPaths(conf, args[0]);
