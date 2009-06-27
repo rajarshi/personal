@@ -253,7 +253,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CDKPersonal.iml" filepath="$PROJECT_DIR$/CDKPersonal.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../cache/PGCache.iml" filepath="$PROJECT_DIR$/../../cache/PGCache.iml" />
       <module fileurl="file://$PROJECT_DIR$/draw2d/draw2d.iml" filepath="$PROJECT_DIR$/draw2d/draw2d.iml" />
       <module fileurl="file://$PROJECT_DIR$/rghadoop/rghadoop.iml" filepath="$PROJECT_DIR$/rghadoop/rghadoop.iml" />
     </modules>
@@ -284,8 +283,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/draw2d" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/rghadoop" vcs="Git" />
   </component>
   <component name="VcsRevisionGraphProjectComponent">
     <option name="_useTwoTagConvention" value="true" />
@@ -368,10 +365,17 @@
     </library>
     <library name="Misc">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/libs/CJWizards-0.2.jar!/" />
+        <root url="jar://$PROJECT_DIR$/libs/forms-1.2.1.jar!/" />
       </CLASSES>
-      <JAVADOC />
-      <SOURCES />
+      <JAVADOC>
+        <root url="file://$PROJECT_DIR$/../../forms-1.2.1/docs/api" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="file://$PROJECT_DIR$/../../forms-1.2.1/src/core" />
+        <root url="file://$PROJECT_DIR$/../../forms-1.2.1/src/tutorial" />
+        <root url="file://$PROJECT_DIR$/../../forms-1.2.1/src/extras" />
+        <root url="file://$PROJECT_DIR$/../../forms-1.2.1/src/test" />
+      </SOURCES>
     </library>
   </component>
 </project>

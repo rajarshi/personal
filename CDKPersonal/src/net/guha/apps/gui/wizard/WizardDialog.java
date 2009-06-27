@@ -1,5 +1,6 @@
 package net.guha.apps.gui.wizard;
 
+import com.jgoodies.forms.builder.ButtonBarBuilder;
 import net.guha.apps.gui.wizard.stateui.StateDescriptorsUI;
 import net.guha.apps.gui.wizard.stateui.StateDoneUI;
 import net.guha.apps.gui.wizard.stateui.StateGAFeatSelUI;
@@ -21,15 +22,13 @@ import java.awt.event.WindowEvent;
 /**
  * Generates the complete UI for a given state of the wizard.
  * <p/>
- * The stratgey here is to simply generate the UI and set various variables
- * based on the users action in the UI. The caller of this class can then query
- * this class to see what type of action happened and then perform the appropriate
+ * The stratgey here is to simply generate the UI and set various variables based on the users action in the UI. The
+ * caller of this class can then query this class to see what type of action happened and then perform the appropriate
  * tasks.
  * <p/>
- * Thus the caller will bring up a dialog based on this class and after the
- * user has clicked next, back, cancel or done, the dialog is dispose()'ed and
- * the user can then prform the required actions. As a result this dialog
- * will not block the EDT.
+ * Thus the caller will bring up a dialog based on this class and after the user has clicked next, back, cancel or done,
+ * the dialog is dispose()'ed and the user can then prform the required actions. As a result this dialog will not block
+ * the EDT.
  *
  * @author Rajarshi Guha
  */
@@ -77,7 +76,7 @@ public class WizardDialog extends JDialog {
     }
 
     public WizardDialog(int whichState,
-                            String title) {
+                        String title) {
         super();
 
         BorderLayout layout = new BorderLayout(5, 5);
@@ -147,13 +146,12 @@ public class WizardDialog extends JDialog {
             }
         });
 
-
-        FlowLayout buttonPanelLayout = new FlowLayout(FlowLayout.RIGHT);
-        JPanel buttonPanel = new JPanel(buttonPanelLayout);
-        buttonPanel.add(nextButton);
-        buttonPanel.add(backButton);
-        buttonPanel.add(cancelButton);
-        buttonPanel.add(stopButton);
+        ButtonBarBuilder builder = new ButtonBarBuilder();
+        builder.addGriddedButtons(new JButton[] {cancelButton, stopButton});
+        builder.addUnrelatedGap();
+        builder.addGlue();
+        builder.addGriddedButtons(new JButton[] {nextButton, backButton});                                
+        JPanel buttonPanel = builder.getPanel();
 
 
         //
