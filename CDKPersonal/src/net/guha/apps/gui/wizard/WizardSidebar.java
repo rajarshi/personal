@@ -17,7 +17,7 @@ import java.net.URL;
  *
  * @author Rajarshi Guha
  */
-public class WizardSidebar extends JPanel {
+public class WizardSidebar extends GradientPanel {
     private JLabel[] labels;
     private int currentLabel = 0;
 
@@ -33,6 +33,8 @@ public class WizardSidebar extends JPanel {
      */
     public WizardSidebar(String[] stateStrings, int startState) {
 
+        super();
+        
         iconOK = getImageIcon("images/applet-okay.png", "Success");
         iconRunning = getImageIcon("images/applet-busy.png", "Busy");
         iconStart = getImageIcon("images/start.png", "Starting");

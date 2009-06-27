@@ -14,8 +14,6 @@ public class QSARWizardGUILoop {
 
     public QSARWizardGUILoop() {
         m_log.info("In the EDT: " + SwingUtilities.isEventDispatchThread());
-
-        // we clear the wizard report chunk list in case we had used before this
         WizardReportPage.getInstance().clearPage();
     }
 
@@ -26,7 +24,7 @@ public class QSARWizardGUILoop {
 
         QSARWizardDialog wdlg;
         Object ret;
-        String dlgTitle = "QSAR Modeling Wizard";
+        String dlgTitle = "Wizard";
         boolean wizardComplete = false;
 
 
@@ -61,7 +59,6 @@ public class QSARWizardGUILoop {
             }
         } // end while
 
-//        activeWindow.setEnabled(true);
     } // end run
 
     public static void main(String[] args) {
