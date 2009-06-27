@@ -8,11 +8,11 @@ import javax.swing.*;
 /**
  * @author Rajarshi Guha
  */
-public class QSARWizardGUILoop {
-    private static Log m_log = LogFactory.getLog(QSARWizardGUILoop.class);
+public class WizardGUILoop {
+    private static Log m_log = LogFactory.getLog(WizardGUILoop.class);
 
 
-    public QSARWizardGUILoop() {
+    public WizardGUILoop() {
         m_log.info("In the EDT: " + SwingUtilities.isEventDispatchThread());
         WizardReportPage.getInstance().clearPage();
     }
@@ -20,16 +20,16 @@ public class QSARWizardGUILoop {
 
     public void run() {
         int currentState = WizardStates.STATE_INIT;
-        QSARWizardUndo undoStack = new QSARWizardUndo();
+        WizardUndo undoStack = new WizardUndo();
 
-        QSARWizardDialog wdlg;
+        WizardDialog wdlg;
         Object ret;
         String dlgTitle = "Wizard";
         boolean wizardComplete = false;
 
 
         while (!wizardComplete) {
-            wdlg = new QSARWizardDialog(currentState, dlgTitle);
+            wdlg = new WizardDialog(currentState, dlgTitle);
             wdlg.pack();
             wdlg.setVisible(true);
 
@@ -62,7 +62,7 @@ public class QSARWizardGUILoop {
     } // end run
 
     public static void main(String[] args) {
-        QSARWizardGUILoop gloop = new QSARWizardGUILoop();
+        WizardGUILoop gloop = new WizardGUILoop();
         gloop.run();
     }
 }

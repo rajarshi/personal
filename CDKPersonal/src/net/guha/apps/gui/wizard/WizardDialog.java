@@ -1,11 +1,22 @@
 package net.guha.apps.gui.wizard;
 
-import net.guha.apps.gui.wizard.stateui.*;
+import net.guha.apps.gui.wizard.stateui.StateDescriptorsUI;
+import net.guha.apps.gui.wizard.stateui.StateDoneUI;
+import net.guha.apps.gui.wizard.stateui.StateGAFeatSelUI;
+import net.guha.apps.gui.wizard.stateui.StateInitializeUI;
+import net.guha.apps.gui.wizard.stateui.StateQSARSetsUI;
+import net.guha.apps.gui.wizard.stateui.StateReductionUI;
+import net.guha.apps.gui.wizard.stateui.WizardStateUI;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
  * Generates the complete UI for a given state of the wizard.
@@ -22,7 +33,7 @@ import java.awt.event.*;
  *
  * @author Rajarshi Guha
  */
-public class QSARWizardDialog extends JDialog {
+public class WizardDialog extends JDialog {
 
     private int minX = 560;
     private int minY = 300;
@@ -65,7 +76,7 @@ public class QSARWizardDialog extends JDialog {
         return currentStateUI;
     }
 
-    public QSARWizardDialog(int whichState,
+    public WizardDialog(int whichState,
                             String title) {
         super();
 

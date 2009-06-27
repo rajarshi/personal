@@ -283,6 +283,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/draw2d" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/rghadoop" vcs="Git" />
   </component>

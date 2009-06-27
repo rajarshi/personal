@@ -5,10 +5,10 @@ import java.util.Stack;
 /**
  * @author Rajarshi Guha
  */
-public class QSARWizardUndo extends Stack {
+public class WizardUndo extends Stack {
 
 
-    public QSARWizardUndo() {
+    public WizardUndo() {
         super();
     }
 
