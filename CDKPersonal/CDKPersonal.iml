@@ -23,6 +23,7 @@
     <orderEntry type="library" name="RESTLet" level="project" />
     <orderEntry type="library" name="SMSD" level="project" />
     <orderEntry type="library" name="Hadoop" level="project" />
+    <orderEntry type="library" exported="" name="Misc" level="project" />
   </component>
 </module>
 

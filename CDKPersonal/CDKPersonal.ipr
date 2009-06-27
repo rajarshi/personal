@@ -253,11 +253,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CDKPersonal.iml" filepath="$PROJECT_DIR$/CDKPersonal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../cache/PGCache.iml" filepath="$PROJECT_DIR$/../../cache/PGCache.iml" />
       <module fileurl="file://$PROJECT_DIR$/draw2d/draw2d.iml" filepath="$PROJECT_DIR$/draw2d/draw2d.iml" />
       <module fileurl="file://$PROJECT_DIR$/rghadoop/rghadoop.iml" filepath="$PROJECT_DIR$/rghadoop/rghadoop.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK" />
   <component name="ResourceManagerContainer">
     <option name="myResourceBundles">
       <value>
@@ -363,6 +364,13 @@
         <root url="file://$PROJECT_DIR$/../../hadoop-0.20.0/src/tools" />
         <root url="file://$PROJECT_DIR$/../../hadoop-0.20.0/src/core" />
       </SOURCES>
+    </library>
+    <library name="Misc">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/libs/CJWizards-0.2.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
     </library>
   </component>
 </project>
