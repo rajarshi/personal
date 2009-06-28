@@ -5,7 +5,7 @@ import java.util.Stack;
 /**
  * @author Rajarshi Guha
  */
-public class WizardUndo extends Stack {
+public class WizardUndo extends Stack<Object> {
 
 
     public WizardUndo() {
