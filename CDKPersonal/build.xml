@@ -69,6 +69,15 @@
         </javac>
     </target>
 
+    <target id="compile-wizard" name="compile-wizard" depends="prep">
+        <javac srcdir="${sources}/net/guha/apps/gui/wizard"
+               destdir="${build.dir}"
+               target="1.5"
+                >
+            <classpath refid="${project.classpath}"/>
+        </javac>
+    </target>
+
 
     <target id="rest" name="rest" depends="compile-rest">
         <unjar dest="${build.dir}">
