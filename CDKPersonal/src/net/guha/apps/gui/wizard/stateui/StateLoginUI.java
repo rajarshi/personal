@@ -106,6 +106,8 @@ public class StateLoginUI extends WizardStateUI {
 //            return null;
         }
 
+        // store the connection object so that others can get it
+        settings.put("gov.nih.ncgc.rnai.setttings.connection", conn);
 
         return new Object();
     }
@@ -117,9 +119,5 @@ public class StateLoginUI extends WizardStateUI {
      */
     public String getStateName() {
         return "Login";
-    }
-
-    public Connection getConnection() {
-        return conn;
     }
 }

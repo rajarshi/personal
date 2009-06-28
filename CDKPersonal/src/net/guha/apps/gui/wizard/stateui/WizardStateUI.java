@@ -38,6 +38,10 @@ public abstract class WizardStateUI {
         return panel;
     }
 
+    public Map<String,Object> getSettingsMap(){
+        return settings;
+    }
+
     /**
      * Evaluate the state.
      *
