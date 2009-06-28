@@ -3,6 +3,11 @@ package net.guha.apps.gui.wizard;
 import com.jgoodies.looks.LookUtils;
 import com.jgoodies.looks.Options;
 import com.jgoodies.looks.plastic.Plastic3DLookAndFeel;
+import net.guha.apps.gui.wizard.stateui.StateAssaySetupUI;
+import net.guha.apps.gui.wizard.stateui.StateDataLoadUI;
+import net.guha.apps.gui.wizard.stateui.StateDoneUI;
+import net.guha.apps.gui.wizard.stateui.StateLoginUI;
+import net.guha.apps.gui.wizard.stateui.WizardStateUI;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -15,12 +20,17 @@ import java.awt.*;
 public class WizardGUILoop {
     private static Log m_log = LogFactory.getLog(WizardGUILoop.class);
 
+    private WizardStateUI[] states = null;
+
 
     public WizardGUILoop() {
         m_log.info("In the EDT: " + SwingUtilities.isEventDispatchThread());
         WizardReportPage.getInstance().clearPage();
     }
 
+    public WizardGUILoop(WizardStateUI[] states) {
+        this.states = states;
+    }
 
     private void configureUI() {
         UIManager.put(Options.USE_SYSTEM_FONTS_APP_KEY, Boolean.TRUE);
@@ -40,7 +50,7 @@ public class WizardGUILoop {
     }
 
     public void run() {
-        int currentState = WizardStates.STATE_LOGIN;
+        int currentState = 0; // beginning of the state list
         WizardUndo undoStack = new WizardUndo();
 
         WizardDialog wdlg;
@@ -56,11 +66,11 @@ public class WizardGUILoop {
 
             // see what action needs to be taken
             if (wdlg.isStopClicked()) {
-                m_log.info(WizardStates.STATE_NAMES[currentState] + " clicked stop ");
+                m_log.info(states[currentState].getStateName() + " clicked stop ");
                 wizardComplete = true;
             } else if (wdlg.isNextClicked()) {
-                m_log.info(WizardStates.STATE_NAMES[currentState] + " clicked next ");
-                if (currentState == WizardStates.STATE_END) {
+                m_log.info(states[currentState].getStateName() + " clicked next ");
+                if (currentState == states.length-1) {
                     wizardComplete = true;
                 } else {
                     ret = wdlg.getCurrentStateUI().evaluate();
@@ -69,12 +79,12 @@ public class WizardGUILoop {
                     currentState++;
                 }
             } else if (wdlg.isBackClicked()) {
-                m_log.info(WizardStates.STATE_NAMES[currentState] + " clicked back ");
-                if (currentState == WizardStates.STATE_LOGIN) continue;
+                m_log.info(states[currentState].getStateName() + " clicked back ");
+                if (currentState == 0) continue;
                 undoStack.undo(currentState);
                 currentState--;
             } else if (wdlg.isCancelClicked()) {
-                m_log.info(WizardStates.STATE_NAMES[currentState] + " clicked cancel ");
+                m_log.info(states[currentState].getStateName() + " clicked cancel ");
                 undoStack.undoAll(currentState);
                 wizardComplete = true;
             }
@@ -83,7 +93,14 @@ public class WizardGUILoop {
     } // end run
 
     public static void main(String[] args) {
-        WizardGUILoop gloop = new WizardGUILoop();
+        WizardStateUI[] states = new WizardStateUI[]{
+                new StateLoginUI(),
+                new StateAssaySetupUI(),
+                new StateDataLoadUI(),
+                new StateDoneUI()
+        };
+        
+        WizardGUILoop gloop = new WizardGUILoop(states);
         gloop.configureUI();
         gloop.run();
     }
