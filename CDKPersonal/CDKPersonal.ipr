@@ -366,6 +366,7 @@
     <library name="Misc">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/libs/forms-1.2.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/libs/looks-2.2.2.jar!/" />
       </CLASSES>
       <JAVADOC>
         <root url="file://$PROJECT_DIR$/../../forms-1.2.1/docs/api" />

@@ -1,9 +1,13 @@
 package net.guha.apps.gui.wizard;
 
+import com.jgoodies.looks.LookUtils;
+import com.jgoodies.looks.Options;
+import com.jgoodies.looks.plastic.Plastic3DLookAndFeel;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * @author Rajarshi Guha
@@ -17,6 +21,23 @@ public class WizardGUILoop {
         WizardReportPage.getInstance().clearPage();
     }
 
+
+    private void configureUI() {
+        UIManager.put(Options.USE_SYSTEM_FONTS_APP_KEY, Boolean.TRUE);
+        Options.setDefaultIconSize(new Dimension(18, 18));
+
+        String lafName =
+                LookUtils.IS_OS_MAC
+                        ? Options.getCrossPlatformLookAndFeelClassName()
+                        : Options.getSystemLookAndFeelClassName();
+
+        try {
+//            UIManager.setLookAndFeel(lafName);
+            UIManager.setLookAndFeel(new Plastic3DLookAndFeel());
+        } catch (Exception e) {
+            System.err.println("Can't set look & feel:" + e);
+        }
+    }
 
     public void run() {
         int currentState = WizardStates.STATE_LOGIN;
@@ -63,6 +84,7 @@ public class WizardGUILoop {
 
     public static void main(String[] args) {
         WizardGUILoop gloop = new WizardGUILoop();
+        gloop.configureUI();
         gloop.run();
     }
 }
