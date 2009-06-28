@@ -112,6 +112,15 @@ public class StateLoginUI extends WizardStateUI {
         return new Object();
     }
 
+    /**
+     * Return the user visible name of the state.
+     *
+     * @return The name of the state.
+     */
+    public String getStateName() {
+        return "Login";
+    }
+
     public Connection getConnection() {
         return conn;
     }

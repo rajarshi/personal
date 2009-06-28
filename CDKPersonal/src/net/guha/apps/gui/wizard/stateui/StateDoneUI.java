@@ -41,4 +41,13 @@ public class StateDoneUI extends WizardStateUI {
     public Object evaluate() {
         return new ArrayList();
     }
+
+    /**
+     * Return the user visible name of the state.
+     *
+     * @return The name of the state.
+     */
+    public String getStateName() {
+        return "Done";
+    }
 }

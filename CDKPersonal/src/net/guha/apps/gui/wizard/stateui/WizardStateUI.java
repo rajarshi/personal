@@ -42,4 +42,11 @@ public abstract class WizardStateUI {
      *         purposes. If the evaluation failed the return value is <code>null</code>
      */
     public abstract Object evaluate();
+
+    /**
+     * Return the user visible name of the state.
+     *
+     * @return The name of the state.
+     */
+    public abstract String getStateName();
 }
