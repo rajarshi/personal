@@ -48,11 +48,10 @@ public class WizardSidebar extends GradientPanel {
 
         currentLabel = 0;
 
-        labels = new JLabel[stateLabels.length];
-        for (int i = 0; i < stateLabels.length; i++) {
-            labels[i] = stateLabels[i];
-            labels[i].setEnabled(false);
-            this.add(labels[i]);
+        labels = stateLabels;
+        for (JLabel label : labels) {
+            label.setEnabled(false);
+            this.add(label);
         }       
     }
 
@@ -63,10 +62,10 @@ public class WizardSidebar extends GradientPanel {
      *
      * @param s The name for the current state.
      */
-    public void inState(String s) {
+    public void inState(JLabel s) {
         for (JLabel label : labels) {
             if (label.isEnabled()) label.setEnabled(false);
-            if (label.getText().equals(s)) label.setEnabled(true);
+            if (label.getText().equals(s.getText())) label.setEnabled(true);
         }
     }
 

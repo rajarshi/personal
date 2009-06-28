@@ -87,7 +87,7 @@ public class WizardDialog extends JDialog {
         stopClicked = false;
         cancelClicked = false;
 
-        sideBar.inState(ui.getStateName());
+        sideBar.inState(ui.getLabel());
 
         if (oldStateUI != null) getContentPane().remove(oldStateUI.getPanel());
         getContentPane().add(currentStateUI.getPanel(), BorderLayout.CENTER);
