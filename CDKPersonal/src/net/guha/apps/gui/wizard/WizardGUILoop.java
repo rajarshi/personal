@@ -19,7 +19,7 @@ public class WizardGUILoop {
 
 
     public void run() {
-        int currentState = WizardStates.STATE_INIT;
+        int currentState = WizardStates.STATE_LOGIN;
         WizardUndo undoStack = new WizardUndo();
 
         WizardDialog wdlg;
@@ -49,7 +49,7 @@ public class WizardGUILoop {
                 }
             } else if (wdlg.isBackClicked()) {
                 m_log.info(WizardStates.STATE_NAMES[currentState] + " clicked back ");
-                if (currentState == WizardStates.STATE_INIT) continue;
+                if (currentState == WizardStates.STATE_LOGIN) continue;
                 undoStack.undo(currentState);
                 currentState--;
             } else if (wdlg.isCancelClicked()) {

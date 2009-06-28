@@ -11,7 +11,7 @@ public class WizardStates {
      * These can be indexed by the integer values of the states
      */
     public static final String[] STATE_NAMES = {
-            "Start", "QSAR Sets", "Descriptor Evaluation",
+            "Login", "QSAR Sets", "Descriptor Evaluation",
             "Descriptor Reduction", "Feature Selection", "Done"
     };
 
@@ -25,7 +25,7 @@ public class WizardStates {
      * <p/>
      * Just displays a message.
      */
-    public static final int STATE_INIT = 0;
+    public static final int STATE_LOGIN = 0;
 
     /**
      * The set selection state.

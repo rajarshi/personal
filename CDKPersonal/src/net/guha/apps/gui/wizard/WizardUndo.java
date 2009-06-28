@@ -42,7 +42,7 @@ public class WizardUndo extends Stack {
 
 
 //        switch (whichState) {
-//            case WizardStates.STATE_INIT:
+//            case WizardStates.STATE_LOGIN:
 //                // nothing to undo before this state
 //                break;
 //            case WizardStates.STATE_SETS:

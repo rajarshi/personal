@@ -1,11 +1,10 @@
 package net.guha.apps.gui.wizard.stateui;
 
 
+import com.jgoodies.forms.builder.DefaultFormBuilder;
+import com.jgoodies.forms.layout.FormLayout;
+
 import javax.swing.*;
-import javax.swing.border.CompoundBorder;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.EtchedBorder;
-import java.awt.*;
 import java.util.ArrayList;
 
 /**
@@ -13,28 +12,49 @@ import java.util.ArrayList;
  */
 public class StateLoginUI extends WizardStateUI {
 
+    private JTextField hostNameField;
+    private JTextField portField;
+    private JTextField userNameField;
+    private JTextField passwordField;
+    private JTextField sidField;
+
+    private void initComponents() {
+        hostNameField = new JTextField();
+        portField = new JTextField();
+        userNameField = new JTextField();
+        passwordField = new JTextField();
+        sidField = new JTextField();
+    }
 
     public StateLoginUI() {
         super();
 
-        panel = new JPanel(new BorderLayout());
+        initComponents();
 
-        CompoundBorder border = new CompoundBorder(
-                BorderFactory.createEtchedBorder(EtchedBorder.RAISED),
-                new EmptyBorder(2, 2, 2, 2));
-        panel.setBorder(border);
+        FormLayout layout = new FormLayout(
+                "right:[40dlu,pref], 3dlu, 70dlu, 7dlu, "
+                        + "right:[40dlu,pref], 3dlu, 70dlu");
+        DefaultFormBuilder builder = new DefaultFormBuilder(layout);
+        builder.setDefaultDialogBorder();
 
-        String txt = "<html>\n" +
-                "<body>\n" +
-                "You've successfully completed the wizard!\n";
-        JEditorPane jed = new JEditorPane("text/html", txt);
-        jed.setEditable(false);
-        jed.setMargin(new Insets(1, 1, 1, 1));
-        jed.setPreferredSize(new Dimension(350, 200));
-        JScrollPane scrollPane = new JScrollPane(jed, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
-                JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        panel.add(scrollPane, BorderLayout.CENTER);
-        panel.add(scrollPane, BorderLayout.CENTER);
+        builder.appendSeparator("Database login");
+
+        builder.append("Hostname", hostNameField);
+        builder.nextLine();
+
+        builder.append("Port", portField);
+        builder.nextLine();
+
+        builder.append("Username", userNameField);
+        builder.nextLine();
+
+        builder.append("Password", passwordField);
+        builder.nextLine();
+
+        builder.append("SID", sidField);
+        builder.nextLine();
+        
+        panel = builder.getPanel();
     }
 
 

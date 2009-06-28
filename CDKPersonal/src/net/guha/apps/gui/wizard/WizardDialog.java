@@ -4,7 +4,7 @@ import com.jgoodies.forms.builder.ButtonBarBuilder;
 import net.guha.apps.gui.wizard.stateui.StateDescriptorsUI;
 import net.guha.apps.gui.wizard.stateui.StateDoneUI;
 import net.guha.apps.gui.wizard.stateui.StateGAFeatSelUI;
-import net.guha.apps.gui.wizard.stateui.StateInitializeUI;
+import net.guha.apps.gui.wizard.stateui.StateLoginUI;
 import net.guha.apps.gui.wizard.stateui.StateQSARSetsUI;
 import net.guha.apps.gui.wizard.stateui.StateReductionUI;
 import net.guha.apps.gui.wizard.stateui.WizardStateUI;
@@ -163,9 +163,9 @@ public class WizardDialog extends JDialog {
 
         // see which state UI we should add
         switch (whichState) {
-            case WizardStates.STATE_INIT:
+            case WizardStates.STATE_LOGIN:
                 backButton.setEnabled(false);
-                currentStateUI = new StateInitializeUI();
+                currentStateUI = new StateLoginUI();
                 break;
             case WizardStates.STATE_SETS:
                 currentStateUI = new StateQSARSetsUI();

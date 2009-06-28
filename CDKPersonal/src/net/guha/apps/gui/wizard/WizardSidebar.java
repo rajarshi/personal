@@ -85,7 +85,7 @@ public class WizardSidebar extends GradientPanel {
     public void enablePreviousLabel() {
         labels[currentLabel].setIcon(iconStart);
 
-        if (currentLabel == WizardStates.STATE_INIT) return;
+        if (currentLabel == WizardStates.STATE_LOGIN) return;
 
         labels[currentLabel].setEnabled(false);
         currentLabel--;
