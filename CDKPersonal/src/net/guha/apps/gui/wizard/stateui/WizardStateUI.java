@@ -11,7 +11,14 @@ import java.util.Map;
 public abstract class WizardStateUI {
 
     protected JPanel panel;
-    protected Map<String,Object> settings;
+
+    /**
+     * Settings that will be shared by all subclass instances.
+     *
+     * Allows individual states to ommunicate with each other.
+     * Instantiated when the first state UI is created.
+     */
+    protected static Map<String,Object> settings = null;
 
     /**
      * Constructor for all wizard states.
@@ -21,7 +28,10 @@ public abstract class WizardStateUI {
      *
      */
     public WizardStateUI() {
-        settings = new HashMap<String,Object>();
+        if (settings == null) {
+            System.out.println("Creating empty settings map");
+            settings = new HashMap<String,Object>();
+        }
     }
 
     /**
