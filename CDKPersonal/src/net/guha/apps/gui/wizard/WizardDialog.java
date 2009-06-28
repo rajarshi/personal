@@ -27,6 +27,9 @@ import java.awt.event.WindowEvent;
  * @author Rajarshi Guha
  */
 public class WizardDialog extends JDialog {
+    public static final int STATE_FIRST = 1;
+    public static final int STATE_INTERMEDIATE = 2;
+    public static final int STATE_LAST = 3;
 
     private int minX = 560;
     private int minY = 300;
@@ -85,24 +88,26 @@ public class WizardDialog extends JDialog {
         cancelClicked = false;
 
         sideBar.inState(ui.getStateName());
-        
+
         if (oldStateUI != null) getContentPane().remove(oldStateUI.getPanel());
         getContentPane().add(currentStateUI.getPanel(), BorderLayout.CENTER);
+
+        pack();
     }
 
-    /**
-     * Call to notify that the wizard is in the first step.
-     */
-    public void isFirstState() {
-        backButton.setEnabled(false);
-    }
-
-    /**
-     * Call to notify that the wizard is at the last step.
-     */
-    public void isLastState() {
-        nextButton.setText("Done");
-        stopButton.setEnabled(false);
+    public void whichState(int whichState) {
+        switch (whichState) {
+            case STATE_FIRST:
+                backButton.setEnabled(false);
+                break;
+            case STATE_INTERMEDIATE:
+                backButton.setEnabled(true);
+                break;
+            case STATE_LAST:
+                backButton.setEnabled(true);
+                nextButton.setText("Done");
+                stopButton.setEnabled(false);
+        }
     }
 
     public WizardDialog(WizardStateUI[] states,
@@ -114,7 +119,7 @@ public class WizardDialog extends JDialog {
         Border border = BorderFactory.createEmptyBorder(5, 5, 5, 5);
         contentPanel.setBorder(border);
         setContentPane(contentPanel);
-        setModal(true);
+        setModal(false);
         setTitle(title);
         addComponentListener(new ComponentAdapter() {
             public void componentResized(ComponentEvent e) {
