@@ -1,11 +1,11 @@
 package net.guha.apps.gui.wizard;
 
 import com.jgoodies.forms.builder.ButtonBarBuilder;
-import net.guha.apps.gui.wizard.stateui.StateDescriptorsUI;
+import net.guha.apps.gui.wizard.stateui.StateAssaySetupUI;
+import net.guha.apps.gui.wizard.stateui.StateDataLoadUI;
 import net.guha.apps.gui.wizard.stateui.StateDoneUI;
 import net.guha.apps.gui.wizard.stateui.StateGAFeatSelUI;
 import net.guha.apps.gui.wizard.stateui.StateLoginUI;
-import net.guha.apps.gui.wizard.stateui.StateQSARSetsUI;
 import net.guha.apps.gui.wizard.stateui.StateReductionUI;
 import net.guha.apps.gui.wizard.stateui.WizardStateUI;
 
@@ -167,11 +167,11 @@ public class WizardDialog extends JDialog {
                 backButton.setEnabled(false);
                 currentStateUI = new StateLoginUI();
                 break;
-            case WizardStates.STATE_SETS:
-                currentStateUI = new StateQSARSetsUI();
+            case WizardStates.STATE_ASSAY_SETUP:
+                currentStateUI = new StateAssaySetupUI();
                 break;
-            case WizardStates.STATE_DESC:
-                currentStateUI = new StateDescriptorsUI();
+            case WizardStates.STATE_DATA_LOAD:
+                currentStateUI = new StateDataLoadUI();
                 break;
             case WizardStates.STATE_REDU:
                 currentStateUI = new StateReductionUI();
