@@ -6,6 +6,8 @@ import com.jgoodies.forms.layout.FormLayout;
 
 import javax.swing.*;
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 /**
  * @author Rajarshi Guha
@@ -84,14 +86,21 @@ public class StateLoginUI extends WizardStateUI {
 
 
         System.out.println("password = " + password);
-        int port = 0;
         try {
-            port = Integer.parseInt(portString);
+            int port = Integer.parseInt(portString);
         } catch (NumberFormatException e) {
             return null; // TODO should issue an error dialog
         }
 
         // make the connection
+        try {
+            conn = DriverManager.getConnection
+                    ("jdbc:oracle:thin:@"+hostname+":"+portString+":"+sid, username, password);
+        } catch (SQLException e) {
+            // TODO show message dialog
+            return null;
+        }
+
 
         return new Object();
     }
