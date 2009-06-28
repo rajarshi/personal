@@ -24,15 +24,6 @@ public class StateQSARSetsUI extends WizardStateUI {
         return new ArrayList();
     }
 
-    /**
-     * Return the user visible name of the state.
-     *
-     * @return The name of the state.
-     */
-    public String getStateName() {
-        return "QSAR Sets";
-    }
-
     @Override
     public JLabel getLabel() {
         return new JLabel("QSAR Sets");

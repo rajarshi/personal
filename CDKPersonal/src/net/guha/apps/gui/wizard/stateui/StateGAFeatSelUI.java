@@ -67,15 +67,6 @@ public class StateGAFeatSelUI extends WizardStateUI {
         return new Object();
     }
 
-    /**
-     * Return the user visible name of the state.
-     *
-     * @return The name of the state.
-     */
-    public String getStateName() {
-        return "Feature Selection";
-    }
-
     @Override
     public JLabel getLabel() {
         return new JLabel("Feature Selection");

@@ -59,15 +59,6 @@ public class StateAssaySetupUI extends WizardStateUI {
         return new Object();
     }
 
-    /**
-     * Return the user visible name of the state.
-     *
-     * @return The name of the state.
-     */
-    public String getStateName() {
-        return "Assay Setup";
-    }
-
     public JLabel getLabel() {
         return new JLabel("Assay Setup");
     }

@@ -61,12 +61,5 @@ public abstract class WizardStateUI {
      */
     public abstract Object evaluate();
 
-    /**
-     * Return the user visible name of the state.
-     *
-     * @return The name of the state.
-     */
-    public abstract String getStateName();
-
     public abstract JLabel getLabel();
 }
