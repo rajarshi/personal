@@ -105,7 +105,7 @@ public class StateLoginUI extends WizardStateUI {
                     +e.toString()+"</pre></html>");
             dlg.pack();
             dlg.setVisible(true);
-            return null;
+//            return null;
         }
 
 
