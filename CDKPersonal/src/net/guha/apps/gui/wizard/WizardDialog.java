@@ -76,6 +76,14 @@ public class WizardDialog extends JDialog {
         WizardStateUI oldStateUI = currentStateUI;
         currentStateUI = ui;
 
+        // we need to reset these, since one of them
+        // might have been clicked in the previous state
+        // and would carry on to this new state
+        backClicked = false;
+        nextClicked = false;
+        stopClicked = false;
+        cancelClicked = false;
+
         sideBar.inState(ui.getStateName());
         
         if (oldStateUI != null) getContentPane().remove(oldStateUI.getPanel());
@@ -148,7 +156,6 @@ public class WizardDialog extends JDialog {
         nextButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 nextClicked = true;
-                dispose();
             }
         });
 
@@ -156,7 +163,6 @@ public class WizardDialog extends JDialog {
         backButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 backClicked = true;
-                dispose();
             }
         });
 
