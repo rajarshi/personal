@@ -22,13 +22,9 @@ public class WizardGUILoop {
 
     private WizardStateUI[] states = null;
 
-
-    public WizardGUILoop() {
+    public WizardGUILoop(WizardStateUI[] states) {
         m_log.info("In the EDT: " + SwingUtilities.isEventDispatchThread());
         WizardReportPage.getInstance().clearPage();
-    }
-
-    public WizardGUILoop(WizardStateUI[] states) {
         this.states = states;
     }
 
