@@ -1,12 +1,6 @@
 package net.guha.apps.gui.wizard;
 
 import com.jgoodies.forms.builder.ButtonBarBuilder;
-import net.guha.apps.gui.wizard.stateui.StateAssaySetupUI;
-import net.guha.apps.gui.wizard.stateui.StateDataLoadUI;
-import net.guha.apps.gui.wizard.stateui.StateDoneUI;
-import net.guha.apps.gui.wizard.stateui.StateGAFeatSelUI;
-import net.guha.apps.gui.wizard.stateui.StateLoginUI;
-import net.guha.apps.gui.wizard.stateui.StateReductionUI;
 import net.guha.apps.gui.wizard.stateui.WizardStateUI;
 
 import javax.swing.*;
@@ -39,6 +33,9 @@ public class WizardDialog extends JDialog {
 
     private JButton nextButton;
     private JButton backButton;
+    private JButton stopButton;
+
+    private WizardSidebar sideBar;
 
     private boolean nextClicked = false;
     private boolean backClicked = false;
@@ -75,7 +72,32 @@ public class WizardDialog extends JDialog {
         return currentStateUI;
     }
 
-    public WizardDialog(int whichState,
+    public void setCurrentStateUI(WizardStateUI ui) {
+        WizardStateUI oldStateUI = currentStateUI;
+        currentStateUI = ui;
+
+        sideBar.inState(ui.getStateName());
+        
+        if (oldStateUI != null) getContentPane().remove(oldStateUI.getPanel());
+        getContentPane().add(currentStateUI.getPanel(), BorderLayout.CENTER);
+    }
+
+    /**
+     * Call to notify that the wizard is in the first step.
+     */
+    public void isFirstState() {
+        backButton.setEnabled(false);
+    }
+
+    /**
+     * Call to notify that the wizard is at the last step.
+     */
+    public void isLastState() {
+        nextButton.setText("Done");
+        stopButton.setEnabled(false);
+    }
+
+    public WizardDialog(WizardStateUI[] states,
                         String title) {
         super();
 
@@ -114,7 +136,7 @@ public class WizardDialog extends JDialog {
         //
         // Set up the buttons for the Wizard
         //
-        JButton stopButton = new JButton("Stop Wizard");
+        stopButton = new JButton("Stop Wizard");
         stopButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 stopClicked = true;
@@ -147,46 +169,21 @@ public class WizardDialog extends JDialog {
         });
 
         ButtonBarBuilder builder = new ButtonBarBuilder();
-        builder.addGriddedButtons(new JButton[] {cancelButton, stopButton});
+        builder.addGriddedButtons(new JButton[]{cancelButton, stopButton});
         builder.addUnrelatedGap();
         builder.addGlue();
-        builder.addGriddedButtons(new JButton[] {nextButton, backButton});                                
+        builder.addGriddedButtons(new JButton[]{nextButton, backButton});
         JPanel buttonPanel = builder.getPanel();
 
 
         //
         // Add various components to the contentPane
         //
-        WizardSidebar sideBar = new WizardSidebar(WizardStates.STATE_NAMES, whichState);
+        String[] snames = new String[states.length];
+        for (int i = 0; i < states.length; i++) snames[i] = states[i].getStateName();
+        sideBar = new WizardSidebar(snames);
+
         getContentPane().add(sideBar, BorderLayout.WEST);
         getContentPane().add(buttonPanel, BorderLayout.PAGE_END);
-
-        // see which state UI we should add
-        switch (whichState) {
-            case WizardStates.STATE_LOGIN:
-                backButton.setEnabled(false);
-                currentStateUI = new StateLoginUI();
-                break;
-            case WizardStates.STATE_ASSAY_SETUP:
-                currentStateUI = new StateAssaySetupUI();
-                break;
-            case WizardStates.STATE_DATA_LOAD:
-                currentStateUI = new StateDataLoadUI();
-                break;
-            case WizardStates.STATE_REDU:
-                currentStateUI = new StateReductionUI();
-                break;
-            case WizardStates.STATE_FSEL:
-                currentStateUI = new StateGAFeatSelUI();
-                break;
-            case WizardStates.STATE_END:
-                currentStateUI = new StateDoneUI();
-                nextButton.setText("Done");
-                stopButton.setEnabled(false);
-                break;
-        }
-
-        // add the state UI to the content pane
-        getContentPane().add(currentStateUI.getPanel(), BorderLayout.CENTER);
     }
 }
