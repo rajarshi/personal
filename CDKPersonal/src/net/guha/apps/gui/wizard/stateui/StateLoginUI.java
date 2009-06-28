@@ -3,6 +3,7 @@ package net.guha.apps.gui.wizard.stateui;
 
 import com.jgoodies.forms.builder.DefaultFormBuilder;
 import com.jgoodies.forms.layout.FormLayout;
+import net.guha.apps.gui.wizard.WizardMessageDialog;
 
 import javax.swing.*;
 import java.sql.Connection;
@@ -87,9 +88,12 @@ public class StateLoginUI extends WizardStateUI {
 
         System.out.println("password = " + password);
         try {
-            int port = Integer.parseInt(portString);
+            Integer.parseInt(portString);
         } catch (NumberFormatException e) {
-            return null; // TODO should issue an error dialog
+            WizardMessageDialog dlg = new WizardMessageDialog("Port must be an integer");
+            dlg.pack();
+            dlg.setVisible(true);
+            return null;
         }
 
         // make the connection
@@ -97,7 +101,10 @@ public class StateLoginUI extends WizardStateUI {
             conn = DriverManager.getConnection
                     ("jdbc:oracle:thin:@"+hostname+":"+portString+":"+sid, username, password);
         } catch (SQLException e) {
-            // TODO show message dialog
+            WizardMessageDialog dlg = new WizardMessageDialog("<html>Couldn't connect to the database<p><pre>"
+                    +e.toString()+"</pre></html>");
+            dlg.pack();
+            dlg.setVisible(true);
             return null;
         }
 
