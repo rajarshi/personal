@@ -9,9 +9,8 @@ import java.net.URL;
 /**
  * A sidebar that can be placed in a wizard.
  * <p/>
- * The purpose of this sidebar is to provide the user with feedback about
- * the current state of the wizard. Currently it jsut uses plain labels which
- * are enabled or disabled depending on the current state.
+ * The purpose of this sidebar is to provide the user with feedback about the current state of the wizard. Currently it
+ * jsut uses plain labels which are enabled or disabled depending on the current state.
  * <p/>
  * Fancier labels would be nice but I have zero artistic talent
  *
@@ -29,12 +28,11 @@ public class WizardSidebar extends GradientPanel {
      * Instantiates the side bar.
      *
      * @param stateStrings An array containing the strings for each possible state.
-     * @param startState   The state to start with
      */
-    public WizardSidebar(String[] stateStrings, int startState) {
+    public WizardSidebar(String[] stateStrings) {
 
         super();
-        
+
         iconOK = getImageIcon("images/applet-okay.png", "Success");
         iconRunning = getImageIcon("images/applet-busy.png", "Busy");
         iconStart = getImageIcon("images/start.png", "Starting");
@@ -48,7 +46,7 @@ public class WizardSidebar extends GradientPanel {
         this.setBorder(border);
 
 
-        currentLabel = startState;
+        currentLabel = 0;
 
         labels = new JLabel[stateStrings.length];
         for (int i = 0; i < stateStrings.length; i++) {
@@ -56,7 +54,20 @@ public class WizardSidebar extends GradientPanel {
             labels[i].setEnabled(false);
             this.add(labels[i]);
         }
-        labels[currentLabel].setEnabled(true);
+    }
+
+    /**
+     * Highlight the label for the current state.
+     * <p/>
+     * The argument is the state name for the current state that should be highlighted.
+     *
+     * @param s The name for the current state.
+     */
+    public void inState(String s) {
+        for (JLabel label : labels) {
+            if (label.isEnabled()) label.setEnabled(false);
+            if (label.getText().equals(s)) label.setEnabled(true);
+        }
     }
 
     private ImageIcon getImageIcon(String path, String description) {
