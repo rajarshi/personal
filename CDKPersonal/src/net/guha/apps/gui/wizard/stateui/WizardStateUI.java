@@ -2,6 +2,8 @@ package net.guha.apps.gui.wizard.stateui;
 
 
 import javax.swing.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Rajarshi Guha
@@ -9,6 +11,7 @@ import javax.swing.*;
 public abstract class WizardStateUI {
 
     protected JPanel panel;
+    protected Map<String,Object> settings;
 
     /**
      * Constructor for all wizard states.
@@ -18,6 +21,7 @@ public abstract class WizardStateUI {
      *
      */
     public WizardStateUI() {
+        settings = new HashMap<String,Object>();
     }
 
     /**
