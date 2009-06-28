@@ -20,7 +20,7 @@ public class StateAssaySetupUI extends WizardStateUI {
     private Connection conn;
 
     private void initComponents() {
-        assayNameField = new JTextField();
+        assayNameField = new JTextField();        
         runSetField = new JTextField();
         protocolNameField = new JComboBox();
         assayFormatList = new JComboBox(new Object[]{new Integer(1536), new Integer(384), new Integer(96)});
@@ -33,9 +33,8 @@ public class StateAssaySetupUI extends WizardStateUI {
 
         initComponents();
 
-        FormLayout layout = new FormLayout(
-                "right:[40dlu,pref], 3dlu, 70dlu, 7dlu, "
-                        + "right:[40dlu,pref], 3dlu, 70dlu");
+//        FormLayout layout = new FormLayout("right:[40dlu,pref], 3dlu, 70dlu, 7dlu, right:[40dlu,pref], 3dlu, 70dlu");
+        FormLayout layout = new FormLayout("right:[40dlu,pref], 3dlu, pref:grow");
         DefaultFormBuilder builder = new DefaultFormBuilder(layout);
         builder.setDefaultDialogBorder();
 

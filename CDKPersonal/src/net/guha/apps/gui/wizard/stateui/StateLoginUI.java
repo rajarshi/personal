@@ -45,9 +45,7 @@ public class StateLoginUI extends WizardStateUI {
 
         initComponents();
 
-        FormLayout layout = new FormLayout(
-                "right:[40dlu,pref], 3dlu, 70dlu, 7dlu, "
-                        + "right:[40dlu,pref], 3dlu, 70dlu");
+        FormLayout layout = new FormLayout("right:[40dlu,pref], 3dlu, pref:grow");
         DefaultFormBuilder builder = new DefaultFormBuilder(layout);
         builder.setDefaultDialogBorder();
 
