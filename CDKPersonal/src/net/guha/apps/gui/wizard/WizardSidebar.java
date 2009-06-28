@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
+import java.awt.*;
 import java.net.URL;
 
 /**
@@ -38,8 +39,7 @@ public class WizardSidebar extends GradientPanel {
         iconStart = getImageIcon("images/start.png", "Starting");
 
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-
-
+        
         CompoundBorder border = new CompoundBorder(
                 BorderFactory.createEtchedBorder(EtchedBorder.RAISED),
                 new EmptyBorder(10, 5, 5, 5));
@@ -52,7 +52,8 @@ public class WizardSidebar extends GradientPanel {
         for (JLabel label : labels) {
             label.setEnabled(false);
             this.add(label);
-        }       
+            this.add(Box.createRigidArea(new Dimension(0,10)));
+        }
     }
 
     /**
@@ -82,7 +83,7 @@ public class WizardSidebar extends GradientPanel {
     public void enableNextLabel() {
         labels[currentLabel].setIcon(iconOK);
 
-        if (currentLabel == labels.length-1) return;
+        if (currentLabel == labels.length - 1) return;
 
         labels[currentLabel].setEnabled(false);
         currentLabel++;

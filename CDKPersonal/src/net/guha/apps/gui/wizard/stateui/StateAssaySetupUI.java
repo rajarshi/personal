@@ -20,10 +20,10 @@ public class StateAssaySetupUI extends WizardStateUI {
     private Connection conn;
 
     private void initComponents() {
-        assayNameField = new JTextField();        
+        assayNameField = new JTextField();
         runSetField = new JTextField();
         protocolNameField = new JComboBox();
-        
+
         assayFormatList = new JComboBox(new Object[]{new Integer(1536), new Integer(384), new Integer(96)});
         assayFormatList.setSelectedIndex(1);
     }
@@ -60,6 +60,8 @@ public class StateAssaySetupUI extends WizardStateUI {
     }
 
     public JLabel getLabel() {
-        return new JLabel("Assay Setup");
+        JLabel label = new JLabel("Assay Setup");
+        label.setIcon(getImageIcon("/net/guha/apps/gui/wizard/images/assaycreate.png", "", 0.125));
+        return label;
     }
 }

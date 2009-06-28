@@ -97,10 +97,10 @@ public class StateLoginUI extends WizardStateUI {
         // make the connection
         try {
             conn = DriverManager.getConnection
-                    ("jdbc:oracle:thin:@"+hostname+":"+portString+":"+sid, username, password);
+                    ("jdbc:oracle:thin:@" + hostname + ":" + portString + ":" + sid, username, password);
         } catch (SQLException e) {
             WizardMessageDialog dlg = new WizardMessageDialog("<html>Couldn't connect to the database<p><pre>"
-                    +e.toString()+"</pre></html>");
+                    + e.toString() + "</pre></html>");
             dlg.pack();
             dlg.setVisible(true);
 //            return null;
@@ -114,6 +114,8 @@ public class StateLoginUI extends WizardStateUI {
 
     @Override
     public JLabel getLabel() {
-        return new JLabel("Login");
+        JLabel label = new JLabel("Login");
+        label.setIcon(getImageIcon("/net/guha/apps/gui/wizard/images/login.png", "", 0.125));
+        return label;
     }
 }

@@ -17,7 +17,7 @@ public class StateDataLoadUI extends WizardStateUI {
     private JTextField userNameField;
     private JTextField passwordField;
     private JTextField sidField;
-    
+
 
     private Connection conn;
 
@@ -77,6 +77,8 @@ public class StateDataLoadUI extends WizardStateUI {
 
     @Override
     public JLabel getLabel() {
-        return new JLabel("Data Load");
+        JLabel label = new JLabel("Data Load");
+        label.setIcon(getImageIcon("/net/guha/apps/gui/wizard/images/dataload.png", "", 0.125));
+        return label;
     }
 }
