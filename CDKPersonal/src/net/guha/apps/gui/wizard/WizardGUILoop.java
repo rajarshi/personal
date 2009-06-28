@@ -66,16 +66,15 @@ public class WizardGUILoop {
 
             // see what action needs to be taken
             if (wdlg.isStopClicked()) {
-                m_log.info(states[currentState].getStateName() + " clicked stop ");
+                m_log.info(states[currentState].getLabel().getText() + " clicked stop ");
                 wizardComplete = true;
             } else if (wdlg.isNextClicked()) {
-                m_log.info(states[currentState].getStateName() + " clicked next ");
+                m_log.info(states[currentState].getLabel().getText() + " clicked next ");
                 if (currentState == states.length - 1) {
                     wdlg.whichState(WizardDialog.STATE_LAST);
                     wizardComplete = true;
                 } else {
                     wdlg.whichState(WizardDialog.STATE_INTERMEDIATE);
-                    System.out.println("Will evaluate " + states[currentState].getStateName());
                     ret = wdlg.getCurrentStateUI().evaluate();
                     if (ret == null) continue;
                     else undoStack.push(ret);
@@ -85,7 +84,7 @@ public class WizardGUILoop {
                     wdlg.setCurrentStateUI(states[currentState]);                    
                 }
             } else if (wdlg.isBackClicked()) {
-                m_log.info(states[currentState].getStateName() + " clicked back ");
+                m_log.info(states[currentState].getLabel().getText() + " clicked back ");
                 if (currentState == 0) {
                     wdlg.whichState(WizardDialog.STATE_FIRST);
                     continue;
@@ -96,7 +95,7 @@ public class WizardGUILoop {
                 // set up the next state dialog
                 wdlg.setCurrentStateUI(states[currentState]);
             } else if (wdlg.isCancelClicked()) {
-                m_log.info(states[currentState].getStateName() + " clicked cancel ");
+                m_log.info(states[currentState].getLabel().getText() + " clicked cancel ");
                 undoStack.undoAll(currentState);
                 wizardComplete = true;
             }
