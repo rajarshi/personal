@@ -25,7 +25,6 @@ public class WizardGUILoop {
 
     public WizardGUILoop(WizardStateUI[] states) {
         m_log.info("In the EDT: " + SwingUtilities.isEventDispatchThread());
-        System.out.println("In the EDT: " + SwingUtilities.isEventDispatchThread());
         WizardReportPage.getInstance().clearPage();
         this.states = states;
     }
@@ -62,8 +61,6 @@ public class WizardGUILoop {
         Object ret;
 
         boolean wizardComplete = false;
-
-        // create the main wizard dlg and set it with the first state
 
         while (!wizardComplete) {
 
