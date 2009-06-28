@@ -27,9 +27,9 @@ public class WizardSidebar extends GradientPanel {
     /**
      * Instantiates the side bar.
      *
-     * @param stateStrings An array containing the strings for each possible state.
+     * @param stateLabels An array containing the labels for each possible state, in the desired order.
      */
-    public WizardSidebar(String[] stateStrings) {
+    public WizardSidebar(JLabel[] stateLabels) {
 
         super();
 
@@ -48,12 +48,12 @@ public class WizardSidebar extends GradientPanel {
 
         currentLabel = 0;
 
-        labels = new JLabel[stateStrings.length];
-        for (int i = 0; i < stateStrings.length; i++) {
-            labels[i] = new JLabel(stateStrings[i], iconStart, JLabel.CENTER);
+        labels = new JLabel[stateLabels.length];
+        for (int i = 0; i < stateLabels.length; i++) {
+            labels[i] = stateLabels[i];
             labels[i].setEnabled(false);
             this.add(labels[i]);
-        }
+        }       
     }
 
     /**

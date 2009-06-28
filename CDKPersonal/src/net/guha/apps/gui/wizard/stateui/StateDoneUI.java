@@ -50,4 +50,9 @@ public class StateDoneUI extends WizardStateUI {
     public String getStateName() {
         return "Done";
     }
+
+    @Override
+    public JLabel getLabel() {
+        return new JLabel("Done");
+    }
 }

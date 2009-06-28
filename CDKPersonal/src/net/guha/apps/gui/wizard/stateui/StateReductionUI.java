@@ -34,4 +34,9 @@ public class StateReductionUI extends WizardStateUI {
         return "Data Reduction";
     }
 
+    @Override
+    public JLabel getLabel() {
+        return new JLabel("Data Reduction");
+    }
+
 }

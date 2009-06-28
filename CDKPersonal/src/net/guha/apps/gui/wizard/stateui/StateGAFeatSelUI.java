@@ -76,5 +76,10 @@ public class StateGAFeatSelUI extends WizardStateUI {
         return "Feature Selection";
     }
 
+    @Override
+    public JLabel getLabel() {
+        return new JLabel("Feature Selection");
+    }
+
 
 }

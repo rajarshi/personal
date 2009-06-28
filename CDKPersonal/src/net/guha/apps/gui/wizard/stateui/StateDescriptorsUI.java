@@ -33,5 +33,10 @@ public class StateDescriptorsUI extends WizardStateUI {
         return "Descriptors";
     }
 
+    @Override
+    public JLabel getLabel() {
+        return new JLabel("Descriptors");
+    }
+
 
 }

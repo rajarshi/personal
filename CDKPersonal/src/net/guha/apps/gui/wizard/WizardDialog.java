@@ -190,9 +190,9 @@ public class WizardDialog extends JDialog {
         //
         // Add various components to the contentPane
         //
-        String[] snames = new String[states.length];
-        for (int i = 0; i < states.length; i++) snames[i] = states[i].getStateName();
-        sideBar = new WizardSidebar(snames);
+        JLabel[] labels = new JLabel[states.length];
+        for (int i = 0; i < states.length; i++) labels[i] = states[i].getLabel();
+        sideBar = new WizardSidebar(labels);
 
         getContentPane().add(sideBar, BorderLayout.WEST);
         getContentPane().add(buttonPanel, BorderLayout.PAGE_END);

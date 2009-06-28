@@ -120,4 +120,9 @@ public class StateLoginUI extends WizardStateUI {
     public String getStateName() {
         return "Login";
     }
+
+    @Override
+    public JLabel getLabel() {
+        return new JLabel("Login");
+    }
 }

@@ -73,4 +73,9 @@ public class StateInitializeUI extends WizardStateUI {
     public String getStateName() {
         return "Initialize";
     }
+
+    @Override
+    public JLabel getLabel() {
+        return new JLabel("Initialize");
+    }
 }

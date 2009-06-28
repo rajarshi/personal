@@ -33,5 +33,10 @@ public class StateQSARSetsUI extends WizardStateUI {
         return "QSAR Sets";
     }
 
+    @Override
+    public JLabel getLabel() {
+        return new JLabel("QSAR Sets");
+    }
+
 
 }

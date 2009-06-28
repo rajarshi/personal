@@ -83,4 +83,9 @@ public class StateDataLoadUI extends WizardStateUI {
     public String getStateName() {
         return "Data Load";
     }
+
+    @Override
+    public JLabel getLabel() {
+        return new JLabel("Data Load");
+    }
 }

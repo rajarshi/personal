@@ -67,4 +67,8 @@ public class StateAssaySetupUI extends WizardStateUI {
     public String getStateName() {
         return "Assay Setup";
     }
+
+    public JLabel getLabel() {
+        return new JLabel("Assay Setup");
+    }
 }
