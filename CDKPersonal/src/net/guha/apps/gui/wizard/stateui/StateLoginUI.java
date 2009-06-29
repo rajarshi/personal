@@ -83,8 +83,6 @@ public class StateLoginUI extends WizardStateUI {
                 password == null ||
                 sid == null) return null;
 
-
-        System.out.println("password = " + password);
         try {
             Integer.parseInt(portString);
         } catch (NumberFormatException e) {
