@@ -7,6 +7,7 @@ import net.guha.apps.gui.wizard.stateui.StateAssaySetupUI;
 import net.guha.apps.gui.wizard.stateui.StateDataLoadUI;
 import net.guha.apps.gui.wizard.stateui.StateDoneUI;
 import net.guha.apps.gui.wizard.stateui.StateLoginUI;
+import net.guha.apps.gui.wizard.stateui.StatePlateMapUI;
 import net.guha.apps.gui.wizard.stateui.WizardStateUI;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -105,6 +106,7 @@ public class WizardGUILoop {
         WizardStateUI[] states = new WizardStateUI[]{
                 new StateLoginUI(),
                 new StateAssaySetupUI(),
+                new StatePlateMapUI(),
                 new StateDataLoadUI(),
                 new StateDoneUI()
         };
