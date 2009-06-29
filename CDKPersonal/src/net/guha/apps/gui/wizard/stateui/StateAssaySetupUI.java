@@ -3,9 +3,11 @@ package net.guha.apps.gui.wizard.stateui;
 
 import com.jgoodies.forms.builder.DefaultFormBuilder;
 import com.jgoodies.forms.layout.FormLayout;
+import net.guha.apps.gui.wizard.FilteringComboBox;
 
 import javax.swing.*;
 import java.sql.Connection;
+import java.util.Vector;
 
 /**
  * @author Rajarshi Guha
@@ -22,7 +24,17 @@ public class StateAssaySetupUI extends WizardStateUI {
     private void initComponents() {
         assayNameField = new JTextField();
         runSetField = new JTextField();
-        protocolNameField = new JComboBox();
+
+        Vector<String> protocols = new Vector<String>();
+        protocols.add("kinome-test1");
+        protocols.add("kinome-test1");
+        protocols.add("drosophilia-kinome-test1");
+        protocols.add("nci-cancer-1");
+        protocols.add("hdg-ntp-2");
+        protocolNameField = new FilteringComboBox(protocols);
+        
+//        protocolNameField = new JComboBox();
+
 
         assayFormatList = new JComboBox(new Object[]{new Integer(1536), new Integer(384), new Integer(96)});
         assayFormatList.setSelectedIndex(1);
