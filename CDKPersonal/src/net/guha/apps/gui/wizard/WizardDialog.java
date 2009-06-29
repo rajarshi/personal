@@ -26,7 +26,7 @@ import java.awt.event.WindowEvent;
  *
  * @author Rajarshi Guha
  */
-public class WizardDialog extends JDialog {
+public class    WizardDialog extends JDialog {
     public static final int STATE_FIRST = 1;
     public static final int STATE_INTERMEDIATE = 2;
     public static final int STATE_LAST = 3;
@@ -196,5 +196,7 @@ public class WizardDialog extends JDialog {
 
         getContentPane().add(sideBar, BorderLayout.WEST);
         getContentPane().add(buttonPanel, BorderLayout.PAGE_END);
+
+        getRootPane().setDefaultButton(nextButton);
     }
 }
