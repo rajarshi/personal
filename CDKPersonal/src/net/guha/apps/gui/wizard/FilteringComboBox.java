@@ -17,7 +17,10 @@ import java.util.Vector;
  * and seems to be a little crude. But does the job for now.
  */
 public class FilteringComboBox extends JComboBox {
-    private Vector<String> items;   
+    private Vector<String> items;
+
+    public FilteringComboBox() {
+    }
 
     public FilteringComboBox(Vector<String> objects) {
         super(objects);
