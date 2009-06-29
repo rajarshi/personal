@@ -66,17 +66,18 @@ public abstract class WizardStateUI {
      *
      * @param path        The path to the image
      * @param description The text that goes with the image
+     * @param scale       scale factor for the icon. If less than 1, the image is reduced in size and if larger, the
+     *                    image is expanded
      * @return An {@link ImageIcon} is the image was loaded correctly, else null.
      */
     protected ImageIcon getImageIcon(String path, String description, double scale) {
         URL imgURL = WizardStateUI.class.getResource(path);
-//        String imgURL = path;
         if (imgURL != null) {
             ImageIcon imageIcon = new ImageIcon(imgURL, description);
 
             int w = (int) (imageIcon.getIconWidth() * scale);
             int h = (int) (imageIcon.getIconHeight() * scale);
-            Image image = imageIcon.getImage().getScaledInstance(w,h,Image.SCALE_AREA_AVERAGING);
+            Image image = imageIcon.getImage().getScaledInstance(w, h, Image.SCALE_AREA_AVERAGING);
 
             return new ImageIcon(image);
         } else return null;
