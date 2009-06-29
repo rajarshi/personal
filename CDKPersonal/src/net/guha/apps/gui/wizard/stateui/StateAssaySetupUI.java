@@ -8,7 +8,6 @@ import javax.swing.*;
 import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
 import java.sql.Connection;
-import java.util.Vector;
 
 /**
  * @author Rajarshi Guha
@@ -21,7 +20,6 @@ public class StateAssaySetupUI extends WizardStateUI {
     private JComboBox assayFormatList;
 
     private Connection conn;
-    private Vector<String> protocols = null;
 
     private void initComponents() {
         assayNameField = new JTextField();
