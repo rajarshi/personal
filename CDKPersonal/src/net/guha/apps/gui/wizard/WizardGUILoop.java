@@ -66,36 +66,34 @@ public class WizardGUILoop {
 
             // see what action needs to be taken
             if (wdlg.isStopClicked()) {
-                m_log.info(states[currentState].getLabel().getText() + " clicked stop ");
                 wizardComplete = true;
             } else if (wdlg.isNextClicked()) {
-                m_log.info(states[currentState].getLabel().getText() + " clicked next ");
-                if (currentState == states.length - 1) {
-                    wdlg.whichState(WizardDialog.STATE_LAST);
+                currentState++;
+
+                if (currentState == states.length) {
                     wizardComplete = true;
                 } else {
-                    wdlg.whichState(WizardDialog.STATE_INTERMEDIATE);                    
+                    if (currentState == states.length - 1) wdlg.whichState(WizardDialog.STATE_LAST);
+                    else wdlg.whichState(WizardDialog.STATE_INTERMEDIATE);
                     ret = wdlg.getCurrentStateUI().evaluate();
                     if (ret == null) continue;
                     else undoStack.push(ret);
-                    currentState++;
 
                     // set up the next state dialog
-                    wdlg.setCurrentStateUI(states[currentState]);                    
+                    wdlg.setCurrentStateUI(states[currentState]);
                 }
             } else if (wdlg.isBackClicked()) {
-                m_log.info(states[currentState].getLabel().getText() + " clicked back ");
+                currentState--;
+
                 if (currentState == 0) {
                     wdlg.whichState(WizardDialog.STATE_FIRST);
-                    continue;
+//                    continue;
                 } else wdlg.whichState(WizardDialog.STATE_INTERMEDIATE);
-                undoStack.undo(currentState);
-                currentState--;
+                undoStack.undo(currentState + 1);
 
                 // set up the next state dialog
                 wdlg.setCurrentStateUI(states[currentState]);
             } else if (wdlg.isCancelClicked()) {
-                m_log.info(states[currentState].getLabel().getText() + " clicked cancel ");
                 undoStack.undoAll(currentState);
                 wizardComplete = true;
             }

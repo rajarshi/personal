@@ -79,7 +79,7 @@
         </javac>
     </target>
     <target id="wizard-resources" name="wizard-resources">
-        <jar jarfile="${dist.dir}/wizres.jar" basedir="${sources}" includes="**/*.png" />
+        <jar jarfile="${dist.dir}/wizres.jar" basedir="${sources}" includes="**/*.png"/>
     </target>
 
 
@@ -97,6 +97,28 @@
             </fileset>
         </jar>
     </target>
+
+    <target id="wizard" name="wizard" depends="compile-wizard">
+        <unjar dest="${build.dir}">
+            <fileset dir="${lib.dir}"
+                     includes="forms-1.2.1.jar,looks-2.2.2.jar,commons-logging-1.1.1.jar,log4j.jar"/>
+        </unjar>
+        <mkdir dir="${build.dir}/net/guha/apps/gui/wizard/images"/>
+        <copy todir="${build.dir}/net/guha/apps/gui/wizard/images">
+            <fileset dir="${sources}/net/guha/apps/gui/wizard/images">
+                <include name="**/*.png"/>
+            </fileset>
+        </copy>
+        <jar jarfile="${dist.dir}/wizard.jar">
+            <manifest>
+                <attribute name="Main-Class" value="net.guha.apps.gui.wizard.WizardGUILoop"/>
+            </manifest>
+            <fileset dir="${build.dir}">
+                <include name="**/*"/>
+            </fileset>
+        </jar>
+    </target>
+
 
     <target id="smds" name="smds" depends="compile-smds">
         <unjar dest="${build.dir}">
