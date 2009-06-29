@@ -44,8 +44,8 @@ public class StateDoneUI extends WizardStateUI {
 
     @Override
     public JLabel getLabel() {
-                JLabel label = new JLabel("Done");
-        label.setIcon(getImageIcon("/net/guha/apps/gui/wizard/images/login.png", "", 0.125));
+        JLabel label = new JLabel("Done");
+        label.setIcon(getImageIcon("/net/guha/apps/gui/wizard/images/done.png", "", 0.125));
         return label;
     }
 }
