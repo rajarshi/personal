@@ -33,7 +33,7 @@ public class StateAssaySetupUI extends WizardStateUI {
         protocols.add("hdg-ntp-2");
         protocolNameField = new FilteringComboBox(protocols);
         
-        assayFormatList = new JComboBox(new Object[]{new Integer(1536), new Integer(384), new Integer(96)});
+        assayFormatList = new JComboBox(new Object[]{1536, 384, 96});
         assayFormatList.setSelectedIndex(1);
     }
 
