@@ -74,7 +74,7 @@ public class WizardGUILoop {
                     wdlg.whichState(WizardDialog.STATE_LAST);
                     wizardComplete = true;
                 } else {
-                    wdlg.whichState(WizardDialog.STATE_INTERMEDIATE);
+                    wdlg.whichState(WizardDialog.STATE_INTERMEDIATE);                    
                     ret = wdlg.getCurrentStateUI().evaluate();
                     if (ret == null) continue;
                     else undoStack.push(ret);

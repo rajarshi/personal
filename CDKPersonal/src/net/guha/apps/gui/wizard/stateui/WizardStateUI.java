@@ -29,7 +29,6 @@ public abstract class WizardStateUI {
      */
     public WizardStateUI() {
         if (settings == null) {
-            System.out.println("Creating empty settings map");
             settings = new HashMap<String, Object>();
         }
     }
