@@ -3,9 +3,10 @@ package net.guha.apps.gui.wizard.stateui;
 
 import com.jgoodies.forms.builder.DefaultFormBuilder;
 import com.jgoodies.forms.layout.FormLayout;
-import net.guha.apps.gui.wizard.FilteringComboBox;
 
 import javax.swing.*;
+import javax.swing.event.AncestorEvent;
+import javax.swing.event.AncestorListener;
 import java.sql.Connection;
 import java.util.Vector;
 
@@ -20,19 +21,16 @@ public class StateAssaySetupUI extends WizardStateUI {
     private JComboBox assayFormatList;
 
     private Connection conn;
+    private Vector<String> protocols = null;
 
     private void initComponents() {
         assayNameField = new JTextField();
         runSetField = new JTextField();
 
-        Vector<String> protocols = new Vector<String>();
-        protocols.add("kinome-test1");
-        protocols.add("kinome-test1");
-        protocols.add("drosophilia-kinome-test1");
-        protocols.add("nci-cancer-1");
-        protocols.add("hdg-ntp-2");
-        protocolNameField = new FilteringComboBox(protocols);
-        
+
+        protocolNameField = new JComboBox();
+        protocolNameField.setEditable(true);
+
         assayFormatList = new JComboBox(new Object[]{1536, 384, 96});
         assayFormatList.setSelectedIndex(1);
     }
@@ -60,6 +58,29 @@ public class StateAssaySetupUI extends WizardStateUI {
         builder.append("Assay Format", assayFormatList);
         builder.nextLine();
 
+        // we need to add a listener so that we can populate the
+        // fields before the panel is shown, based on data that
+        // (should) is made available from the preceding state ui
+        builder.getPanel().addAncestorListener(new AncestorListener() {
+            @Override
+            public void ancestorAdded(AncestorEvent ancestorEvent) {
+                if (protocolNameField.getItemCount() == 0) {
+                    protocolNameField.addItem("kinome-test1");
+                    protocolNameField.addItem("kinome-test1");
+                    protocolNameField.addItem("drosophilia-kinome-test1");
+                    protocolNameField.addItem("nci-cancer-1");
+                    protocolNameField.addItem("hdg-ntp-2");                    
+                }
+            }
+
+            @Override
+            public void ancestorRemoved(AncestorEvent ancestorEvent) {
+            }
+
+            @Override
+            public void ancestorMoved(AncestorEvent ancestorEvent) {
+            }
+        });
         panel = builder.getPanel();
     }
 
