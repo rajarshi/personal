@@ -60,7 +60,6 @@ public class StateAssaySetupUI extends WizardStateUI {
         // fields before the panel is shown, based on data that
         // (should) is made available from the preceding state ui
         builder.getPanel().addAncestorListener(new AncestorListener() {
-            @Override
             public void ancestorAdded(AncestorEvent ancestorEvent) {
                 if (protocolNameField.getItemCount() == 0) {
                     protocolNameField.addItem("kinome-test1");
@@ -71,11 +70,9 @@ public class StateAssaySetupUI extends WizardStateUI {
                 }
             }
 
-            @Override
             public void ancestorRemoved(AncestorEvent ancestorEvent) {
             }
 
-            @Override
             public void ancestorMoved(AncestorEvent ancestorEvent) {
             }
         });
