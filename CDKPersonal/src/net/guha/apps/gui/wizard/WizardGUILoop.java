@@ -88,8 +88,9 @@ public class WizardGUILoop {
 
                 if (currentState == 0) {
                     wdlg.whichState(WizardDialog.STATE_FIRST);
-//                    continue;
-                } else wdlg.whichState(WizardDialog.STATE_INTERMEDIATE);
+                } else {
+                    wdlg.whichState(WizardDialog.STATE_INTERMEDIATE);
+                }
                 undoStack.undo(currentState + 1);
 
                 // set up the next state dialog

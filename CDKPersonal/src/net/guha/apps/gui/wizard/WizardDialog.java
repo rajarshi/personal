@@ -102,6 +102,7 @@ public class    WizardDialog extends JDialog {
                 break;
             case STATE_INTERMEDIATE:
                 backButton.setEnabled(true);
+                nextButton.setText("Next");
                 break;
             case STATE_LAST:
                 backButton.setEnabled(true);
