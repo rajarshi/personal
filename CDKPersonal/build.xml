@@ -6,17 +6,17 @@
 
 
     <!-- Pull in ant-contrib -->
-    <taskdef resource="net/sf/antcontrib/antlib.xml"/>
+<!--    <taskdef resource="net/sf/antcontrib/antlib.xml"/> -->
 
     <!-- Set up the CLASSPATH -->
     <path id="project.libs">
         <fileset dir="${lib.dir}">
             <include name="*.jar"/>
         </fileset>
-        <fileset dir="../../hadoop-0.20.0/">
+        <fileset dir="../../hadoop-0.18.3/">
             <include name="*jar"/>
         </fileset>
-        <fileset dir="../../hadoop-0.20.0/lib">
+        <fileset dir="../../hadoop-0.18.3/lib">
             <include name="commons-logging-1.0.4.jar"/>
         </fileset>
     </path>
@@ -169,7 +169,7 @@
     <target id="hadoop-big" name="hadoop-big">
         <javac srcdir="rghadoop/src"
                destdir="rghadoop/classes"
-               target="1.6"
+               target="1.5"
                 >
             <classpath refid="${project.classpath}"/>
         </javac>
@@ -179,7 +179,7 @@
         </unjar>
         <jar jarfile="rghadoop.jar">
             <manifest>
-                <attribute name="Main-Class" value="net.rguha.dc.PSearch"/>
+                <attribute name="Main-Class" value="net.rguha.dc.HeavyAtomCount"/>
             </manifest>
             <fileset dir="rghadoop/classes">
                 <include name="**/*"/>
