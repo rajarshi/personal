@@ -131,7 +131,8 @@
             <fileset dir="rghadoop/classes" includes="**/*"/>
         </delete>
     </target>
-    <target id="hadoop-big" name="hadoop-big">
+
+    <target id="hadoop-pre" name="hadoop-pre">
         <javac srcdir="rghadoop/src"
                destdir="rghadoop/classes"
                target="1.6"
@@ -142,32 +143,29 @@
             <fileset dir="${lib.dir}"
                      includes="cdk-1.2.2.jar"/>
         </unjar>
-        <jar jarfile="rghadoop.jar">
-            <manifest>
-                <attribute name="Main-Class" value="net.rguha.dc.SubSearch"/>
-            </manifest>
-            <fileset dir="rghadoop/classes">
-                <include name="**/*"/>
-            </fileset>
-        </jar>
     </target>
 
-    <target id="hadoop" name="hadoop">
-        <javac srcdir="rghadoop/src"
-               destdir="rghadoop/classes"
-               target="1.6"
-                >
-            <classpath refid="${project.classpath}"/>
-        </javac>
+    <target id="hadoop-heavyAtomCount" name="hadoop-heavyAtomCount" depends="hadoop-pre">
         <jar jarfile="rghadoop.jar">
             <manifest>
-                <attribute name="Main-Class" value="net.rguha.dc.Identity"/>
+                <attribute name="Main-Class" value="net.rguha.dc.HeavyAtomCount"/>
             </manifest>
             <fileset dir="rghadoop/classes">
                 <include name="**/*"/>
             </fileset>
         </jar>
     </target>
+    <target id="hadoop-psearch" name="hadoop-psearch" depends="hadoop-pre">
+        <jar jarfile="rghadoop.jar">
+            <manifest>
+                <attribute name="Main-Class" value="net.rguha.dc.PSearch"/>
+            </manifest>
+            <fileset dir="rghadoop/classes">
+                <include name="**/*"/>
+            </fileset>
+        </jar>
+    </target>
+    
 
     <target id="hadoop-dist" name="hadoop-dist">
         <tar destfile="hadoop-cdk.tgz"
@@ -175,7 +173,7 @@
              basedir="rghadoop/src">
         </tar>
     </target>
-    
+
     <target id="srcdist-rest" name="srcdist-rest" depends="clean">
         <loadfile property="version.line" srcfile="src/net/guha/apps/rest/Constants.java">
             <filterchain>
