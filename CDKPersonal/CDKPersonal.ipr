@@ -72,7 +72,7 @@
   <component name="ExportToHTMLSettings">
     <option name="PRINT_LINE_NUMBERS" value="false" />
     <option name="OPEN_IN_BROWSER" value="false" />
-    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../../../../../public_html/" />
+    <option name="OUTPUT_DIRECTORY" value="/public_html/" />
   </component>
   <component name="IdProvider" IDEtalkID="CE016689E23184729929CB9C62C527E6" />
   <component name="InspectionProjectProfileManager">
@@ -85,7 +85,12 @@
         <option name="myLocal" value="false" />
       </profile>
     </profiles>
-    <list size="0" />
+    <list size="4">
+      <item index="0" class="java.lang.String" itemvalue="SERVER PROBLEM" />
+      <item index="1" class="java.lang.String" itemvalue="INFO" />
+      <item index="2" class="java.lang.String" itemvalue="WARNING" />
+      <item index="3" class="java.lang.String" itemvalue="ERROR" />
+    </list>
   </component>
   <component name="JavacSettings">
     <option name="DEBUGGING_INFO" value="true" />
@@ -250,11 +255,12 @@
     <option name="projectName" value="CDKPersonal" />
   </component>
   <component name="ProjectFileVersion" converted="true" />
+  <component name="ProjectKey">
+    <option name="state" value="project://a47b1260-cd92-4e3b-90c3-9c7916312a1e" />
+  </component>
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CDKPersonal.iml" filepath="$PROJECT_DIR$/CDKPersonal.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../cache/PGCache.iml" filepath="$PROJECT_DIR$/../../cache/PGCache.iml" />
-      <module fileurl="file://$PROJECT_DIR$/draw2d/draw2d.iml" filepath="$PROJECT_DIR$/draw2d/draw2d.iml" />
       <module fileurl="file://$PROJECT_DIR$/rghadoop/rghadoop.iml" filepath="$PROJECT_DIR$/rghadoop/rghadoop.iml" />
     </modules>
   </component>
@@ -272,6 +278,9 @@
     <option name="GENERATE_NO_WARNINGS" value="false" />
     <option name="GENERATE_IIOP_STUBS" value="false" />
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
+  </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="TL_PLUGIN">
     <option name="myModel">
@@ -350,35 +359,23 @@
     </library>
     <library name="Hadoop">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/../../hadoop-0.20.0/hadoop-0.20.0-ant.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../hadoop-0.20.0/hadoop-0.20.0-tools.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../hadoop-0.20.0/hadoop-0.20.0-core.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../hadoop-0.20.0/lib/commons-logging-api-1.0.4.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../hadoop-0.20.0/lib/commons-logging-1.0.4.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../hadoop-0.18.3/lib/commons-logging-1.0.4.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../hadoop-0.18.3/hadoop-0.18.3-test.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../hadoop-0.18.3/hadoop-0.18.3-core.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../hadoop-0.18.3/hadoop-0.18.3-ant.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../hadoop-0.18.3/hadoop-0.18.3-examples.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../hadoop-0.18.3/hadoop-0.18.3-tools.jar!/" />
       </CLASSES>
-      <JAVADOC>
-        <root url="file://$PROJECT_DIR$/../../hadoop-0.20.0/docs/api" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="file://$PROJECT_DIR$/../../hadoop-0.20.0/src/tools" />
-        <root url="file://$PROJECT_DIR$/../../hadoop-0.20.0/src/core" />
-      </SOURCES>
+      <JAVADOC />
+      <SOURCES />
     </library>
     <library name="Misc">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/libs/forms-1.2.1.jar!/" />
         <root url="jar://$PROJECT_DIR$/libs/looks-2.2.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/dist/wizres.jar!/" />
       </CLASSES>
-      <JAVADOC>
-        <root url="file://$PROJECT_DIR$/../../forms-1.2.1/docs/api" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="file://$PROJECT_DIR$/../../forms-1.2.1/src/core" />
-        <root url="file://$PROJECT_DIR$/../../forms-1.2.1/src/tutorial" />
-        <root url="file://$PROJECT_DIR$/../../forms-1.2.1/src/extras" />
-        <root url="file://$PROJECT_DIR$/../../forms-1.2.1/src/test" />
-      </SOURCES>
+      <JAVADOC />
+      <SOURCES />
     </library>
   </component>
 </project>
