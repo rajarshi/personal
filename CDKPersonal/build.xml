@@ -135,7 +135,7 @@
     <target id="hadoop-pre" name="hadoop-pre">
         <javac srcdir="rghadoop/src"
                destdir="rghadoop/classes"
-               target="1.6"
+               target="1.5"
                 >
             <classpath refid="${project.classpath}"/>
         </javac>
