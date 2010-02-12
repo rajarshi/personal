@@ -145,6 +145,27 @@
         </unjar>
     </target>
 
+    <target id="hadoop-fragment" name="hadoop-fragment">
+        <javac srcdir="rghadoop/src"
+               destdir="rghadoop/classes"
+               target="1.5"
+                >
+            <classpath refid="${project.classpath}"/>
+        </javac>
+        <unjar dest="rghadoop/classes">
+            <fileset dir="${lib.dir}"
+                     includes="jchem.jar"/>
+        </unjar>
+        <jar jarfile="frag.jar">
+            <manifest>
+                <attribute name="Main-Class" value="net.rguha.dc.MolecularFramework"/>
+            </manifest>
+            <fileset dir="rghadoop/classes">
+                <include name="**/*"/>
+            </fileset>
+        </jar>
+    </target>
+
     <target id="hadoop-heavyAtomCount" name="hadoop-heavyAtomCount" depends="hadoop-pre">
         <jar jarfile="rghadoop.jar">
             <manifest>
@@ -165,7 +186,7 @@
             </fileset>
         </jar>
     </target>
-    
+
 
     <target id="hadoop-dist" name="hadoop-dist">
         <tar destfile="hadoop-cdk.tgz"
