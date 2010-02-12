@@ -368,6 +368,14 @@
         <root url="file://$PROJECT_DIR$/../../hadoop-0.18.3/src/core" />
       </SOURCES>
     </library>
+    <library name="JChem">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/libs/jchem.jar!/" />
+        <root url="jar://$PROJECT_DIR$/libs/ncgcutil.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
   </component>
 </project>
 
