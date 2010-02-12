@@ -160,7 +160,7 @@
         <delete>
             <fileset dir="rghadoop/classes/META-INF" includes="MANIFEST*,NCGC*" />
         </delete>
-        <jar jarfile="frag.jar">
+        <jar jarfile="dist/frag.jar">
             <manifest>
                 <attribute name="Main-Class" value="net.rguha.dc.MolecularFramework"/>
             </manifest>
@@ -171,7 +171,7 @@
     </target>
 
     <target id="hadoop-heavyAtomCount" name="hadoop-heavyAtomCount" depends="hadoop-pre">
-        <jar jarfile="rghadoop.jar">
+        <jar jarfile="dist/rghadoop.jar">
             <manifest>
                 <attribute name="Main-Class" value="net.rguha.dc.HeavyAtomCount"/>
             </manifest>
@@ -181,7 +181,7 @@
         </jar>
     </target>
     <target id="hadoop-psearch" name="hadoop-psearch" depends="hadoop-pre">
-        <jar jarfile="rghadoop.jar">
+        <jar jarfile="dist/rghadoop.jar">
             <manifest>
                 <attribute name="Main-Class" value="net.rguha.dc.PSearch"/>
             </manifest>
