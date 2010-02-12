@@ -154,8 +154,12 @@
         </javac>
         <unjar dest="rghadoop/classes">
             <fileset dir="${lib.dir}"
-                     includes="jchem.jar,"/>
+                     includes="jchem.jar,ncgcutil.jar"/>
         </unjar>
+        <!-- get rid of signture files -->
+        <delete>
+            <fileset dir="rghadoop/classes/META-INF" includes="MANIFEST*,NCGC*" />
+        </delete>
         <jar jarfile="frag.jar">
             <manifest>
                 <attribute name="Main-Class" value="net.rguha.dc.MolecularFramework"/>
