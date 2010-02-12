@@ -154,7 +154,7 @@
         </javac>
         <unjar dest="rghadoop/classes">
             <fileset dir="${lib.dir}"
-                     includes="jchem.jar"/>
+                     includes="jchem.jar,"/>
         </unjar>
         <jar jarfile="frag.jar">
             <manifest>
