@@ -1,4 +1,4 @@
-(ns foo
+(ns entrez
   (:require [clojure.xml :as xml])
   (:require [clojure.zip :as zip])
   (:require [clojure.contrib.zip-filter.xml :as zf])
