@@ -13,7 +13,9 @@
   (zf/xml-> zipper :IdList :Id zf/text))
 
 (defn get-affiliations [zipper]
-  (str (zipper)))
+  (map (fn [x y] (list x y))
+       (zf/xml-> zipper :PubmedArticle :MedlineCitation :PMID zf/text)
+       (zf/xml-> zipper :PubmedArticle :MedlineCitation :Article :Affiliation zf/text)))
 
 (defn proc-date 
   "If argument is a string return a CGI query term, otherwise empty string"
@@ -58,5 +60,5 @@
 
 ;;  (count (esearch {:term "cheminformatics" :mindate "2009" :maxdate "2010"}))
 (def ids (esearch {:term "cheminformatics" }))
-(def xml (parse-str (efetch ids "pubmed")))
-(def get-affilitations xml)
+(println (get-affiliations (parse-str (efetch ids "pubmed"))))
+
