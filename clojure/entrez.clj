@@ -51,6 +51,21 @@
 		  "retmode=xml&"
 		  "email=rajarshi.guha@gmail.com")))
 
+;; split text on white space, remove stop words, for each
+;; token query country collection in mongodb, return the hits
+;; that we get
+(def stop-words '("as" "is" "for" "in" 
+		  "not" "the" "of" 
+		  "college" "university" "institute" "corporation"))
+(defn match-country 
+  "Identify FIPS-1040 country code associated with a string"
+  [s]
+  (filter #(not (.contains stop-words (str/lower-case %))) 
+	  (seq (.split s "\\s+"))))
+
+(match-country "University of Minnesota, Minneapolis, USA")
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; read in reults xml
@@ -59,6 +74,7 @@
  
 
 ;;  (count (esearch {:term "cheminformatics" :mindate "2009" :maxdate "2010"}))
-(def ids (esearch {:term "cheminformatics" }))
+(def ids (esearch {:term "2010[dp]" }))
+(println (count ids))
 (println (get-affiliations (parse-str (efetch ids "pubmed"))))
 
