@@ -2,7 +2,8 @@
   (:require [clojure.xml :as xml])
   (:require [clojure.zip :as zip])
   (:require [clojure.contrib.zip-filter.xml :as zf])
-  (:require [clojure.contrib.duck-streams :as ds]))
+  (:require [clojure.contrib.duck-streams :as ds])
+  (:require [clojure.contrib.str-utils2 :as str]))
 
 (defn parse-str [s]
   (zip/xml-zip (xml/parse (new org.xml.sax.InputSource
@@ -10,6 +11,9 @@
 
 (defn get-ids [zipper]
   (zf/xml-> zipper :IdList :Id zf/text))
+
+(defn get-affiliations [zipper]
+  (str (zipper)))
 
 (defn proc-date 
   "If argument is a string return a CGI query term, otherwise empty string"
@@ -36,7 +40,15 @@
 			    (proc-date "maxdate" maxdate)
 			    "email=rajarshi.guha@gmail.com")))))
 
-  
+(defn efetch
+  "Call the Entrez efetch service"
+  [ids db]
+  (ds/slurp* (str "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?"
+		  "db=" db "&"
+		  "id=" (str/join "," ids) "&"
+		  "retmode=xml&"
+		  "email=rajarshi.guha@gmail.com")))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; read in reults xml
@@ -44,6 +56,7 @@
 	     (xml/parse "/Users/guhar/src/personal/clojure/entrez.xml")))
  
 
-(count (esearch {:term "cheminformatics" :mindate "2009" :maxdate "2010"}))
-(count (esearch {:term "cheminformatics" }))
-
+;;  (count (esearch {:term "cheminformatics" :mindate "2009" :maxdate "2010"}))
+(def ids (esearch {:term "cheminformatics" }))
+(def xml (parse-str (efetch ids "pubmed")))
+(def get-affilitations xml)
