@@ -11,7 +11,13 @@
 (defn get-ids [zipper]
   (zf/xml-> zipper :IdList :Id zf/text))
 
-(defn esearch 
+;; The :keys is a shortcut, to make the keys of the map the names of the
+;; local variable. The :or key provides default values. We provide a 
+;; pre-condition to ensure that we have a term to search on
+(defn esearch [{:keys [term db retmode], :or {db "pubmed", retmode "xml"}}]
+  {:pre [(not (nil? term))]}
+  (list db term retmode))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; read in reults xml
@@ -26,3 +32,7 @@
 
 ;; get xml
 (get-ids (parse-str (ds/slurp* url1)))
+
+
+
+(esearch {:db "pubmed"})
