@@ -51,6 +51,14 @@
 		  "retmode=xml&"
 		  "email=rajarshi.guha@gmail.com")))
 
+
+(defn load-fips []
+  "Read and parse FIPS country data, give back a list of 2-tuples of the form (CODE,name)"
+  (map #(list (str/take (first %) 2) (str/lower-case (last %)))
+       (map #(seq (.split (. % trim) "_"))
+	    (filter #(str/contains? % "_country_")
+		    (ds/read-lines "fips-414.txt")))))
+
 ;; split text on white space, remove stop words, for each
 ;; token query country collection in mongodb, return the hits
 ;; that we get
