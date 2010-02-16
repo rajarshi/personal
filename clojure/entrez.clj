@@ -5,6 +5,14 @@
   (:require [clojure.contrib.duck-streams :as ds])
   (:require [clojure.contrib.str-utils2 :as str]))
 
+(defn flatten
+  "Flatten a list which may contain lists"
+  [x]
+  (let [s? #(instance? clojure.lang.Sequential %)]
+    (filter
+     (complement s?)
+     (tree-seq s? seq x)))) 
+
 (defn parse-str [s]
   (zip/xml-zip (xml/parse (new org.xml.sax.InputSource
 			       (new java.io.StringReader s)))))  
@@ -52,6 +60,7 @@
 		  "email=rajarshi.guha@gmail.com")))
 
 
+;; FIPS country code related methods
 (defn load-fips []
   "Read and parse FIPS country data, give back a list of 2-tuples of the form (CODE,name)"
   (map #(list (str/take (first %) 2) (str/lower-case (last %)))
@@ -59,19 +68,30 @@
 	    (filter #(str/contains? % "_country_")
 		    (ds/read-lines "fips-414.txt")))))
 
+(defn find-country-code 
+  [s codes]
+  (filter #(not (nil? %))
+	  (map #(if (= (str/lower-case s) (last %))
+		  (first %)
+		  nil)
+	       codes)))
+(find-country-code "Italy" (load-fips))
+
 ;; split text on white space, remove stop words, for each
 ;; token query country collection in mongodb, return the hits
 ;; that we get
 (def stop-words '("as" "is" "for" "in" 
 		  "not" "the" "of" 
 		  "college" "university" "institute" "corporation"))
+
 (defn match-country 
   "Identify FIPS-1040 country code associated with a string"
-  [s]
-  (filter #(not (.contains stop-words (str/lower-case %))) 
-	  (seq (.split s "\\s+"))))
+  [s fips-country]
+  (flatten (map #(find-country-code % fips-country) 
+		(filter #(not (.contains stop-words (str/lower-case %))) 
+			(seq (.split s "\\s+"))))))
 
-(match-country "University of Minnesota, Minneapolis, USA")
+(match-country "University of Perugia, Italy and Nigeria" (load-fips))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
