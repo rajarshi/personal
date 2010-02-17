@@ -14,13 +14,16 @@
      (tree-seq s? seq x)))) 
 
 (defn parse-str [s]
+  "Convert an XML string to a zipper data-structure"
   (zip/xml-zip (xml/parse (new org.xml.sax.InputSource
 			       (new java.io.StringReader s)))))  
 
 (defn get-ids [zipper]
+  "Extract specific elements from an XML document"
   (zf/xml-> zipper :IdList :Id zf/text))
 
 (defn get-affiliations [zipper]
+  "Extract affiliations from PubMed abstracts"
   (map (fn [x y] (list x y))
        (zf/xml-> zipper :PubmedArticle :MedlineCitation :PMID zf/text)
        (zf/xml-> zipper :PubmedArticle :MedlineCitation :Article :Affiliation zf/text)))
@@ -97,6 +100,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; read in reults xml
+(println (get-ids 
+	  (zip/xml-zip
+	   (xml/parse "esearch.xml"))))
+
 (def result (zip/xml-zip 
 	     (xml/parse "/Users/guhar/src/personal/clojure/entrez.xml")))
  
