@@ -136,6 +136,7 @@
         <javac srcdir="rghadoop/src"
                destdir="rghadoop/classes"
                target="1.5"
+               excludes="**/MolecularFramework*"
                 >
             <classpath refid="${project.classpath}"/>
         </javac>
