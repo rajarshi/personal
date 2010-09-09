@@ -359,6 +359,7 @@
         <root url="jar://$PROJECT_DIR$/../../hadoop-0.18.3/hadoop-0.18.3-core.jar!/" />
         <root url="jar://$PROJECT_DIR$/../../hadoop-0.18.3/hadoop-0.18.3-tools.jar!/" />
         <root url="jar://$PROJECT_DIR$/../../hadoop-0.18.3/hadoop-0.18.3-examples.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../pig-0.4.0/pig-0.4.0-core.jar!/" />
       </CLASSES>
       <JAVADOC>
         <root url="file://$PROJECT_DIR$/../../hadoop-0.18.3/docs/api" />

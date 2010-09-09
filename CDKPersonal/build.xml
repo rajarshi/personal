@@ -15,6 +15,9 @@
         <fileset dir="../../hadoop-0.18.3/">
             <include name="*jar"/>
         </fileset>
+        <fileset dir="../../pig-0.4.0/">
+            <include name="*jar"/>
+        </fileset>
         <fileset dir="../../hadoop-0.18.3/lib">
             <include name="commons-logging-1.0.4.jar"/>
         </fileset>
@@ -159,12 +162,31 @@
         </unjar>
         <!-- get rid of signture files -->
         <delete>
-            <fileset dir="rghadoop/classes/META-INF" includes="MANIFEST*,NCGC*" />
+            <fileset dir="rghadoop/classes/META-INF" includes="MANIFEST*,NCGC*"/>
         </delete>
         <jar jarfile="dist/frag.jar">
             <manifest>
                 <attribute name="Main-Class" value="net.rguha.dc.MolecularFramework"/>
             </manifest>
+            <fileset dir="rghadoop/classes">
+                <include name="**/*"/>
+            </fileset>
+        </jar>
+    </target>
+
+    <target id="pig" name="pig">
+        <javac srcdir="rghadoop/src/"
+               destdir="rghadoop/classes"
+               target="1.5"
+               includes="**/pig/*.java"
+                >
+            <classpath refid="${project.classpath}"/>
+        </javac>
+        <unjar dest="rghadoop/classes">
+            <fileset dir="${lib.dir}"
+                     includes="cdk-1.2.2.jar"/>
+        </unjar>
+        <jar jarfile="dist/rgpig.jar">
             <fileset dir="rghadoop/classes">
                 <include name="**/*"/>
             </fileset>
