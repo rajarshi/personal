@@ -12,6 +12,7 @@ import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.io.MDLV2000Reader;
 import org.openscience.cdk.io.iterator.IteratingMDLReader;
+import org.openscience.cdk.io.listener.PropertiesListener;
 import org.openscience.cdk.nonotify.NoNotificationChemObjectBuilder;
 import org.openscience.cdk.similarity.DistanceMoment;
 
@@ -20,6 +21,7 @@ import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Properties;
 
 /**
  * Command line to evaluate moment similarity.
@@ -136,6 +138,12 @@ public class momsim {
         IAtomContainer query = null;
         if (queryFileName != null) {
             MDLV2000Reader reader = new MDLV2000Reader(new FileInputStream(queryFileName));
+            Properties qprop = new Properties();
+            qprop.setProperty("ForceReadAs3DCoordinates", "true");
+            PropertiesListener listener = new PropertiesListener(qprop);
+            reader.addChemObjectIOListener(listener);
+            reader.customizeJob();
+            
             query = NoNotificationChemObjectBuilder.getInstance().newInstance(IAtomContainer.class);
             query = reader.read(query);
             if (verbose)
@@ -152,6 +160,12 @@ public class momsim {
         }
 
         IteratingMDLReader ireader = new IteratingMDLReader(new FileReader(targetFileName), NoNotificationChemObjectBuilder.getInstance());
+        Properties prop = new Properties();
+        prop.setProperty("ForceReadAs3DCoordinates", "true");
+        PropertiesListener listener = new PropertiesListener(prop);
+        ireader.addChemObjectIOListener(listener);
+        ireader.customizeJob();
+
         BufferedWriter writer = new BufferedWriter(new FileWriter(outFileName));
         int nmol = 0;
         long start, end;
