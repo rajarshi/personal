@@ -6,7 +6,7 @@
 
 
     <!-- Pull in ant-contrib -->
-<!--    <taskdef resource="net/sf/antcontrib/antlib.xml"/> -->
+    <!--    <taskdef resource="net/sf/antcontrib/antlib.xml"/> -->
 
     <!-- Set up the CLASSPATH -->
     <path id="project.libs">
@@ -70,6 +70,16 @@
         </javac>
     </target>
 
+    <target id="compile-momsim" name="compile-momsim" depends="prep">
+        <javac srcdir="${sources}/net/guha/apps/"
+               includes="momsim.java"
+               destdir="${build.dir}"
+               target="1.5"
+                >
+            <classpath refid="${project.classpath}"/>
+        </javac>
+    </target>
+
     <target id="compile-wizard" name="compile-wizard" depends="prep">
         <javac srcdir="${sources}/net/guha/apps/gui/wizard"
                destdir="${build.dir}"
@@ -119,6 +129,21 @@
         </jar>
     </target>
 
+
+    <target id='momsim' name='momsim' depends='compile-momsim'>
+        <unjar dest="${build.dir}">
+            <fileset dir="${lib.dir}"
+                     includes="cdk.jar, commons-cli-1.0.jar"/>
+        </unjar>
+        <jar jarfile="momsim.jar">
+            <manifest>
+                <attribute name="Main-Class" value="net.guha.apps.momsim"/>
+            </manifest>
+            <fileset dir="${build.dir}">
+                <include name="**/*"/>
+            </fileset>
+        </jar>
+    </target>
 
     <target id="smds" name="smds" depends="compile-smds">
         <unjar dest="${build.dir}">
