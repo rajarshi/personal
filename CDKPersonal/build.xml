@@ -3,6 +3,7 @@
     <property name="sources" value="src"/>
     <property name="lib.dir" value="libs"/>
     <property name="dist.dir" value="dist"/>
+    <property name="cdk.jar.dir" value="../../cdk/dist/jar"/>
 
 
     <!-- Pull in ant-contrib -->
@@ -133,7 +134,9 @@
     <target id='momsim' name='momsim' depends='compile-momsim'>
         <unjar dest="${build.dir}">
             <fileset dir="${lib.dir}"
-                     includes="cdk.jar, commons-cli-1.0.jar"/>
+                     includes="commons-cli-1.0.jar"/>
+            <fileset dir="${cdk.jar.dir}"
+                     includes="cdk-core.jar, cdk-extra.jar, cdk-fingerprint.jar, cdk-io.jar, cdk-ioformats.jar, cdk-standard.jar, cdk-interfaces.jar, cdk-nonotify.jar, cdk-data.jar"/>
         </unjar>
         <jar jarfile="momsim.jar">
             <manifest>
