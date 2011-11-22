@@ -70,6 +70,7 @@ public class momsim {
         options.addOption("g", false, "Generate moments");
         options.addOption("o", true, "Output file (default is mom.txt)");
         options.addOption("q", true, "Query file (SDF)");
+        options.addOption("c", true, "Similarity cutoff [0-1]. Default is 0.8");
 
         CommandLineParser parser = new PosixParser();
         try {
@@ -82,6 +83,7 @@ public class momsim {
             if (cmd.hasOption("g")) obj.setGenerateVectors(true);
             if (cmd.hasOption("q")) obj.setQueryFileName(cmd.getOptionValue("q"));
             if (cmd.hasOption("o")) obj.setOutFileName(cmd.getOptionValue("o"));
+            if (cmd.hasOption("c")) obj.setCutoff(Double.parseDouble(cmd.getOptionValue("c")));
 
             String[] remainder = cmd.getArgs();
             if (remainder.length == 0) {
@@ -174,7 +176,7 @@ public class momsim {
 
             end = System.currentTimeMillis();
             if (verbose)
-                System.out.println("\rGenerated moment vectors for " + nmol + " molecules in " + (end - start) / 1000 + " sec [" + nmol / ((end - start) / 1000) + " mol/s]");
+                System.out.println("\rGenerated moment vectors for " + nmol + " molecules in " + (float) (end - start) / 1000 + " sec [" + (float) nmol / ((end - start) / 1000) + " mol/s]");
         } else {
             // we are to perform a similarity calculation. We should already have gotten a query structure
             float[] queryMoments = DistanceMoment.generateMoments(query);
@@ -185,6 +187,7 @@ public class momsim {
                 nmol++;
                 if (!has3D(target) || target.getAtomCount() == 1) {
                     System.err.println("\nERROR: " + target.getProperty(CDKConstants.TITLE) + " had no 3D coordinates or else a single atom. Skipping");
+                    continue;
                 }
                 float[] targetMoments = DistanceMoment.generateMoments(target);
                 float sum = 0;
@@ -196,10 +199,12 @@ public class momsim {
                     writer.write(target.getProperty(CDKConstants.TITLE) + "\n");
                     nsel++;
                 }
+                if (verbose && nmol % 100 == 0)
+                    System.out.print("\rProcessed " + nmol + " molecules and found " + nsel + " similar");
             }
             end = System.currentTimeMillis();
             if (verbose)
-                System.out.print("\rProcessed " + nmol + " molecules and found " + nsel + " similar in " + (end - start) / 1000 + " sec");
+                System.out.println("\rProcessed " + nmol + " molecules and found " + nsel + " similar in " + (float) (end - start) / (1000) + " sec");
         }
         writer.close();
         ireader.close();
