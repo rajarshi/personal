@@ -6,6 +6,7 @@ import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
+import org.openscience.cdk.CDK;
 import org.openscience.cdk.CDKConstants;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.IAtom;
@@ -143,7 +144,7 @@ public class momsim {
             PropertiesListener listener = new PropertiesListener(qprop);
             reader.addChemObjectIOListener(listener);
             reader.customizeJob();
-            
+
             query = NoNotificationChemObjectBuilder.getInstance().newInstance(IAtomContainer.class);
             query = reader.read(query);
             if (verbose)
@@ -229,7 +230,7 @@ public class momsim {
         HelpFormatter helpFormatter = new HelpFormatter();
         helpFormatter.printHelp("momsim [OPTIONS] inputfile\n", options);
         System.out.println("\ninputfile should be an SD file containing target structures.\nIdeally each molecule should have a title");
-        System.out.println("\nmomsim v" + VERSION + " Rajarshi Guha <rajarshi.guha@gmail.com>\n");
+        System.out.println("\nmomsim v" + VERSION + " (CDK " + CDK.getVersion() + ") Rajarshi Guha <rajarshi.guha@gmail.com>\n");
         System.exit(-1);
 
     }
