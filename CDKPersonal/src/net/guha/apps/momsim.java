@@ -142,6 +142,10 @@ public class momsim {
                 System.err.println("ERROR: Query structure must have 3D coordinates");
                 System.exit(-1);
             }
+            if (query.getAtomCount() == 1) {
+                System.err.println("ERROR: Can't work with a single atom query");
+                System.exit(-1);
+            }
             reader.close();
         }
 
@@ -156,8 +160,8 @@ public class momsim {
                 IAtomContainer target = (IAtomContainer) ireader.next();
                 float[] moments;
                 nmol++;
-                if (!has3D(target)) {
-                    System.err.println("\nERROR: " + target.getProperty(CDKConstants.TITLE) + " had no 3D coordinates. Using NAs");
+                if (!has3D(target) || target.getAtomCount() == 1) {
+                    System.err.println("\nERROR: " + target.getProperty(CDKConstants.TITLE) + " had no 3D coordinates or else has a single atom. Using NAs");
                     moments = new float[12];
                     for (int i = 0; i < 12; i++) moments[i] = Float.NaN;
                 } else {
@@ -179,8 +183,8 @@ public class momsim {
             while (ireader.hasNext()) {
                 IAtomContainer target = (IAtomContainer) ireader.next();
                 nmol++;
-                if (!has3D(target)) {
-                    System.err.println("\nERROR: " + target.getProperty(CDKConstants.TITLE) + " had no 3D coordinates. Skipping");
+                if (!has3D(target) || target.getAtomCount() == 1) {
+                    System.err.println("\nERROR: " + target.getProperty(CDKConstants.TITLE) + " had no 3D coordinates or else a single atom. Skipping");
                 }
                 float[] targetMoments = DistanceMoment.generateMoments(target);
                 float sum = 0;
