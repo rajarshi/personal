@@ -157,8 +157,10 @@ public class momsim {
             reader.close();
         }
 
+        BufferedWriter writer = new BufferedWriter(new FileWriter(outFileName));
+
         for (String targetFileName : targetFileNames) {
-            if (verbose) System.out.println("Processing "+targetFileName);
+            if (verbose) System.out.println("Processing " + targetFileName);
 
             IteratingMDLReader ireader = new IteratingMDLReader(new FileReader(targetFileName), NoNotificationChemObjectBuilder.getInstance());
             Properties prop = new Properties();
@@ -167,7 +169,6 @@ public class momsim {
             ireader.addChemObjectIOListener(listener);
             ireader.customizeJob();
 
-            BufferedWriter writer = new BufferedWriter(new FileWriter(outFileName));
             int nmol = 0;
             long start, end;
 
@@ -221,9 +222,9 @@ public class momsim {
                 if (verbose)
                     System.out.println("\rProcessed " + nmol + " molecules and found " + nsel + " similar in " + (float) (end - start) / (1000) + " sec");
             }
-            writer.close();
             ireader.close();
         }
+        writer.close();
 
     }
 
