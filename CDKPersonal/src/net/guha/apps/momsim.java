@@ -30,12 +30,12 @@ import java.util.Properties;
  * @author Rajarshi Guha
  */
 public class momsim {
-    private static final String VERSION = "1.0";
+    private static final String VERSION = "1.1";
 
     double cutoff = 0.8;
     String outFileName = "mom.txt";
     String queryFileName = null;
-    String targetFileName = null;
+    String[] targetFileNames = null;
     boolean generateVectors = false;
     boolean verbose = false;
 
@@ -51,8 +51,8 @@ public class momsim {
         this.queryFileName = queryFileName;
     }
 
-    public void setTargetFileName(String targetFileName) {
-        this.targetFileName = targetFileName;
+    public void setTargetFileNames(String[] targetFileNames) {
+        this.targetFileNames = targetFileNames;
     }
 
     public void setGenerateVectors(boolean generateVectors) {
@@ -93,10 +93,7 @@ public class momsim {
                 usage(options);
                 System.exit(-1);
             }
-            if (remainder.length > 1) {
-                System.err.println("ERROR: Only one target file can be specified");
-                System.exit(-1);
-            } else obj.setTargetFileName(remainder[0]);
+            obj.setTargetFileNames(remainder);
 
         } catch (ParseException e) {
             e.printStackTrace();
@@ -130,7 +127,7 @@ public class momsim {
             System.err.println("ERROR: If you're not generating vectors, then you must specify a query structure");
             System.exit(-1);
         }
-        if (generateVectors && targetFileName == null) {
+        if (generateVectors && targetFileNames == null) {
             System.err.println("ERROR: Must specify the target structures");
             System.exit(-1);
         }
@@ -160,75 +157,80 @@ public class momsim {
             reader.close();
         }
 
-        IteratingMDLReader ireader = new IteratingMDLReader(new FileReader(targetFileName), NoNotificationChemObjectBuilder.getInstance());
-        Properties prop = new Properties();
-        prop.setProperty("ForceReadAs3DCoordinates", "true");
-        PropertiesListener listener = new PropertiesListener(prop);
-        ireader.addChemObjectIOListener(listener);
-        ireader.customizeJob();
+        for (String targetFileName : targetFileNames) {
+            if (verbose) System.out.println("Processing "+targetFileName);
 
-        BufferedWriter writer = new BufferedWriter(new FileWriter(outFileName));
-        int nmol = 0;
-        long start, end;
+            IteratingMDLReader ireader = new IteratingMDLReader(new FileReader(targetFileName), NoNotificationChemObjectBuilder.getInstance());
+            Properties prop = new Properties();
+            prop.setProperty("ForceReadAs3DCoordinates", "true");
+            PropertiesListener listener = new PropertiesListener(prop);
+            ireader.addChemObjectIOListener(listener);
+            ireader.customizeJob();
 
-        if (generateVectors) {
-            start = System.currentTimeMillis();
-            while (ireader.hasNext()) {
-                IAtomContainer target = (IAtomContainer) ireader.next();
-                float[] moments;
-                nmol++;
-                if (!has3D(target) || target.getAtomCount() == 1) {
-                    System.err.println("\nERROR: " + target.getProperty(CDKConstants.TITLE) + " had no 3D coordinates or else has a single atom. Using NAs");
-                    moments = new float[12];
-                    for (int i = 0; i < 12; i++) moments[i] = Float.NaN;
-                } else {
-                    moments = DistanceMoment.generateMoments(target);
+            BufferedWriter writer = new BufferedWriter(new FileWriter(outFileName));
+            int nmol = 0;
+            long start, end;
+
+            if (generateVectors) {
+                start = System.currentTimeMillis();
+                while (ireader.hasNext()) {
+                    IAtomContainer target = (IAtomContainer) ireader.next();
+                    float[] moments;
+                    nmol++;
+                    if (!has3D(target) || target.getAtomCount() == 1) {
+                        System.err.println("\nERROR: " + target.getProperty(CDKConstants.TITLE) + " had no 3D coordinates or else has a single atom. Using NAs");
+                        moments = new float[12];
+                        for (int i = 0; i < 12; i++) moments[i] = Float.NaN;
+                    } else {
+                        moments = DistanceMoment.generateMoments(target);
+                    }
+                    String row = target.getProperty(CDKConstants.TITLE) + "," + join(moments, ",");
+                    writer.write(row + "\n");
+                    if (verbose && nmol % 100 == 0) System.out.print("\rProcessed " + nmol + " molecules");
                 }
-                String row = target.getProperty(CDKConstants.TITLE) + "," + join(moments, ",");
-                writer.write(row + "\n");
-                if (verbose && nmol % 100 == 0) System.out.print("\rProcessed " + nmol + " molecules");
+
+                end = System.currentTimeMillis();
+                if (verbose)
+                    System.out.println("\rGenerated moment vectors for " + nmol + " molecules in " + (float) (end - start) / 1000 + " sec [" + (float) nmol / ((end - start) / 1000) + " mol/s]");
+            } else {
+                // we are to perform a similarity calculation. We should already have gotten a query structure
+                float[] queryMoments = DistanceMoment.generateMoments(query);
+                int nsel = 0;
+                start = System.currentTimeMillis();
+                while (ireader.hasNext()) {
+                    IAtomContainer target = (IAtomContainer) ireader.next();
+                    nmol++;
+                    if (!has3D(target) || target.getAtomCount() == 1) {
+                        System.err.println("\nERROR: " + target.getProperty(CDKConstants.TITLE) + " had no 3D coordinates or else a single atom. Skipping");
+                        continue;
+                    }
+                    float[] targetMoments = DistanceMoment.generateMoments(target);
+                    float sum = 0;
+                    for (int i = 0; i < queryMoments.length; i++) {
+                        sum += Math.abs(queryMoments[i] - targetMoments[i]);
+                    }
+                    float sim = (float) (1.0 / (1.0 + sum / 12.0));
+                    if (sim >= cutoff) {
+                        writer.write(target.getProperty(CDKConstants.TITLE) + "\n");
+                        nsel++;
+                    }
+                    if (verbose && nmol % 100 == 0)
+                        System.out.print("\rProcessed " + nmol + " molecules and found " + nsel + " similar");
+                }
+                end = System.currentTimeMillis();
+                if (verbose)
+                    System.out.println("\rProcessed " + nmol + " molecules and found " + nsel + " similar in " + (float) (end - start) / (1000) + " sec");
             }
-
-            end = System.currentTimeMillis();
-            if (verbose)
-                System.out.println("\rGenerated moment vectors for " + nmol + " molecules in " + (float) (end - start) / 1000 + " sec [" + (float) nmol / ((end - start) / 1000) + " mol/s]");
-        } else {
-            // we are to perform a similarity calculation. We should already have gotten a query structure
-            float[] queryMoments = DistanceMoment.generateMoments(query);
-            int nsel = 0;
-            start = System.currentTimeMillis();
-            while (ireader.hasNext()) {
-                IAtomContainer target = (IAtomContainer) ireader.next();
-                nmol++;
-                if (!has3D(target) || target.getAtomCount() == 1) {
-                    System.err.println("\nERROR: " + target.getProperty(CDKConstants.TITLE) + " had no 3D coordinates or else a single atom. Skipping");
-                    continue;
-                }
-                float[] targetMoments = DistanceMoment.generateMoments(target);
-                float sum = 0;
-                for (int i = 0; i < queryMoments.length; i++) {
-                    sum += Math.abs(queryMoments[i] - targetMoments[i]);
-                }
-                float sim = (float) (1.0 / (1.0 + sum / 12.0));
-                if (sim >= cutoff) {
-                    writer.write(target.getProperty(CDKConstants.TITLE) + "\n");
-                    nsel++;
-                }
-                if (verbose && nmol % 100 == 0)
-                    System.out.print("\rProcessed " + nmol + " molecules and found " + nsel + " similar");
-            }
-            end = System.currentTimeMillis();
-            if (verbose)
-                System.out.println("\rProcessed " + nmol + " molecules and found " + nsel + " similar in " + (float) (end - start) / (1000) + " sec");
+            writer.close();
+            ireader.close();
         }
-        writer.close();
-        ireader.close();
+
     }
 
 
     private static void usage(Options options) {
         HelpFormatter helpFormatter = new HelpFormatter();
-        helpFormatter.printHelp("momsim [OPTIONS] inputfile\n", options);
+        helpFormatter.printHelp("momsim [OPTIONS] inputfile inputfile ...\n", options);
         System.out.println("\ninputfile should be an SD file containing target structures.\nIdeally each molecule should have a title");
         System.out.println("\nmomsim v" + VERSION + " (CDK " + CDK.getVersion() + ") Rajarshi Guha <rajarshi.guha@gmail.com>\n");
         System.exit(-1);
