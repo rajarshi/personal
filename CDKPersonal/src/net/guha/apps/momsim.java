@@ -19,6 +19,7 @@ import org.openscience.cdk.similarity.DistanceMoment;
 
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -162,7 +163,13 @@ public class momsim {
         for (String targetFileName : targetFileNames) {
             if (verbose) System.out.println("Processing " + targetFileName);
 
-            IteratingMDLReader ireader = new IteratingMDLReader(new FileReader(targetFileName), NoNotificationChemObjectBuilder.getInstance());
+            IteratingMDLReader ireader = null;
+            try {
+                ireader = new IteratingMDLReader(new FileReader(targetFileName), NoNotificationChemObjectBuilder.getInstance());
+            } catch (FileNotFoundException e) {
+                System.err.println("ERROR: Couldn't open "+targetFileName);
+                continue;
+            }
             Properties prop = new Properties();
             prop.setProperty("ForceReadAs3DCoordinates", "true");
             PropertiesListener listener = new PropertiesListener(prop);
