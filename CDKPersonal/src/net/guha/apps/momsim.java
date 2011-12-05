@@ -31,7 +31,7 @@ import java.util.Properties;
  * @author Rajarshi Guha
  */
 public class momsim {
-    private static final String VERSION = "1.1";
+    private static final String VERSION = "1.1.1";
 
     double cutoff = 0.8;
     String outFileName = "mom.txt";
