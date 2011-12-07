@@ -69,6 +69,38 @@ public class momsim {
         this.topN = topN;
     }
 
+    class Result implements Comparable {
+        String id;
+        Float sim;
+
+        Result(String id, float sim) {
+            this.id = id;
+            this.sim = sim;
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public Float getSim() {
+            return sim;
+        }
+
+        @Override
+        public String toString() {
+            return id + "\t" + sim;
+        }
+
+        public int compareTo(Object o) {
+            if (o instanceof Result) {
+                Result r = (Result)o;
+                return sim.compareTo(r.getSim());
+            }
+            return 0;
+        }
+    }
+
+
     public static void main(String[] args) throws CDKException, IOException {
 
         momsim obj = new momsim();
@@ -95,7 +127,7 @@ public class momsim {
             if (cmd.hasOption("o")) obj.setOutFileName(cmd.getOptionValue("o"));
             if (cmd.hasOption("c")) obj.setCutoff(Double.parseDouble(cmd.getOptionValue("c")));
 //            if (cmd.hasOption("t")) obj.setTopN(Integer.parseInt(cmd.getOptionValue("t")));
-            
+
             String[] remainder = cmd.getArgs();
             if (remainder.length == 0) {
                 usage(options);
