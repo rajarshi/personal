@@ -31,12 +31,13 @@ import java.util.Properties;
  * @author Rajarshi Guha
  */
 public class momsim {
-    private static final String VERSION = "1.1.1";
+    private static final String VERSION = "1.1.2";
 
     double cutoff = 0.8;
     String outFileName = "mom.txt";
     String queryFileName = null;
     String[] targetFileNames = null;
+    int topN = 0;
     boolean generateVectors = false;
     boolean verbose = false;
 
@@ -64,6 +65,10 @@ public class momsim {
         this.verbose = verbose;
     }
 
+    public void setTopN(int topN) {
+        this.topN = topN;
+    }
+
     public static void main(String[] args) throws CDKException, IOException {
 
         momsim obj = new momsim();
@@ -75,6 +80,7 @@ public class momsim {
         options.addOption("o", true, "Output file (default is mom.txt)");
         options.addOption("q", true, "Query file (SDF)");
         options.addOption("c", true, "Similarity cutoff [0-1]. Default is 0.8");
+        options.addOption("t", true, "Keep top N most similar compounds only. N >= 1");
 
         CommandLineParser parser = new PosixParser();
         try {
@@ -88,7 +94,8 @@ public class momsim {
             if (cmd.hasOption("q")) obj.setQueryFileName(cmd.getOptionValue("q"));
             if (cmd.hasOption("o")) obj.setOutFileName(cmd.getOptionValue("o"));
             if (cmd.hasOption("c")) obj.setCutoff(Double.parseDouble(cmd.getOptionValue("c")));
-
+//            if (cmd.hasOption("t")) obj.setTopN(Integer.parseInt(cmd.getOptionValue("t")));
+            
             String[] remainder = cmd.getArgs();
             if (remainder.length == 0) {
                 usage(options);
@@ -167,7 +174,7 @@ public class momsim {
             try {
                 ireader = new IteratingMDLReader(new FileReader(targetFileName), NoNotificationChemObjectBuilder.getInstance());
             } catch (FileNotFoundException e) {
-                System.err.println("ERROR: Couldn't open "+targetFileName);
+                System.err.println("ERROR: Couldn't open " + targetFileName);
                 continue;
             }
             Properties prop = new Properties();
@@ -219,7 +226,7 @@ public class momsim {
                     }
                     float sim = (float) (1.0 / (1.0 + sum / 12.0));
                     if (sim >= cutoff) {
-                        writer.write(target.getProperty(CDKConstants.TITLE) + "\n");
+                        writer.write(target.getProperty(CDKConstants.TITLE) + "\t" + sim + "\n");
                         nsel++;
                     }
                     if (verbose && nmol % 100 == 0)
