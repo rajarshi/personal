@@ -31,7 +31,7 @@ import java.util.Properties;
  * @author Rajarshi Guha
  */
 public class momsim {
-    private static final String VERSION = "1.1.2";
+    private static final String VERSION = "1.1.3";
 
     double cutoff = 0.8;
     String outFileName = "mom.txt";
@@ -40,6 +40,11 @@ public class momsim {
     int topN = 0;
     boolean generateVectors = false;
     boolean verbose = false;
+    String titleField = null;
+
+    public void setTitleField(String titleField) {
+        this.titleField = titleField;
+    }
 
     public void setCutoff(double cutoff) {
         this.cutoff = cutoff;
@@ -93,7 +98,7 @@ public class momsim {
 
         public int compareTo(Object o) {
             if (o instanceof Result) {
-                Result r = (Result)o;
+                Result r = (Result) o;
                 return sim.compareTo(r.getSim());
             }
             return 0;
@@ -113,6 +118,7 @@ public class momsim {
         options.addOption("q", true, "Query file (SDF)");
         options.addOption("c", true, "Similarity cutoff [0-1]. Default is 0.8");
         options.addOption("t", true, "Keep top N most similar compounds only. N >= 1");
+        options.addOption("f", true, "The SD field to use for the molecule title. If not specified, the molecule title field is used");
 
         CommandLineParser parser = new PosixParser();
         try {
@@ -124,6 +130,7 @@ public class momsim {
             if (cmd.hasOption("v")) obj.setVerbose(true);
             if (cmd.hasOption("g")) obj.setGenerateVectors(true);
             if (cmd.hasOption("q")) obj.setQueryFileName(cmd.getOptionValue("q"));
+            if (cmd.hasOption("f")) obj.setTitleField(cmd.getOptionValue("f"));
             if (cmd.hasOption("o")) obj.setOutFileName(cmd.getOptionValue("o"));
             if (cmd.hasOption("c")) obj.setCutoff(Double.parseDouble(cmd.getOptionValue("c")));
 //            if (cmd.hasOption("t")) obj.setTopN(Integer.parseInt(cmd.getOptionValue("t")));
@@ -222,16 +229,17 @@ public class momsim {
                 start = System.currentTimeMillis();
                 while (ireader.hasNext()) {
                     IAtomContainer target = (IAtomContainer) ireader.next();
+                    String title = (String) (titleField != null ? target.getProperty(titleField) : target.getProperty(CDKConstants.TITLE));
                     float[] moments;
                     nmol++;
                     if (!has3D(target) || target.getAtomCount() == 1) {
-                        System.err.println("\nERROR: " + target.getProperty(CDKConstants.TITLE) + " had no 3D coordinates or else has a single atom. Using NAs");
+                        System.err.println("\nERROR: " + title + " had no 3D coordinates or else has a single atom. Using NAs");
                         moments = new float[12];
                         for (int i = 0; i < 12; i++) moments[i] = Float.NaN;
                     } else {
                         moments = DistanceMoment.generateMoments(target);
                     }
-                    String row = target.getProperty(CDKConstants.TITLE) + "," + join(moments, ",");
+                    String row = title + "," + join(moments, ",");
                     writer.write(row + "\n");
                     if (verbose && nmol % 100 == 0) System.out.print("\rProcessed " + nmol + " molecules");
                 }
@@ -246,9 +254,10 @@ public class momsim {
                 start = System.currentTimeMillis();
                 while (ireader.hasNext()) {
                     IAtomContainer target = (IAtomContainer) ireader.next();
+                    String title = (String) (titleField != null ? target.getProperty(titleField) : target.getProperty(CDKConstants.TITLE));
                     nmol++;
                     if (!has3D(target) || target.getAtomCount() == 1) {
-                        System.err.println("\nERROR: " + target.getProperty(CDKConstants.TITLE) + " had no 3D coordinates or else a single atom. Skipping");
+                        System.err.println("\nERROR: " + title + " had no 3D coordinates or else a single atom. Skipping");
                         continue;
                     }
                     float[] targetMoments = DistanceMoment.generateMoments(target);
@@ -258,7 +267,7 @@ public class momsim {
                     }
                     float sim = (float) (1.0 / (1.0 + sum / 12.0));
                     if (sim >= cutoff) {
-                        writer.write(target.getProperty(CDKConstants.TITLE) + "\t" + sim + "\n");
+                        writer.write(title + "\t" + sim + "\n");
                         nsel++;
                     }
                     if (verbose && nmol % 100 == 0)
