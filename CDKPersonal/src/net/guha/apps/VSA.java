@@ -118,32 +118,40 @@ public class VSA {
         else if (symbol.equals("Br")) vdwr = 2.166;
         else if (symbol.equals("I")) vdwr = 2.358;
         else if (symbol.equals("O")) {
-            List<IAtom> connected = atomContainer.getConnectedAtomsList(atom);
-            if (connected.size() == 1 &&
-                    atomContainer.getBond(atom, connected.get(0)).getOrder().equals(IBond.Order.DOUBLE)) {
-                vdwr = 1.810;
-            } else if (connected.size() == 2) {
-                if (connected.get(0).getSymbol().equals("H")) {
-                    List<IAtom> tmp = atomContainer.getConnectedAtomsList(connected.get(0));
-                    for (IAtom tmp1 : tmp) {
-                        if (!tmp1.equals(atom) && tmp1.getSymbol().equals("O") &&
-                                atomContainer.getBond(tmp1, connected.get(0)).getOrder().equals(IBond.Order.DOUBLE)) {
-                            vdwr = 2.152;
-                            break;
-                        }
-                    }
-                } else if (connected.get(1).getSymbol().equals("H")) {
-                    List<IAtom> tmp = atomContainer.getConnectedAtomsList(connected.get(1));
-                    for (IAtom tmp1 : tmp) {
-                        if (!tmp1.equals(atom) && tmp1.getSymbol().equals("O") &&
-                                atomContainer.getBond(tmp1, connected.get(1)).getOrder().equals(IBond.Order.DOUBLE)) {
-                            vdwr = 2.152;
-                            break;
-                        }
-                    }
-                } else vdwr = 1.779;
-            }
-        }
+             List<IAtom> connected =
+atomContainer.getConnectedAtomsList(atom);
+             if (connected.size() == 1 &&
+                     atomContainer.getBond(atom,
+connected.get(0)).getOrder().equals(IBond.Order.DOUBLE)) {
+                 vdwr = 1.810;
+             } else if (connected.size() == 2) {
+                 if (connected.get(0).getSymbol().equals("H")) {
+                     List<IAtom> tmp =
+atomContainer.getConnectedAtomsList(connected.get(1));
+                     for (IAtom tmp1 : tmp) {
+                         if (!tmp1.equals(atom) &&
+tmp1.getSymbol().equals("O") &&
+                                 atomContainer.getBond(tmp1,
+connected.get(1)).getOrder().equals(IBond.Order.DOUBLE)) {
+                             vdwr = 2.152;
+                             break;
+                         }
+                     }
+                 } else if (connected.get(1).getSymbol().equals("H")) {
+                     List<IAtom> tmp =
+atomContainer.getConnectedAtomsList(connected.get(0));
+                     for (IAtom tmp1 : tmp) {
+                         if (!tmp1.equals(atom) &&
+tmp1.getSymbol().equals("O") &&
+                                 atomContainer.getBond(tmp1,
+connected.get(0)).getOrder().equals(IBond.Order.DOUBLE)) {
+                             vdwr = 2.152;
+                             break;
+                         }
+                     }
+                 } else vdwr = 1.779;
+             }
+         }
 
         return vdwr;
     }
